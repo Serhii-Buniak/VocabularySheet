@@ -1,12 +1,12 @@
 ﻿namespace VocabularySheet.Domain;
 
-public class Word : BaseEntity
+public record Word : IEntity
 {
-    public override long Id { get; set; }
+    public long Id { get; set; }
 
-    public string Original { get; set; } = null!;
+    public required string Original { get; set; }
     
-    public string Translation { get; set; } = null!;
+    public required string Translation { get; set; }
     
     public string? Description { get; set; }
 }

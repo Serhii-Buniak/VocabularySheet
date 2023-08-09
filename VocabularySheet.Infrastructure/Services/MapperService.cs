@@ -8,5 +8,4 @@ public class MapperService : Mapper, IMapperService
     public MapperService(IConfigurationProvider configuration) : base(configuration)
     {
     }
-
 }

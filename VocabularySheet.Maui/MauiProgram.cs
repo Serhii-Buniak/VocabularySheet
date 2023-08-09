@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using VocabularySheet.Maui.Data;
 using VocabularySheet.Infrastructure;
 using VocabularySheet.Application;
 
@@ -24,12 +23,12 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<WeatherForecastService>();
-
 		builder.Services.AddInfrastructureServices(new()
 		{
 			DataDirectory = FileSystem.Current.AppDataDirectory
 		});
+
+		builder.Services.AddSingleton<DebugService>();
 
 		builder.Services.AddApplicationServices();
 

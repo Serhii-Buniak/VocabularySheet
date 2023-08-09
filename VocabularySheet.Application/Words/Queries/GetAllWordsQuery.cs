@@ -15,7 +15,7 @@ public class GetAllWordsQuery : IRequest<IEnumerable<WordReadDto>>
         {
         }
 
-        async Task<IEnumerable<WordReadDto>> IRequestHandler<GetAllWordsQuery, IEnumerable<WordReadDto>>.Handle(GetAllWordsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<WordReadDto>> Handle(GetAllWordsQuery request, CancellationToken cancellationToken)
         {
             IEnumerable<Word> words = await Context.Words.ToListAsync(cancellationToken);
 
@@ -24,4 +24,5 @@ public class GetAllWordsQuery : IRequest<IEnumerable<WordReadDto>>
             return wordReads;
         }
     }
+
 }

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using VocabularySheet.Application.Commons.Interfaces;
+﻿using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
 using VocabularySheet.Infrastructure.Data.Csv.Interfaces;
 using VocabularySheet.Infrastructure.Data.Csv.Models;

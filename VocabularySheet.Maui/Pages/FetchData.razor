@@ -1,13 +1,13 @@
 ﻿@page "/fetchdata"
+@using VocabularySheet.Application.Words.Queries;
 
-@using VocabularySheet.Maui.Data
-@inject WeatherForecastService ForecastService
+@inject IMediator Mediator
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (wordReadDtos == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -23,13 +23,13 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (WordReadDto word in wordReadDtos)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@word.Index</td>
+                    <td>@word.Original</td>
+                    <td>@word.Translation</td>
+                    <td>@word.Description</td>
                 </tr>
             }
         </tbody>
@@ -37,10 +37,10 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private IEnumerable<WordReadDto>? wordReadDtos;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        wordReadDtos = await Mediator.Send(new GetAllWordsQuery());
     }
 }
