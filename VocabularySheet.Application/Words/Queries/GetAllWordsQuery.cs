@@ -9,20 +9,24 @@ namespace VocabularySheet.Application.Words.Queries;
 
 public class GetAllWordsQuery : IRequest<IEnumerable<WordReadDto>>
 {
-    public class GetAllWordsQueryHandler : EntityRequestHandler, IRequestHandler<GetAllWordsQuery, IEnumerable<WordReadDto>>
+    public class GetAllWordsQueryHandler : IRequestHandler<GetAllWordsQuery, IEnumerable<WordReadDto>>
     {
-        public GetAllWordsQueryHandler(IAppDbContext context, IMapperService mapper) : base(context, mapper)
+        private readonly IWordsRepository _repository;
+        private readonly IMapperService _mapper;
+
+        public GetAllWordsQueryHandler(IWordsRepository repository, IMapperService mapper)
         {
+            _repository = repository;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<WordReadDto>> Handle(GetAllWordsQuery request, CancellationToken cancellationToken)
         {
-            IEnumerable<Word> words = await Context.Words.ToListAsync(cancellationToken);
+            IEnumerable<Word> words = await _repository.GetAllAsync(cancellationToken);
 
-            var wordReads = Mapper.Map<IEnumerable<WordReadDto>>(words);
+            var wordReads = _mapper.Map<IEnumerable<WordReadDto>>(words);
 
             return wordReads;
         }
     }
-
 }

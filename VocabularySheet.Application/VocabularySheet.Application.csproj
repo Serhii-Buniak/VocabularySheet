@@ -15,11 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GoogleSheets\Commands\" />
-    <Folder Include="Words\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
   </ItemGroup>
 

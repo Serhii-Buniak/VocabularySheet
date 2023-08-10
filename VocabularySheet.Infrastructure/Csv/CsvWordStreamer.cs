@@ -1,11 +1,11 @@
 ﻿using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
-using VocabularySheet.Infrastructure.Data.Csv.Interfaces;
-using VocabularySheet.Infrastructure.Data.Csv.Models;
+using VocabularySheet.Infrastructure.Csv.Interfaces;
+using VocabularySheet.Infrastructure.Csv.Models;
 
-namespace VocabularySheet.Infrastructure.Data.Csv;
+namespace VocabularySheet.Infrastructure.Csv;
 
-public partial class CsvWordStreamer : ICsvWordStreamer
+public class CsvWordStreamer : ICsvWordStreamer
 {
     private readonly ICsvStreamer<WordCsv, WordCsvClassMap> _csvStreamer;
     private readonly IMapperService _mapper;
@@ -16,9 +16,9 @@ public partial class CsvWordStreamer : ICsvWordStreamer
         _mapper = mapper;
     }
 
-    public IEnumerable<Word> Read(Stream stream)
+    public async Task<IEnumerable<Word>> ReadAsync(Stream stream, CancellationToken cancellationToken)
     {
-        IEnumerable<WordCsv> words = _csvStreamer.Read(stream);
+        IEnumerable<WordCsv> words = await _csvStreamer.ReadAsync(stream, cancellationToken);
         return _mapper.Map<IEnumerable<Word>>(words);
     }
 }

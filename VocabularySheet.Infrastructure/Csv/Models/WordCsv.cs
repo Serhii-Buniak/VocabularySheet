@@ -1,4 +1,4 @@
-﻿namespace VocabularySheet.Infrastructure.Data.Csv.Models;
+﻿namespace VocabularySheet.Infrastructure.Csv.Models;
 
 public record WordCsv
 {

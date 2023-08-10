@@ -1,5 +1,4 @@
-﻿using VocabularySheet.Application.Commons.Interfaces;
-using InfrastructureOptions = VocabularySheet.Infrastructure.ConfigureServices.InfrastructureOptions;
+﻿using VocabularySheet.Infrastructure.Services.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Services;
 

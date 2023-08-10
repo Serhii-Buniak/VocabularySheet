@@ -10,16 +10,16 @@ public class SetGoogleSheetUrlCommand : IRequest
 
     public class SetGoogleSheetUrlCommandHandler : IRequestHandler<SetGoogleSheetUrlCommand>
     {
-        private readonly IJsonStorage _jsonStorage;
+        private readonly IGoogleSheetConfigurationRepository _configurationRepository;
 
-        public SetGoogleSheetUrlCommandHandler(IJsonStorage jsonStorage)
+        public SetGoogleSheetUrlCommandHandler(IGoogleSheetConfigurationRepository configurationRepository)
         {
-            _jsonStorage = jsonStorage;
+            _configurationRepository = configurationRepository;
         }
 
         public async Task Handle(SetGoogleSheetUrlCommand request, CancellationToken cancellationToken)
         {
-            _jsonStorage.GoogleSheetUrl = request.Url;
+            _configurationRepository.SetGoogleSheetUrl(request.Url);
 
             await Task.CompletedTask;
         }

@@ -1,4 +1,4 @@
-﻿namespace VocabularySheet.Application.Commons.Interfaces;
+﻿namespace VocabularySheet.Infrastructure.Services.Interfaces;
 
 public interface IAppDataService
 {

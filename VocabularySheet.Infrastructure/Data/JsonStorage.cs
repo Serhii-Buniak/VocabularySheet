@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
-using VocabularySheet.Application.Commons.Interfaces;
+using VocabularySheet.Infrastructure.Data.Interfaces;
+using VocabularySheet.Infrastructure.Services.Interfaces;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace VocabularySheet.Infrastructure.Data;
@@ -15,21 +16,7 @@ public class JsonStorage : IJsonStorage
 
     }
 
-    public string? GoogleSheetUrl
-    {
-        get
-        {
-            return JsonConfigurationData.GoogleSheetUrl;
-        }
-        set
-        {
-            JsonConfiguration data = JsonConfigurationData;
-            data.GoogleSheetUrl = value;
-            JsonConfigurationData = data;
-        }
-    }
-
-    private JsonConfiguration JsonConfigurationData
+    public JsonConfiguration JsonConfiguration
     {
         get
         {
@@ -49,10 +36,4 @@ public class JsonStorage : IJsonStorage
             serializer.Serialize(jsonWriter, value);
         }
     }
-
-    private class JsonConfiguration
-    {
-        public string? GoogleSheetUrl { get; set; }
-    }
-
 }

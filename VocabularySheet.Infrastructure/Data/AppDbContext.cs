@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
+using VocabularySheet.Infrastructure.Data.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Data;
 
@@ -24,4 +25,5 @@ public class AppDbContext : DbContext, IAppDbContext
     {
         options.UseSqlite();
     }
+
 }

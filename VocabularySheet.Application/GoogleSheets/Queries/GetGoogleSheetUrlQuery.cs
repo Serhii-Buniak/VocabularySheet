@@ -8,16 +8,16 @@ public class GetGoogleSheetUrlQuery : IRequest<string>
 
     public class GetGoogleSheetUrlQueryHandler : IRequestHandler<GetGoogleSheetUrlQuery, string>
     {
-        private readonly IJsonStorage _jsonStorage;
+        private readonly IGoogleSheetConfigurationRepository _configurationRepository;
 
-        public GetGoogleSheetUrlQueryHandler(IJsonStorage jsonStorage)
+        public GetGoogleSheetUrlQueryHandler(IGoogleSheetConfigurationRepository configurationRepository)
         {
-            _jsonStorage = jsonStorage;
+            _configurationRepository = configurationRepository;
         }
 
         public async Task<string> Handle(GetGoogleSheetUrlQuery request, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(_jsonStorage.GoogleSheetUrl) ?? "https://docs.google.com/spreadsheets";
+            return await Task.FromResult(_configurationRepository.GetGoogleSheetUrl()) ?? "https://docs.google.com/spreadsheets";
         }
     }
 

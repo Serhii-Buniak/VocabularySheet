@@ -56,4 +56,10 @@
       <ProjectReference Include="..\VocabularySheet.Infrastructure\VocabularySheet.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="MainPage.xaml.cs">
+        <DependentUpon>MainPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
