@@ -1,8 +1,4 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using VocabularySheet.Application.Commons;
-using VocabularySheet.Application.Commons.Dtos;
-using VocabularySheet.Application.Commons.Interfaces;
+﻿using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Commons.Mappings;
 using VocabularySheet.Domain;
 

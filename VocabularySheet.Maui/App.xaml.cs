@@ -17,7 +17,7 @@ public partial class App : ApplicationMaui
 
         if (window != null)
         {
-            window.Title = "Word Collusion";
+            window.Title = "Vocabulary Sheet";
         }
 
         return window!;

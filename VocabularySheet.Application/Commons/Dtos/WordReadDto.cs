@@ -2,7 +2,7 @@
 
 public record WordReadDto
 {
-    public required long Index { get; set; }
+    public required long Id { get; set; }
 
     public required string Original { get; set; }
 

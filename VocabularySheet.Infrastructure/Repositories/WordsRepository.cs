@@ -24,6 +24,16 @@ public class WordsRepository : IWordsRepository
         return await _context.Words.ExecuteDeleteAsync(cancellationToken);
     }
 
+    public int Count()
+    {
+        return _context.Words.Count();
+    }
+
+    public async Task<int> CountAsync(CancellationToken cancellationToken)
+    {
+        return await _context.Words.CountAsync(cancellationToken);
+    }
+
     public async Task<IEnumerable<Word>> GetAllAsync(CancellationToken cancellationToken)
     {
         return await _context.Words.AsNoTracking().ToListAsync(cancellationToken);
@@ -32,5 +42,10 @@ public class WordsRepository : IWordsRepository
     public async Task<int> SaveAsync(CancellationToken cancellationToken)
     {
         return await _context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<Word>> TakeAsync(int take, int skip, CancellationToken cancellationToken)
+    {
+        return await _context.Words.Skip(skip).Take(take).AsNoTracking().ToListAsync(cancellationToken);
     }
 }
