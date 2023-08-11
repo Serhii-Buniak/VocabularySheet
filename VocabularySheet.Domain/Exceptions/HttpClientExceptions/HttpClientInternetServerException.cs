@@ -4,7 +4,7 @@ namespace VocabularySheet.Domain.Exceptions.HttpClientExceptions;
 
 public class HttpClientInternetServerException : HttpClientException
 {
-    public HttpClientInternetServerException() : base("404 Not Found")
+    public HttpClientInternetServerException() : base("500 Internal Server Error")
     {
     }
 

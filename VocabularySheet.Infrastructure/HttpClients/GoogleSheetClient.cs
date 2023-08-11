@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text.RegularExpressions;
+using VocabularySheet.Domain.Exceptions;
 using VocabularySheet.Domain.Exceptions.HttpClientExceptions;
 using VocabularySheet.Infrastructure.HttpClients.Interfaces;
 
@@ -26,17 +27,25 @@ public class GoogleSheetClient : IGoogleSheetClient
 
         HttpResponseMessage httpResponse = await _httpClient.GetAsync(fileUrl, cancellationToken);
 
-        if (httpResponse.IsSuccessStatusCode)
+
+        if (!httpResponse.IsSuccessStatusCode)
         {
-            return await httpResponse.Content.ReadAsStreamAsync(cancellationToken);
+            throw httpResponse.StatusCode switch
+            {
+                HttpStatusCode.InternalServerError => new HttpClientInternetServerException(),
+                HttpStatusCode.NotFound => new HttpClientNotFoundException(),
+                _ => new HttpClientException(),
+            };
+
         }
 
-        throw httpResponse.StatusCode switch
+        if (httpResponse.RequestMessage?.RequestUri?.Authority == "accounts.google.com")
         {
-            HttpStatusCode.InternalServerError => new HttpClientInternetServerException(),
-            HttpStatusCode.NotFound => new HttpClientNotFoundException(),
-            _ => new HttpClientException(),
-        };
+            throw new GoogleSheetNotPublicException();
+        }
+
+
+        return await httpResponse.Content.ReadAsStreamAsync(cancellationToken);
     }
 
 }

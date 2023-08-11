@@ -30,19 +30,12 @@ public static class ConfigureServices
 
         services.AddCsvSteamers();
 
-        services.AddMapper();
-
         return services;
     }
 
     private static void AddHttpClients(this IServiceCollection services)
     {
         services.AddHttpClient<IGoogleSheetClient, GoogleSheetClient>();
-    }
-
-    private static void AddMapper(this IServiceCollection services)
-    {
-        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     }
 
     private static void AddRepositories(this IServiceCollection services)
@@ -71,7 +64,6 @@ public static class ConfigureServices
 
     private static void AddServices(this IServiceCollection services)
     {
-        services.AddSingleton<IMapperService, MapperService>();
         services.AddSingleton<IAppDataService, AppDataService>();
         services.AddSingleton<IGoogleSheetService, GoogleSheetService>();
     }

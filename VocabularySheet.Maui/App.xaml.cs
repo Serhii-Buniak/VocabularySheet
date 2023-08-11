@@ -1,6 +1,6 @@
-﻿namespace VocabularySheet.Maui;
+﻿using ApplicationMaui = Microsoft.Maui.Controls.Application;
 
-using ApplicationMaui = Microsoft.Maui.Controls.Application;
+namespace VocabularySheet.Maui;
 
 public partial class App : ApplicationMaui
 {
@@ -8,7 +8,7 @@ public partial class App : ApplicationMaui
     {
         InitializeComponent();
 
-        MainPage = new MainPage();
+        MainPage = new AppShell();
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
@@ -17,7 +17,7 @@ public partial class App : ApplicationMaui
 
         if (window != null)
         {
-            window.Title = "Vocabulary Sheet";
+            window.Title = "Word Collusion";
         }
 
         return window!;

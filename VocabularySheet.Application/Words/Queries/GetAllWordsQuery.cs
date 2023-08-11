@@ -3,30 +3,41 @@ using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Commons.Interfaces;
+using VocabularySheet.Application.Commons.Mappings;
 using VocabularySheet.Domain;
 
 namespace VocabularySheet.Application.Words.Queries;
 
-public class GetAllWordsQuery : IRequest<IEnumerable<WordReadDto>>
+public static class GetAllWords
 {
-    public class GetAllWordsQueryHandler : IRequestHandler<GetAllWordsQuery, IEnumerable<WordReadDto>>
+    public class Query : IRequest<IEnumerable<WordReadDto>>
     {
-        private readonly IWordsRepository _repository;
-        private readonly IMapperService _mapper;
-
-        public GetAllWordsQueryHandler(IWordsRepository repository, IMapperService mapper)
+        public class Handler : IRequestHandler<Query, IEnumerable<WordReadDto>>
         {
-            _repository = repository;
-            _mapper = mapper;
+            private readonly IWordsRepository _repository;
+
+            public Handler(IWordsRepository repository)
+            {
+                _repository = repository;
+            }
+
+            public async Task<IEnumerable<WordReadDto>> Handle(Query request, CancellationToken cancellationToken)
+            {
+                IEnumerable<Word> words = await _repository.GetAllAsync(cancellationToken);
+
+                IEnumerable<WordReadDto> wordReads = words.ToWordsRead();
+
+                return wordReads;
+            }
         }
+    }
 
-        public async Task<IEnumerable<WordReadDto>> Handle(GetAllWordsQuery request, CancellationToken cancellationToken)
+    public class Validation : AbstractValidator<Query>
+    {
+        public Validation()
         {
-            IEnumerable<Word> words = await _repository.GetAllAsync(cancellationToken);
 
-            var wordReads = _mapper.Map<IEnumerable<WordReadDto>>(words);
-
-            return wordReads;
         }
     }
 }
+

@@ -3,21 +3,29 @@ using VocabularySheet.Application.Commons.Interfaces;
 
 namespace VocabularySheet.Application.Words.Commands;
 
-public class SynchronizeWordsCommand : IRequest
+public static class SynchronizeWords
 {
-    public class SynchronizeWordsCommandHandler : IRequestHandler<SynchronizeWordsCommand>
+    public class Command : IRequest
     {
-        private readonly IGoogleSheetService _googleSheetService;
-
-        public SynchronizeWordsCommandHandler(IGoogleSheetService googleSheetService)
+        public class Handler : IRequestHandler<Command>
         {
-            _googleSheetService = googleSheetService;
-        }
+            private readonly IGoogleSheetService _googleSheetService;
 
-        public async Task Handle(SynchronizeWordsCommand request, CancellationToken cancellationToken)
-        {
-            await _googleSheetService.SynchronizeDataAsync(cancellationToken);
+            public Handler(IGoogleSheetService googleSheetService)
+            {
+                _googleSheetService = googleSheetService;
+            }
+
+            public async Task Handle(Command request, CancellationToken cancellationToken)
+            {
+                await _googleSheetService.SynchronizeDataAsync(cancellationToken);
+            }
         }
     }
-
+    public class Validation : AbstractValidator<Command>
+    {
+        public Validation()
+        {
+        }
+    }
 }

@@ -1,37 +1,45 @@
-﻿using Microsoft.Extensions.Logging;
-using VocabularySheet.Infrastructure;
+﻿using CommunityToolkit.Maui.Core;
+using Microsoft.Extensions.Logging;
 using VocabularySheet.Application;
+using VocabularySheet.Infrastructure;
+using VocabularySheet.Maui.Views;
+using VocabularySheet.Maui.ViewModels;
 
 namespace VocabularySheet.Maui;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-			});
-
-		builder.Services.AddMauiBlazorWebView();
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkitCore()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            });
 
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
+       
 
-		builder.Services.AddInfrastructureServices(new()
-		{
-			DataDirectory = FileSystem.Current.AppDataDirectory
-		});
+        builder.Services.AddInfrastructureServices(new()
+        {
+            DataDirectory = FileSystem.Current.AppDataDirectory
+        });
+        builder.Services.AddApplicationServices();
 
-		builder.Services.AddSingleton<DebugService>();
 
-		builder.Services.AddApplicationServices();
+        builder.Services.AddSingleton<GoogleSheets>()
+                        .AddSingleton<GoogleSheetsVM>();
+
+        builder.Services.AddSingleton<WordsSpin>()
+                        .AddSingleton<WordsSpinVM>();
+
 
         return builder.Build();
-	}
+    }
 }

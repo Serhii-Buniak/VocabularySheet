@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="VocabularySheet.Maui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:VocabularySheet.Maui"
+    xmlns:view="clr-namespace:VocabularySheet.Maui.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent Title="Words Spin"
+                      ContentTemplate="{DataTemplate view:WordsSpin}"
+                      Route="WordsSpin" />
+
+        <ShellContent Title="Google Sheets"
+                      ContentTemplate="{DataTemplate view:GoogleSheets}"
+                      Route="GoogleSheets" />
+    </TabBar>
+
+</Shell>

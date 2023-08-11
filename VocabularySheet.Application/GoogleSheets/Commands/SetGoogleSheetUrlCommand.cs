@@ -1,27 +1,39 @@
-﻿using MediatR;
-using VocabularySheet.Application.Commons.Interfaces;
-using VocabularySheet.Application.GoogleSheets.Queries;
+﻿using System.Text.RegularExpressions;
 
 namespace VocabularySheet.Application.GoogleSheets.Commands;
 
-public class SetGoogleSheetUrlCommand : IRequest
+public static class SetGoogleSheetUrl
 {
-    public required string Url { get; set; }
-
-    public class SetGoogleSheetUrlCommandHandler : IRequestHandler<SetGoogleSheetUrlCommand>
+    public class Command : IRequest
     {
-        private readonly IGoogleSheetConfigurationRepository _configurationRepository;
+        public required string Url { get; set; }
 
-        public SetGoogleSheetUrlCommandHandler(IGoogleSheetConfigurationRepository configurationRepository)
+        public class Handler : IRequestHandler<Command>
         {
-            _configurationRepository = configurationRepository;
+            private readonly IGoogleSheetConfigurationRepository _configurationRepository;
+
+            public Handler(IGoogleSheetConfigurationRepository configurationRepository)
+            {
+                _configurationRepository = configurationRepository;
+            }
+
+            public async Task Handle(Command request, CancellationToken cancellationToken)
+            {
+                _configurationRepository.SetGoogleSheetUrl(request.Url);
+
+                await Task.CompletedTask;
+            }
         }
+    }
 
-        public async Task Handle(SetGoogleSheetUrlCommand request, CancellationToken cancellationToken)
+    public class Validation : AbstractValidator<Command>
+    {
+        public readonly static Regex UrlRegex = new(@"https:\/\/docs\.google\.com\/spreadsheets\/(u\/\d\/)?d\/[a-zA-Z0-9_-]+(\/(edit(\?usp=sharing)?|(\?usp=#gid=\d+))?)?");
+
+        public Validation()
         {
-            _configurationRepository.SetGoogleSheetUrl(request.Url);
-
-            await Task.CompletedTask;
+            RuleFor(command => command.Url)
+              .Matches(UrlRegex);
         }
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.Views.GoogleSheets"
+             xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
+             x:DataType="viewmodel:GoogleSheetsVM"
+             Title="GoogleSheets">
+
+    <VerticalStackLayout Margin="0,0,0,0">
+
+        <StackLayout HeightRequest="50">
+            <Label Text="{Binding Error}"
+                   FontSize="21"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" 
+                   Margin="20"
+                   IsVisible="{Binding IsErrorVisible}"/>
+        </StackLayout>
+    
+        
+        <Button Text="Synchronize"
+                FontSize="21"
+                HorizontalOptions="Center" 
+                Command="{Binding SynchronizeCommand}"
+                IsEnabled="{Binding IsGoogleSheetEnable}"
+                Margin="20"/>
+
+        <Editor Text="{Binding GoogleSheetUrl}"
+                FontSize="16"
+                TextColor="White"
+                HeightRequest="250"
+                WidthRequest="{OnPlatform WinUI=600, Android=250}"
+                />
+
+    </VerticalStackLayout>
+    
+</ContentPage>

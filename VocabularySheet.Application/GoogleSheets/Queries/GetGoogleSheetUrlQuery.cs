@@ -3,22 +3,30 @@ using VocabularySheet.Application.Commons.Interfaces;
 
 namespace VocabularySheet.Application.GoogleSheets.Queries;
 
-public class GetGoogleSheetUrlQuery : IRequest<string>
+public class GetGoogleSheetUrl
 {
-
-    public class GetGoogleSheetUrlQueryHandler : IRequestHandler<GetGoogleSheetUrlQuery, string>
+    public class Query : IRequest<string>
     {
-        private readonly IGoogleSheetConfigurationRepository _configurationRepository;
-
-        public GetGoogleSheetUrlQueryHandler(IGoogleSheetConfigurationRepository configurationRepository)
+        public class Handler : IRequestHandler<Query, string>
         {
-            _configurationRepository = configurationRepository;
-        }
+            private readonly IGoogleSheetConfigurationRepository _configurationRepository;
 
-        public async Task<string> Handle(GetGoogleSheetUrlQuery request, CancellationToken cancellationToken)
-        {
-            return await Task.FromResult(_configurationRepository.GetGoogleSheetUrl()) ?? "https://docs.google.com/spreadsheets";
+            public Handler(IGoogleSheetConfigurationRepository configurationRepository)
+            {
+                _configurationRepository = configurationRepository;
+            }
+
+            public async Task<string> Handle(Query request, CancellationToken cancellationToken)
+            {
+                return await Task.FromResult(_configurationRepository.GetGoogleSheetUrl());
+            }
         }
     }
 
+    public class Validation : AbstractValidator<Query>
+    {
+        public Validation()
+        {
+        }
+    }
 }
