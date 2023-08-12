@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Views.WordsSpin"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
+             xmlns:converters="clr-namespace:VocabularySheet.Maui.Converters"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              x:DataType="viewmodel:WordsSpinVM">
+    <ContentPage.Resources>
+        <converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout
@@ -25,14 +29,21 @@
             </VerticalStackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
-                <controls:SpinButton Text="Start"
-                                     Command="{Binding StartCommand}"
-                                     IsAlternativeMode="{Binding IsStarted}"
-                                     AltText="Stop"
-                                     AltCommand="{Binding StopCommand}"
-                                   
-                />
-                <!--<controls:SpinButton Text="Pause"/>-->
+
+                <Button Text="Start"
+                        Command="{Binding StartCommand}"
+                        CommandParameter="{Binding StartCancelCommand}"
+                                        
+                >
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                     Binding="{Binding IsStarted}"
+                                     Value="True">
+                            <Setter Property="Text" Value="Stop" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+
             </HorizontalStackLayout>
 
             <ScrollView HeightRequest="300"  MaximumWidthRequest="1200">

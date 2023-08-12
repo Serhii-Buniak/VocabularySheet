@@ -4,6 +4,7 @@ using VocabularySheet.Application;
 using VocabularySheet.Infrastructure;
 using VocabularySheet.Maui.Views;
 using VocabularySheet.Maui.ViewModels;
+using VocabularySheet.Maui.Controls;
 
 namespace VocabularySheet.Maui;
 
@@ -31,7 +32,6 @@ public static class MauiProgram
             DataDirectory = FileSystem.Current.AppDataDirectory
         });
         builder.Services.AddApplicationServices();
-
 
         builder.Services.AddSingleton<GoogleSheets>()
                         .AddSingleton<GoogleSheetsVM>();

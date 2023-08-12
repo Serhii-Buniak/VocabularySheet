@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
+using Microsoft.Extensions.Logging;
+using System.Windows.Input;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
 
@@ -9,7 +11,6 @@ namespace VocabularySheet.Maui.ViewModels;
 public partial class WordsSpinVM : BaseViewModel
 {
     private static readonly Random rng = new();
-    private CancellationTokenSource iterationTokenSource = new();
 
     [ObservableProperty]
     private GetSpinWords.Query queryParameters = new()
@@ -20,12 +21,10 @@ public partial class WordsSpinVM : BaseViewModel
         IsTranslationMode = false,
     };
 
-    public bool StartStopButtonEnable => IsNotStarted && (QueryParameters.IsOriginalMode || QueryParameters.IsTranslationMode);
 
 
-    [ObservableProperty, NotifyPropertyChangedFor(nameof(IsNotStarted), nameof(StartStopButtonEnable))]
-    private bool isStarted;
-    public bool IsNotStarted => !IsStarted;
+    [ObservableProperty]
+    private bool isStarted = false;
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsNotPaused))]
     private bool isPaused;
@@ -43,7 +42,7 @@ public partial class WordsSpinVM : BaseViewModel
     [ObservableProperty]
     private double delayInSeconds = 1;
 
-    public WordsSpinVM(IMediator mediator) : base(mediator)
+    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger) : base(mediator, logger)
     {
 
     }
@@ -59,36 +58,28 @@ public partial class WordsSpinVM : BaseViewModel
         }
         else
         {
-            QueryParameters.ToIndex = 1;
+            QueryParameters.ToIndex = max;
         }
 
     }
 
-    [RelayCommand]
-    private async Task Start()
+    [RelayCommand(IncludeCancelCommand = true, AllowConcurrentExecutions = true, CanExecute = nameof(IsStarted))]
+    public async Task Start(CancellationToken cancellationToken)
     {
         IsStarted = true;
-        iterationTokenSource = new CancellationTokenSource();
-
         try
         {
-            IsStarted = true;
+            IEnumerable<WordSpinDto> words = await GetWordsListAsync(cancellationToken);
 
-            IEnumerable<WordSpinDto> words = await GetWordsListAsync();
 
             foreach (WordSpinDto word in words)
             {
-                if (IsNotStarted)
-                {
-                    break;
-                }
-
-                await WaitPause();
-                await NextWord(word);
+                await NextWord(word, cancellationToken);
             }
         }
-        catch (AggregateException)
+        catch (TaskCanceledException ex)
         {
+            Logger.LogInformation("StartCommand throw {@Type} with message {@Message}:", ex.GetType().Name, ex.Message);
         }
         finally
         {
@@ -97,40 +88,34 @@ public partial class WordsSpinVM : BaseViewModel
         }
     }
 
-    [RelayCommand]
-    private void Stop()
-    {
-        iterationTokenSource.Cancel();
-    }
+    //[RelayCommand]
+    //private void Pause()
+    //{
+    //    IsPaused = true;
+    //}
 
-    [RelayCommand]
-    private void Pause()
-    {
-        IsPaused = true;
-    }
+    //[RelayCommand]
+    //private void Resume()
+    //{
+    //    IsPaused = false;
+    //}
 
-    [RelayCommand]
-    private void Resume()
-    {
-        IsPaused = false;
-    }
-
-    private async Task NextWord(WordSpinDto word)
+    private async Task NextWord(WordSpinDto word, CancellationToken cancellationToken)
     {
         Word = word;
-        await Task.Delay(TimeSpan.FromSeconds(DelayInSeconds), iterationTokenSource.Token);
+        await Task.Delay(TimeSpan.FromSeconds(DelayInSeconds), cancellationToken);
     }
 
-    private async Task WaitPause()
+    private async Task WaitPause(CancellationToken cancellationToken)
     {
         while (IsPaused)
         {
-            await Task.Delay(100, iterationTokenSource.Token);
+            await Task.Delay(100, cancellationToken);
         }
     }
-    private async Task<IEnumerable<WordSpinDto>> GetWordsListAsync()
+    private async Task<IEnumerable<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
     {
-        var words = await Mediator.Send(QueryParameters);
+        var words = await Mediator.Send(QueryParameters, cancellationToken);
         return words.OrderBy(a => rng.Next()).ToList();
     }
 }

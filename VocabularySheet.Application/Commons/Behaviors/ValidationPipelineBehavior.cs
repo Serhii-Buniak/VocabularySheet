@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using VocabularySheet.Domain.Exceptions;
 
 namespace VocabularySheet.Application.Commons.Behaviors;
 
@@ -18,7 +19,7 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
 
         if (!validationResult.IsValid)
         {
-            throw new ValidationException(validationResult.Errors);
+            throw new FluentValidationException(validationResult.Errors);
         }
 
         return await next();

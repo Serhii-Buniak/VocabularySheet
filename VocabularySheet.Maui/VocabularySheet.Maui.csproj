@@ -58,6 +58,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\PrimaryButton.xaml.cs">
+	    <DependentUpon>PrimaryButton.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\GoogleSheets.xaml.cs">
 	    <DependentUpon>GoogleSheets.xaml</DependentUpon>
 	  </Compile>
@@ -67,7 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Controls\SpinButton.xaml">
+	  <MauiXaml Update="Controls\PrimaryButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\GoogleSheets.xaml">

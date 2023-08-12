@@ -2,11 +2,10 @@
 using CommunityToolkit.Mvvm.Input;
 using CsvHelper;
 using MediatR;
-using System.Linq;
+using Microsoft.Extensions.Logging;
 using VocabularySheet.Application.GoogleSheets.Commands;
 using VocabularySheet.Application.GoogleSheets.Queries;
 using VocabularySheet.Application.Words.Commands;
-using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.Domain.Exceptions;
 using VocabularySheet.Domain.Exceptions.HttpClientExceptions;
 using VocabularySheet.Infrastructure.Csv.Models;
@@ -27,7 +26,7 @@ public partial class GoogleSheetsVM : BaseViewModel
     public bool IsErrorVisible => Error != null;
 
 
-    public GoogleSheetsVM(IMediator mediator) : base(mediator)
+    public GoogleSheetsVM(IMediator mediator, ILogger<GoogleSheetsVM> logger) : base(mediator, logger)
     {
 
     }
@@ -41,23 +40,27 @@ public partial class GoogleSheetsVM : BaseViewModel
             await Mediator.Send(new SynchronizeWords.Command());
             Error = null;
         }
-        catch(HeaderValidationException)
+        catch (FluentValidationException)
+        {
+            Error = $"Google sheet url invalid";
+        }
+        catch (HeaderValidationException)
         {
             var props = typeof(WordCsv).GetProperties().Select(prop => prop.Name);
-            Error = $"Google sheet have to contain this columns: {string.Join(", " ,props)}.";
-        }  
-        catch(HttpClientNotFoundException)
+            Error = $"Google sheet have to contain this columns: {string.Join(", ", props)}.";
+        }
+        catch (HttpClientNotFoundException)
         {
             Error = $"Google sheet not found.";
-        }   
-        catch(HttpClientInternetServerException)
+        }
+        catch (HttpClientInternetServerException)
         {
             Error = $"No internet connection.";
         }
         catch (GoogleSheetNotPublicException ex)
         {
             Error = ex.Message;
-        }    
+        }
     }
 
     public async Task LoadDataAsync()
