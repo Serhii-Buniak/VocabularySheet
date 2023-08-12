@@ -56,6 +56,11 @@ public partial class WordsSpinVM : BaseViewModel
         _textToSpeechService = textToSpeechService;
     }
 
+    public void ResetSpin()
+    {
+        StartCancelCommand.Execute(this);
+    }
+
     public async Task ResetIndex()
     {
         int max = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
@@ -94,8 +99,6 @@ public partial class WordsSpinVM : BaseViewModel
             return false;
         }
     }
-
-
 
 
     [RelayCommand(IncludeCancelCommand = true, CanExecute = nameof(StartCommandCanExecute))]
@@ -147,6 +150,63 @@ public partial class WordsSpinVM : BaseViewModel
         });
     }
 
+    [RelayCommand]
+    public void ShiftDelay(double shiftDelay)
+    {
+        double newDelay = DelayInSeconds + shiftDelay;
+
+        const double min = 0.2;
+        bool biggerThanMin = newDelay < min;
+        if (biggerThanMin)
+        {
+            newDelay = min;
+        }
+
+        DelayInSeconds = Math.Round(newDelay, 2);
+    }
+
+    [RelayCommand]
+    public void ShiftFromLine(int shiftFromLine)
+    {
+        int newFromLine = FromIndex + shiftFromLine;
+
+        const int min = 1;
+        bool lessThanMin = newFromLine < min;
+        if (lessThanMin)
+        {
+            newFromLine = min;
+        }
+
+        bool biggerThanToLine = newFromLine > ToIndex;
+        if (biggerThanToLine)
+        {
+            newFromLine = ToIndex;
+        }
+
+        FromIndex = newFromLine;
+    }
+
+    [RelayCommand]
+    public async Task ShiftToLine(int shiftToLine)
+    {
+        int newToLine = ToIndex + shiftToLine;
+
+        bool lessThanFromLine = newToLine < FromIndex;
+        if (lessThanFromLine)
+        {
+            newToLine = FromIndex;
+        }
+
+        int max = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
+        bool biggerThanMax = newToLine > max;
+        if (biggerThanMax)
+        {
+            newToLine = max;
+        }
+
+        ToIndex = newToLine;
+    }
+
     private async Task NextWord(WordSpinDto word, CancellationToken cancellationToken)
     {
         Word = word;
@@ -162,7 +222,9 @@ public partial class WordsSpinVM : BaseViewModel
     }
     private async Task<IEnumerable<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
     {
+        var a = QueryParameters;
         var words = await Mediator.Send(QueryParameters, cancellationToken);
         return words.OrderBy(a => rng.Next()).ToList();
     }
 }
+

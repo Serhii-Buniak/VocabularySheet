@@ -17,6 +17,7 @@ public partial class WordsSpin : ContentPage
     {
         base.OnAppearing();
 
+        _wordsSpinVM.ResetSpin();
         await _wordsSpinVM.ResetIndex();
     }
 }

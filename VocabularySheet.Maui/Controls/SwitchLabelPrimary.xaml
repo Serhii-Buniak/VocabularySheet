@@ -8,15 +8,15 @@
         <FlexLayout JustifyContent="SpaceBetween" Margin="10">
 
             <Label Text="{Binding LabelText, Source={Reference switchLablePrimary}}"
-               VerticalOptions="Center"
-               FontSize="24"/>
+                   VerticalOptions="Center"
+                   FontSize="24"/>
 
             <Switch IsToggled="{Binding IsToggled, Source={Reference switchLablePrimary}}"
-                HorizontalOptions="StartAndExpand"
-                MinimumWidthRequest="0"
-                WidthRequest="75"
-                Margin="0,0,5,0"
-                Scale="1.2"/>
+                    HorizontalOptions="StartAndExpand"
+                    MinimumWidthRequest="0"
+                    WidthRequest="75"
+                    Margin="0,0,5,0"
+                    Scale="1.2"/>
 
         </FlexLayout>
     </Border>
