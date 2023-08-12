@@ -2,49 +2,58 @@
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 using System.Windows.Input;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
+using VocabularySheet.Maui.Services;
 
 namespace VocabularySheet.Maui.ViewModels;
 
 public partial class WordsSpinVM : BaseViewModel
 {
     private static readonly Random rng = new();
+    private readonly ITextToSpeechService _textToSpeechService;
 
-    [ObservableProperty]
-    private GetSpinWords.Query queryParameters = new()
+    private GetSpinWords.Query QueryParameters => new()
     {
-        FromIndex = 1,
-        ToIndex = 1,
-        IsOriginalMode = true,
-        IsTranslationMode = false,
+        FromIndex = FromIndex,
+        ToIndex = ToIndex,
+        IsOriginalMode = IsOriginalMode,
+        IsTranslationMode = IsTranslationMode,
     };
 
-
-
+    [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
+    private int fromIndex = 1;
     [ObservableProperty]
+    private int toIndex = 1;
+    [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
+    private bool isOriginalMode = true;
+    [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
+    private bool isTranslationMode = false;
+
+
+    [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
     private bool isStarted = false;
 
-    [ObservableProperty, NotifyPropertyChangedFor(nameof(IsNotPaused))]
+    [ObservableProperty]
     private bool isPaused;
-    public bool IsNotPaused => !IsPaused;
 
     [ObservableProperty]
     private WordSpinDto word = WordSpinDto.Sample;
 
     [ObservableProperty]
-    private bool isDescriptionShowed = true;
+    private bool isDescriptionVisible = true;
 
     [ObservableProperty]
-    private bool isTranslationEnable = true;
+    private bool isTranslationVisible = true;
 
     [ObservableProperty]
     private double delayInSeconds = 1;
 
-    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger) : base(mediator, logger)
+    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, ITextToSpeechService textToSpeechService) : base(mediator, logger)
     {
-
+        _textToSpeechService = textToSpeechService;
     }
 
     public async Task ResetIndex()
@@ -53,17 +62,43 @@ public partial class WordsSpinVM : BaseViewModel
 
         if (max == 0)
         {
-            QueryParameters.FromIndex = 0;
-            QueryParameters.ToIndex = 0;
+            FromIndex = 0;
+            ToIndex = 0;
         }
         else
         {
-            QueryParameters.ToIndex = max;
+            ToIndex = max;
         }
 
     }
 
-    [RelayCommand(IncludeCancelCommand = true, AllowConcurrentExecutions = true, CanExecute = nameof(IsStarted))]
+    public bool StartCommandCanExecute
+    {
+        get
+        {
+            if (IsStarted)
+            {
+                return true;
+            }
+
+            if (FromIndex == 0)
+            {
+                return false;
+            }
+
+            if (IsOriginalMode || IsTranslationMode)
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+
+
+
+    [RelayCommand(IncludeCancelCommand = true, CanExecute = nameof(StartCommandCanExecute))]
     public async Task Start(CancellationToken cancellationToken)
     {
         IsStarted = true;
@@ -71,9 +106,9 @@ public partial class WordsSpinVM : BaseViewModel
         {
             IEnumerable<WordSpinDto> words = await GetWordsListAsync(cancellationToken);
 
-
             foreach (WordSpinDto word in words)
             {
+                await WaitPause(cancellationToken);
                 await NextWord(word, cancellationToken);
             }
         }
@@ -88,17 +123,29 @@ public partial class WordsSpinVM : BaseViewModel
         }
     }
 
-    //[RelayCommand]
-    //private void Pause()
-    //{
-    //    IsPaused = true;
-    //}
+    [RelayCommand]
+    public void Pause()
+    {
+        IsPaused = true;
+    }
 
-    //[RelayCommand]
-    //private void Resume()
-    //{
-    //    IsPaused = false;
-    //}
+    [RelayCommand]
+    public void Resume()
+    {
+        IsPaused = false;
+    }
+
+
+    [RelayCommand]
+    public async Task TextSpeech()
+    {
+        LocaleAndText value = await _textToSpeechService.GetLocaleAndTextForTextAsync(Word.Original);
+
+        await TextToSpeech.SpeakAsync(value.Text, new SpeechOptions()
+        {
+            Locale = value.Locale,
+        });
+    }
 
     private async Task NextWord(WordSpinDto word, CancellationToken cancellationToken)
     {

@@ -16,12 +16,6 @@ public partial class PrimaryButton : ContentView
         typeof(PrimaryButton),
         default(ICommand));   
     
-    public static readonly BindableProperty CancelCommandProperty = BindableProperty.Create(
-        nameof(CancelCommand),
-        typeof(ICommand),
-        typeof(PrimaryButton),
-        default(ICommand));   
-    
     public new static readonly BindableProperty IsVisibleProperty = BindableProperty.Create(
         nameof(IsVisible),
         typeof(bool),
@@ -32,7 +26,8 @@ public partial class PrimaryButton : ContentView
         nameof(IsEnabled),
         typeof(bool),
         typeof(PrimaryButton),
-        true);
+        true,
+        defaultBindingMode: BindingMode.TwoWay);
 
     public PrimaryButton()
     {
@@ -49,12 +44,6 @@ public partial class PrimaryButton : ContentView
     {
         get => (ICommand)GetValue(CommandProperty);
         set => SetValue(CommandProperty, value);
-    }    
-    
-    public ICommand CancelCommand
-    {
-        get => (ICommand)GetValue(CancelCommandProperty);
-        set => SetValue(CancelCommandProperty, value);
     }    
     
     public new bool IsVisible

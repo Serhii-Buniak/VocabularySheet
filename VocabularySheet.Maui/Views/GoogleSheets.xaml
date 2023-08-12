@@ -6,7 +6,7 @@
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              x:DataType="viewmodel:GoogleSheetsVM">
 
-    <VerticalStackLayout Margin="0,0,0,0">
+    <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
 
         <StackLayout HeightRequest="50">
             <Label Text="{Binding Error}"
@@ -23,7 +23,6 @@
                                 IsEnabled="{Binding IsGoogleSheetEnable}"
             
         />
-
 
         <Editor Text="{Binding GoogleSheetUrl}"
                 FontSize="16"
