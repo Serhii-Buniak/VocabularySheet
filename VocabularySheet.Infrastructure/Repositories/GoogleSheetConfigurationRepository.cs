@@ -16,6 +16,18 @@ public class GoogleSheetConfigurationRepository : IGoogleSheetConfigurationRepos
     public string GetGoogleSheetUrl()
     {
         return _jsonStorage.JsonConfiguration.GoogleSheetUrl;
+    }  
+    
+    public string GetGoogleScriptUrl()
+    {
+        return _jsonStorage.JsonConfiguration.GoogleScriptUrl;
+    }
+
+    public void SetGoogleScriptUrl(string value)
+    {
+        JsonConfiguration data = _jsonStorage.JsonConfiguration;
+        data.GoogleScriptUrl = value;
+        _jsonStorage.JsonConfiguration = data;
     }
 
     public void SetGoogleSheetUrl(string value)

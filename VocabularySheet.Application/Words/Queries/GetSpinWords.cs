@@ -1,4 +1,6 @@
-﻿using VocabularySheet.Application.Commons.Dtos;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
+using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Commons.Mappings;
 using VocabularySheet.Domain;
 
@@ -70,7 +72,6 @@ public static class GetSpinWords
         public Validation(IWordsRepository repository)
         {
             const int min = 1;
-            int max = repository.Count();
 
             RuleFor(q => q.FromIndex)
                 .GreaterThanOrEqualTo(min)
@@ -78,7 +79,8 @@ public static class GetSpinWords
 
             RuleFor(q => q.ToIndex)
                 .GreaterThanOrEqualTo(q => q.FromIndex)
-                .LessThanOrEqualTo(max);
+                .LessThanOrEqualTo(p => repository.Count());
+
         }
     }
 }

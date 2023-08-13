@@ -18,7 +18,10 @@ public partial class GoogleSheetsVM : BaseViewModel
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
     private string googleSheetUrl = "https://docs.google.com/spreadsheets";
 
-    public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch(GoogleSheetUrl);
+    [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
+    private string googleScriptUrl = "https://script.google.com/macros/s";
+
+    public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch(GoogleSheetUrl) && SetGoogleScriptUrl.Validation.UrlRegex.IsMatch(GoogleScriptUrl);
 
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsErrorVisible))]
@@ -37,6 +40,7 @@ public partial class GoogleSheetsVM : BaseViewModel
         try
         {
             await Mediator.Send(new SetGoogleSheetUrl.Command() { Url = GoogleSheetUrl });
+            await Mediator.Send(new SetGoogleScriptUrl.Command() { Url = GoogleScriptUrl });
             await Mediator.Send(new SynchronizeWords.Command());
             Error = null;
         }
@@ -57,22 +61,25 @@ public partial class GoogleSheetsVM : BaseViewModel
         {
             Error = $"No internet connection.";
         }
-        catch (GoogleSheetNotPublicException ex)
+        catch (HttpClientException ex)
         {
             Error = ex.Message;
-        }
-        finally
-        {
         }
     }
 
     public async Task LoadDataAsync()
     {
-        string url = await Mediator.Send(new GetGoogleSheetUrl.Query());
+        string sheetUrl = await Mediator.Send(new GetGoogleSheetUrl.Query());
+        string scriptUrl = await Mediator.Send(new GetGoogleScriptUrl.Query());
 
-        if (!string.IsNullOrWhiteSpace(url))
+        if (!string.IsNullOrWhiteSpace(sheetUrl))
         {
-            GoogleSheetUrl = url;
+            GoogleSheetUrl = sheetUrl;
+        }
+
+        if (!string.IsNullOrWhiteSpace(scriptUrl))
+        {
+            GoogleScriptUrl = scriptUrl;
         }
     }
 

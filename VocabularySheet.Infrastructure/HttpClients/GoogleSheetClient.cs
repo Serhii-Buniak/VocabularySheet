@@ -48,4 +48,13 @@ public class GoogleSheetClient : IGoogleSheetClient
         return await httpResponse.Content.ReadAsStreamAsync(cancellationToken);
     }
 
+    public async Task RunScriptAsync(string url, CancellationToken cancellationToken)
+    {
+        HttpResponseMessage httpResponse = await _httpClient.GetAsync(url, cancellationToken);
+
+        if (!httpResponse.IsSuccessStatusCode)
+        {
+            throw new HttpClientException("Script is not valid.");
+        }
+    }
 }

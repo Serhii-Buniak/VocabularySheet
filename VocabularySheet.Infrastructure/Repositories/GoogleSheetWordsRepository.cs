@@ -23,10 +23,13 @@ public class GoogleSheetWordsRepository : IGoogleSheetWordsRepository
 
     public async Task<IEnumerable<Word>?> GetAllAsync(CancellationToken cancellationToken)
     {
-        string? url = _configuration.GetGoogleSheetUrl() 
-            ?? throw new NullReferenceException("Google sheet Url is null");
+        string scriptUrl = _configuration.GetGoogleScriptUrl();
+        await _client.RunScriptAsync(scriptUrl, cancellationToken);
 
-        using Stream stream = await _client.GetCsvFileAsync(url, cancellationToken);
+
+        string sheetUrl = _configuration.GetGoogleSheetUrl();
+
+        using Stream stream = await _client.GetCsvFileAsync(sheetUrl, cancellationToken);
 
         return await _streamer.ReadAsync(stream, cancellationToken);
     }

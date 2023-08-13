@@ -24,11 +24,9 @@
             
         />
 
-        <Editor Text="{Binding GoogleSheetUrl}"
-                FontSize="16"
-                HeightRequest="250"
-                WidthRequest="{OnPlatform WinUI=600, Android=300}"
-                />
+        <controls:EditorForUrl Text="{Binding GoogleSheetUrl, Mode=TwoWay}"/>
+
+        <controls:EditorForUrl Text="{Binding GoogleScriptUrl, Mode=TwoWay}"/>
 
     </VerticalStackLayout>
     
