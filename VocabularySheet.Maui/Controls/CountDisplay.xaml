@@ -6,7 +6,7 @@
              x:Name="countDisplay">
     <Border HorizontalOptions="CenterAndExpand">
         <FlexLayout Direction="Column" 
-                    JustifyContent="SpaceBetween" >
+                    JustifyContent="SpaceAround" >
             <Label Text="{Binding Title, Source={Reference countDisplay}}"
                    FontSize="18"
                    HorizontalTextAlignment="Center"  

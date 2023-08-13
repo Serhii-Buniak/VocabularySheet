@@ -12,21 +12,35 @@
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
     </ContentPage.Resources>
 
-    <ScrollView MinimumWidthRequest="{OnPlatform WinUI=600}">
+    <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
         <VerticalStackLayout
             Spacing="5"
-            Padding="5,70"
+            Padding="5,5"
             VerticalOptions="Center">
 
-            <VerticalStackLayout HeightRequest="300">
+            <Border HorizontalOptions="Center" 
+                    MaximumWidthRequest="{OnPlatform WinUI=1600}"
+                    Padding="{OnPlatform WinUI=10}"
+                    >
+                <ScrollView HeightRequest="400">
+                    <Label Text="{Binding Word.Description}"
+                               LineBreakMode="WordWrap"
+                               FontSize="{OnPlatform WinUI=24, Android=18}"    
+                               IsVisible="{Binding IsDescriptionVisible}"/>
+
+                 
+                </ScrollView>
+            </Border>
+
+            <VerticalStackLayout HeightRequest="400">
                 <Label Text="{Binding Word.Original}"
                        SemanticProperties.HeadingLevel="Level1"
-                       FontSize="{OnPlatform WinUI=120, Android=42}"
+                       FontSize="{OnPlatform WinUI=110, Android=42}"
                        HorizontalOptions="Center" />
 
                 <Label Text="{Binding Word.Translation}"
                        SemanticProperties.HeadingLevel="Level2"
-                       FontSize="{OnPlatform WinUI=70, Android=22}"
+                       FontSize="{OnPlatform WinUI=62, Android=22}"
                        HorizontalOptions="Center"     
                        IsVisible="{Binding IsTranslationVisible}"/>
             </VerticalStackLayout>
@@ -53,17 +67,7 @@
             <controls:PrimaryButton Text="Speech"
                                     Command="{Binding TextSpeechCommand}"/>
 
-            
-            <VerticalStackLayout IsVisible="{Binding IsDescriptionVisible}" 
-                                 HeightRequest="500" 
-                                 MaximumWidthRequest="1200">
-                <Editor Text="{Binding Word.Description}"
-                        HeightRequest="350"
-                        MaximumWidthRequest="1200"
-                        FontSize="{OnPlatform WinUI=24, Android=18}"                  
-                        IsReadOnly="True"                   
-                />
-            </VerticalStackLayout>
+
 
 
 
@@ -123,7 +127,7 @@
             <components:IndexShiftMenu Title="To"
                                        Count="{Binding ToIndex}"
                                        ShiftCommand="{Binding ShiftToLineCommand}"/>
-            
+
         </VerticalStackLayout>
     </ScrollView>
 

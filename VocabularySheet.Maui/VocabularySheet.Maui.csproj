@@ -37,13 +37,13 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'" Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\viconwindows.svg"  BaseSize="256,256" />
+		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'" Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\vicon90.svg" BaseSize="512,512" />
 
 
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\viconmobile.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\vcon50back75.svg" Color="#09252B" BaseSize="512,512" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\AppIcon\viconmobile.svg" Color="#0C343D" />
+		<MauiSplashScreen Include="Resources\AppIcon\vcon50back75.svg" Color="#09252B" BaseSize="512,512"/>
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />

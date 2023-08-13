@@ -14,6 +14,7 @@ public partial class WordsSpinVM : BaseViewModel
 {
     private static readonly Random rng = new();
     private readonly ITextToSpeechService _textToSpeechService;
+    private int _maxIndex;
 
     private GetSpinWords.Query QueryParameters => new()
     {
@@ -63,9 +64,9 @@ public partial class WordsSpinVM : BaseViewModel
 
     public async Task ResetIndex()
     {
-        int max = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
+        _maxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
 
-        if (max == 0)
+        if (_maxIndex == 0)
         {
             FromIndex = 0;
             ToIndex = 0;
@@ -73,7 +74,7 @@ public partial class WordsSpinVM : BaseViewModel
         else
         {
             FromIndex = 1;
-            ToIndex = max;
+            ToIndex = _maxIndex;
         }
 
     }
@@ -188,7 +189,7 @@ public partial class WordsSpinVM : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task ShiftToLine(int shiftToLine)
+    public void ShiftToLine(int shiftToLine)
     {
         int newToLine = ToIndex + shiftToLine;
 
@@ -198,7 +199,7 @@ public partial class WordsSpinVM : BaseViewModel
             newToLine = FromIndex;
         }
 
-        int max = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
+        int max = _maxIndex;
         bool biggerThanMax = newToLine > max;
         if (biggerThanMax)
         {

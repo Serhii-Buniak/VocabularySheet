@@ -6,7 +6,7 @@
              x:Name="primaryBtn">
 
     <Button FontSize="24"
-			WidthRequest="160"
+			WidthRequest="170"
 			Text="{Binding Text, Source={Reference primaryBtn}}"
 			Command="{Binding Command, Source={Reference primaryBtn}}"
 			IsEnabled="{Binding IsEnabled, Source={Reference primaryBtn}}"
