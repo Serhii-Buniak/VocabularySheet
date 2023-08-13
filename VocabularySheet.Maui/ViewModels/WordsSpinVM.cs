@@ -24,9 +24,9 @@ public partial class WordsSpinVM : BaseViewModel
     };
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
-    private int fromIndex = 1;
+    private int fromIndex;
     [ObservableProperty]
-    private int toIndex = 1;
+    private int toIndex;
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
     private bool isOriginalMode = true;
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
@@ -72,6 +72,7 @@ public partial class WordsSpinVM : BaseViewModel
         }
         else
         {
+            FromIndex = 1;
             ToIndex = max;
         }
 

@@ -14,6 +14,7 @@ namespace VocabularySheet.Maui.ViewModels;
 
 public partial class GoogleSheetsVM : BaseViewModel
 {
+
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
     private string googleSheetUrl = "https://docs.google.com/spreadsheets";
 
@@ -28,7 +29,6 @@ public partial class GoogleSheetsVM : BaseViewModel
 
     public GoogleSheetsVM(IMediator mediator, ILogger<GoogleSheetsVM> logger) : base(mediator, logger)
     {
-
     }
 
     [RelayCommand]
@@ -60,6 +60,9 @@ public partial class GoogleSheetsVM : BaseViewModel
         catch (GoogleSheetNotPublicException ex)
         {
             Error = ex.Message;
+        }
+        finally
+        {
         }
     }
 

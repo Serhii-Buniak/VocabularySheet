@@ -5,16 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:VocabularySheet.Maui"
     xmlns:view="clr-namespace:VocabularySheet.Maui.Views"
+    xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
+    x:DataType="viewmodel:AppShellVM"
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <ShellContent Title="Words Spin"
-                      ContentTemplate="{DataTemplate view:WordsSpin}"
-                      Route="WordsSpin" />
-
-        <ShellContent Title="Google Sheets"
-                      ContentTemplate="{DataTemplate view:GoogleSheets}"
-                      Route="GoogleSheets" />
+        <Tab Title="Words Spin">
+            <ShellContent Route="WordsSpin" ContentTemplate="{DataTemplate view:WordsSpin}" />
+        </Tab>
+        <Tab Title="Google Sheets" >
+            <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate view:GoogleSheets}" />
+        </Tab>
     </TabBar>
 
 </Shell>

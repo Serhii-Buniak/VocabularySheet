@@ -34,6 +34,8 @@ public static class MauiProgram
         });
         builder.Services.AddApplicationServices();
 
+        builder.Services.AddSingleton<AppShellVM>();
+
         builder.Services.AddSingleton<ITextToSpeechService, TextToSpeechService>();
 
         builder.Services.AddSingleton<GoogleSheets>()

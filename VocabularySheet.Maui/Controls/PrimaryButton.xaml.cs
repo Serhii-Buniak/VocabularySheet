@@ -26,8 +26,7 @@ public partial class PrimaryButton : ContentView
         nameof(IsEnabled),
         typeof(bool),
         typeof(PrimaryButton),
-        true,
-        defaultBindingMode: BindingMode.TwoWay);
+        true);
 
     public PrimaryButton()
     {

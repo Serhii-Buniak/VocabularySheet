@@ -45,8 +45,7 @@ public partial class PrimaryTriggerButton : ContentView
         nameof(IsEnabled),
         typeof(bool),
         typeof(PrimaryTriggerButton),
-        true,
-        defaultBindingMode: BindingMode.TwoWay);
+        true);
 
 
     public PrimaryTriggerButton()

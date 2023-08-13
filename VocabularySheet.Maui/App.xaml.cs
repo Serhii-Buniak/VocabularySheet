@@ -1,14 +1,15 @@
-﻿using ApplicationMaui = Microsoft.Maui.Controls.Application;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using VocabularySheet.Maui.ViewModels;
+using ApplicationMaui = Microsoft.Maui.Controls.Application;
 
 namespace VocabularySheet.Maui;
 
 public partial class App : ApplicationMaui
 {
-    public App()
+    public App(AppShellVM appShellVM)
     {
         InitializeComponent();
-
-        MainPage = new AppShell();
+        MainPage = new AppShell(appShellVM);
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
@@ -23,3 +24,4 @@ public partial class App : ApplicationMaui
         return window!;
     }
 }
+

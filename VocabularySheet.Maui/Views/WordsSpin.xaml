@@ -14,8 +14,8 @@
 
     <ScrollView MinimumWidthRequest="{OnPlatform WinUI=600}">
         <VerticalStackLayout
-            Spacing="10"
-            Padding="30,0"
+            Spacing="5"
+            Padding="5,70"
             VerticalOptions="Center">
 
             <VerticalStackLayout HeightRequest="300">
@@ -53,15 +53,19 @@
             <controls:PrimaryButton Text="Speech"
                                     Command="{Binding TextSpeechCommand}"/>
 
-            <ScrollView HeightRequest="300"  MaximumWidthRequest="1200">
-                <Border>
-                    <Label Text="{Binding Word.Description}"
-                           IsVisible="{Binding IsDescriptionVisible}" 
-                           HorizontalOptions="Center"
-                           FontSize="{OnPlatform WinUI=21, Android=18}"
-                    />
-                </Border>
-            </ScrollView>
+            
+            <VerticalStackLayout IsVisible="{Binding IsDescriptionVisible}" 
+                                 HeightRequest="500" 
+                                 MaximumWidthRequest="1200">
+                <Editor Text="{Binding Word.Description}"
+                        HeightRequest="350"
+                        MaximumWidthRequest="1200"
+                        FontSize="{OnPlatform WinUI=24, Android=18}"                  
+                        IsReadOnly="True"                   
+                />
+            </VerticalStackLayout>
+
+
 
             <Grid ColumnDefinitions="{OnPlatform WinUI='*,*' }" RowDefinitions="{OnPlatform WinUI='*,*', Android='*,*,*,*'}" ColumnSpacing="10"  RowSpacing="10" HorizontalOptions="Center">
                 <controls:SwitchLabelPrimary LabelText="Translation" 
@@ -87,7 +91,7 @@
 
 
 
-            <HorizontalStackLayout HorizontalOptions="Center">
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10">
 
                 <controls:SwiftButton Text="-0.2"
                                   Command="{Binding ShiftDelayCommand}">
