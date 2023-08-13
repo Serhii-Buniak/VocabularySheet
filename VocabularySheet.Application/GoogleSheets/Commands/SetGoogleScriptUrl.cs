@@ -2,7 +2,7 @@
 
 namespace VocabularySheet.Application.GoogleSheets.Commands;
 
-public static class SetGoogleScriptUrl
+public static partial class  SetGoogleScriptUrl
 {
     public class Command : IRequest
     {
@@ -26,14 +26,17 @@ public static class SetGoogleScriptUrl
         }
     }
 
-    public class Validation : AbstractValidator<Command>
+    public partial class Validation : AbstractValidator<Command>
     {
-        public readonly static Regex UrlRegex = new(@"https:\/\/script\.google\.com\/macros\/s\/.*?\/exec");
+        public readonly static Regex UrlRegex = GetUrlRegex();
 
         public Validation()
         {
             RuleFor(command => command.Url)
               .Matches(UrlRegex);
         }
+
+        [GeneratedRegex("https:\\/\\/script\\.google\\.com\\/macros\\/s\\/.*?\\/exec")]
+        private static partial Regex GetUrlRegex();
     }
 }

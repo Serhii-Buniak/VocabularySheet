@@ -2,7 +2,7 @@
 
 namespace VocabularySheet.Application.GoogleSheets.Commands;
 
-public static class SetGoogleSheetUrl
+public static partial class SetGoogleSheetUrl
 {
     public class Command : IRequest
     {
@@ -26,14 +26,17 @@ public static class SetGoogleSheetUrl
         }
     }
 
-    public class Validation : AbstractValidator<Command>
+    public partial class Validation : AbstractValidator<Command>
     {
-        public readonly static Regex UrlRegex = new(@"https:\/\/docs\.google\.com\/spreadsheets\/(u\/\d\/)?d\/[a-zA-Z0-9_-]+(\/(edit(\?usp=sharing)?|(\?usp=#gid=\d+))?)?");
+        public readonly static Regex UrlRegex = GetUrlRegex();
 
         public Validation()
         {
             RuleFor(command => command.Url)
               .Matches(UrlRegex);
         }
+
+        [GeneratedRegex("https:\\/\\/docs\\.google\\.com\\/spreadsheets\\/(u\\/\\d\\/)?d\\/[a-zA-Z0-9_-]+(\\/(edit(\\?usp=sharing)?|(\\?usp=#gid=\\d+))?)?")]
+        private static partial Regex GetUrlRegex();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace VocabularySheet.Application.GoogleSheets.Queries;
 
-public class GetGoogleScriptUrl
+public static class GetGoogleScriptUrl
 {
     public class Query : IRequest<string>
     {

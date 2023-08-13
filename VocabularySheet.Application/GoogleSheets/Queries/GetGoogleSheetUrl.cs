@@ -3,7 +3,7 @@ using VocabularySheet.Application.Commons.Interfaces;
 
 namespace VocabularySheet.Application.GoogleSheets.Queries;
 
-public class GetGoogleSheetUrl
+public static class GetGoogleSheetUrl
 {
     public class Query : IRequest<string>
     {
