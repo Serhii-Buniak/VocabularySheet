@@ -5,8 +5,6 @@ namespace VocabularySheet.Maui.Common.Services;
 
 public class TextToSpeechService
 {
-    public static CultureInfo UserCultureInfo => CultureInfo.CurrentCulture;
-
     public async Task<LocaleAndText> GetLocaleAndTextForTextAsync(string text)
     {
         var locales = await TextToSpeech.GetLocalesAsync();

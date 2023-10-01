@@ -6,13 +6,15 @@ public partial class WordsSpin : ContentPage
 {
     private readonly WordsSpinVM _wordsSpinVM;
 
-    public WordsSpin(WordsSpinVM wordsSpinVM)
+    public WordsSpin(WordsSpinVM wordsSpinVM, GoogleSheetsVM googleSheetsVm)
     {
         _wordsSpinVM = wordsSpinVM;
         InitializeComponent();
         BindingContext = wordsSpinVM;
+        
+        googleSheetsVm.OnSynchronize += async (_, _) => await wordsSpinVM.HandleSynchronize();
     }
-
+    
     protected override async void OnAppearing()
     {
         base.OnAppearing();

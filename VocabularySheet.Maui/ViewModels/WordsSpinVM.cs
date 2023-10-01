@@ -12,7 +12,6 @@ namespace VocabularySheet.Maui.ViewModels;
 public partial class WordsSpinVM : BaseViewModel
 {
     private readonly TextToSpeechService _textToSpeechService;
-    private readonly GoogleSheetsVM _googleSheetsVm;
     public int MaxIndex { get; set; }
 
     private GetSpinWords.Query QueryParameters => new()
@@ -54,16 +53,29 @@ public partial class WordsSpinVM : BaseViewModel
     [ObservableProperty]
     private double _delayInSeconds = 1;
 
-    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, TextToSpeechService textToSpeechService, GoogleSheetsVM googleSheetsVm) : base(mediator, logger)
+    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, TextToSpeechService textToSpeechService) : base(mediator, logger)
     {
         _textToSpeechService = textToSpeechService;
-        _googleSheetsVm = googleSheetsVm;
-        _googleSheetsVm.OnSynchronize += async (_, _) => await HandleSynchronize();
     }
 
     public async Task SetMaxIndex()
     {
-        MaxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
+        MaxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query(), CancellationToken.None);
+    }
+    
+    public async Task HandleSynchronize()
+    {
+        await SetMaxIndex();
+       
+        if (!IsIndexesValid || MaxIndex < FromIndex)
+        {
+            ResetIndex();
+        }
+        else
+        {
+            ShiftFromLine(0);
+            ShiftToLine(0);
+        }
     }
     
     public void ResetSpin()
@@ -84,22 +96,6 @@ public partial class WordsSpinVM : BaseViewModel
             ToIndex = MaxIndex;  
         }
     }
-    
-    public async Task HandleSynchronize()
-    {
-        await SetMaxIndex();
-       
-        if (IsIndexesValid)
-        {
-            ShiftFromLine(0);
-            ShiftToLine(0);
-        }
-        else
-        {
-            ResetIndex();
-        }
-    }
-
     public bool StartCommandCanExecute
     {
         get

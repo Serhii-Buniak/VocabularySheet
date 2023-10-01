@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularySheet.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Maui", "VocabularySheet.Maui\VocabularySheet.Maui.csproj", "{7EDC31F5-9292-4D8A-8667-5049A0FFDA99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Tests", "VocabularySheet.Tests\VocabularySheet.Tests.csproj", "{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,12 +36,16 @@ Global
 		{7EDC31F5-9292-4D8A-8667-5049A0FFDA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EDC31F5-9292-4D8A-8667-5049A0FFDA99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EDC31F5-9292-4D8A-8667-5049A0FFDA99}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+										SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {0B543622-8983-49AE-9922-E9B313640D98}
 	EndGlobalSection
 EndGlobal
