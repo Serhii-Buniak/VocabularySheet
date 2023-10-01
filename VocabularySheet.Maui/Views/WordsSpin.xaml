@@ -3,15 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Views.WordsSpin"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
-             xmlns:converters="clr-namespace:VocabularySheet.Maui.Converters"
              xmlns:components="clr-namespace:VocabularySheet.Maui.Compenents"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              xmlns:s="clr-namespace:System;assembly=mscorlib"
              x:DataType="viewmodel:WordsSpinVM">
-    <ContentPage.Resources>
-        <converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
-    </ContentPage.Resources>
-
     <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
         <VerticalStackLayout
             Spacing="5"
@@ -32,17 +27,29 @@
                 </ScrollView>
             </Border>
 
-            <VerticalStackLayout HeightRequest="400">
+            <VerticalStackLayout HeightRequest="400" x:Name="WordsLayout">
                 <Label Text="{Binding Word.Original}"
                        SemanticProperties.HeadingLevel="Level1"
                        FontSize="{OnPlatform WinUI=110, Android=42}"
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Command="{Binding CopyToClipboardCommand}" 
+                            CommandParameter="{Binding Word.Original}"/>
+                    </Label.GestureRecognizers>
+                </Label>
 
                 <Label Text="{Binding Word.Translation}"
                        SemanticProperties.HeadingLevel="Level2"
                        FontSize="{OnPlatform WinUI=62, Android=22}"
                        HorizontalOptions="Center"     
-                       IsVisible="{Binding IsTranslationVisible}"/>
+                       IsVisible="{Binding IsTranslationVisible}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Command="{Binding CopyToClipboardCommand}" 
+                            CommandParameter="{Binding Word.Translation}"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </VerticalStackLayout>
 
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">

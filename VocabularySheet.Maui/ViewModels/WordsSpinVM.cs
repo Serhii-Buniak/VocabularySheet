@@ -5,12 +5,15 @@ using Microsoft.Extensions.Logging;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.Domain.Extensions;
+using VocabularySheet.Maui.Common.Events;
 using VocabularySheet.Maui.Common.Services;
 
 namespace VocabularySheet.Maui.ViewModels;
 
 public partial class WordsSpinVM : BaseViewModel
 {
+    public event ClipboardEvent.Handler OnClipboard = (_, _) => Task.CompletedTask;
+
     private readonly TextToSpeechService _textToSpeechService;
     public int MaxIndex { get; set; }
 
@@ -157,7 +160,16 @@ public partial class WordsSpinVM : BaseViewModel
         IsPaused = false;
     }
 
-
+    [RelayCommand]
+    public async Task CopyToClipboard(string text)
+    {
+        await Clipboard.Default.SetTextAsync(text);
+        await OnClipboard.Invoke(this, new ClipboardEvent.Args()
+        {
+            Text = text,
+        });
+    }
+    
     [RelayCommand]
     public async Task TextSpeech()
     {
