@@ -9,6 +9,7 @@ using VocabularySheet.Application.Words.Commands;
 using VocabularySheet.Domain.Exceptions;
 using VocabularySheet.Domain.Exceptions.HttpClientExceptions;
 using VocabularySheet.Infrastructure.Csv.Models;
+using VocabularySheet.Maui.Common.Events;
 
 namespace VocabularySheet.Maui.ViewModels;
 
@@ -21,6 +22,7 @@ public partial class GoogleSheetsVM : BaseViewModel
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
     private string googleScriptUrl = "https://script.google.com/macros/s";
 
+    public event SynchronizeEvent.Handler OnSynchronize = (_, _) => Task.CompletedTask;
     public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch(GoogleSheetUrl) && SetGoogleScriptUrl.Validation.UrlRegex.IsMatch(GoogleScriptUrl);
 
 
@@ -42,6 +44,8 @@ public partial class GoogleSheetsVM : BaseViewModel
             await Mediator.Send(new SetGoogleSheetUrl.Command() { Url = GoogleSheetUrl });
             await Mediator.Send(new SetGoogleScriptUrl.Command() { Url = GoogleScriptUrl });
             await Mediator.Send(new SynchronizeWords.Command());
+            await OnSynchronize.Invoke(this, new SynchronizeEvent.Args());
+            
             Error = null;
         }
         catch (FluentValidationException)
@@ -82,5 +86,4 @@ public partial class GoogleSheetsVM : BaseViewModel
             GoogleScriptUrl = scriptUrl;
         }
     }
-
 }

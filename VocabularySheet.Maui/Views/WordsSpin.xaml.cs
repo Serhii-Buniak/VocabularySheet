@@ -16,8 +16,13 @@ public partial class WordsSpin : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-
+        
+        if (_wordsSpinVM.MaxIndex == 0)
+        {
+            await _wordsSpinVM.SetMaxIndex();
+            _wordsSpinVM.ResetIndex();
+        }
+        
         _wordsSpinVM.ResetSpin();
-        await _wordsSpinVM.ResetIndex();
     }
 }

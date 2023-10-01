@@ -4,8 +4,7 @@ using VocabularySheet.Application;
 using VocabularySheet.Infrastructure;
 using VocabularySheet.Maui.Views;
 using VocabularySheet.Maui.ViewModels;
-using VocabularySheet.Maui.Controls;
-using VocabularySheet.Maui.Services;
+using TextToSpeechService = VocabularySheet.Maui.Common.Services.TextToSpeechService;
 
 namespace VocabularySheet.Maui;
 
@@ -36,7 +35,7 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<AppShellVM>();
 
-        builder.Services.AddSingleton<ITextToSpeechService, TextToSpeechService>();
+        builder.Services.AddSingleton<TextToSpeechService>();
 
         builder.Services.AddSingleton<GoogleSheets>()
                         .AddSingleton<GoogleSheetsVM>();

@@ -2,19 +2,18 @@
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System.Globalization;
-using System.Windows.Input;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
-using VocabularySheet.Maui.Services;
+using VocabularySheet.Domain.Extensions;
+using VocabularySheet.Maui.Common.Services;
 
 namespace VocabularySheet.Maui.ViewModels;
 
 public partial class WordsSpinVM : BaseViewModel
 {
-    private static readonly Random rng = new();
-    private readonly ITextToSpeechService _textToSpeechService;
-    private int _maxIndex;
+    private readonly TextToSpeechService _textToSpeechService;
+    private readonly GoogleSheetsVM _googleSheetsVm;
+    public int MaxIndex { get; set; }
 
     private GetSpinWords.Query QueryParameters => new()
     {
@@ -25,48 +24,56 @@ public partial class WordsSpinVM : BaseViewModel
     };
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
-    private int fromIndex;
+    private int _fromIndex;
     [ObservableProperty]
-    private int toIndex;
+    private int _toIndex;
+
+    public bool IsIndexesValid => FromIndex != 0 && ToIndex != 0; 
+    
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
-    private bool isOriginalMode = true;
+    private bool _isOriginalMode = true;
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
-    private bool isTranslationMode = false;
+    private bool _isTranslationMode = false;
 
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
-    private bool isStarted = false;
+    private bool _isStarted = false;
 
     [ObservableProperty]
-    private bool isPaused;
+    private bool _isPaused;
 
     [ObservableProperty]
-    private WordSpinDto word = WordSpinDto.Sample;
+    private WordSpinDto _word = WordSpinDto.Sample;
 
     [ObservableProperty]
-    private bool isDescriptionVisible = true;
+    private bool _isDescriptionVisible = true;
 
     [ObservableProperty]
-    private bool isTranslationVisible = true;
+    private bool _isTranslationVisible = true;
 
     [ObservableProperty]
-    private double delayInSeconds = 1;
+    private double _delayInSeconds = 1;
 
-    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, ITextToSpeechService textToSpeechService) : base(mediator, logger)
+    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, TextToSpeechService textToSpeechService, GoogleSheetsVM googleSheetsVm) : base(mediator, logger)
     {
         _textToSpeechService = textToSpeechService;
+        _googleSheetsVm = googleSheetsVm;
+        _googleSheetsVm.OnSynchronize += async (_, _) => await HandleSynchronize();
     }
 
+    public async Task SetMaxIndex()
+    {
+        MaxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
+    }
+    
     public void ResetSpin()
     {
         StartCancelCommand.Execute(this);
     }
 
-    public async Task ResetIndex()
+    public void ResetIndex()
     {
-        _maxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query());
-
-        if (_maxIndex == 0)
+        if (MaxIndex == 0)
         {
             FromIndex = 0;
             ToIndex = 0;
@@ -74,9 +81,23 @@ public partial class WordsSpinVM : BaseViewModel
         else
         {
             FromIndex = 1;
-            ToIndex = _maxIndex;
+            ToIndex = MaxIndex;  
         }
-
+    }
+    
+    public async Task HandleSynchronize()
+    {
+        await SetMaxIndex();
+       
+        if (IsIndexesValid)
+        {
+            ShiftFromLine(0);
+            ShiftToLine(0);
+        }
+        else
+        {
+            ResetIndex();
+        }
     }
 
     public bool StartCommandCanExecute
@@ -109,7 +130,7 @@ public partial class WordsSpinVM : BaseViewModel
         IsStarted = true;
         try
         {
-            IEnumerable<WordSpinDto> words = await GetWordsListAsync(cancellationToken);
+            List<WordSpinDto> words = await GetWordsListAsync(cancellationToken);
 
             foreach (WordSpinDto word in words)
             {
@@ -199,7 +220,7 @@ public partial class WordsSpinVM : BaseViewModel
             newToLine = FromIndex;
         }
 
-        int max = _maxIndex;
+        int max = MaxIndex;
         bool biggerThanMax = newToLine > max;
         if (biggerThanMax)
         {
@@ -222,11 +243,10 @@ public partial class WordsSpinVM : BaseViewModel
             await Task.Delay(100, cancellationToken);
         }
     }
-    private async Task<IEnumerable<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
+    private async Task<List<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
     {
-        var a = QueryParameters;
         var words = await Mediator.Send(QueryParameters, cancellationToken);
-        return words.OrderBy(a => rng.Next()).ToList();
+        return words.OrderRandom().ToList();
     }
 }
 

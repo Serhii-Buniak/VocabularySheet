@@ -1,11 +1,9 @@
-﻿using NickBuhro.Translit;
-using System.Globalization;
-using System.Text.RegularExpressions;
+﻿using System.Globalization;
 using VocabularySheet.Domain.Extensions;
 
-namespace VocabularySheet.Maui.Services;
+namespace VocabularySheet.Maui.Common.Services;
 
-public partial class TextToSpeechService : ITextToSpeechService
+public class TextToSpeechService
 {
     public static CultureInfo UserCultureInfo => CultureInfo.CurrentCulture;
 
@@ -15,7 +13,16 @@ public partial class TextToSpeechService : ITextToSpeechService
 
         return new LocaleAndText(text, locales.Random()!);
     }
+}
 
-    [GeneratedRegex("\\p{IsCyrillic}")]
-    private static partial Regex IsCyrillicRegex();
+public struct LocaleAndText
+{
+    public LocaleAndText(string text, Locale locale)
+    {
+        Text = text;
+        Locale = locale;
+    }
+
+    public string Text { get; set; }
+    public Locale Locale { get; set; }
 }

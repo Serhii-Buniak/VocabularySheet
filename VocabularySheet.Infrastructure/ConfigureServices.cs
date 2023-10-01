@@ -50,8 +50,10 @@ public static class ConfigureServices
 
     private static void AddDatabase(this IServiceCollection services, InfrastructureOptions options)
     {
+        var path = $"Filename={Path.Combine(options.DataDirectory, "words.db")}";
+        
         services.AddDbContext<AppDbContext>(o
-            => o.UseSqlite($"Filename={Path.Combine(options.DataDirectory, "words.db")}", x
+            => o.UseSqlite(path, x
             => x.MigrationsAssembly("VocabularySheet.Infrastructure")
             )
         );
