@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace VocabularySheet.Infrastructure.Csv.Models;
 
-public class WordCsvClassMap : ClassMap<WordCsv>
+public sealed class WordCsvClassMap : ClassMap<WordCsv>
 {
     public WordCsvClassMap()
     {

@@ -1,6 +1,4 @@
-﻿using VocabularySheet.Application.Commons.Interfaces;
-using VocabularySheet.Domain;
-using VocabularySheet.Infrastructure.Commons.Mappings;
+﻿using VocabularySheet.Domain;
 using VocabularySheet.Infrastructure.Csv.Interfaces;
 using VocabularySheet.Infrastructure.Csv.Models;
 

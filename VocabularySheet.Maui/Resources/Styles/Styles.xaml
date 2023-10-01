@@ -11,7 +11,11 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray100}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray50}}" />
+    </Style>  
+    
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
     </Style>
 
 

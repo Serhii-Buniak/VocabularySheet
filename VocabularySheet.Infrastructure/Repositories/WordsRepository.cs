@@ -26,12 +26,22 @@ public class WordsRepository : IWordsRepository
 
     public int Count()
     {
-        return _context.Words.Count();
+        return GetWordQuery().Count();
+    }   
+    
+    public int Count(Category category)
+    {
+        return GetWordByCategoryQuery(category).Count();
     }
 
     public async Task<int> CountAsync(CancellationToken cancellationToken)
     {
-        return await _context.Words.CountAsync(cancellationToken);
+        return await GetWordQuery().CountAsync(cancellationToken);
+    }   
+    
+    public async Task<int> CountAsync(Category category, CancellationToken cancellationToken)
+    {
+        return await GetWordByCategoryQuery(category).CountAsync(cancellationToken);
     }
 
     public async Task<IEnumerable<Word>> GetAllAsync(CancellationToken cancellationToken)
@@ -46,6 +56,27 @@ public class WordsRepository : IWordsRepository
 
     public async Task<IEnumerable<Word>> TakeAsync(int take, int skip, CancellationToken cancellationToken)
     {
-        return await _context.Words.Skip(skip).Take(take).AsNoTracking().ToListAsync(cancellationToken);
+        return await GetWordQuery()
+            .Skip(skip)
+            .Take(take)
+            .ToListAsync(cancellationToken);
+    }
+    
+    public async Task<IEnumerable<Word>> TakeAsync(int take, int skip, Category category, CancellationToken cancellationToken)
+    {
+        return await GetWordByCategoryQuery(category)
+            .Skip(skip)
+            .Take(take)
+            .ToListAsync(cancellationToken);
+    }   
+    
+    public IQueryable<Word> GetWordQuery()
+    {
+        return _context.Words.AsNoTracking();
+    }   
+    
+    public IQueryable<Word> GetWordByCategoryQuery(Category category)
+    {
+        return _context.Words.Where(w => w.Category == category).AsNoTracking();
     }
 }

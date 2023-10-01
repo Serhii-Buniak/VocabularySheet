@@ -1,9 +1,13 @@
-﻿namespace VocabularySheet.Application.Words.Queries;
+﻿using VocabularySheet.Domain;
+
+namespace VocabularySheet.Application.Words.Queries;
 
 public static class GetWordsSpinMaxIndex
 {
     public class Query : IRequest<int>
     {
+        public Category? Category { get; set; }
+        
         public class Handler : IRequestHandler<Query, int>
         {
             private readonly IWordsRepository _repository;
@@ -15,7 +19,14 @@ public static class GetWordsSpinMaxIndex
 
             public async Task<int> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _repository.CountAsync(cancellationToken);
+                if (request.Category.HasValue)
+                {
+                    return await _repository.CountAsync(request.Category.Value, cancellationToken);
+                }
+                else
+                {
+                    return await _repository.CountAsync(cancellationToken);
+                }
             }
         }
     }

@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using VocabularySheet.Application.Commons.Dtos;
-using VocabularySheet.Application.Commons.Mappings;
+﻿using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Domain;
 
 namespace VocabularySheet.Application.Words.Queries;
@@ -14,7 +11,8 @@ public static class GetSpinWords
         public int ToIndex { get; set; }
         public bool IsOriginalMode { get; set; }
         public bool IsTranslationMode { get; set; }
-
+        public Category? Category { get; set; }
+        
         public class Handler : IRequestHandler<Query, IEnumerable<WordSpinDto>>
         {
             private readonly IWordsRepository _repository;
@@ -28,10 +26,18 @@ public static class GetSpinWords
             {
                 int needSkip = request.FromIndex - 1;
                 int needTake = request.ToIndex - needSkip;
-
-                IEnumerable<Word> words = await _repository.TakeAsync(needTake, needSkip, cancellationToken);
-
-
+                
+                IEnumerable<Word> words;
+                if (request.Category.HasValue)
+                {
+                    words = await _repository.TakeAsync(needTake, needSkip, request.Category.Value, cancellationToken);
+                }
+                else
+                {
+                    words = await _repository.TakeAsync(needTake, needSkip, cancellationToken);
+                }
+                
+                
                 List<WordSpinDto> result = new();
 
                 int index = request.FromIndex;
@@ -79,7 +85,9 @@ public static class GetSpinWords
 
             RuleFor(q => q.ToIndex)
                 .GreaterThanOrEqualTo(q => q.FromIndex)
-                .LessThanOrEqualTo(p => repository.Count());
+                .LessThanOrEqualTo(p => p.Category.HasValue 
+                    ? repository.Count(p.Category.Value) 
+                    : repository.Count());
 
         }
     }

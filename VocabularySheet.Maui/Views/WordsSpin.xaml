@@ -15,7 +15,7 @@
 
             <Border HorizontalOptions="Center" 
                     MaximumWidthRequest="{OnPlatform WinUI=1600}"
-                    Padding="{OnPlatform WinUI=10}"
+                    Padding="{OnPlatform WinUI=10, Android=5}"
                     >
                 <ScrollView HeightRequest="400">
                     <Label Text="{Binding Word.Description}"
@@ -135,7 +135,19 @@
                                        Count="{Binding ToIndex}"
                                        ShiftCommand="{Binding ShiftToLineCommand}"/>
 
+            <Picker x:Name="categoryPicker" 
+                    HorizontalOptions="Center" 
+                    FontSize="25"
+                    WidthRequest="300"
+                    Margin="10"
+                    ItemsSource="{Binding CategoryItems}"
+                    SelectedItem="{Binding SelectedCategoryItem}"
+                    >
+            </Picker>
+
+            
         </VerticalStackLayout>
+        
     </ScrollView>
 
 </ContentPage>

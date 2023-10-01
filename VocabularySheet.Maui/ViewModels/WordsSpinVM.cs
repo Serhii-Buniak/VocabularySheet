@@ -1,9 +1,12 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
+using VocabularySheet.Domain;
 using VocabularySheet.Domain.Extensions;
 using VocabularySheet.Maui.Common.Events;
 using VocabularySheet.Maui.Common.Services;
@@ -23,13 +26,14 @@ public partial class WordsSpinVM : BaseViewModel
         ToIndex = ToIndex,
         IsOriginalMode = IsOriginalMode,
         IsTranslationMode = IsTranslationMode,
+        Category = SelectedCategoryItem.Key,
     };
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
     private int _fromIndex;
     [ObservableProperty]
     private int _toIndex;
-
+    
     public bool IsIndexesValid => FromIndex != 0 && ToIndex != 0; 
     
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]
@@ -56,6 +60,19 @@ public partial class WordsSpinVM : BaseViewModel
     [ObservableProperty]
     private double _delayInSeconds = 1;
 
+    [ObservableProperty]
+    private CategoryItem _selectedCategoryItem = new CategoryItem(null, "Not Selected");
+    public ObservableCollection<CategoryItem> CategoryItems { get; init; } = new()
+    {
+        new CategoryItem(null, "Not Selected"),
+        new CategoryItem(Category.Red, "Red"),
+        new CategoryItem(Category.Green, "Green"),
+        new CategoryItem(Category.Yellow, "Yellow"),
+        new CategoryItem(Category.Orange, "Orange"),
+        new CategoryItem(Category.Purple, "Purple"),
+        new CategoryItem(Category.Pink, "Pink"),
+    };
+    
     public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, TextToSpeechService textToSpeechService) : base(mediator, logger)
     {
         _textToSpeechService = textToSpeechService;
@@ -63,7 +80,10 @@ public partial class WordsSpinVM : BaseViewModel
 
     public async Task SetMaxIndex()
     {
-        MaxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query(), CancellationToken.None);
+        MaxIndex = await Mediator.Send(new GetWordsSpinMaxIndex.Query()
+        {
+            Category = SelectedCategoryItem.Key
+        }, CancellationToken.None);
     }
     
     public async Task HandleSynchronize()
@@ -163,7 +183,7 @@ public partial class WordsSpinVM : BaseViewModel
     [RelayCommand]
     public async Task CopyToClipboard(string text)
     {
-        await Clipboard.Default.SetTextAsync(text);
+        await Clipboard.SetTextAsync(text);
         await OnClipboard.Invoke(this, new ClipboardEvent.Args()
         {
             Text = text,
@@ -238,6 +258,19 @@ public partial class WordsSpinVM : BaseViewModel
         ToIndex = newToLine;
     }
 
+    protected override async void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        base.OnPropertyChanged(e);
+
+        if (e.PropertyName == nameof(SelectedCategoryItem))
+        {
+            await SetMaxIndex();
+            ResetIndex();
+        }
+        
+        Console.WriteLine();
+    }
+
     private async Task NextWord(WordSpinDto word, CancellationToken cancellationToken)
     {
         Word = word;
@@ -253,8 +286,7 @@ public partial class WordsSpinVM : BaseViewModel
     }
     private async Task<List<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
     {
-        var words = await Mediator.Send(QueryParameters, cancellationToken);
+        IEnumerable<WordSpinDto> words = await Mediator.Send(QueryParameters, cancellationToken);
         return words.OrderRandom().ToList();
     }
 }
-

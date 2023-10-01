@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 
@@ -8,7 +7,7 @@ namespace VocabularySheet.Infrastructure.Data;
 /// <summary>
 ///     dotnet ef migrations add Initial --startup-project ./VocabularySheet.Infrastructure --project ./VocabularySheet.Infrastructure
 /// </summary>
-public class AppDbContext : DbContext, IAppDbContext
+public sealed class AppDbContext : DbContext, IAppDbContext
 {
     public AppDbContext()
     {
@@ -20,10 +19,9 @@ public class AppDbContext : DbContext, IAppDbContext
     }
 
     public DbSet<Word> Words => Set<Word>();
-
+    
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseSqlite();
     }
-
 }

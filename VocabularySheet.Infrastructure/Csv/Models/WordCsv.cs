@@ -6,5 +6,5 @@ public record WordCsv
     public required string Translation { get; set; }
     public string? Description { get; set; }
     public string? Sources { get; set; }
-
+    public string? Category { get; set; }
 }
