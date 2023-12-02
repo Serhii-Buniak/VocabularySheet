@@ -1,26 +1,37 @@
-﻿using System.Globalization;
+﻿using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Domain.Extensions;
 
 namespace VocabularySheet.Maui.Common.Services;
 
 public class TextToSpeechService
 {
-    public async Task<LocaleAndText> GetLocaleAndTextForTextAsync(string text)
+    public TextToSpeechService()
     {
-        var locales = await TextToSpeech.GetLocalesAsync();
+        
+    }
+    
+    public async Task<LocaleAndText?> GetLocaleAndTextForTextAsync(string text, WordLanguage lang)
+    {
+        string localeLang = lang switch
+        {
+            WordLanguage.Ua => "uk",
+            WordLanguage.Ru => "ru",
+            _ => "en"
+        };
+        
+        var locales = (await TextToSpeech.GetLocalesAsync()).ToList();
+ 
+        Locale? locale = locales.Where(l => l.Language.Contains(localeLang)).Random();
+        locale ??= locales.Where(l => l.Language.Contains("en")).Random();
+        locale ??= locales.Random();
 
-        return new LocaleAndText(text, locales.Random()!);
+        if (locale == null)
+        {
+            return null;
+        }
+        
+        return new LocaleAndText(text, locale);
     }
 }
 
-public struct LocaleAndText
-{
-    public LocaleAndText(string text, Locale locale)
-    {
-        Text = text;
-        Locale = locale;
-    }
-
-    public string Text { get; set; }
-    public Locale Locale { get; set; }
-}
+public record LocaleAndText(string Text, Locale Locale);

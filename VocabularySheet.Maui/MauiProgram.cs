@@ -42,6 +42,9 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<WordsSpin>()
                         .AddSingleton<WordsSpinVM>();
+        
+        builder.Services.AddSingleton<LanguageWord>()
+                        .AddSingleton<LanguageWordVM>();
 
 
         return builder.Build();

@@ -15,7 +15,7 @@
 
             <Border HorizontalOptions="Center" 
                     MaximumWidthRequest="{OnPlatform WinUI=1600}"
-                    Padding="{OnPlatform WinUI=10, Android=5}"
+                    Padding="10"
                     >
                 <ScrollView HeightRequest="400">
                     <Label Text="{Binding Word.Description}"

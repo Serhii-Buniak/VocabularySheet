@@ -3,19 +3,26 @@
     x:Class="VocabularySheet.Maui.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:VocabularySheet.Maui"
     xmlns:view="clr-namespace:VocabularySheet.Maui.Views"
     xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
-    x:DataType="viewmodel:AppShellVM"
-    Shell.FlyoutBehavior="Disabled">
-
-    <TabBar>
-        <Tab Title="Words Spin">
-            <ShellContent Route="WordsSpin" ContentTemplate="{DataTemplate view:WordsSpin}" />
-        </Tab>
-        <Tab Title="Google Sheets" >
-            <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate view:GoogleSheets}" />
-        </Tab>
-    </TabBar>
-
+    x:DataType="viewmodel:AppShellVM">
+    
+    <Shell.FlyoutBehavior>
+        <OnPlatform x:TypeArguments="FlyoutBehavior">
+            <On Platform="WinUI" Value="Locked" />
+            <On Platform="Android" Value="Flyout" />
+        </OnPlatform>
+    </Shell.FlyoutBehavior>
+    
+    <FlyoutItem Title="Words Spin" Icon="words_spin_icon.png">
+        <ShellContent Route="WordsSpin" ContentTemplate="{DataTemplate view:WordsSpin}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Google Sheets" Icon="google_sheet_icon.png">
+        <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate view:GoogleSheets}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Language" Icon="language_icon.png">
+        <ShellContent Route="Language" ContentTemplate="{DataTemplate view:LanguageWord}" />
+    </FlyoutItem>
 </Shell>

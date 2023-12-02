@@ -83,6 +83,10 @@
 	  <Compile Update="Views\WordsSpin.xaml.cs">
 	    <DependentUpon>WordsSpin.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\LanguageWord.xaml.cs">
+	    <DependentUpon>Language.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -108,6 +112,10 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\GoogleSheets.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LanguageWord.xaml">
+	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

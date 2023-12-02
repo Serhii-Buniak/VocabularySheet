@@ -1,5 +1,6 @@
 ﻿using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Domain;
+using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.Words.Queries;
 
@@ -16,16 +17,20 @@ public static class GetSpinWords
         public class Handler : IRequestHandler<Query, IEnumerable<WordSpinDto>>
         {
             private readonly IWordsRepository _repository;
+            private readonly IConfigurationRepository<LocalizationConfigurationEntity> _configuration;
 
-            public Handler(IWordsRepository repository)
+            public Handler(IWordsRepository repository, IConfigurationRepository<LocalizationConfigurationEntity> configuration)
             {
                 _repository = repository;
+                _configuration = configuration;
             }
 
             public async Task<IEnumerable<WordSpinDto>> Handle(Query request, CancellationToken cancellationToken)
             {
                 int needSkip = request.FromIndex - 1;
                 int needTake = request.ToIndex - needSkip;
+
+                var languages = await _configuration.Get(cancellationToken);
                 
                 IEnumerable<Word> words;
                 if (request.Category.HasValue)
@@ -51,6 +56,8 @@ public static class GetSpinWords
                             Original = word.Original,
                             Translation = word.Translation,
                             Description = word.Description,
+                            OrignalLanguage = languages.OriginLang,
+                            TranslationlLanguage = languages.TranslateLang,
                         });
                     }          
                     
@@ -62,6 +69,8 @@ public static class GetSpinWords
                             Original = word.Translation,
                             Translation = word.Original,
                             Description = word.Description,
+                            OrignalLanguage = languages.TranslateLang,
+                            TranslationlLanguage = languages.OriginLang,
                         });
                     }
 

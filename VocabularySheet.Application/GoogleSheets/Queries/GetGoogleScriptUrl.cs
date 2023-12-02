@@ -1,4 +1,6 @@
-﻿namespace VocabularySheet.Application.GoogleSheets.Queries;
+﻿using VocabularySheet.Domain.ConfigEntities;
+
+namespace VocabularySheet.Application.GoogleSheets.Queries;
 
 public static class GetGoogleScriptUrl
 {
@@ -6,16 +8,17 @@ public static class GetGoogleScriptUrl
     {
         public class Handler : IRequestHandler<Query, string>
         {
-            private readonly IGoogleSheetConfigurationRepository _configurationRepository;
+            private readonly IConfigurationRepository<GoogleSheetConfigurationEntity> _configuration;
 
-            public Handler(IGoogleSheetConfigurationRepository configurationRepository)
+            public Handler(IConfigurationRepository<GoogleSheetConfigurationEntity> configuration)
             {
-                _configurationRepository = configurationRepository;
+                _configuration = configuration;
             }
 
             public async Task<string> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await Task.FromResult(_configurationRepository.GetGoogleScriptUrl());
+                var googleSheetConfiguration = await _configuration.Get(cancellationToken);
+                return googleSheetConfiguration.ScriptUrl;
             }
         }
     }

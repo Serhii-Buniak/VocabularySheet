@@ -1,8 +1,9 @@
 ﻿using System.Text.RegularExpressions;
+using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.GoogleSheets.Commands;
 
-public static partial class  SetGoogleScriptUrl
+public static partial class SetGoogleScriptUrl
 {
     public class Command : IRequest
     {
@@ -10,18 +11,20 @@ public static partial class  SetGoogleScriptUrl
 
         public class Handler : IRequestHandler<Command>
         {
-            private readonly IGoogleSheetConfigurationRepository _configurationRepository;
+            private readonly IConfigurationRepository<GoogleSheetConfigurationEntity> _configuration;
 
-            public Handler(IGoogleSheetConfigurationRepository configurationRepository)
+            public Handler(IConfigurationRepository<GoogleSheetConfigurationEntity> configuration)
             {
-                _configurationRepository = configurationRepository;
+                _configuration = configuration;
             }
 
             public async Task Handle(Command request, CancellationToken cancellationToken)
             {
-                _configurationRepository.SetGoogleScriptUrl(request.Url);
-
-                await Task.CompletedTask;
+                await _configuration.Set(conf =>
+                {
+                    conf.ScriptUrl = request.Url;
+                    return conf;
+                }, cancellationToken);
             }
         }
     }

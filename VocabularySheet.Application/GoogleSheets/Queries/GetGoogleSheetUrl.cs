@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using VocabularySheet.Application.Commons.Interfaces;
+using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.GoogleSheets.Queries;
 
@@ -9,16 +10,17 @@ public static class GetGoogleSheetUrl
     {
         public class Handler : IRequestHandler<Query, string>
         {
-            private readonly IGoogleSheetConfigurationRepository _configurationRepository;
+            private readonly IConfigurationRepository<GoogleSheetConfigurationEntity> _configuration;
 
-            public Handler(IGoogleSheetConfigurationRepository configurationRepository)
+            public Handler(IConfigurationRepository<GoogleSheetConfigurationEntity> configuration)
             {
-                _configurationRepository = configurationRepository;
+                _configuration = configuration;
             }
 
             public async Task<string> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await Task.FromResult(_configurationRepository.GetGoogleSheetUrl());
+                var googleSheetConfiguration = await _configuration.Get(cancellationToken);
+                return googleSheetConfiguration.SheetUrl;
             }
         }
     }

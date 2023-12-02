@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Domain;
+using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Data;
@@ -19,6 +20,7 @@ public sealed class AppDbContext : DbContext, IAppDbContext
     }
 
     public DbSet<Word> Words => Set<Word>();
+    public DbSet<ConfigEntry> Configs => Set<ConfigEntry>();
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {

@@ -7,9 +7,9 @@ namespace VocabularySheet.Maui.ViewModels;
 public abstract partial class BaseViewModel : ObservableObject
 {
 	protected IMediator Mediator { get; }
-	protected ILogger<BaseViewModel> Logger { get; }
+	protected ILogger Logger { get; }
 
-    protected BaseViewModel(IMediator mediator, ILogger<BaseViewModel> logger) 
+    protected BaseViewModel(IMediator mediator, ILogger logger) 
 	{
         Mediator = mediator;
         Logger = logger;

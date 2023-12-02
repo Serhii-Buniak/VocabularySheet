@@ -193,12 +193,15 @@ public partial class WordsSpinVM : BaseViewModel
     [RelayCommand]
     public async Task TextSpeech()
     {
-        LocaleAndText value = await _textToSpeechService.GetLocaleAndTextForTextAsync(Word.Original);
+        LocaleAndText? value = await _textToSpeechService.GetLocaleAndTextForTextAsync(Word.Original, Word.OrignalLanguage);
 
-        await TextToSpeech.SpeakAsync(value.Text, new SpeechOptions()
+        if (value != null)
         {
-            Locale = value.Locale,
-        });
+            await TextToSpeech.SpeakAsync(value.Text, new SpeechOptions()
+            {
+                Locale = value.Locale,
+            });
+        }
     }
 
     [RelayCommand]

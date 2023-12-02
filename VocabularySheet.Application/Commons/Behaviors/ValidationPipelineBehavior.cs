@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using VocabularySheet.Domain.Exceptions;
+﻿using VocabularySheet.Domain.Exceptions;
 
 namespace VocabularySheet.Application.Commons.Behaviors;
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using VocabularySheet.Application.Commons.Interfaces;
+using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Infrastructure.Csv;
 using VocabularySheet.Infrastructure.Csv.Interfaces;
 using VocabularySheet.Infrastructure.Data;
@@ -8,6 +9,7 @@ using VocabularySheet.Infrastructure.Data.Interfaces;
 using VocabularySheet.Infrastructure.HttpClients;
 using VocabularySheet.Infrastructure.HttpClients.Interfaces;
 using VocabularySheet.Infrastructure.Repositories;
+using VocabularySheet.Infrastructure.Repositories.Configurations;
 using VocabularySheet.Infrastructure.Repositories.Interfaces;
 using VocabularySheet.Infrastructure.Services;
 using VocabularySheet.Infrastructure.Services.Interfaces;
@@ -22,8 +24,7 @@ public static class ConfigureServices
 
         services.AddDatabase(options);
         services.AddRepositories();
-        services.AddJsonStorage();
-
+        
         services.AddHttpClients();
 
         services.AddServices();
@@ -44,7 +45,10 @@ public static class ConfigureServices
 
         services.AddScoped<IWordsRepository, WordsRepository>();
 
-        services.AddSingleton<IGoogleSheetConfigurationRepository, GoogleSheetConfigurationRepository>();
+        services.AddConfigurationRepository<GoogleSheetConfigurationEntity, GoogleSheetConfigurationRepository>();
+        services.AddConfigurationRepository<LocalizationConfigurationEntity, LocalizationConfigurationRepository>();
+        
+        
         services.AddSingleton<IGoogleSheetWordsRepository, GoogleSheetWordsRepository>();
     }
 
@@ -58,12 +62,7 @@ public static class ConfigureServices
             )
         );
     }
-
-    private static void AddJsonStorage(this IServiceCollection services)
-    {
-        services.AddSingleton<IJsonStorage, JsonStorage>();
-    }
-
+    
     private static void AddServices(this IServiceCollection services)
     {
         services.AddSingleton<IAppDataService, AppDataService>();
@@ -74,5 +73,12 @@ public static class ConfigureServices
     {
         services.AddSingleton(typeof(ICsvStreamer<,>), typeof(CsvStreamer<,>))
                 .AddSingleton<ICsvWordStreamer, CsvWordStreamer>();
+    }
+    
+    private static void AddConfigurationRepository<TEntity, TRepository>(this IServiceCollection services)
+        where TEntity : BaseConfigurationEntity<TEntity>, new()
+        where TRepository : BaseConfigurationRepository<TEntity>
+    {
+        services.AddScoped<IConfigurationRepository<TEntity>, TRepository>();
     }
 }
