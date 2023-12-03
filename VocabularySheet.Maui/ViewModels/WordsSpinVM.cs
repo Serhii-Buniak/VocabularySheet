@@ -8,6 +8,7 @@ using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.Domain;
 using VocabularySheet.Domain.Extensions;
+using VocabularySheet.Maui.Common;
 using VocabularySheet.Maui.Common.Events;
 using VocabularySheet.Maui.Common.Services;
 
@@ -168,6 +169,12 @@ public partial class WordsSpinVM : BaseViewModel
         }
     }
 
+    [RelayCommand]
+    public async Task OpenWord()
+    {
+        await Shell.Current.GoToWordDetails(Word.Id);
+    }
+    
     [RelayCommand]
     public void Pause()
     {

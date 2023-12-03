@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Domain.Extensions;
+using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Repositories.Configurations;
@@ -42,7 +44,7 @@ public abstract class BaseConfigurationRepository<T> : IConfigurationRepository<
     
     private async Task<ConfigEntry> Ensure(CancellationToken cancellationToken)
     {
-        ConfigEntry? configEntity = await Configs.FirstOrDefaultAsync(c => c.Id == Type, cancellationToken);
+        ConfigEntry? configEntity = await Configs.FirstOrDefaultId(Type, cancellationToken);
 
         if (configEntity == null)
         {

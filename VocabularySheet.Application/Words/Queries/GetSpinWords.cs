@@ -13,6 +13,8 @@ public static class GetSpinWords
         public bool IsOriginalMode { get; set; }
         public bool IsTranslationMode { get; set; }
         public Category? Category { get; set; }
+
+        public bool IsValid() => FromIndex > 0;
         
         public class Handler : IRequestHandler<Query, IEnumerable<WordSpinDto>>
         {

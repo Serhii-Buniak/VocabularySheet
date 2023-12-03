@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
+using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Repositories;
@@ -42,6 +43,27 @@ public class WordsRepository : IWordsRepository
     public async Task<int> CountAsync(Category category, CancellationToken cancellationToken)
     {
         return await GetWordByCategoryQuery(category).CountAsync(cancellationToken);
+    }
+
+    public async Task<Word?> GetById(long id, CancellationToken cancellationToken)
+    {
+       return await _context.Words.FirstOrDefaultId(id, cancellationToken);
+    }
+
+    public async Task<int?> GetIndexOf(long id, CancellationToken cancellationToken)
+    {
+        var words = await _context.Words
+            .OrderBy(w => w.Id)
+            .OfType<IEntity<long>>()
+            .ToListAsync(cancellationToken);
+
+        var word = words.Select((w, i) => new
+        {
+            w.Id,
+            Index = i,
+        }).FirstOrDefault(w => w.Id == id);
+
+        return word?.Index + 1; 
     }
 
     public async Task<IEnumerable<Word>> GetAllAsync(CancellationToken cancellationToken)

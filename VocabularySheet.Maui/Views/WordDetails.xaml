@@ -3,17 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Views.WordDetails"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
-             xmlns:model="clr-namespace:VocabularySheet.Application.Commons.Dtos;assembly=VocabularySheet.Application"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              x:DataType="viewmodel:WordDetailsVM">
 
     <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
         <controls:DescriptionArea 
             Text="{Binding Word.Description}"
-            IsDescriptionVisible="True" /> 
-        
-        <controls:WordListItem 
-            Word="{Binding Word}"/>
+            IsDescriptionVisible="True" />
+
+        <controls:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
+                               OnClick="{Binding GoBackCommand}"
+                               Word="{Binding Word}" />
         
     </VerticalStackLayout>    
 </ContentPage>

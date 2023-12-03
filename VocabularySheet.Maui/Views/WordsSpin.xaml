@@ -10,9 +10,15 @@
     <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
         <VerticalStackLayout
             Spacing="5"
-            Padding="5,5"
+            Padding="5"
             VerticalOptions="Center">
 
+            <controls:WordListItem
+                MaximumWidth="{OnPlatform WinUI=1600}"
+                Word="{Binding Word}"
+                OnClick="{Binding OpenWordCommand}"
+                IsWordVisible="{Binding IsDescriptionVisible}" />
+            
             <controls:DescriptionArea Text="{Binding Word.Description}"
                                       IsDescriptionVisible="{Binding IsDescriptionVisible}" />
             
@@ -124,8 +130,7 @@
                                        Count="{Binding ToIndex}"
                                        ShiftCommand="{Binding ShiftToLineCommand}"/>
 
-            <Picker x:Name="categoryPicker" 
-                    HorizontalOptions="Center" 
+            <Picker HorizontalOptions="Center" 
                     FontSize="25"
                     WidthRequest="300"
                     Margin="10"

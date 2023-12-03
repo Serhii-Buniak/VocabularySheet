@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Controls.WordListItem"
              x:Name="wordListItem">
-	<Frame Margin="10" BorderColor="Black" CornerRadius="5">
+	<Frame Margin="10" BorderColor="Black" CornerRadius="5"
+	       MaximumWidthRequest="{Binding MaximumWidth, Source={Reference wordListItem}}">
 		<Frame.GestureRecognizers>
 			<TapGestureRecognizer Tapped="OnFrameTapped"
 			                      CommandParameter="{Binding Word.Id, Source={Reference wordListItem}}" />
@@ -24,8 +25,10 @@
 			</Grid.ColumnDefinitions>
 
 			<Label Text="{Binding Word.Index, Source={Reference wordListItem}}" FontSize="20" Grid.Column="0" />
-			<Label Text="{Binding Word.Original, Source={Reference wordListItem}}" FontSize="20" Grid.Column="2" />
-			<Label Text="{Binding Word.Translation, Source={Reference wordListItem}}" FontSize="20" Grid.Column="4" />
+			<Label Text="{Binding Word.Original, Source={Reference wordListItem}}" FontSize="20" Grid.Column="2" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}"/>
+			<Label Text="{Binding Word.Translation, Source={Reference wordListItem}}" FontSize="20" Grid.Column="4" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}"/>
 		</Grid>
 	</Frame>
 

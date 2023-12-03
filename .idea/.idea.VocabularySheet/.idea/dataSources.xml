@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Administrator\AppData\Local\Packages\48081b13-9b5a-4853-a7d3-0eb7306c2f3f_75cr2b68sm664\LocalState\words.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Administrator\AppData\Local\Packages\58081b13-9b5a-4853-a7d3-0eb7306c2f3f_75cr2b68sm664\LocalState\words.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

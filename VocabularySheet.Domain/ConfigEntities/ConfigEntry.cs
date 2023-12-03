@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace VocabularySheet.Domain.ConfigEntities;
 
-public record ConfigEntry
+public record ConfigEntry : IEntity<ConfigType>
 {
     public required ConfigType Id { get; init; }
     public required string JsonData { get; set; }

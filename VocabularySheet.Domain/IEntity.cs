@@ -1,8 +1,8 @@
 ﻿namespace VocabularySheet.Domain;
 
-public interface IEntity<TId>
+public interface IEntity<out TId> where TId : notnull
 {
-    TId Id { get; set; }
+    TId Id { get; }
 }
 
 public interface IEntity : IEntity<long>
