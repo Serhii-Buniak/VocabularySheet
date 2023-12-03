@@ -13,20 +13,9 @@
             Padding="5,5"
             VerticalOptions="Center">
 
-            <Border HorizontalOptions="Center" 
-                    MaximumWidthRequest="{OnPlatform WinUI=1600}"
-                    Padding="10"
-                    >
-                <ScrollView HeightRequest="400">
-                    <Label Text="{Binding Word.Description}"
-                               LineBreakMode="WordWrap"
-                               FontSize="{OnPlatform WinUI=24, Android=18}"    
-                               IsVisible="{Binding IsDescriptionVisible}"/>
-
-                 
-                </ScrollView>
-            </Border>
-
+            <controls:DescriptionArea Text="{Binding Word.Description}"
+                                      IsDescriptionVisible="{Binding IsDescriptionVisible}" />
+            
             <VerticalStackLayout HeightRequest="400" x:Name="WordsLayout">
                 <Label Text="{Binding Word.Original}"
                        SemanticProperties.HeadingLevel="Level1"

@@ -18,6 +18,10 @@
         <ShellContent Route="WordsSpin" ContentTemplate="{DataTemplate view:WordsSpin}" />
     </FlyoutItem>
     
+    <FlyoutItem Title="Words List" Icon="list_icon.png">
+        <ShellContent Route="WordsList" ContentTemplate="{DataTemplate view:WordsList}" />
+    </FlyoutItem>
+    
     <FlyoutItem Title="Google Sheets" Icon="google_sheet_icon.png">
         <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate view:GoogleSheets}" />
     </FlyoutItem>
@@ -25,4 +29,9 @@
     <FlyoutItem Title="Language" Icon="language_icon.png">
         <ShellContent Route="Language" ContentTemplate="{DataTemplate view:LanguageWord}" />
     </FlyoutItem>
+    
+    <FlyoutItem Title="Word Details" Icon="word_details_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate view:WordDetails}" />
+    </FlyoutItem>
+    
 </Shell>

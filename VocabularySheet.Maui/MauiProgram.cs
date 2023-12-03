@@ -45,7 +45,12 @@ public static class MauiProgram
         
         builder.Services.AddSingleton<LanguageWord>()
                         .AddSingleton<LanguageWordVM>();
-
+        
+        builder.Services.AddSingleton<WordsList>()
+                        .AddSingleton<WordsListVM>();
+        
+        builder.Services.AddSingleton<WordDetails>()
+                        .AddSingleton<WordDetailsVM>();
 
         return builder.Build();
     }

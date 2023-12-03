@@ -52,6 +52,7 @@ public static class GetSpinWords
                     {
                         result.Add(new WordSpinDto
                         {
+                            Id = word.Id,
                             Index = index,
                             Original = word.Original,
                             Translation = word.Translation,
@@ -65,6 +66,7 @@ public static class GetSpinWords
                     {
                         result.Add(new WordSpinDto
                         {
+                            Id = word.Id,
                             Index = index,
                             Original = word.Translation,
                             Translation = word.Original,

@@ -1,4 +1,5 @@
 ﻿using VocabularySheet.Maui.ViewModels;
+using VocabularySheet.Maui.Views;
 
 namespace VocabularySheet.Maui;
 
@@ -8,5 +9,7 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
         BindingContext = appShellVM;
+        
+        Routing.RegisterRoute(nameof(WordDetails), typeof(WordDetails));
     }
 }

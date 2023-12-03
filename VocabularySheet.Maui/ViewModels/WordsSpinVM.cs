@@ -20,7 +20,7 @@ public partial class WordsSpinVM : BaseViewModel
     private readonly TextToSpeechService _textToSpeechService;
     public int MaxIndex { get; set; }
 
-    private GetSpinWords.Query QueryParameters => new()
+    public GetSpinWords.Query QueryParameters => new()
     {
         FromIndex = FromIndex,
         ToIndex = ToIndex,

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.Controls.WordListItem"
+             x:Name="wordListItem">
+	<Frame Margin="10" BorderColor="Black" CornerRadius="5">
+		<Frame.GestureRecognizers>
+			<TapGestureRecognizer Tapped="OnFrameTapped"
+			                      CommandParameter="{Binding Word.Id, Source={Reference wordListItem}}" />
+		</Frame.GestureRecognizers>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{OnPlatform WinUI=90, Android=70}" />
+				<!-- Fixed size for Index -->
+				<ColumnDefinition Width="{OnPlatform WinUI=20, Android=10}" />
+				<!-- Space between columns -->
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=110}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=20, Android=10}" />
+				<!-- Space between columns -->
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=110}" />
+			</Grid.ColumnDefinitions>
+
+			<Label Text="{Binding Word.Index, Source={Reference wordListItem}}" FontSize="20" Grid.Column="0" />
+			<Label Text="{Binding Word.Original, Source={Reference wordListItem}}" FontSize="20" Grid.Column="2" />
+			<Label Text="{Binding Word.Translation, Source={Reference wordListItem}}" FontSize="20" Grid.Column="4" />
+		</Grid>
+	</Frame>
+
+</ContentView>
