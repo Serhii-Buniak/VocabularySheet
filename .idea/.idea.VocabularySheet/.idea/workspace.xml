@@ -10,27 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca85f3df-c501-4132-b9e1-b6f084f057c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Commons/EfCoreExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IWordsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IWordsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWords.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWords.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/ConfigEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/ConfigEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/IEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/IConfigurationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/IConfigurationRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/WordsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/WordsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Common/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Common/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsListVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsListVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsSpinVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsSpinVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsSpin.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsSpin.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/VocabularySheet.Maui.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/VocabularySheet.Maui.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +96,7 @@
       <updated>1692095231139</updated>
       <workItem from="1701621400231" duration="2328000" />
       <workItem from="1701623833065" duration="354000" />
-      <workItem from="1701624210291" duration="725000" />
+      <workItem from="1701624210291" duration="1381000" />
     </task>
     <servers />
   </component>
