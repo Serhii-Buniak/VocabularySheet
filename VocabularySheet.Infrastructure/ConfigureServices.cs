@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using VocabularySheet.Application.Commons.Interfaces;
+using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Infrastructure.Csv;
 using VocabularySheet.Infrastructure.Csv.Interfaces;
@@ -30,6 +31,8 @@ public static class ConfigureServices
         services.AddServices();
 
         services.AddCsvSteamers();
+        
+        services.AddCambridgeDictionary();
 
         return services;
     }

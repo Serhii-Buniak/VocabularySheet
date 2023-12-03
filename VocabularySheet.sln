@@ -12,6 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Maui", "Voc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Tests", "VocabularySheet.Tests\VocabularySheet.Tests.csproj", "{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSources", "WebSources", "{4CDDEDBE-248E-474F-AB16-8B58F56312B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.CambridgeDictionary", "VocabularySheet.CambridgeDictionary\VocabularySheet.CambridgeDictionary.csproj", "{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{F5B1797B-5B16-4367-A46F-648328208908}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +46,14 @@ Global
 		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04A0DA12-9C1D-4CC0-BD72-0EC3A982EA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B1797B-5B16-4367-A46F-648328208908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B1797B-5B16-4367-A46F-648328208908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B1797B-5B16-4367-A46F-648328208908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B1797B-5B16-4367-A46F-648328208908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +61,8 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 										SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {0B543622-8983-49AE-9922-E9B313640D98}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9} = {4CDDEDBE-248E-474F-AB16-8B58F56312B7}
 	EndGlobalSection
 EndGlobal

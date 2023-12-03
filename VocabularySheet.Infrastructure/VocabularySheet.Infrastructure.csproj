@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VocabularySheet.Application\VocabularySheet.Application.csproj" />
+    <ProjectReference Include="..\VocabularySheet.CambridgeDictionary\VocabularySheet.CambridgeDictionary.csproj" />
     <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
   </ItemGroup>
 
