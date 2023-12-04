@@ -11,7 +11,7 @@
                     MinimumWidthRequest="{OnPlatform WinUI=650}"
                     SelectionMode="None">
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:WordSpinDto">
+            <DataTemplate x:DataType="model:WordModel">
                 <controls:WordListItem
                     Word="{Binding}"
                     OnClick="{Binding BindingContext.OpenWordCommand, Source={x:Reference wordList}}"/>

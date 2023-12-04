@@ -1,6 +1,14 @@
 ﻿namespace VocabularySheet.Domain;
 
-public record Word : IEntity
+public interface IWord
+{
+    long Id { get; }
+    string Original { get; }
+    string Translation { get; }
+    string? Description { get; }
+}
+
+public record Word : IEntity, IWord
 {
     public long Id { get; set; }
 

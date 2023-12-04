@@ -16,6 +16,6 @@ public partial class WordDetails : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await _wordDetails.SetWord();
+        await _wordDetails.LoadDataAsync();
     }
 }

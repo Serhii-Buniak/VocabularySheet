@@ -15,9 +15,9 @@ public partial class WordsSpin : ContentPage
         googleSheetsVm.OnSynchronize += async (_, _) => await wordsSpinVM.HandleSynchronize();
         wordsSpinVM.OnClipboard += async (_, _) =>
         {
-            const int red = 0;
-            const int green = 120;
-            const int blue = 240;
+            const int red = 47;
+            const int green = 79;
+            const int blue = 79;
             
             var old = WordsLayout.BackgroundColor;
 

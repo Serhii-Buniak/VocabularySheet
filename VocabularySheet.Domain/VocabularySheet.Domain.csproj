@@ -12,4 +12,11 @@
     <PackageReference Include="FluentValidation" Version="11.7.0" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Reference Include="VocabularySheet.CambridgeDictionary">
+      <HintPath>..\Sandbox\bin\Debug\net7.0\VocabularySheet.CambridgeDictionary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

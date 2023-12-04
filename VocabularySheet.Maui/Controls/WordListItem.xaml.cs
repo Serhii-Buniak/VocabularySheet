@@ -7,7 +7,7 @@ public partial class WordListItem : ContentView
 {
     public static readonly BindableProperty WordProperty = BindableProperty.Create(
         nameof(Word),
-        typeof(WordSpinDto),
+        typeof(WordModel),
         typeof(WordListItem));
     
     public static readonly BindableProperty OnClickProperty = BindableProperty.Create(
@@ -38,9 +38,9 @@ public partial class WordListItem : ContentView
         set => SetValue(OnClickProperty, value);
     }
     
-    public WordSpinDto Word
+    public WordModel Word
     {
-        get => (WordSpinDto)GetValue(WordProperty);
+        get => (WordModel)GetValue(WordProperty);
         set => SetValue(WordProperty, value);
     }
     

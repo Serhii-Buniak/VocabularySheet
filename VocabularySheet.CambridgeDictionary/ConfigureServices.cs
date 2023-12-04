@@ -6,15 +6,15 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddCambridgeDictionary(this IServiceCollection services)
     {
-        AddHttpClients(services);
+        AddCambridge(services);
         
-        services.AddSingleton<CambridgeParser>();
-
         return services;
     }
 
-    private static void AddHttpClients(this IServiceCollection services)
+    private static void AddCambridge(this IServiceCollection services)
     {
         services.AddHttpClient<CambridgeClient>();
+        services.AddSingleton<CambridgeParser>();
+        services.AddSingleton<CabridgePageBuilder>();
     }
 }

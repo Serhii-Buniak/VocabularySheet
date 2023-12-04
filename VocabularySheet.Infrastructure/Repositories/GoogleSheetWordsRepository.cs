@@ -14,9 +14,9 @@ public class GoogleSheetWordsRepository : IGoogleSheetWordsRepository
 {
     private readonly IGoogleSheetClient _client;
     private readonly ICsvWordStreamer _streamer;
-    private readonly IConfigurationRepository<GoogleSheetConfigurationEntity> _configuration;
+    private readonly IConfigurator<GoogleSheetConfig> _configuration;
 
-    public GoogleSheetWordsRepository(IGoogleSheetClient client, ICsvWordStreamer streamer, IConfigurationRepository<GoogleSheetConfigurationEntity> configuration)
+    public GoogleSheetWordsRepository(IGoogleSheetClient client, ICsvWordStreamer streamer, IConfigurator<GoogleSheetConfig> configuration)
     {
         _client = client;
         _streamer = streamer;

@@ -12,6 +12,7 @@ using VocabularySheet.Infrastructure.HttpClients.Interfaces;
 using VocabularySheet.Infrastructure.Repositories;
 using VocabularySheet.Infrastructure.Repositories.Configurations;
 using VocabularySheet.Infrastructure.Repositories.Interfaces;
+using VocabularySheet.Infrastructure.Repositories.Pages;
 using VocabularySheet.Infrastructure.Services;
 using VocabularySheet.Infrastructure.Services.Interfaces;
 
@@ -47,9 +48,10 @@ public static class ConfigureServices
         services.AddScoped<IAppDbContext, AppDbContext>();
 
         services.AddScoped<IWordsRepository, WordsRepository>();
+        services.AddScoped<ICambridgeRepository, CambridgeRepository>();
 
-        services.AddConfigurationRepository<GoogleSheetConfigurationEntity, GoogleSheetConfigurationRepository>();
-        services.AddConfigurationRepository<LocalizationConfigurationEntity, LocalizationConfigurationRepository>();
+        services.AddConfigurationRepository<GoogleSheetConfig, GoogleSheetConfigurator>();
+        services.AddConfigurationRepository<LocalizationConfig, LocalizationConfigurator>();
         
         
         services.AddSingleton<IGoogleSheetWordsRepository, GoogleSheetWordsRepository>();
@@ -80,8 +82,8 @@ public static class ConfigureServices
     
     private static void AddConfigurationRepository<TEntity, TRepository>(this IServiceCollection services)
         where TEntity : BaseConfigurationEntity<TEntity>, new()
-        where TRepository : BaseConfigurationRepository<TEntity>
+        where TRepository : BaseConfigurator<TEntity>
     {
-        services.AddScoped<IConfigurationRepository<TEntity>, TRepository>();
+        services.AddScoped<IConfigurator<TEntity>, TRepository>();
     }
 }

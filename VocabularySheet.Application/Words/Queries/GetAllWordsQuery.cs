@@ -7,20 +7,20 @@ namespace VocabularySheet.Application.Words.Queries;
 
 public static class GetAllWords
 {
-    public class Query : IRequest<List<WordSpinDto>>
+    public class Query : IRequest<List<WordModel>>
     {
-        public class Handler : IRequestHandler<Query, List<WordSpinDto>>
+        public class Handler : IRequestHandler<Query, List<WordModel>>
         {
             private readonly IWordsRepository _repository;
-            private readonly IConfigurationRepository<LocalizationConfigurationEntity> _configuration;
+            private readonly IConfigurator<LocalizationConfig> _configuration;
 
-            public Handler(IWordsRepository repository, IConfigurationRepository<LocalizationConfigurationEntity> configuration)
+            public Handler(IWordsRepository repository, IConfigurator<LocalizationConfig> configuration)
             {
                 _repository = repository;
                 _configuration = configuration;
             }
 
-            public async Task<List<WordSpinDto>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<WordModel>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var localization = await _configuration.Get(cancellationToken);
                 IEnumerable<Word> words = await _repository.GetAllAsync(cancellationToken);

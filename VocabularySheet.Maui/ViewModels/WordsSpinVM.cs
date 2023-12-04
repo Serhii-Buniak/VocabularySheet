@@ -50,7 +50,7 @@ public partial class WordsSpinVM : BaseViewModel
     private bool _isPaused;
 
     [ObservableProperty]
-    private WordSpinDto _word = WordSpinDto.Sample;
+    private WordModel _word = WordModel.Sample;
 
     [ObservableProperty]
     private bool _isDescriptionVisible = true;
@@ -150,9 +150,9 @@ public partial class WordsSpinVM : BaseViewModel
         IsStarted = true;
         try
         {
-            List<WordSpinDto> words = await GetWordsListAsync(cancellationToken);
+            List<WordModel> words = await GetWordsListAsync(cancellationToken);
 
-            foreach (WordSpinDto word in words)
+            foreach (WordModel word in words)
             {
                 await WaitPause(cancellationToken);
                 await NextWord(word, cancellationToken);
@@ -281,7 +281,7 @@ public partial class WordsSpinVM : BaseViewModel
         Console.WriteLine();
     }
 
-    private async Task NextWord(WordSpinDto word, CancellationToken cancellationToken)
+    private async Task NextWord(WordModel word, CancellationToken cancellationToken)
     {
         Word = word;
         await Task.Delay(TimeSpan.FromSeconds(DelayInSeconds), cancellationToken);
@@ -294,9 +294,9 @@ public partial class WordsSpinVM : BaseViewModel
             await Task.Delay(100, cancellationToken);
         }
     }
-    private async Task<List<WordSpinDto>> GetWordsListAsync(CancellationToken cancellationToken)
+    private async Task<List<WordModel>> GetWordsListAsync(CancellationToken cancellationToken)
     {
-        IEnumerable<WordSpinDto> words = await Mediator.Send(QueryParameters, cancellationToken);
+        IEnumerable<WordModel> words = await Mediator.Send(QueryParameters, cancellationToken);
         return words.OrderRandom().ToList();
     }
 }

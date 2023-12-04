@@ -2,7 +2,7 @@
 
 namespace VocabularySheet.Application.Commons.Interfaces;
 
-public interface IConfigurationRepository<T> where T : BaseConfigurationEntity<T>, new()
+public interface IConfigurator<T> where T : BaseConfigurationEntity<T>, new()
 {
     ConfigType Type { get; }
     Task<T> Get(CancellationToken cancellationToken);

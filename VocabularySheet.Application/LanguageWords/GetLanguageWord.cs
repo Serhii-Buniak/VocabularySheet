@@ -4,18 +4,18 @@ namespace VocabularySheet.Application.LanguageWords;
 
 public static class GetLanguageWord
 {
-    public class Query : IRequest<LocalizationConfigurationEntity>
+    public class Query : IRequest<LocalizationConfig>
     {
-        public class Handler : IRequestHandler<Query, LocalizationConfigurationEntity>
+        public class Handler : IRequestHandler<Query, LocalizationConfig>
         {
-            private readonly IConfigurationRepository<LocalizationConfigurationEntity> _configuration;
+            private readonly IConfigurator<LocalizationConfig> _configuration;
 
-            public Handler(IConfigurationRepository<LocalizationConfigurationEntity> configuration)
+            public Handler(IConfigurator<LocalizationConfig> configuration)
             {
                 _configuration = configuration;
             }
 
-            public async Task<LocalizationConfigurationEntity> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<LocalizationConfig> Handle(Query request, CancellationToken cancellationToken)
             {
                 return await _configuration.Get(cancellationToken);
             }

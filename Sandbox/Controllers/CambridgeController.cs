@@ -8,29 +8,26 @@ namespace Sandbox.Controllers;
 [Route("[controller]")]
 public class CambridgeController : ControllerBase
 {
-    private readonly CambridgeClient _cambridgeClient;
-    private readonly CambridgeParser _parser;
+    private readonly CabridgePageBuilder _cabridge;
 
-    public CambridgeController(CambridgeClient cambridgeClient, CambridgeParser parser)
+    public CambridgeController(CabridgePageBuilder cabridge)
     {
-        _cambridgeClient = cambridgeClient;
-        _parser = parser;
+        _cabridge = cabridge;
     }
 
     [HttpGet("Word/{word}")]
     public async Task<IActionResult> GetWord(string word, [FromQuery] WordLanguage language, CancellationToken cancellationToken)
     {
-       var page = await _cambridgeClient.Page(word, language, cancellationToken);
+        var page = await _cabridge.Build(word, language, cancellationToken);
 
-       var parsed = await _parser.Page(page, cancellationToken);
-       return Ok(parsed?.WithOutHtml());
+        return Ok(page);
     }    
     
     
     [HttpGet("Html/{word}")]
     public async Task<IActionResult> GetHtml(string word, [FromQuery] WordLanguage language, CancellationToken cancellationToken)
     {
-       var page = await _cambridgeClient.Page(word, language, cancellationToken);
-        return Ok(page);
+        // var page = await _cambridgeClient.Page(word, language, cancellationToken);
+        return Ok("page");
     }
 }

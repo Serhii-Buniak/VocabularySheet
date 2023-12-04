@@ -11,16 +11,16 @@ public static class SetLanguageWord
 
         public class Handler : IRequestHandler<Command>
         {
-            private readonly IConfigurationRepository<LocalizationConfigurationEntity> _configuration;
+            private readonly IConfigurator<LocalizationConfig> _configuration;
 
-            public Handler(IConfigurationRepository<LocalizationConfigurationEntity> configuration)
+            public Handler(IConfigurator<LocalizationConfig> configuration)
             {
                 _configuration = configuration;
             }
 
             public async Task Handle(Command request, CancellationToken cancellationToken)
             {
-                await _configuration.Set(new LocalizationConfigurationEntity()
+                await _configuration.Set(new LocalizationConfig()
                 {
                     OriginLang = request.WordLang,
                     TranslateLang = request.TranslateLang,

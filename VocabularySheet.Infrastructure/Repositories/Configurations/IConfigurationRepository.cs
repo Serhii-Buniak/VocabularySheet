@@ -1,19 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain.ConfigEntities;
-using VocabularySheet.Domain.Extensions;
 using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Repositories.Configurations;
 
-public abstract class BaseConfigurationRepository<T> : IConfigurationRepository<T> where T : BaseConfigurationEntity<T>, new()
+public abstract class BaseConfigurator<T> : IConfigurator<T> where T : BaseConfigurationEntity<T>, new()
 {
     private readonly IAppDbContext _context;
     public abstract ConfigType Type  { get; }
     private DbSet<ConfigEntry> Configs { get; }
     
-    protected BaseConfigurationRepository(IAppDbContext context)
+    protected BaseConfigurator(IAppDbContext context)
     {
         _context = context;
         Configs = context.Configs;

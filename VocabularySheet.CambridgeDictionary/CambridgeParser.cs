@@ -9,7 +9,7 @@ namespace VocabularySheet.CambridgeDictionary;
 
 public class CambridgeParser
 {
-    public async Task<CambridgePageWithHtml?> Page(string html, CancellationToken cancellationToken)
+    public async Task<CambridgeContent?> Page(string html, CancellationToken cancellationToken)
     {
         var htmlParser = new HtmlParser();
 
@@ -71,10 +71,9 @@ public class CambridgeParser
             }
         }));
         
-        return new CambridgePageWithHtml()
+        return new CambridgeContent()
         {
             Title = mainTitle,
-            HtmlContent = pageContentEl.OuterHtml,
             Blocks = blocks,
             Ref = refItem,
         };

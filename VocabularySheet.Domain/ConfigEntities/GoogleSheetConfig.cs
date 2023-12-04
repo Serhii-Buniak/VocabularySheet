@@ -1,6 +1,6 @@
 ﻿namespace VocabularySheet.Domain.ConfigEntities;
 
-public record GoogleSheetConfigurationEntity : BaseConfigurationEntity<GoogleSheetConfigurationEntity>
+public record GoogleSheetConfig : BaseConfigurationEntity<GoogleSheetConfig>
 {
     public override ConfigType Type => ConfigType.GoogleSheet;
     

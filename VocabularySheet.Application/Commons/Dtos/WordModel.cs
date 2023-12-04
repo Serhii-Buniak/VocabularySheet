@@ -1,10 +1,11 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Domain;
+using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.Commons.Dtos;
 
-public record WordSpinDto
+public record WordModel : IWord
 {
-    public static WordSpinDto Sample => new()
+    public static WordModel Sample => new()
     {
         Id = 0,
         Index = 0,
@@ -26,5 +27,5 @@ public record WordSpinDto
 
     public string? Description { get; init; }
 
-    public WordSpinDto Self => this;
+    public WordModel Self => this;
 }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Domain;
 using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data.Interfaces;
+using VocabularySheet.Infrastructure.Repositories.Pages;
 
 namespace VocabularySheet.Infrastructure.Data;
 
@@ -21,9 +23,15 @@ public sealed class AppDbContext : DbContext, IAppDbContext
 
     public DbSet<Word> Words => Set<Word>();
     public DbSet<ConfigEntry> Configs => Set<ConfigEntry>();
+    public DbSet<CambridgeEntry> Cambridge => Set<CambridgeEntry>();
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseSqlite();
+    }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<CambridgeEntry>().HasKeyPageEntry();
     }
 }

@@ -6,7 +6,7 @@ namespace VocabularySheet.Application.Words.Queries;
 
 public static class GetSpinWords
 {
-    public class Query : IRequest<IEnumerable<WordSpinDto>>
+    public record Query : IRequest<IEnumerable<WordModel>>
     {
         public int FromIndex { get; set; }
         public int ToIndex { get; set; }
@@ -16,18 +16,18 @@ public static class GetSpinWords
 
         public bool IsValid() => FromIndex > 0;
         
-        public class Handler : IRequestHandler<Query, IEnumerable<WordSpinDto>>
+        public class Handler : IRequestHandler<Query, IEnumerable<WordModel>>
         {
             private readonly IWordsRepository _repository;
-            private readonly IConfigurationRepository<LocalizationConfigurationEntity> _configuration;
+            private readonly IConfigurator<LocalizationConfig> _configuration;
 
-            public Handler(IWordsRepository repository, IConfigurationRepository<LocalizationConfigurationEntity> configuration)
+            public Handler(IWordsRepository repository, IConfigurator<LocalizationConfig> configuration)
             {
                 _repository = repository;
                 _configuration = configuration;
             }
 
-            public async Task<IEnumerable<WordSpinDto>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<WordModel>> Handle(Query request, CancellationToken cancellationToken)
             {
                 int needSkip = request.FromIndex - 1;
                 int needTake = request.ToIndex - needSkip;
@@ -45,14 +45,14 @@ public static class GetSpinWords
                 }
                 
                 
-                List<WordSpinDto> result = new();
+                List<WordModel> result = new();
 
                 int index = request.FromIndex;
                 foreach (Word word in words)
                 {
                     if (request.IsOriginalMode)
                     {
-                        result.Add(new WordSpinDto
+                        result.Add(new WordModel
                         {
                             Id = word.Id,
                             Index = index,
@@ -66,7 +66,7 @@ public static class GetSpinWords
                     
                     if (request.IsTranslationMode)
                     {
-                        result.Add(new WordSpinDto
+                        result.Add(new WordModel
                         {
                             Id = word.Id,
                             Index = index,

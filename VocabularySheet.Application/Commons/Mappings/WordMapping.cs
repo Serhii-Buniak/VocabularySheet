@@ -6,7 +6,7 @@ namespace VocabularySheet.Application.Commons.Mappings;
 
 public static class WordMapping
 {
-    public static WordSpinDto ToWordSpin(this Word word, int index, WordLanguage language, WordLanguage transLang) => new()
+    public static WordModel ToWordSpin(this Word word, int index, WordLanguage language, WordLanguage transLang) => new()
     {
         Id = word.Id,
         Index = index,
@@ -18,6 +18,6 @@ public static class WordMapping
     };
 
 
-    public static IEnumerable<WordSpinDto> ToWordsSpin(this IEnumerable<Word> words, WordLanguage language, WordLanguage transLang) => words
+    public static IEnumerable<WordModel> ToWordsSpin(this IEnumerable<Word> words, WordLanguage language, WordLanguage transLang) => words
         .Select((word, index) => word.ToWordSpin(index + 1, language, transLang));
 }

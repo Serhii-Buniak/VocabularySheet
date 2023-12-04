@@ -11,9 +11,9 @@ public static partial class SetGoogleScriptUrl
 
         public class Handler : IRequestHandler<Command>
         {
-            private readonly IConfigurationRepository<GoogleSheetConfigurationEntity> _configuration;
+            private readonly IConfigurator<GoogleSheetConfig> _configuration;
 
-            public Handler(IConfigurationRepository<GoogleSheetConfigurationEntity> configuration)
+            public Handler(IConfigurator<GoogleSheetConfig> configuration)
             {
                 _configuration = configuration;
             }
