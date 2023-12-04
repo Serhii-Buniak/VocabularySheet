@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.CambridgeDi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{F5B1797B-5B16-4367-A46F-648328208908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Parsing.Common", "VocabularySheet.Parsing.Common\VocabularySheet.Parsing.Common.csproj", "{5B624F12-22EE-43E8-956F-61870AA40AB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{F5B1797B-5B16-4367-A46F-648328208908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B1797B-5B16-4367-A46F-648328208908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B1797B-5B16-4367-A46F-648328208908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B624F12-22EE-43E8-956F-61870AA40AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B624F12-22EE-43E8-956F-61870AA40AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B624F12-22EE-43E8-956F-61870AA40AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B624F12-22EE-43E8-956F-61870AA40AB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8BEE6DF1-BE79-4254-87CB-85855B5ADFA9} = {4CDDEDBE-248E-474F-AB16-8B58F56312B7}
+		{5B624F12-22EE-43E8-956F-61870AA40AB2} = {4CDDEDBE-248E-474F-AB16-8B58F56312B7}
 	EndGlobalSection
 EndGlobal

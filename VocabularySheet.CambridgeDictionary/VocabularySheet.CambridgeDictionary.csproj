@@ -16,6 +16,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
+      <ProjectReference Include="..\VocabularySheet.Parsing.Common\VocabularySheet.Parsing.Common.csproj" />
     </ItemGroup>
+
 
 </Project>
