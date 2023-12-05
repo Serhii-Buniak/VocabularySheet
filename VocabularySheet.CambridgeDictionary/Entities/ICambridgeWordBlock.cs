@@ -1,4 +1,6 @@
-﻿namespace VocabularySheet.CambridgeDictionary.Entities;
+﻿using Newtonsoft.Json;
+
+namespace VocabularySheet.CambridgeDictionary.Entities;
 
 public interface ICambridgeWordBlock
 {

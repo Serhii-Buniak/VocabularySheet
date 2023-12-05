@@ -13,55 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca85f3df-c501-4132-b9e1-b6f084f057c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Application/Cambridge/Queries/GetGoogleScriptUrl.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/ICambridgeRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgePage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/CambridgeContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Domain/Pages/PublicParsedPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Commons/ParsedPageEntryExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Pages/CambridgeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources/68080721-3982-4d47-b8d7-86e194aba9c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources/68080721-3982-4d47-b8d7-86e194aba9c2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Converters/IrregularsConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Controllers/CambridgeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Controllers/CambridgeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Dtos/WordSpinDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Dtos/WordModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IConfigurationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IConfigurator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IGoogleSheetService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Interfaces/IGoogleSheetService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Mappings/WordMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Commons/Mappings/WordMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Commands/SetGoogleScriptUrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Commands/SetGoogleScriptUrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Commands/SetGoogleSheetUrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Commands/SetGoogleSheetUrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Queries/GetGoogleScriptUrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Queries/GetGoogleScriptUrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Queries/GetGoogleSheetUrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/GoogleSheets/Queries/GetGoogleSheetUrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/LanguageWords/GetLanguageWord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/LanguageWords/GetLanguageWord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/LanguageWords/SetLanguageWord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/LanguageWords/SetLanguageWord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/VocabularySheet.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/VocabularySheet.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetAllWordsQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetAllWordsQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWords.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Application/Words/Queries/GetSpinWords.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/ConfigureServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/ConfigureServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/CambridgePage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/ConfigEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/ConfigEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/GoogleSheetConfigurationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/GoogleSheetConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/LocalizationConfigurationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/ConfigEntities/LocalizationConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/VocabularySheet.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/VocabularySheet.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Domain/Word.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Domain/Word.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/ConfigureServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/ConfigureServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Data/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Data/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/GoogleSheetConfigurationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/GoogleSheetConfigurator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/IConfigurationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/Configurations/IConfigurationRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/GoogleSheetWordsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/Repositories/GoogleSheetWordsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Infrastructure/VocabularySheet.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Infrastructure/VocabularySheet.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/ICambridgeWordBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/ICambridgeWordBlock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsListVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsListVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsSpinVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordsSpinVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsList.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsList.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsSpin.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsSpin.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Parsing.Common/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Parsing.Common/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.Parsing.Common/VocabularySheet.Parsing.Common.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Parsing.Common/VocabularySheet.Parsing.Common.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +177,7 @@
       <workItem from="1701625829111" duration="2224000" />
       <workItem from="1701628123793" duration="16189000" />
       <workItem from="1701715723496" duration="8527000" />
-      <workItem from="1701724486560" duration="6794000" />
+      <workItem from="1701724486560" duration="10660000" />
     </task>
     <servers />
   </component>
@@ -230,63 +186,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\repositories\VocabularySheet\VocabularySheet.Maui\ViewModels\WordDetailsVM.cs" initialLine="41" containingFunctionPresentation="Method 'LoadDataAsync'">
-            <startOffsets>
-              <option value="1211" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1212" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/VocabularySheet.Application/Cambridge/Queries/GetGoogleScriptUrl.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\repositories\VocabularySheet\VocabularySheet.Application\Cambridge\Queries\GetGoogleScriptUrl.cs" initialLine="26" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="1051" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1124" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CabridgePageBuilder.cs</url>
-          <line>17</line>
-          <properties documentPath="C:\repositories\VocabularySheet\VocabularySheet.CambridgeDictionary\CabridgePageBuilder.cs" initialLine="17" containingFunctionPresentation="Method 'Build'">
-            <startOffsets>
-              <option value="497" />
-            </startOffsets>
-            <endOffsets>
-              <option value="566" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeParser.cs</url>
-          <line>15</line>
-          <properties documentPath="C:\repositories\VocabularySheet\VocabularySheet.CambridgeDictionary\CambridgeParser.cs" initialLine="15" containingFunctionPresentation="Method 'Page'">
-            <startOffsets>
-              <option value="444" />
-            </startOffsets>
-            <endOffsets>
-              <option value="520" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

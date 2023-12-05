@@ -4,6 +4,7 @@
              x:Class="VocabularySheet.Maui.Views.WordDetails"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
+             xmlns:cambridge="clr-namespace:VocabularySheet.CambridgeDictionary.Entities;assembly=VocabularySheet.CambridgeDictionary"
              x:DataType="viewmodel:WordDetailsVM">
 
     <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
@@ -15,5 +16,98 @@
                                OnClick="{Binding GoBackCommand}"
                                Word="{Binding Word}" />
         
+        <!-- Display Word Information -->
+        
+        <Label Text="{Binding OriginalCambridge.Word}" />
+        <Label Text="{Binding OriginalCambridge.Link}" />
+
+        <StackLayout BindableLayout.ItemsSource="{Binding OriginalCambridge.Content.Blocks}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout x:DataType="cambridge:CambridgeWordBlock">
+                        <Label Text="{Binding Title}" FontAttributes="Bold" />
+                        <Label Text="{Binding Category}" FontAttributes="Bold" />
+                        
+                        <FlexLayout BindableLayout.ItemsSource="{Binding Irregulars}">
+                            <FlexLayout.JustifyContent>Start</FlexLayout.JustifyContent>
+                            <FlexLayout.AlignItems>Center</FlexLayout.AlignItems>
+                            <FlexLayout.Wrap>Wrap</FlexLayout.Wrap>
+                            <FlexLayout.Direction>Row</FlexLayout.Direction>
+                            <FlexLayout.AlignContent>Center</FlexLayout.AlignContent>
+                            <FlexLayout.Grow>1</FlexLayout.Grow>
+                            <FlexLayout.Basis>0</FlexLayout.Basis>
+                            <FlexLayout.Shrink>0</FlexLayout.Shrink>
+                            <FlexLayout.Order>0</FlexLayout.Order>
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="Transparent"
+                                           CornerRadius="10"
+                                           HasShadow="False"
+                                           BorderColor="LightBlue">
+                                        <Label Margin="10" Text="{Binding}" />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                        
+                        <!-- <StackLayout> -->
+                        <!--     <Label Text="Pronunciation:" FontAttributes="Bold" /> -->
+                        <!--     <StackLayout BindableLayout.ItemsSource="{Binding Audios}"> -->
+                        <!--         <BindableLayout.ItemTemplate> -->
+                        <!--             <DataTemplate> -->
+                        <!--                 <StackLayout> -->
+                        <!--                     <Label Text="{Binding LanguageCode}" FontAttributes="Italic" /> -->
+                        <!--                     <Label Text="{Binding Transcription}" /> -->
+                        <!--                     ~1~ Add UI elements for Audio Links here @1@ -->
+                        <!--                     <StackLayout BindableLayout.ItemsSource="{Binding Links}"> -->
+                        <!--                         <BindableLayout.ItemTemplate> -->
+                        <!--                             <DataTemplate> -->
+                        <!--                                 <StackLayout> -->
+                        <!--                                     <Label Text="{Binding Type}" FontAttributes="Bold" /> -->
+                        <!--                                     <Label Text="{Binding Src}" /> -->
+                        <!--                                 </StackLayout> -->
+                        <!--                             </DataTemplate> -->
+                        <!--                         </BindableLayout.ItemTemplate> -->
+                        <!--                     </StackLayout> -->
+                        <!--                 </StackLayout> -->
+                        <!--             </DataTemplate> -->
+                        <!--         </BindableLayout.ItemTemplate> -->
+                        <!--     </StackLayout> -->
+                        <!-- </StackLayout> -->
+                        <!-- -->
+                        <!-- ~1~ Display Articles @1@ -->
+                        <!-- <StackLayout BindableLayout.ItemsSource="{Binding Articles}"> -->
+                        <!--     <BindableLayout.ItemTemplate> -->
+                        <!--         <DataTemplate> -->
+                        <!--             <StackLayout> -->
+                        <!--                 <Label Text="{Binding Header.Title}" FontAttributes="Bold" /> -->
+                        <!--                 <Label Text="{Binding Header.BlueTitle}" FontAttributes="Italic" /> -->
+                        <!--                 ~1~ Add UI elements for SubArticles here @1@ -->
+                        <!--                 <StackLayout BindableLayout.ItemsSource="{Binding SubArticles}"> -->
+                        <!--                     <BindableLayout.ItemTemplate> -->
+                        <!--                         <DataTemplate> -->
+                        <!--                             <StackLayout> -->
+                        <!--                                 <Label Text="{Binding Header.Title}" FontAttributes="Bold" /> -->
+                        <!--                                 ~1~ Add UI elements for Examples here @1@ -->
+                        <!--                                 <StackLayout BindableLayout.ItemsSource="{Binding Examples}"> -->
+                        <!--                                     <BindableLayout.ItemTemplate> -->
+                        <!--                                         <DataTemplate> -->
+                        <!--                                             <Label Text="{Binding}" /> -->
+                        <!--                                         </DataTemplate> -->
+                        <!--                                     </BindableLayout.ItemTemplate> -->
+                        <!--                                 </StackLayout> -->
+                        <!--                             </StackLayout> -->
+                        <!--                         </DataTemplate> -->
+                        <!--                     </BindableLayout.ItemTemplate> -->
+                        <!--                 </StackLayout> -->
+                        <!--             </StackLayout> -->
+                        <!--         </DataTemplate> -->
+                        <!--     </BindableLayout.ItemTemplate> -->
+                        <!-- </StackLayout> -->
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
     </VerticalStackLayout>    
 </ContentPage>
