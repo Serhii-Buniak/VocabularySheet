@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Controls.WordListItem"
              x:Name="wordListItem">
-	<Frame Margin="10" BorderColor="Black" CornerRadius="5"
+	<Frame BorderColor="Black" CornerRadius="5"
 	       MaximumWidthRequest="{Binding MaximumWidth, Source={Reference wordListItem}}">
 		<Frame.GestureRecognizers>
 			<TapGestureRecognizer Tapped="OnFrameTapped"

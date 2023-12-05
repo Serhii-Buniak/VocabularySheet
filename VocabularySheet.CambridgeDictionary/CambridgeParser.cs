@@ -124,10 +124,11 @@ public class CambridgeParser
         foreach (var entry in entriesEls)
         {
             var posHeader = entry.QuerySelector(".pos-header");
-            var posBody = entry.QuerySelector(".pos-body");
+            var posBody = entry.QuerySelector(".pv-body") 
+                          ?? entry.QuerySelector(".pos-body");
             var articlesEls = posBody?.QuerySelectorAll(".dsense");
 
-            string? tilte = posHeader?.QuerySelector(".hw")?.InnerHtml;
+            string? tilte = entry.QuerySelector("h2")?.InnerHtmlStriped() ?? posHeader?.QuerySelector(".hw")?.InnerHtml;
             string? category = posHeader?.QuerySelector(".pos.dpos")?.InnerHtml 
                                ?? entry.QuerySelector(".pos.dpos")?.InnerHtml;
             

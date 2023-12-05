@@ -6,6 +6,8 @@ using VocabularySheet.Application.Cambridge.Queries;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
 using VocabularySheet.Application.Words.Queries;
+using VocabularySheet.CambridgeDictionary;
+using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Maui.Common;
@@ -29,6 +31,15 @@ public partial class WordDetailsVM : BaseViewModel
     {
         await Shell.Current.GoToBack();
     }
+    
+    [RelayCommand]
+    public async Task OpenLink(string link)
+    {
+        if (!string.IsNullOrWhiteSpace(link))
+        {
+            await Launcher.OpenAsync(link);
+        }
+    }
 
     public async Task LoadDataAsync()
     {
@@ -44,7 +55,17 @@ public partial class WordDetailsVM : BaseViewModel
         
         var localization = await Mediator.Send(new GetLanguageWord.Query());
 
-        OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang);
+        OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
+        {
+            Word = Word.Original,
+            Language = localization.OriginLang,
+            Link = CambridgeClient.WordLink(Word.Original, localization.OriginLang),
+            Content = new CambridgeContent()
+            {
+                Title = Word.Original,
+                Blocks = new List<CambridgeWordBlock>(),
+            }
+        };
         TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang);
     }
 }

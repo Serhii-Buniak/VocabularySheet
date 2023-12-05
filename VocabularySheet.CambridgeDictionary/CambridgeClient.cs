@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Web;
+using Microsoft.Extensions.Logging;
 using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Parsing.Common;
 
@@ -17,7 +18,7 @@ public class CambridgeClient : WebPageClient
     {
         try
         {
-            string link = $"{BaseLang(language)}/{word}";
+            var link = WordLink(word, language);
 
             Logger.LogInformation("Full link: {link}", link);
 
@@ -43,6 +44,17 @@ public class CambridgeClient : WebPageClient
         {
             return null;
         }
+    }
+
+    public static string WordLink(string word, WordLanguage language)
+    {
+        word = word
+            .Replace("/", "-")
+            .Replace(" ", "-");
+        
+        word = HttpUtility.UrlEncode(word);
+        string link = $"{BaseLang(language)}/{word}";
+        return link;
     }
 
     private static string BaseLang(WordLanguage language)

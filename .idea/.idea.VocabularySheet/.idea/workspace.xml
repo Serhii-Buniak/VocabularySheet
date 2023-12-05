@@ -13,11 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca85f3df-c501-4132-b9e1-b6f084f057c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Converters/IrregularsConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Converters/CambridgeLanguageConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Resources/Images/cambridge_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources/68080721-3982-4d47-b8d7-86e194aba9c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/dataSources/68080721-3982-4d47-b8d7-86e194aba9c2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VocabularySheet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/ICambridgeWordBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/Entities/ICambridgeWordBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/Controllers/CambridgeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Controllers/CambridgeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.CambridgeDictionary/CambridgeParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Controls/WordListItem.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/GoogleSheetsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/GoogleSheetsVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/ViewModels/WordDetailsVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordDetails.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsList.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VocabularySheet.Maui/Views/WordsList.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +35,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/5DEB583F8814CA2B1FCECB3C/CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/VocabularySheet.Maui.ViewModels.WordDetailsVM.GoBack.g.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/9B33D650D14897CDEAC29950/CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/VocabularySheet.Maui.ViewModels.WordDetailsVM.GoBack.g.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/E38DCDF3ADD155825C278DBE/CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/VocabularySheet.Maui.ViewModels.WordDetailsVM.GoBack.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1530e6b7a3c9442589996e6dea6d2affda200/49/43b5196e/HtmlParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1530e6b7a3c9442589996e6dea6d2affda200/50/39543895/Element.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1530e6b7a3c9442589996e6dea6d2affda200/51/f2b37444/IElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/228fce54dead4328a918687dab5ae89696fb0/49/6d445dfb/Binding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/228fce54dead4328a918687dab5ae89696fb0/6e/d3c22dd4/VisualElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d8bf597b69542b39e0f9d6a58f787b9873b0/a0/13936407/VisualElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d8bf597b69542b39e0f9d6a58f787b9873b0/c1/2d7e68b2/Shell.cs" root0="SKIP_HIGHLIGHTING" />
@@ -73,29 +78,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.80751175",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CodeLensConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.96732026&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Administrator\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Administrator\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Administrator\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Administrator\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Administrator\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Administrator\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="UWP.VocabularySheet.Maui">
     <configuration name="VocabularySheet.Maui: MSIX-win10-x64" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish publish_profile="MSIX-win10-x64.pubxml" pubxml_path="$PROJECT_DIR$/VocabularySheet.Maui/Properties/PublishProfiles/MSIX-win10-x64.pubxml" uuid_high="9141236274451074442" uuid_low="-8761946272862053735" />
@@ -177,7 +182,10 @@
       <workItem from="1701625829111" duration="2224000" />
       <workItem from="1701628123793" duration="16189000" />
       <workItem from="1701715723496" duration="8527000" />
-      <workItem from="1701724486560" duration="10660000" />
+      <workItem from="1701724486560" duration="11364000" />
+      <workItem from="1701803916491" duration="4816000" />
+      <workItem from="1701808798832" duration="379000" />
+      <workItem from="1701809201364" duration="7794000" />
     </task>
     <servers />
   </component>

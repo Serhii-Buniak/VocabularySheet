@@ -13,6 +13,7 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:WordModel">
                 <controls:WordListItem
+                    Margin="10"
                     Word="{Binding}"
                     OnClick="{Binding BindingContext.OpenWordCommand, Source={x:Reference wordList}}"/>
             </DataTemplate>
