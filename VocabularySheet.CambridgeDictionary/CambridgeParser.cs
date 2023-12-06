@@ -28,16 +28,36 @@ public class CambridgeParser
         }
         
         var blocksEls = pageContentEl
-            .QuerySelector(".pr.dictionary")
+            .QuerySelector(".dictionary")
             ?.QuerySelector(".di-body")
             ?.QuerySelectorAll(".entry");
 
-        var subBlocksEls = pageContentEl
+        if (blocksEls == null || blocksEls.Length == 0)
+        {
+            blocksEls = pageContentEl
+                .QuerySelectorAll(".entry-body__el");
+        } 
+        
+        if (blocksEls.Length == 0)
+        {
+            blocksEls = pageContentEl
+                .QuerySelectorAll(".pr.idiom-block");
+        }
+
+        List<IElement> subBlocks = new List<IElement>();
+        
+        var dlinks = pageContentEl
             .QuerySelector(".pr.dictionary")
             ?.QuerySelectorAll(".dlink");
-
-        blocksEls ??= pageContentEl
-            .QuerySelectorAll(".entry-body__el");
+        if (dlinks != null)
+        {
+            subBlocks.AddRange(dlinks);
+        }
+        var idioms = pageContentEl
+            .QuerySelectorAll(".pr.idiom-block");
+        subBlocks.AddRange(idioms);
+        
+        
         
         CambridgeRef? refItem = null;
 
@@ -55,7 +75,7 @@ public class CambridgeParser
 
         List<CambridgeWordBlock> blocks = SetBlocks(blocksEls);
 
-        blocks.AddRange(SetSubBlocks(subBlocksEls).Select(sb => new CambridgeWordBlock
+        blocks.AddRange(SetSubBlocks(subBlocks).Select(sb => new CambridgeWordBlock
         {
             Title = sb.Title,
             Category = sb.Category,
@@ -79,7 +99,7 @@ public class CambridgeParser
         };
     }
 
-    private List<CambridgeWordSubBlock> SetSubBlocks(IHtmlCollection<IElement>? subBlocksEls)
+    private List<CambridgeWordSubBlock> SetSubBlocks(List<IElement>? subBlocksEls)
     {
         List<CambridgeWordSubBlock> blocks = new();
         if (subBlocksEls == null)

@@ -24,7 +24,6 @@
             <VerticalStackLayout Margin="5"
                                  HorizontalOptions="Fill"
                                  MaximumWidthRequest="{OnPlatform WinUI=1600}">
-                
                 <HorizontalStackLayout
                             HorizontalOptions="Start">
                     <Image Source="cambridge_logo.png" 
@@ -50,24 +49,14 @@
                                Text="{Binding OriginalCambridge.Language, Converter={converter:CambridgeLanguageConverter}}" />
                     </FlexLayout>
                 </HorizontalStackLayout>
-
-
+                
                 <StackLayout BindableLayout.ItemsSource="{Binding OriginalCambridge.Content.Blocks}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout x:DataType="cambridge:CambridgeWordBlock">
                                 <Label Text="{Binding Title}" FontAttributes="Bold" />
                                 <Label Text="{Binding Category}" FontAttributes="Bold" />
-                                <FlexLayout BindableLayout.ItemsSource="{Binding Irregulars}">
-                                    <FlexLayout.JustifyContent>Start</FlexLayout.JustifyContent>
-                                    <FlexLayout.AlignItems>Center</FlexLayout.AlignItems>
-                                    <FlexLayout.Wrap>Wrap</FlexLayout.Wrap>
-                                    <FlexLayout.Direction>Row</FlexLayout.Direction>
-                                    <FlexLayout.AlignContent>Center</FlexLayout.AlignContent>
-                                    <FlexLayout.Grow>1</FlexLayout.Grow>
-                                    <FlexLayout.Basis>0</FlexLayout.Basis>
-                                    <FlexLayout.Shrink>0</FlexLayout.Shrink>
-                                    <FlexLayout.Order>0</FlexLayout.Order>
+                                <HorizontalStackLayout HorizontalOptions="Start" BindableLayout.ItemsSource="{Binding Irregulars}">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
                                             <Frame BackgroundColor="Transparent"
@@ -78,7 +67,7 @@
                                             </Frame>
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
-                                </FlexLayout>
+                                </HorizontalStackLayout>
 
                                 <StackLayout>
                                     <Label Text="Pronunciation:" FontAttributes="Bold" />

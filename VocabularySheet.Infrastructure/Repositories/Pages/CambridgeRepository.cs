@@ -23,7 +23,7 @@ public class CambridgeRepository : ICambridgeRepository
 
     public async Task<PublicCambridgeEntry?> Get(string word, WordLanguage language, CancellationToken cancellationToken)
     {
-        var entry = await _cambridge.OfType<IParsedPageEntry>().FirstOrDefaultKey(word, language, cancellationToken);
+        var entry = await _cambridge.AsNoTracking().OfType<IParsedPageEntry>().FirstOrDefaultKey(word, language, cancellationToken);
         if (entry != null)
         {
             return CambridgeEntry.CreatePublic(entry);
