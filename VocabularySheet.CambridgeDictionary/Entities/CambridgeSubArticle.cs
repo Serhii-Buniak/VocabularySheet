@@ -22,4 +22,6 @@ public record CambridgeSubArticleHeader
     public string? Title { get; set; }
     public string? Level { get; set; }
     public string? Translation { get; set; }
+    public string? BlueTitle { get; init; }
+    public bool IsBlue() => BlueTitle != null;
 }

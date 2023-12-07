@@ -15,40 +15,24 @@ public partial class WordsSpin : ContentPage
         googleSheetsVm.OnSynchronize += async (_, _) => await wordsSpinVM.HandleSynchronize();
         wordsSpinVM.OnClipboard += async (_, _) =>
         {
-            const int red = 47;
-            const int green = 79;
-            const int blue = 79;
+            const byte red = 47;
+            const byte green = 79;
+            const byte blue = 79;
             
-            var old = WordsLayout.BackgroundColor;
+            Color originalColor = WordsLayout.BackgroundColor;
+            Color darkerColor = Color.FromRgb(red, green, blue); 
 
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 10);
-            await Task.Delay(10);    
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 20);
-            await Task.Delay(10);  
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 30);
-            await Task.Delay(10);
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 40);
-            await Task.Delay(10);    
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 50);
-            await Task.Delay(10);    
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 40);
-            await Task.Delay(10);
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 30);
-            await Task.Delay(10);       
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 20);
-            await Task.Delay(10); 
-            
-            WordsLayout.BackgroundColor = Color.FromRgba(red, green, blue, 10);
-            await Task.Delay(25);
-            
-            WordsLayout.BackgroundColor = old;
+            // Animate to darker color
+            await WordsLayout.FadeTo(0.5, 125, Easing.Linear);
+            WordsLayout.BackgroundColor = darkerColor;
+            await WordsLayout.FadeTo(1, 125, Easing.Linear);
+
+            // Implement your additional logic here
+
+            // Animate back to the original color
+            await WordsLayout.FadeTo(0.5, 125, Easing.Linear);
+            WordsLayout.BackgroundColor = originalColor;
+            await WordsLayout.FadeTo(1, 125, Easing.Linear);
         };
     }
     

@@ -40,6 +40,7 @@ public static class ConfigureServices
 
     private static void AddHttpClients(this IServiceCollection services)
     {
+        services.AddHttpClient<StreamFetcherClient>();
         services.AddHttpClient<IGoogleSheetClient, GoogleSheetClient>();
     }
 

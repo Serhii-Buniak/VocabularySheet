@@ -7,7 +7,8 @@
              xmlns:converter="clr-namespace:VocabularySheet.Maui.Converters"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              xmlns:cambridge="clr-namespace:VocabularySheet.CambridgeDictionary.Entities;assembly=VocabularySheet.CambridgeDictionary"
-             x:DataType="viewmodel:WordDetailsVM">
+             x:DataType="viewmodel:WordDetailsVM"
+             x:Name="wordDetails">
     <!-- <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}"> -->
     <ScrollView>
         <VerticalStackLayout>
@@ -20,13 +21,13 @@
                                    Margin="0,5"
                                    OnClick="{Binding GoBackCommand}"
                                    Word="{Binding Word}" />
-  
+
             <VerticalStackLayout Margin="5"
                                  HorizontalOptions="Fill"
                                  MaximumWidthRequest="{OnPlatform WinUI=1600}">
                 <HorizontalStackLayout
-                            HorizontalOptions="Start">
-                    <Image Source="cambridge_logo.png" 
+                    HorizontalOptions="Start">
+                    <Image Source="cambridge_logo.png"
                            Margin="0,0,20,0"
                            HeightRequest="{OnPlatform WinUI=200, Android=120}"
                            WidthRequest="{OnPlatform WinUI=200, Android=120}">
@@ -35,104 +36,159 @@
                                                   CommandParameter="{Binding OriginalCambridge.Link}" />
                         </Image.GestureRecognizers>
                     </Image>
-                
-                    <FlexLayout JustifyContent="SpaceBetween" 
+
+                    <FlexLayout JustifyContent="SpaceAround"
                                 HorizontalOptions="Start"
                                 WidthRequest="{OnPlatform WinUI=400, Android=150}"
                                 Direction="Column">
                         <Label
-                               FontSize="{OnPlatform WinUI=36, Android=21}"
-                               Text="{Binding OriginalCambridge.Word}"
-                               LineBreakMode="WordWrap"/>
+                            FontSize="{OnPlatform WinUI=36, Android=21}"
+                            Text="{Binding OriginalCambridge.Word}"
+                            LineBreakMode="WordWrap" />
                         <Label FontSize="{OnPlatform WinUI=21, Android=16}"
-                               Margin="{OnPlatform WinUI='0,0,0,20', Android='0,0,0,12'}"
                                Text="{Binding OriginalCambridge.Language, Converter={converter:CambridgeLanguageConverter}}" />
                     </FlexLayout>
                 </HorizontalStackLayout>
-                
+
                 <StackLayout BindableLayout.ItemsSource="{Binding OriginalCambridge.Content.Blocks}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout x:DataType="cambridge:CambridgeWordBlock">
-                                <Label Text="{Binding Title}" FontAttributes="Bold" />
-                                <Label Text="{Binding Category}" FontAttributes="Bold" />
-                                <HorizontalStackLayout HorizontalOptions="Start" BindableLayout.ItemsSource="{Binding Irregulars}">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <Frame BackgroundColor="Transparent"
-                                                   CornerRadius="10"
-                                                   HasShadow="False"
-                                                   BorderColor="LightBlue">
-                                                <Label Margin="10" Text="{Binding}" />
-                                            </Frame>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
-                                </HorizontalStackLayout>
+                            <Frame BorderColor="Red">
+                                <StackLayout x:DataType="cambridge:CambridgeWordBlock">
+                                    <Label Text="{Binding Title}"
+                                           FontSize="{OnPlatform WinUI=42, Android=32}" />
+                                    <HorizontalStackLayout Margin="0,10">
+                                        <Frame BackgroundColor="#114488"
+                                               CornerRadius="5"
+                                               Padding="10,5">
+                                            <Label Text="{Binding Category}"
+                                                   FontSize="{OnPlatform WinUI=21, Android=16}" />
+                                        </Frame>
+                                        <HorizontalStackLayout Margin="50,0,0,0"
+                                                               HorizontalOptions="Start"
+                                                               BindableLayout.ItemsSource="{Binding Irregulars}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame BackgroundColor="#116688"
+                                                           CornerRadius="5"
+                                                           Margin="5,0"
+                                                           Padding="10,5">
+                                                        <Label Text="{Binding}"
+                                                               FontSize="{OnPlatform WinUI=21, Android=16}"
+                                                               FontAttributes="Bold" />
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
 
-                                <StackLayout>
-                                    <Label Text="Pronunciation:" FontAttributes="Bold" />
-                                    <StackLayout BindableLayout.ItemsSource="{Binding Audios}">
+                                    <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Audios}">
                                         <BindableLayout.ItemTemplate>
                                             <DataTemplate>
-                                                <StackLayout x:DataType="cambridge:CambridgeAudio">
-                                                    <Label Text="{Binding LanguageCode}" FontAttributes="Italic" />
-                                                    <Label Text="{Binding Transcription}" />
-                                                    <!-- Add UI elements for Audio Links here -->
-                                                    <StackLayout BindableLayout.ItemsSource="{Binding Links}">
-                                                        <BindableLayout.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <StackLayout x:DataType="cambridge:CambridgeAudioLink">
-                                                                    <Label Text="{Binding Type}" FontAttributes="Bold" />
-                                                                    <Label Text="{Binding Src}" />
-                                                                </StackLayout>
-                                                            </DataTemplate>
-                                                        </BindableLayout.ItemTemplate>
+                                                <HorizontalStackLayout x:DataType="cambridge:CambridgeAudio"
+                                                                       Margin="0,10,25,10">
+                                                    <Frame BackgroundColor="#1d2956"
+                                                           CornerRadius="5"
+                                                           Margin="0,0,10,0"
+                                                           Padding="10,5">
+                                                        <Label Text="{Binding LanguageCode}"
+                                                               FontSize="{OnPlatform WinUI=24, Android=18}"
+                                                               TextTransform="Uppercase"
+                                                               FontAttributes="Bold" />
+                                                    </Frame>
+                                                    <Frame BackgroundColor="#772244"
+                                                           CornerRadius="5"
+                                                           Margin="0,0,10,0"
+                                                           Padding="10,5">
+                                                        <Label Text="{Binding Transcription}"
+                                                               FontSize="{OnPlatform WinUI=24, Android=18}"
+                                                               FontAttributes="Italic" />
+                                                    </Frame>
+
+                                                    <Frame BackgroundColor="#DDDDDD"
+                                                           CornerRadius="5"
+                                                           IsEnabled="{Binding Links, Converter={converter:IsNotEmptyConverter}}"
+                                                           Padding="10,5">
+                                                        
+                                                        <Frame.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding BindingContext.PlayAudioCommand, Source={x:Reference wordDetails}}"
+                                                                CommandParameter="{Binding Links[0]}" 
+                                                                Tapped="OnFrameTapped"/>
+                                                        </Frame.GestureRecognizers>
+                                                        
+                                                        <Image Source="audio_play_icon.png"
+                                                               HeightRequest="{OnPlatform WinUI=24, Android=18}"
+                                                               WidthRequest="{OnPlatform WinUI=24, Android=18}"/>
+                                                    </Frame>
+                                                    
+                                                    <!-- <Button> -->
+                                                    <!--     <Button.Triggers> -->
+                                                    <!--         <DataTrigger TargetType="Button" Binding="{Binding Links.Count, Converter={converter:IsGreaterThanZeroConverter}}" Value="True"> -->
+                                                    <!--             <Setter Property="Text" Value="Audio" /> -->
+                                                    <!--             <Setter Property="FontSize" Value="{OnPlatform WinUI=24, Android=18}" /> -->
+                                                    <!--             <Setter Property="TextTransform" Value="Uppercase" /> -->
+                                                    <!--             <Setter Property="Command" Value="{Binding BindingContext.PlayAudioCommand, Source={x:Reference wordDetails}}" /> -->
+                                                    <!--             <Setter Property="CommandParameter" Value="{Binding Links[0]}" /> -->
+                                                    <!--         </DataTrigger> -->
+                                                    <!--     </Button.Triggers> -->
+                                                    <!-- </Button> -->
+                                                    <!-- <Label Text="{Binding Link.Type}" /> -->
+                                                </HorizontalStackLayout>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </HorizontalStackLayout>
+
+                                    <!-- Display Articles -->
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Articles}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BorderColor="Green">
+                                                    <StackLayout x:DataType="cambridge:CambridgeArticle">
+                                                        <Label Text="{Binding Header.Title}" FontAttributes="Bold" />
+                                                        <Label Text="{Binding Header.Category}" FontAttributes="Italic" />
+                                                        <Label Text="{Binding Header.Meaning}" FontAttributes="Italic" />
+                                                        <!-- Add UI elements for SubArticles here -->
+                                                        <StackLayout BindableLayout.ItemsSource="{Binding SubArticles}">
+                                                            <BindableLayout.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Frame BorderColor="Purple">
+
+                                                                        <StackLayout
+                                                                            x:DataType="cambridge:CambridgeSubArticle">
+                                                                            <Label Text="{Binding Header.Title}"
+                                                                                FontAttributes="Bold" />
+                                                                            <Label Text="{Binding Header.BlueTitle}"
+                                                                                FontAttributes="Italic" />
+                                                                            <Label Text="{Binding Header.Level}"
+                                                                                FontAttributes="Bold" />
+                                                                            <Label Text="{Binding Header.Translation}"
+                                                                                FontAttributes="Bold" />
+                                                                            <Label Text="{Binding ImageUrl}"
+                                                                                FontAttributes="Bold" />
+                                                                            <!-- Add UI elements for Examples here -->
+                                                                            <StackLayout
+                                                                                BindableLayout.ItemsSource="{Binding Examples}">
+                                                                                <BindableLayout.ItemTemplate>
+                                                                                    <DataTemplate>
+                                                                                        <Frame BorderColor="Pink">
+                                                                                            <Label Text="{Binding}" />
+                                                                                        </Frame>
+                                                                                    </DataTemplate>
+                                                                                </BindableLayout.ItemTemplate>
+                                                                            </StackLayout>
+                                                                        </StackLayout>
+                                                                    </Frame>
+                                                                </DataTemplate>
+                                                            </BindableLayout.ItemTemplate>
+                                                        </StackLayout>
                                                     </StackLayout>
-                                                </StackLayout>
+                                                </Frame>
                                             </DataTemplate>
                                         </BindableLayout.ItemTemplate>
                                     </StackLayout>
                                 </StackLayout>
-
-                                <!-- Display Articles -->
-                                <StackLayout BindableLayout.ItemsSource="{Binding Articles}">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackLayout x:DataType="cambridge:CambridgeArticle">
-                                                <Label Text="{Binding Header.Title}" FontAttributes="Bold" />
-                                                <Label Text="{Binding Header.BlueTitle}" FontAttributes="Italic" />
-                                                <Label Text="{Binding Header.Category}" FontAttributes="Italic" />
-                                                <Label Text="{Binding Header.Meaning}" FontAttributes="Italic" />
-                                                <!-- Add UI elements for SubArticles here -->
-                                                <StackLayout BindableLayout.ItemsSource="{Binding SubArticles}">
-                                                    <BindableLayout.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <StackLayout x:DataType="cambridge:CambridgeSubArticle">
-                                                                <Label Text="{Binding Header.Title}"
-                                                                       FontAttributes="Bold" />
-                                                                <Label Text="{Binding Header.Level}"
-                                                                       FontAttributes="Bold" />
-                                                                <Label Text="{Binding Header.Translation}"
-                                                                       FontAttributes="Bold" />
-                                                                <Label Text="{Binding ImageUrl}" FontAttributes="Bold" />
-                                                                <!-- Add UI elements for Examples here -->
-                                                                <StackLayout
-                                                                    BindableLayout.ItemsSource="{Binding Examples}">
-                                                                    <BindableLayout.ItemTemplate>
-                                                                        <DataTemplate>
-                                                                            <Label Text="{Binding}" />
-                                                                        </DataTemplate>
-                                                                    </BindableLayout.ItemTemplate>
-                                                                </StackLayout>
-                                                            </StackLayout>
-                                                        </DataTemplate>
-                                                    </BindableLayout.ItemTemplate>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
-                                </StackLayout>
-                            </StackLayout>
+                            </Frame>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>

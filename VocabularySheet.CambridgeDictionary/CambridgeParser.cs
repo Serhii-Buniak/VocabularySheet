@@ -110,7 +110,17 @@ public class CambridgeParser
         foreach (var subBlock in subBlocksEls)
         {
             var header = subBlock.QuerySelector(".di-head");
-            var subArticles = subBlock.QuerySelectorAll(".def-block");
+            
+            var phrases = subBlock.QuerySelectorAll(".phrase-block").ToList();
+            foreach (var phrase in phrases)
+            {
+                phrase.Remove();
+            }
+            
+            var subArticles = subBlock.QuerySelectorAll(".def-block").ToList();
+            
+            subArticles.AddRange(phrases);
+
             
             var dinfEls = header?.QuerySelectorAll(".dinf");
             List<string> irregulars = new List<string>();
@@ -186,13 +196,22 @@ public class CambridgeParser
         foreach (var article in articlesEls)
         {
             var headerEl = article.QuerySelector(".dsense_h");
-            var subArticles = article.QuerySelectorAll(".def-block");
+            
+            var phrases = article.QuerySelectorAll(".phrase-block").ToList();
+            foreach (var phrase in phrases)
+            {
+                phrase.Remove();
+            }
+            
+            var subArticles = article.QuerySelectorAll(".def-block").ToList();
+            
+            subArticles.AddRange(phrases);
+            
             articles.Add(new CambridgeArticle()
             {
                 Header = new CambridgeArticleHeader()
                 {
                     Title = headerEl?.QuerySelector(".hw")?.InnerHtml,
-                    BlueTitle = article.QuerySelector(".dphrase-title")?.InnerHtmlStriped(),
                     Category = headerEl?.QuerySelector(".pos")?.InnerHtml,
                     Meaning = headerEl?.QuerySelector(".dsense_gw")?.QuerySelector("span")?.InnerHtml,
                 },
@@ -217,6 +236,7 @@ public class CambridgeParser
                 Header = new CambridgeSubArticleHeader()
                 {
                     Title = header?.QuerySelector(".ddef_d")?.InnerHtmlStriped(),
+                    BlueTitle = subArticleEl.QuerySelector(".dphrase-title")?.InnerHtmlStriped(),
                     Level = header?.QuerySelector(".epp-xref")?.InnerHtml,
                     Translation = body?.QuerySelector(".dtrans")?.InnerHtml,
                 },

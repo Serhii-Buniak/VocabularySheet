@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Core;
 using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 using VocabularySheet.Application;
 using VocabularySheet.Infrastructure;
 using VocabularySheet.Maui.Views;
@@ -34,6 +35,7 @@ public static class MauiProgram
         builder.Services.AddApplicationServices();
 
         builder.Services.AddSingleton<AppShellVM>();
+        builder.Services.AddSingleton(AudioManager.Current);
 
         builder.Services.AddSingleton<TextToSpeechService>();
 

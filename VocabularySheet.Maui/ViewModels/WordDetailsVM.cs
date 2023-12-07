@@ -2,14 +2,15 @@
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 using VocabularySheet.Application.Cambridge.Queries;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
 using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Domain.Pages;
+using VocabularySheet.Infrastructure.HttpClients;
 using VocabularySheet.Maui.Common;
 
 namespace VocabularySheet.Maui.ViewModels;
@@ -17,13 +18,18 @@ namespace VocabularySheet.Maui.ViewModels;
 [QueryProperty("Id", "Id")]
 public partial class WordDetailsVM : BaseViewModel
 {
+    private readonly IAudioManager _audioManager;
+    private readonly StreamFetcherClient _fetcher;
+
     [ObservableProperty] long id = 0;
     [ObservableProperty] WordModel word = WordModel.Sample;
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     
-    public WordDetailsVM(IMediator mediator, ILogger<LanguageWordVM> logger) : base(mediator, logger)
+    public WordDetailsVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
+        _audioManager = audioManager;
+        _fetcher = fetcher;
     }
     
     [RelayCommand]
@@ -38,6 +44,23 @@ public partial class WordDetailsVM : BaseViewModel
         if (!string.IsNullOrWhiteSpace(link))
         {
             await Launcher.OpenAsync(link);
+        }
+    }
+    
+    [RelayCommand]
+    public async Task PlayAudio(CambridgeAudioLink audioLink, CancellationToken cancellationToken)
+    {
+        try
+        {
+            IAudioPlayer player =
+                _audioManager.CreatePlayer(await _fetcher.Fetch(audioLink.FullLink(), cancellationToken));
+
+            player.Play();
+
+        }
+        catch (Exception)
+        {
+            // ignored
         }
     }
 

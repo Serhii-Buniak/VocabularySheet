@@ -17,7 +17,7 @@
                 MaximumWidth="{OnPlatform WinUI=1600}"
                 Word="{Binding Word}"
                 OnClick="{Binding OpenWordCommand}"
-                IsWordVisible="{Binding IsDescriptionVisible}" />
+                IsWordVisible="{Binding IsTranslationVisible}" />
             
             <controls:DescriptionArea Text="{Binding Word.Description}"
                                       IsDescriptionVisible="{Binding IsDescriptionVisible}" />

@@ -9,7 +9,7 @@ public record WordModel : IWord
     {
         Id = 0,
         Index = 0,
-        Original = "Word",
+        Original = "word",
         Translation = "word translation",
         OrignalLanguage = WordLanguage.En,
         TranslationlLanguage = WordLanguage.En,

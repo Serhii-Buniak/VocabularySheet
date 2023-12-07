@@ -9,9 +9,6 @@ public record CambridgeArticle
 public record CambridgeArticleHeader
 {
     public string? Title { get; init; }
-    public string? BlueTitle { get; init; }
     public string? Category { get; init; }
     public string? Meaning { get; init; }
-    public bool IsBlue() => BlueTitle != null;
-
 }
