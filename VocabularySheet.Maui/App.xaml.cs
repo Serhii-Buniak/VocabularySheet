@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using VocabularySheet.Maui.Controls;
 using VocabularySheet.Maui.ViewModels;
 using ApplicationMaui = Microsoft.Maui.Controls.Application;
 
@@ -14,8 +14,9 @@ public partial class App : ApplicationMaui
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        var window = base.CreateWindow(activationState);
+        Window? window = base.CreateWindow(activationState);
 
+        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
         if (window != null)
         {
             window.Title = "Vocabulary Sheet";
@@ -24,4 +25,3 @@ public partial class App : ApplicationMaui
         return window!;
     }
 }
-

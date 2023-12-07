@@ -12,7 +12,15 @@
             Spacing="5"
             Padding="5"
             VerticalOptions="Center">
+            
+            <controls:BorderlessEditor Text="Your Text">
 
+            </controls:BorderlessEditor>
+            
+            <Editor Text="Your Text">
+
+            </Editor>
+            
             <controls:WordListItem
                 MaximumWidth="{OnPlatform WinUI=1600}"
                 Word="{Binding Word}"

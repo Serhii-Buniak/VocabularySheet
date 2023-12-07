@@ -30,20 +30,11 @@ public class CambridgeParser
         var blocksEls = pageContentEl
             .QuerySelector(".dictionary")
             ?.QuerySelector(".di-body")
-            ?.QuerySelectorAll(".entry");
+            ?.QuerySelectorAll(".entry-body__el").ToList() ?? new List<IElement>();
 
-        if (blocksEls == null || blocksEls.Length == 0)
-        {
-            blocksEls = pageContentEl
-                .QuerySelectorAll(".entry-body__el");
-        } 
+        blocksEls.AddRange(pageContentEl
+            .QuerySelectorAll(".pr.idiom-block"));
         
-        if (blocksEls.Length == 0)
-        {
-            blocksEls = pageContentEl
-                .QuerySelectorAll(".pr.idiom-block");
-        }
-
         List<IElement> subBlocks = new List<IElement>();
         
         var dlinks = pageContentEl
@@ -73,7 +64,7 @@ public class CambridgeParser
             };
         }
 
-        List<CambridgeWordBlock> blocks = SetBlocks(blocksEls);
+        List<CambridgeWordBlock> blocks = SetBlocks(blocksEls.ToList());
 
         blocks.AddRange(SetSubBlocks(subBlocks).Select(sb => new CambridgeWordBlock
         {
@@ -143,13 +134,9 @@ public class CambridgeParser
         return blocks;
     }
 
-    private static List<CambridgeWordBlock> SetBlocks(IHtmlCollection<IElement>? entriesEls)
+    private static List<CambridgeWordBlock> SetBlocks(List<IElement> entriesEls)
     {
         List<CambridgeWordBlock> blocks = new();
-        if (entriesEls == null)
-        {
-            return blocks;
-        }
         
         foreach (var entry in entriesEls)
         {

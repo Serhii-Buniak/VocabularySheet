@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Plugin.Maui.Audio;
 using VocabularySheet.Application;
 using VocabularySheet.Infrastructure;
+using VocabularySheet.Maui.Controls;
 using VocabularySheet.Maui.Views;
 using VocabularySheet.Maui.ViewModels;
 using TextToSpeechService = VocabularySheet.Maui.Common.Services.TextToSpeechService;
@@ -23,6 +24,23 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
+
+        Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
+        {
+            if (v is BorderlessEditor)
+            {
+#if WINDOWS
+                h.PlatformView.BorderThickness = new Microsoft.UI.Xaml.Thickness()
+                {
+                    Bottom = 0,
+                    Top = 0,
+                    Left = 0,
+                    Right = 0,
+                };
+#endif
+            }
+        });
+        
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
