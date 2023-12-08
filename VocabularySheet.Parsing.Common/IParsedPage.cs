@@ -11,3 +11,10 @@ public interface IParsedPage<TContent> where TContent : class
     DateTime CreatedAt { get; init; }
     TContent Content { get; init; }
 }
+
+public interface IHaveNullImageUrl
+{
+    string? ImageUrl { get; }
+
+    string? FullImageLink();
+}

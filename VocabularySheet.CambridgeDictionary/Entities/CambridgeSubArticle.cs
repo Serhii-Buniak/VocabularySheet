@@ -1,6 +1,8 @@
-﻿namespace VocabularySheet.CambridgeDictionary.Entities;
+﻿using VocabularySheet.Parsing.Common;
 
-public record CambridgeSubArticle
+namespace VocabularySheet.CambridgeDictionary.Entities;
+
+public record CambridgeSubArticle : IHaveNullImageUrl
 {
     public required CambridgeSubArticleHeader Header { get; init; }
     public List<string> Examples { get; init; } = new();

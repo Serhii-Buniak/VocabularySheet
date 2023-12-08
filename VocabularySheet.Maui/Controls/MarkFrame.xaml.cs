@@ -1,5 +1,3 @@
-using System.Windows.Input;
-
 namespace VocabularySheet.Maui.Controls;
 
 public partial class MarkFrame : ContentView

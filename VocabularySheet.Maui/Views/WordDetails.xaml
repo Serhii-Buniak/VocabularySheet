@@ -23,7 +23,7 @@
                                    Word="{Binding Word}" />
 
             <VerticalStackLayout HorizontalOptions="Fill"
-                                 BackgroundColor="Black"
+                                 Padding="5"
                                  MaximumWidthRequest="{OnPlatform WinUI=1600}">
                 <HorizontalStackLayout
 
@@ -58,12 +58,12 @@
                                 <Label Text="{Binding Title}"
                                        FontSize="{OnPlatform WinUI=42, Android=32}" />
                                 <HorizontalStackLayout Margin="0,10">
-                                    
+
                                     <controls:MarkFrame
                                         Color="#114488"
                                         Text="{Binding Category}"
-                                        FontSize="{OnPlatform WinUI=21, Android=16}"/>
-                                    
+                                        FontSize="{OnPlatform WinUI=21, Android=16}" />
+
                                     <HorizontalStackLayout Margin="50,0,0,0"
                                                            HorizontalOptions="Start"
                                                            BindableLayout.ItemsSource="{Binding Irregulars}">
@@ -73,7 +73,7 @@
                                                     Color="#116688"
                                                     Text="{Binding }"
                                                     FontSize="{OnPlatform WinUI=21, Android=16}"
-                                                    FontAttributes="Bold"/>
+                                                    FontAttributes="Bold" />
                                             </DataTemplate>
                                         </BindableLayout.ItemTemplate>
                                     </HorizontalStackLayout>
@@ -83,20 +83,20 @@
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
                                             <HorizontalStackLayout x:DataType="cambridge:CambridgeAudio"
-                                                                   Margin="0,10,25,10">
+                                                                   Margin="0,10,25,0">
                                                 <controls:MarkFrame
                                                     Color="#1d2956"
                                                     Text="{Binding LanguageCode}"
                                                     FontSize="{OnPlatform WinUI=24, Android=18}"
                                                     TextTransform="Uppercase"
-                                                    FontAttributes="Bold"/>
-                                                
+                                                    FontAttributes="Bold" />
+
                                                 <controls:MarkFrame
                                                     Color="#772244"
                                                     Text="{Binding Transcription}"
                                                     FontSize="{OnPlatform WinUI=24, Android=18}"
-                                                    FontAttributes="Italic"/>
-                                                
+                                                    FontAttributes="Italic" />
+
                                                 <Frame BackgroundColor="#DDDDDD"
                                                        CornerRadius="5"
                                                        IsEnabled="{Binding Links, Converter={converter:IsNotEmptyConverter}}"
@@ -118,71 +118,122 @@
                                     </BindableLayout.ItemTemplate>
                                 </HorizontalStackLayout>
 
+                                <BoxView HeightRequest="3"
+                                         Color="#FFE797"
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="0,20,0,10" />
+
                                 <!-- Display Articles -->
-                                <StackLayout BindableLayout.ItemsSource="{Binding Articles}"
-                                             Margin="0,25,0,0">
+                                <StackLayout BindableLayout.ItemsSource="{Binding Articles}">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout x:DataType="cambridge:CambridgeArticle">
-                                                <HorizontalStackLayout>
-                                                    
+                                                <HorizontalStackLayout Margin="0,30,0,0"
+                                                                       IsVisible="{Binding Header.Title, Converter={converter:IsNotNullConverter}}">
+
                                                     <controls:MarkFrame
                                                         Color="#772244"
                                                         Text="{Binding Header.Title}"
-                                                        FontSize="{OnPlatform WinUI=24, Android=18}" />
-                                                    
+                                                        FontSize="{OnPlatform WinUI=21, Android=16}" />
+
                                                     <controls:MarkFrame
                                                         Color="#114488"
                                                         Text="{Binding Header.Category}"
-                                                        FontSize="{OnPlatform WinUI=24, Android=18}" 
+                                                        FontSize="{OnPlatform WinUI=21, Android=16}"
                                                         FontAttributes="Italic" />
-                                                    
+
                                                     <controls:MarkFrame
                                                         Color="#122b20"
                                                         Text="{Binding Header.Meaning}"
-                                                        FontSize="{OnPlatform WinUI=24, Android=18}" 
+                                                        FontSize="{OnPlatform WinUI=21, Android=16}"
                                                         FontAttributes="Bold" />
-                                                    
-                                                </HorizontalStackLayout>
 
+                                                </HorizontalStackLayout>
+                                                <BoxView HeightRequest="3"
+                                                         Color="#43A88F"
+                                                         IsVisible="{Binding Header.Title, Converter={converter:IsNotNullConverter}}"
+                                                         HorizontalOptions="Fill"
+                                                         Margin="0,10" />
                                                 <VerticalStackLayout BindableLayout.ItemsSource="{Binding SubArticles}">
                                                     <BindableLayout.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <VerticalStackLayout
-                                                                x:DataType="cambridge:CambridgeSubArticle">
-                                                                
-                                                                <controls:MarkFrame
-                                                                    Color="#1d2956"
-                                                                    Text="{Binding Header.Level}"
-                                                                    FontSize="{OnPlatform WinUI=27, Android=21}" 
-                                                                    FontAttributes="Bold" />
-                                                                
-                                                                <controls:LabelEditor Text="{Binding Header.BlueTitle}"
-                                                                    FontSize="{OnPlatform WinUI=22, Android=19}"
-                                                                    IsVisible="{Binding Header.BlueTitle, Converter={converter:IsNotNullConverter}}" />
-                                                                
-                                                                <controls:LabelEditor Text="{Binding Header.Title}"
-                                                                    FontSize="{OnPlatform WinUI=24, Android=21}"
-                                                                    IsVisible="{Binding Header.Title, Converter={converter:IsNotNullConverter}}" />
-                                                                
-                                                                <controls:LabelEditor Text="{Binding Header.Translation}"
-                                                                    FontSize="{OnPlatform WinUI=21, Android=18}"
-                                                                    IsVisible="{Binding Header.Translation, Converter={converter:IsNotNullConverter}}" />
-                                                                
-                                                                <Label Text="{Binding ImageUrl}"
-                                                                       FontAttributes="Bold" />
-                                                                <!-- Add UI elements for Examples here -->
-                                                                <StackLayout Padding="5"
-                                                                             BindableLayout.ItemsSource="{Binding Examples}">
-                                                                    <BindableLayout.ItemTemplate>
-                                                                        <DataTemplate>
-                                                                            <controls:LabelEditor Text="{Binding }"
-                                                                                FontSize="{OnPlatform WinUI=20, Android=18}"
-                                                                                IsVisible="{Binding }, Converter={converter:IsNotNullConverter}}" />
-                                                                        </DataTemplate>
-                                                                    </BindableLayout.ItemTemplate>
-                                                                </StackLayout>
-                                                            </VerticalStackLayout>
+                                                        <DataTemplate x:DataType="cambridge:CambridgeSubArticle">
+                                                            <Border Stroke="Azure"
+                                                                    Padding="10"
+                                                                    Margin="0,20,0,0"
+                                                                    HorizontalOptions="Fill">
+                                                                <Border.Triggers>
+                                                                    <DataTrigger TargetType="Border" Binding="{Binding Header.BlueTitle, Converter={converter:IsNotNullConverter}}" Value="True">
+                                                                        <Setter Property="BackgroundColor" Value="#0A0F1C" />
+                                                                    </DataTrigger>
+                                                                </Border.Triggers>
+                                                                <VerticalStackLayout>
+                                                                    <controls:MarkFrame
+                                                                        Color="#1d2956"
+                                                                        Text="{Binding Header.Level}"
+                                                                        FontSize="{OnPlatform WinUI=21, Android=16}"
+                                                                        FontAttributes="Bold" />
+
+                                                                    <controls:LabelEditor
+                                                                        Text="{Binding Header.BlueTitle}"
+                                                                        FontSize="{OnPlatform WinUI=22, Android=19}"
+                                                                        IsVisible="{Binding Header.BlueTitle, Converter={converter:IsNotNullConverter}}" />
+
+                                                                    <BoxView HeightRequest="3"
+                                                                             IsVisible="{Binding Header.BlueTitle, Converter={converter:IsNotNullConverter}}"
+                                                                             Color="#114488"
+                                                                             HorizontalOptions="FillAndExpand"
+                                                                             Margin="0,5,0,5" />
+                                                                    
+                                                                    <controls:LabelEditor Text="{Binding Header.Title}"
+                                                                        FontSize="{OnPlatform WinUI=24, Android=21}"
+                                                                        IsVisible="{Binding Header.Title, Converter={converter:IsNotNullConverter}}" />
+
+                                                                    <BoxView HeightRequest="3"
+                                                                             IsVisible="{Binding Header.Title, Converter={converter:IsNotNullConverter}}"
+                                                                             Color="#772244"
+                                                                             HorizontalOptions="FillAndExpand"
+                                                                             Margin="0,5,0,5" />
+                                                                    <controls:LabelEditor
+                                                                        Text="{Binding Header.Translation}"
+                                                                        FontSize="{OnPlatform WinUI=21, Android=18}"
+                                                                        IsVisible="{Binding Header.Translation, Converter={converter:IsNotNullConverter}}" />
+                                                                    <!-- Add UI elements for Examples here -->
+                                                                    <StackLayout
+                                                                        BindableLayout.ItemsSource="{Binding Examples}">
+                                                                        <BindableLayout.ItemTemplate>
+                                                                            <DataTemplate>
+                                                                                <Grid>
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="20" />
+                                                                                        <ColumnDefinition Width="*" />
+                                                                                    </Grid.ColumnDefinitions>
+
+                                                                                    <Label
+                                                                                        HorizontalOptions="Center"
+                                                                                        Grid.Column="0"
+                                                                                        FontSize="{OnPlatform WinUI=20, Android=18}"
+                                                                                        VerticalOptions="Center"
+                                                                                        Text="•" />
+
+                                                                                    <controls:LabelEditor
+                                                                                        Grid.Column="1"
+                                                                                        Text="{Binding .}"
+                                                                                        FontSize="{OnPlatform WinUI=20, Android=18}"
+                                                                                        VerticalOptions="Center"
+                                                                                        IsVisible="{Binding ., Converter={converter:IsNotNullConverter}}" />
+                                                                                </Grid>
+                                                                            </DataTemplate>
+                                                                        </BindableLayout.ItemTemplate>
+                                                                    </StackLayout>
+                                                                    <Image
+                                                                        Source="{Binding ., Converter={converter:ImageUrlConverter}}"
+                                                                        MaximumWidthRequest="400"
+                                                                        MaximumHeightRequest="250"
+                                                                        HorizontalOptions="Start"
+                                                                        IsVisible="{Binding ImageUrl, Converter={converter:IsNotNullConverter}}" />
+
+                                                                </VerticalStackLayout>
+                                                            </Border>
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </VerticalStackLayout>
