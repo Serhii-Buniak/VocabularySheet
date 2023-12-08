@@ -14,7 +14,7 @@
             <DataTemplate x:DataType="model:WordModel">
                 <controls:WordListItem
                     Margin="10"
-                    Word="{Binding}"
+                    Word="{Binding ., Mode=OneTime}"
                     OnClick="{Binding BindingContext.OpenWordCommand, Source={x:Reference wordList}}"/>
             </DataTemplate>
         </CollectionView.ItemTemplate>

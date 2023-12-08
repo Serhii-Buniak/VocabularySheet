@@ -21,7 +21,7 @@ public partial class WordDetails : ContentPage
     
     private async void OnFrameTapped(object sender, EventArgs e)
     {
-        if (sender is Frame frame)
+        if (sender is Border frame)
         {
             
             Color originalColor = frame.BackgroundColor;
