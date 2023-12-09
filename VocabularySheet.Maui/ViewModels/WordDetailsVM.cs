@@ -87,28 +87,31 @@ public partial class WordDetailsVM : BaseViewModel
         });
         
         var localization = await Mediator.Send(new GetLanguageWord.Query());
-        
-        OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
+        await Task.Delay(25);
+        await Task.Run(() =>
         {
-            Word = Word.Original,
-            Language = localization.OriginLang,
-            Link = CambridgeClient.WordLink(Word.Original, localization.OriginLang),
-            Content = new CambridgeContent()
+            OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
             {
-                Title = Word.Original,
-                Blocks = new List<CambridgeWordBlock>(),
-            }
-        };
-        TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang) ?? new PublicCambridgeEntry()
-        {
-            Word = Word.Translation,
-            Language = localization.TranslateLang,
-            Link = CambridgeClient.WordLink(Word.Translation, localization.TranslateLang),
-            Content = new CambridgeContent()
+                Word = Word.Original,
+                Language = localization.OriginLang,
+                Link = CambridgeClient.WordLink(Word.Original, localization.OriginLang),
+                Content = new CambridgeContent()
+                {
+                    Title = Word.Original,
+                    Blocks = new List<CambridgeWordBlock>(),
+                }
+            };
+            TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang) ?? new PublicCambridgeEntry()
             {
-                Title = Word.Translation,
-                Blocks = new List<CambridgeWordBlock>(),
-            }
-        };;
+                Word = Word.Translation,
+                Language = localization.TranslateLang,
+                Link = CambridgeClient.WordLink(Word.Translation, localization.TranslateLang),
+                Content = new CambridgeContent()
+                {
+                    Title = Word.Translation,
+                    Blocks = new List<CambridgeWordBlock>(),
+                }
+            };
+        });
     }
 }
