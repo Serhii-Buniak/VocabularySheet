@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui.Core;
+﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Core;
 using Microsoft.Extensions.Logging;
 using Plugin.Maui.Audio;
 using VocabularySheet.Application;
@@ -6,6 +7,7 @@ using VocabularySheet.Infrastructure;
 using VocabularySheet.Maui.Controls;
 using VocabularySheet.Maui.Views;
 using VocabularySheet.Maui.ViewModels;
+using MauiApp = Microsoft.Maui.Hosting.MauiApp;
 using TextToSpeechService = VocabularySheet.Maui.Common.Services.TextToSpeechService;
 
 namespace VocabularySheet.Maui;
@@ -17,6 +19,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitCore()
             .ConfigureFonts(fonts =>
             {

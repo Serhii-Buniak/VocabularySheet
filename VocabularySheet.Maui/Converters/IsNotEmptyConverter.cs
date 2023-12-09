@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Globalization;
 
 namespace VocabularySheet.Maui.Converters;
 
@@ -6,7 +7,7 @@ public class IsNotEmptyConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (value is List<object> enumerable)
+        if (value is IList enumerable)
             return enumerable.Count > 0;
 
         return Binding.DoNothing;

@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Controls.Cambridge.CambridgeComponent"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:converter="clr-namespace:VocabularySheet.Maui.Converters"
-             xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              xmlns:cambridge="clr-namespace:VocabularySheet.CambridgeDictionary.Entities;assembly=VocabularySheet.CambridgeDictionary"
+             xmlns:cambridgeControls="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
+             x:DataType="cambridgeControls:CambridgeComponent"             
              x:Name="cambridgeCom">
 
     <VerticalStackLayout HorizontalOptions="Fill"
                          Padding="5"
                          MaximumWidthRequest="{OnPlatform WinUI=1600}">
-        <HorizontalStackLayout
-
-            HorizontalOptions="Start">
+        <HorizontalStackLayout HorizontalOptions="Start">
             <Image Source="cambridge_logo.png"
                    Margin="0,0,20,0"
                    HeightRequest="{OnPlatform WinUI=200, Android=120}"
                    WidthRequest="{OnPlatform WinUI=200, Android=120}">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenLinkCommand, Source={x:Reference cambridgeCom}}"
-                                          CommandParameter="{Binding Entry.Link, Source={x:Reference cambridgeCom}}" />
+                    <TapGestureRecognizer Command="{Binding OpenLinkCommand, Source={x:Reference cambridgeCom}}" 
+                                          CommandParameter="{Binding Entry.Link, Source={x:Reference cambridgeCom}}"  />
                 </Image.GestureRecognizers>
             </Image>
 
@@ -38,22 +36,22 @@
             </FlexLayout>
         </HorizontalStackLayout>
 
-        <StackLayout BindableLayout.ItemsSource="{Binding Entry.Content.Blocks, Source={x:Reference cambridgeCom}}">
+        <StackLayout BindableLayout.ItemsSource="{Binding Entry.Content.Blocks, Mode=OneWay, Source={x:Reference cambridgeCom}}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout x:DataType="cambridge:CambridgeWordBlock">
+                    <VerticalStackLayout x:DataType="cambridge:CambridgeWordBlock">
                         <Label Text="{Binding Title, Mode=OneTime}"
                                FontSize="{OnPlatform WinUI=42, Android=32}" />
                         <HorizontalStackLayout Margin="0,10">
-        
+                        
                             <controls:MarkFrame
                                 Color="#114488"
                                 Text="{Binding Category, Mode=OneTime}"
                                 FontSize="{OnPlatform WinUI=21, Android=16}" />
-        
+                        
                             <HorizontalStackLayout Margin="50,0,0,0"
                                                    HorizontalOptions="Start"
-                                                   BindableLayout.ItemsSource="{Binding Irregulars}">
+                                                   BindableLayout.ItemsSource="{Binding Irregulars, Mode=OneTime}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <controls:MarkFrame
@@ -77,25 +75,25 @@
                                             FontSize="{OnPlatform WinUI=24, Android=18}"
                                             TextTransform="Uppercase"
                                             FontAttributes="Bold" />
-        
+                        
                                         <controls:MarkFrame
                                             Color="#772244"
                                             Text="{Binding Transcription, Mode=OneTime}"
                                             FontSize="{OnPlatform WinUI=24, Android=18}"
                                             FontAttributes="Italic" />
-        
+                        
                                         <Border BackgroundColor="#DDDDDD"
                                                 StrokeThickness="0"
-                                                IsEnabled="{Binding Links, Mode=OneTime, Converter={converter:IsNotEmptyConverter}}"
-                                                Padding="10,8">
-        
+                                                IsVisible="{Binding Links, Mode=OneTime, Converter={converter:IsNotEmptyConverter}}"
+                                                Padding="10,10">
+                        
                                             <Border.GestureRecognizers>
                                                 <TapGestureRecognizer
                                                     Command="{Binding AudioCommand, Source={x:Reference cambridgeCom}}"
                                                     CommandParameter="{Binding Links[0], Mode=OneTime}"
                                                     Tapped="AudioTapped" />
                                             </Border.GestureRecognizers>
-        
+                        
                                             <Image Source="audio_play_icon.png"
                                                    HeightRequest="{OnPlatform WinUI=24, Android=18}"
                                                    WidthRequest="{OnPlatform WinUI=24, Android=18}" />
@@ -113,27 +111,27 @@
                         <StackLayout BindableLayout.ItemsSource="{Binding Articles, Mode=OneTime}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout x:DataType="cambridge:CambridgeArticle">
+                                    <VerticalStackLayout x:DataType="cambridge:CambridgeArticle">
                                         <HorizontalStackLayout Margin="0,30,0,0"
                                                                IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converter:IsNotNullConverter}}">
-        
+                                        
                                             <controls:MarkFrame
                                                 Color="#772244"
                                                 Text="{Binding Header.Title, Mode=OneTime}"
                                                 FontSize="{OnPlatform WinUI=18, Android=16}" />
-        
+                                        
                                             <controls:MarkFrame
                                                 Color="#114488"
                                                 Text="{Binding Header.Category, Mode=OneTime}"
                                                 FontSize="{OnPlatform WinUI=18, Android=16}"
                                                 FontAttributes="Italic" />
-        
+                                        
                                             <controls:MarkFrame
                                                 Color="#122b20"
                                                 Text="{Binding Header.Meaning, Mode=OneTime}"
                                                 FontSize="{OnPlatform WinUI=18, Android=16}"
                                                 FontAttributes="Bold" />
-        
+                                        
                                         </HorizontalStackLayout>
                                         <BoxView HeightRequest="2"
                                                  Color="#43A88F"
@@ -172,7 +170,7 @@
                                                                      IsVisible="{Binding Header.BlueTitle, Mode=OneTime, Converter={converter:IsNotNullConverter}}"
                                                                      Color="#114488"
                                                                      HorizontalOptions="FillAndExpand"
-                                                                     Margin="0,5,0,5" />
+                                                                     Margin="0,5" />
         
                                                             <controls:LabelEditor Text="{Binding Header.Title, Mode=OneTime}"
                                                                 FontSize="{OnPlatform WinUI=24, Android=21}"
@@ -182,12 +180,19 @@
                                                                      IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converter:IsNotNullConverter}}"
                                                                      Color="#772244"
                                                                      HorizontalOptions="FillAndExpand"
-                                                                     Margin="0,5,0,5" />
+                                                                     Margin="0,5" />
+                                                            
                                                             <controls:LabelEditor
                                                                 Text="{Binding Header.Translation, Mode=OneTime}"
-                                                                FontSize="{OnPlatform WinUI=21, Android=18}"
+                                                                FontSize="{OnPlatform WinUI=27, Android=24}"
                                                                 IsVisible="{Binding Header.Translation, Mode=OneTime, Converter={converter:IsNotNullConverter}}" />
-        
+                                                            
+                                                            <BoxView HeightRequest="3"
+                                                                     IsVisible="{Binding Header.Translation, Mode=OneTime, Converter={converter:IsNotNullConverter}}"
+                                                                     Color="#43A88F"
+                                                                     HorizontalOptions="FillAndExpand"
+                                                                     Margin="0,5" />
+                                                            
                                                             <StackLayout
                                                                 BindableLayout.ItemsSource="{Binding Examples, Mode=OneTime}">
                                                                 <BindableLayout.ItemTemplate>
@@ -210,7 +215,7 @@
                                                                                 Text="{Binding ., Mode=OneTime}"
                                                                                 FontSize="{OnPlatform WinUI=20, Android=18}"
                                                                                 VerticalOptions="Center"
-                                                                                IsVisible="{Binding ., Converter={converter:IsNotNullConverter}}" />
+                                                                                IsVisible="{Binding ., Mode=OneTime, Converter={converter:IsNotNullConverter}}" />
                                                                         </Grid>
                                                                     </DataTemplate>
                                                                 </BindableLayout.ItemTemplate>
@@ -227,11 +232,11 @@
                                                 </DataTemplate>
                                             </BindableLayout.ItemTemplate>
                                         </VerticalStackLayout>
-                                    </StackLayout>
+                                    </VerticalStackLayout>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
-                    </StackLayout>
+                    </VerticalStackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>

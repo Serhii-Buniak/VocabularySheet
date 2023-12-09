@@ -1,13 +1,9 @@
 using System.Windows.Input;
-using CommunityToolkit.Mvvm.Input;
-using Plugin.Maui.Audio;
-using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.Pages;
-using VocabularySheet.Infrastructure.HttpClients;
 
 namespace VocabularySheet.Maui.Controls.Cambridge;
 
-public partial class CambridgeComponent : ContentView
+public partial class CambridgeComponent
 {
     public static readonly BindableProperty EntryProperty = BindableProperty.Create(
         nameof(Entry),
@@ -15,10 +11,14 @@ public partial class CambridgeComponent : ContentView
         typeof(CambridgeComponent));
     
     public static readonly BindableProperty AudioCommandProperty = BindableProperty.Create(
-        nameof(Command),
+        nameof(AudioCommand),
         typeof(ICommand),
         typeof(CambridgeComponent));
     
+    public static readonly BindableProperty OpenLinkCommandProperty = BindableProperty.Create(
+        nameof(OpenLinkCommand),
+        typeof(ICommand),
+        typeof(CambridgeComponent));
     public CambridgeComponent()
     {
         InitializeComponent();
@@ -34,6 +34,12 @@ public partial class CambridgeComponent : ContentView
     {
         get => (ICommand)GetValue(AudioCommandProperty);
         set => SetValue(AudioCommandProperty, value);
+    }
+    
+    public ICommand OpenLinkCommand
+    {
+        get => (ICommand)GetValue(OpenLinkCommandProperty);
+        set => SetValue(OpenLinkCommandProperty, value);
     }
     
     private async void AudioTapped(object sender, EventArgs e)
@@ -59,15 +65,6 @@ public partial class CambridgeComponent : ContentView
             await frame.FadeTo(1, 250, Easing.Linear);
         }
         // Implement your additional logic here
-    }
-    
-    [RelayCommand]
-    private async Task OpenLink(string link)
-    {
-        if (!string.IsNullOrWhiteSpace(link))
-        {
-            await Launcher.OpenAsync(link);
-        }
     }
 }
 

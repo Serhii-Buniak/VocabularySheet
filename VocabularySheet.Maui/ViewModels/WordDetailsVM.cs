@@ -22,7 +22,10 @@ public partial class WordDetailsVM : BaseViewModel
     private readonly StreamFetcherClient _fetcher;
 
     [ObservableProperty] long id = 0;
-    [ObservableProperty] WordModel word = WordModel.Sample;
+    [ObservableProperty] WordModel word = WordModel.Sample with
+    {
+        Id = -1,
+    };
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     
@@ -66,18 +69,25 @@ public partial class WordDetailsVM : BaseViewModel
 
     public async Task LoadDataAsync()
     {
+        if (Id == Word.Id)
+        {
+            return;
+        }
+        
+        OriginalCambridge = null;
+        TranslateCambridge = null;
         Word = await Mediator.Send(new GetSpinWord.Query()
         {
             Id = Id
         }) ?? Word;
-
+        
         var cambridge = await Mediator.Send(new GetCambridgePage.Query()
         {
             Word = Word
         });
         
         var localization = await Mediator.Send(new GetLanguageWord.Query());
-
+        
         OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
         {
             Word = Word.Original,
@@ -89,6 +99,16 @@ public partial class WordDetailsVM : BaseViewModel
                 Blocks = new List<CambridgeWordBlock>(),
             }
         };
-        TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang);
+        TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang) ?? new PublicCambridgeEntry()
+        {
+            Word = Word.Translation,
+            Language = localization.TranslateLang,
+            Link = CambridgeClient.WordLink(Word.Translation, localization.TranslateLang),
+            Content = new CambridgeContent()
+            {
+                Title = Word.Translation,
+                Blocks = new List<CambridgeWordBlock>(),
+            }
+        };;
     }
 }

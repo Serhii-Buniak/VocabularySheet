@@ -5,9 +5,7 @@
              x:Class="VocabularySheet.Maui.Views.WordDetails"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:controlsCambridge="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
-             xmlns:converter="clr-namespace:VocabularySheet.Maui.Converters"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
-             xmlns:cambridge="clr-namespace:VocabularySheet.CambridgeDictionary.Entities;assembly=VocabularySheet.CambridgeDictionary"
              x:DataType="viewmodel:WordDetailsVM"
              x:Name="wordDetails">
     <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
@@ -23,7 +21,11 @@
                                    Word="{Binding Word}" />
 
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
                                                   Entry="{Binding OriginalCambridge}"/>
+            <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                  Entry="{Binding TranslateCambridge}"/>
             
         </VerticalStackLayout>
     </ScrollView>
