@@ -28,7 +28,7 @@ public class CambridgeParser
         }
         
         var blocksEls = pageContentEl
-            .QuerySelector(".dictionary")
+            .QuerySelector(".di.superentry")
             ?.QuerySelector(".di-body")
             ?.QuerySelectorAll(".entry-body__el").ToList() ?? new List<IElement>();
 
