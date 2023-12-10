@@ -4,6 +4,7 @@
              x:Class="VocabularySheet.Maui.Controls.ShiftWordButton"
              x:Name="shiftWordButton">
 	<Frame BorderColor="Black" CornerRadius="5"
+	       BackgroundColor="#111111"
 	       Padding="5"
 	       Margin="0"
 	       WidthRequest="140">

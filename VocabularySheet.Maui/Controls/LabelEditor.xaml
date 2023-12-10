@@ -7,11 +7,17 @@
 	<controls:BorderlessEditor x:Name="labelEditorEl"
 	                           Text="{Binding Text, Source={Reference labelEditor}}"
 	                           IsVisible="{Binding IsVisible, Source={Reference labelEditor}}"
-	                           IsReadOnly="True"
 	                           FontSize="{Binding FontSize, Source={Reference labelEditor}}"
 	                           BackgroundColor="Transparent"
-		
 	                           AutoSize="TextChanges"
-	                           HorizontalOptions="Fill">
+	                           HorizontalOptions="{OnPlatform WinUI=Fill}">
+		<controls:BorderlessEditor.Triggers>
+			<DataTrigger TargetType="controls:BorderlessEditor" Binding="{Binding IsVisible, Source={Reference labelEditor}}" Value="False">
+				<Setter Property="WidthRequest" Value="0" />
+				<Setter Property="HeightRequest" Value="0" />
+				<Setter Property="Margin" Value="0" />
+			</DataTrigger>
+		</controls:BorderlessEditor.Triggers>
 	</controls:BorderlessEditor>
 </ContentView>
+<!-- IsReadOnly="True" -->

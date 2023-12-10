@@ -64,7 +64,7 @@
                             </HorizontalStackLayout>
                         </HorizontalStackLayout>
         
-                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Audios, Mode=OneTime}">
+                        <StackLayout Orientation="{OnPlatform WinUI=Horizontal, Android=Vertical}" BindableLayout.ItemsSource="{Binding Audios, Mode=OneTime}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <HorizontalStackLayout x:DataType="cambridge:CambridgeAudio"
@@ -72,6 +72,7 @@
                                         <controls:MarkFrame
                                             Color="#1d2956"
                                             Text="{Binding LanguageCode, Mode=OneTime}"
+                                            IsVisible="{Binding LanguageCode, Mode=OneTime, Converter={converter:IsNotEmptyConverter}}"
                                             FontSize="{OnPlatform WinUI=24, Android=18}"
                                             TextTransform="Uppercase"
                                             FontAttributes="Bold" />
@@ -101,7 +102,7 @@
                                     </HorizontalStackLayout>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
-                        </HorizontalStackLayout>
+                        </StackLayout>
         
                         <BoxView HeightRequest="5"
                                  Color="#FFE797"
@@ -114,7 +115,6 @@
                                     <VerticalStackLayout x:DataType="cambridge:CambridgeArticle">
                                         <HorizontalStackLayout Margin="0,30,0,0"
                                                                IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converter:IsNotNullConverter}}">
-                                        
                                             <controls:MarkFrame
                                                 Color="#772244"
                                                 Text="{Binding Header.Title, Mode=OneTime}"
@@ -125,14 +125,12 @@
                                                 Text="{Binding Header.Category, Mode=OneTime}"
                                                 FontSize="{OnPlatform WinUI=18, Android=16}"
                                                 FontAttributes="Italic" />
-                                        
-                                            <controls:MarkFrame
-                                                Color="#122b20"
-                                                Text="{Binding Header.Meaning, Mode=OneTime}"
-                                                FontSize="{OnPlatform WinUI=18, Android=16}"
-                                                FontAttributes="Bold" />
-                                        
                                         </HorizontalStackLayout>
+                                        <controls:MarkFrame
+                                            Color="#122b20"
+                                            Text="{Binding Header.Meaning, Mode=OneTime}"
+                                            FontSize="{OnPlatform WinUI=18, Android=16}"
+                                            FontAttributes="Bold" />
                                         <BoxView HeightRequest="2"
                                                  Color="#43A88F"
                                                  IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converter:IsNotNullConverter}}"

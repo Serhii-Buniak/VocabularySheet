@@ -8,7 +8,7 @@
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              x:DataType="viewmodel:WordDetailsVM"
              x:Name="wordDetails">
-    <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
+    <ScrollView>
         <VerticalStackLayout>
 
             <controls:DescriptionArea

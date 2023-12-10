@@ -14,7 +14,7 @@ namespace VocabularySheet.Maui
         }
 
         protected override MauiApp CreateMauiApp()
-        {
+        { 
             Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
             {
                 if (v is BorderlessEditor)

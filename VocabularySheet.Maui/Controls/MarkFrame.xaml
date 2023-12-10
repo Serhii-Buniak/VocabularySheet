@@ -11,6 +11,15 @@
 	        StrokeThickness="0"
 	        Padding="10,5"
 	        HorizontalOptions="Start">
+		<Border.Triggers>
+			<DataTrigger TargetType="Border" Binding="{Binding Text, Source={Reference labelEditor}, Converter={converters:IsNotNullConverter}}" Value="False">
+				<!-- Set width and height to zero when not visible -->
+				<Setter Property="WidthRequest" Value="0" />
+				<Setter Property="HeightRequest" Value="0" />
+				<Setter Property="Padding" Value="0" />
+				<Setter Property="Margin" Value="0" />
+			</DataTrigger>
+		</Border.Triggers>
 		<Label Text="{Binding Text, Source={Reference labelEditor}}"
 		       FontSize="{OnPlatform WinUI=27, Android=21}"
 		       TextTransform="{Binding TextTransform, Source={Reference labelEditor}}"

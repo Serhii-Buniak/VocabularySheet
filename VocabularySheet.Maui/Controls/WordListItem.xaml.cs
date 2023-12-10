@@ -58,7 +58,7 @@ public partial class WordListItem : ContentView
     
     private async void Tapped(object sender, EventArgs e)
     {
-        if (sender is Frame frame)
+        if (sender is Border frame)
         {
             Color originalColor = frame.BackgroundColor;
 #pragma warning disable CS0618 // Type or member is obsolete

@@ -5,6 +5,7 @@
              x:Name="descriptionArea">
 
 	<Border HorizontalOptions="Center" 
+	        BackgroundColor="#111111"
 	        MaximumWidthRequest="{OnPlatform WinUI=1600}"
 	        Padding="10"
 	>

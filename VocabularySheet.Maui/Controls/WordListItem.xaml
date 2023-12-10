@@ -3,32 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Controls.WordListItem"
              x:Name="wordListItem">
-	<Frame BorderColor="Black" CornerRadius="5"
-	       MaximumWidthRequest="{Binding MaximumWidth, Source={Reference wordListItem}}">
-		<Frame.GestureRecognizers>
+	<Border StrokeThickness="0" BackgroundColor="#111111"
+	        MinimumHeightRequest="70"
+	        VerticalOptions="Center"
+	        Padding="{OnPlatform Android=5, WinUI=20}"
+	        MaximumWidthRequest="{Binding MaximumWidth, Source={Reference wordListItem}}">
+		<Border.GestureRecognizers>
 			<TapGestureRecognizer Tapped="Tapped"/>
-		</Frame.GestureRecognizers>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
+		</Border.GestureRecognizers>
+		<Grid VerticalOptions="Fill" ColumnSpacing="{OnPlatform WinUI=20, Android=10}">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="{OnPlatform WinUI=90, Android=70}" />
-				<!-- Fixed size for Index -->
-				<ColumnDefinition Width="{OnPlatform WinUI=20, Android=10}" />
-				<!-- Space between columns -->
-				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=110}" />
-				<ColumnDefinition Width="{OnPlatform WinUI=20, Android=10}" />
-				<!-- Space between columns -->
-				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=110}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=90, Android=60}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
 			</Grid.ColumnDefinitions>
 
-			<Label Text="{Binding Word.Index, Source={Reference wordListItem}}" FontSize="20" Grid.Column="0" />
-			<Label Text="{Binding Word.Original, Source={Reference wordListItem}}" FontSize="20" Grid.Column="2" 
-			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}"/>
-			<Label Text="{Binding Word.Translation, Source={Reference wordListItem}}" FontSize="20" Grid.Column="4" 
-			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}"/>
+			<Label Text="{Binding Word.Index, Source={Reference wordListItem}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="0"
+			       VerticalOptions="Center"/>
+			<Label Text="{Binding Word.Original, Source={Reference wordListItem}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="1" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}" 
+			       VerticalOptions="Center"/>
+			<Label Text="{Binding Word.Translation, Source={Reference wordListItem}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="2" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference wordListItem}}" 
+			       VerticalOptions="Center"/>
 		</Grid>
-	</Frame>
+	</Border>
 
 </ContentView>
