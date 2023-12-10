@@ -6,8 +6,7 @@
 	<Frame BorderColor="Black" CornerRadius="5"
 	       MaximumWidthRequest="{Binding MaximumWidth, Source={Reference wordListItem}}">
 		<Frame.GestureRecognizers>
-			<TapGestureRecognizer Tapped="OnFrameTapped"
-			                      CommandParameter="{Binding Word.Id, Source={Reference wordListItem}}" />
+			<TapGestureRecognizer Tapped="Tapped"/>
 		</Frame.GestureRecognizers>
 		<Grid>
 			<Grid.RowDefinitions>

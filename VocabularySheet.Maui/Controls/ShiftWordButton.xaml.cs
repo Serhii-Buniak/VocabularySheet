@@ -3,31 +3,19 @@ using VocabularySheet.Application.Commons.Dtos;
 
 namespace VocabularySheet.Maui.Controls;
 
-public partial class WordListItem : ContentView
+public partial class ShiftWordButton : ContentView
 {
     public static readonly BindableProperty WordProperty = BindableProperty.Create(
         nameof(Word),
         typeof(WordModel),
-        typeof(WordListItem));
+        typeof(ShiftWordButton));
     
     public static readonly BindableProperty OnClickProperty = BindableProperty.Create(
         nameof(OnClick),
         typeof(ICommand),
-        typeof(WordListItem));
+        typeof(ShiftWordButton));
     
-    public static readonly BindableProperty MaximumWidthProperty = BindableProperty.Create(
-        nameof(MaximumWidth),
-        typeof(int?),
-        typeof(WordListItem));
-    
-    public static readonly BindableProperty IsWordVisibleProperty = BindableProperty.Create(
-        nameof(IsWordVisible),
-        typeof(bool),
-        typeof(WordListItem),
-        true);
-
-    
-    public WordListItem()
+    public ShiftWordButton()
     {
         InitializeComponent();
     }
@@ -38,22 +26,10 @@ public partial class WordListItem : ContentView
         set => SetValue(OnClickProperty, value);
     }
     
-    public WordModel Word
+    public WordModel? Word
     {
-        get => (WordModel)GetValue(WordProperty);
+        get => (WordModel?)GetValue(WordProperty);
         set => SetValue(WordProperty, value);
-    }
-    
-    public int? MaximumWidth
-    {
-        get => (int?)GetValue(MaximumWidthProperty);
-        set => SetValue(MaximumWidthProperty, value);
-    }
-    
-    public bool IsWordVisible
-    {
-        get => (bool)GetValue(IsWordVisibleProperty);
-        set => SetValue(IsWordVisibleProperty, value);
     }
     
     private async void Tapped(object sender, EventArgs e)
@@ -77,9 +53,12 @@ public partial class WordListItem : ContentView
             frame.BackgroundColor = originalColor;
             await frame.FadeTo(1, 10, Easing.Linear);
         }
-        
-        OnClick?.Execute(Word.Id);
-        // Implement your additional logic here
+
+        if (Word != null)
+        {
+            OnClick?.Execute(Word.Id);
+        }
     }
+
 }
 

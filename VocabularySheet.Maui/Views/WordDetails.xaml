@@ -19,7 +19,14 @@
                                    Margin="0,5"
                                    OnClick="{Binding GoBackCommand}"
                                    Word="{Binding Word}" />
-
+            <FlexLayout MaximumWidthRequest="{OnPlatform WinUI=1600}" HorizontalOptions="Center" JustifyContent="SpaceBetween">
+                <controls:ShiftWordButton Word="{Binding PrevWord}"
+                                          OnClick="{Binding LoadWordCommand}"/>
+                
+                <controls:ShiftWordButton Word="{Binding NextWord}"
+                                          OnClick="{Binding LoadWordCommand}"/>
+            </FlexLayout>
+            
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
                                                   Entry="{Binding OriginalCambridge}"/>

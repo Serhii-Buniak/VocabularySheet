@@ -22,10 +22,10 @@ public partial class WordDetailsVM : BaseViewModel
     private readonly StreamFetcherClient _fetcher;
 
     [ObservableProperty] long id = 0;
-    [ObservableProperty] WordModel word = WordModel.Sample with
-    {
-        Id = -1,
-    };
+    [ObservableProperty] WordModel? prevWord = null;
+    [ObservableProperty] WordModel word = WordModel.Sample;
+    [ObservableProperty] WordModel? nextWord = null;
+ 
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     
@@ -69,25 +69,41 @@ public partial class WordDetailsVM : BaseViewModel
 
     public async Task LoadDataAsync()
     {
-        if (Id == Word.Id)
+        await LoadWord(Id);
+    }
+
+    [RelayCommand]
+    public async Task LoadWord(long wordId)
+    {
+        if (wordId == Word.Id)
         {
             return;
         }
-        
+
         OriginalCambridge = null;
         TranslateCambridge = null;
         Word = await Mediator.Send(new GetSpinWord.Query()
         {
-            Id = Id
+            Id = wordId
         }) ?? Word;
-        
+
+        PrevWord = await Mediator.Send(new GetSpinWord.Query()
+        {
+            Id = (Word.Id - 1)
+        });
+
+        NextWord = await Mediator.Send(new GetSpinWord.Query()
+        {
+            Id = (Word.Id + 1)
+        });
+
         var cambridge = await Mediator.Send(new GetCambridgePage.Query()
         {
             Word = Word
         });
-        
+
         var localization = await Mediator.Send(new GetLanguageWord.Query());
-        await Task.Delay(25);
+        await Task.Delay(50);
         await Task.Run(() =>
         {
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
