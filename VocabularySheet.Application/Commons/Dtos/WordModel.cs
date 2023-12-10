@@ -1,5 +1,5 @@
-﻿using VocabularySheet.Domain;
-using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
+using VocabularySheet.Domain;
 
 namespace VocabularySheet.Application.Commons.Dtos;
 

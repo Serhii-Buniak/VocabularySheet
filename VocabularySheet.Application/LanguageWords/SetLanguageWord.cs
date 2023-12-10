@@ -1,4 +1,5 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
+using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.LanguageWords;
 

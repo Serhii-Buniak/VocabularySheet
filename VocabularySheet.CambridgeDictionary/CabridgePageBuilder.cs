@@ -1,4 +1,5 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿
+using VocabularySheet.Common;
 
 namespace VocabularySheet.CambridgeDictionary;
 

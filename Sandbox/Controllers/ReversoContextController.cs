@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 using VocabularySheet.ReversoContext;
 
 namespace Sandbox.Controllers;

@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
-using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.CambridgeDictionary.Entities;
+using VocabularySheet.Common;
+using VocabularySheet.ReversoContext.Entities;
 
 namespace VocabularySheet.Domain.Pages;
 
@@ -14,6 +14,11 @@ public abstract record PublicParsedPage<TContent> where TContent : class
 }
 
 public record PublicCambridgeEntry : PublicParsedPage<CambridgeContent>
+{
+
+}
+
+public record PublicReversoContextEntry : PublicParsedPage<ReversoContextContent>
 {
 
 }

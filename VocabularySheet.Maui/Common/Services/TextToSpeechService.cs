@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
 using VocabularySheet.Domain.Extensions;
 
 namespace VocabularySheet.Maui.Common.Services;

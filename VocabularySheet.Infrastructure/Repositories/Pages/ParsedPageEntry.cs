@@ -1,8 +1,10 @@
 ﻿using System.Text.Json;
 using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 using VocabularySheet.Domain.Pages;
+using VocabularySheet.ReversoContext;
+using VocabularySheet.ReversoContext.Entities;
 
 namespace VocabularySheet.Infrastructure.Repositories.Pages;
 
@@ -70,6 +72,57 @@ public record CambridgeEntry : ParsedPageEntry
             {
                 Title = page.Word,
                 Blocks = new List<CambridgeWordBlock>(),
+            }
+        };
+    }
+}
+
+public record ReversoContextEntry : ParsedPageEntry
+{
+    public static ReversoContextEntry Create(ReversoContextPage page)
+    {
+        return new ReversoContextEntry()
+        {
+            Word = page.Word,
+            Language = page.Language,
+            TranslationLanguage = page.TranslationLanguage,
+            Html = page.Html,
+            Link = page.Link,
+            CreatedAt = page.CreatedAt,
+            JsonContent = JsonSerializer.Serialize(page.Content),
+        };
+    }
+
+    public PublicReversoContextEntry CreatePublic()
+    {
+        return new PublicReversoContextEntry()
+        {
+            Word = Word,
+            Language = Language,
+            TraslationLanguage = TranslationLanguage,
+            Link = Link,
+            Content = JsonSerializer.Deserialize<ReversoContextContent>(JsonContent) ?? new ReversoContextContent()
+            {
+                Title = Word,
+                CategoryGroups = new List<ReversoContextCetegoryGroup>(),
+                Examples = new List<ReversoContextExample>(),
+            }
+        };
+    }
+    
+    public static PublicReversoContextEntry CreatePublic(IParsedPageEntry page)
+    {
+        return new PublicReversoContextEntry()
+        {
+            Word = page.Word,
+            Language = page.Language,
+            TraslationLanguage = page.TranslationLanguage,
+            Link = page.Link,
+            Content = JsonSerializer.Deserialize<ReversoContextContent>(page.JsonContent) ?? new ReversoContextContent()
+            {
+                Title = page.Word,
+                CategoryGroups = new List<ReversoContextCetegoryGroup>(),
+                Examples = new List<ReversoContextExample>(),
             }
         };
     }

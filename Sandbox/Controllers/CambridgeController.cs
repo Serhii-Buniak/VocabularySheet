@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using VocabularySheet.CambridgeDictionary;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 
 namespace Sandbox.Controllers;
 

@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
 using VocabularySheet.Parsing.Common;
 using VocabularySheet.ReversoContext.Entities;
 

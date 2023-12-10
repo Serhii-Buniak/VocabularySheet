@@ -85,6 +85,7 @@ public partial class WordSearchVM : BaseViewModel
             {
                 Word = SearchWord,
                 Language = localization.OriginLang,
+                TraslationLanguage = localization.TranslateLang,
                 Link = CambridgeClient.WordLink(Word?.Original ?? SearchWord, localization.OriginLang),
                 Content = new CambridgeContent()
                 {
@@ -96,6 +97,7 @@ public partial class WordSearchVM : BaseViewModel
             {
                 Word = Word?.Translation ?? SearchWord,
                 Language = localization.TranslateLang,
+                TraslationLanguage = localization.OriginLang,
                 Link = CambridgeClient.WordLink(Word?.Translation ?? SearchWord, localization.TranslateLang),
                 Content = new CambridgeContent()
                 {

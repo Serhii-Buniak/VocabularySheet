@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 
 namespace VocabularySheet.Maui.Converters;
 

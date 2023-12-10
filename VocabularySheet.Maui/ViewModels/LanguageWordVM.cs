@@ -5,7 +5,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 
 namespace VocabularySheet.Maui.ViewModels;
 

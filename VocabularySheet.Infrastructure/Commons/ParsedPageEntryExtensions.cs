@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 using VocabularySheet.Infrastructure.Repositories.Pages;
 
 namespace VocabularySheet.Infrastructure.Commons;

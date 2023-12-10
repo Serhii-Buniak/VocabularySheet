@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
 
 namespace VocabularySheet.Parsing.Common;
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 
 namespace VocabularySheet.Parsing.Common;
 

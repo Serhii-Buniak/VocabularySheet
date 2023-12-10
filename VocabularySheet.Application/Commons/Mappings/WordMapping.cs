@@ -1,6 +1,6 @@
 ﻿using VocabularySheet.Application.Commons.Dtos;
+using VocabularySheet.Common;
 using VocabularySheet.Domain;
-using VocabularySheet.Domain.ConfigEntities;
 
 namespace VocabularySheet.Application.Commons.Mappings;
 

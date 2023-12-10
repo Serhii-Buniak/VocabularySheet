@@ -1,6 +1,5 @@
 ﻿using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Domain.ConfigEntities;
-using VocabularySheet.Domain.Pages;
+using VocabularySheet.Common;
 using VocabularySheet.Parsing.Common;
 
 namespace VocabularySheet.CambridgeDictionary;

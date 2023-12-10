@@ -1,6 +1,6 @@
 ﻿using System.Web;
 using Microsoft.Extensions.Logging;
-using VocabularySheet.Domain.ConfigEntities;
+using VocabularySheet.Common;
 using VocabularySheet.Parsing.Common;
 
 namespace VocabularySheet.ReversoContext;

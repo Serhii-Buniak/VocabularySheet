@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Domain.ConfigEntities;
+﻿using VocabularySheet.Common;
 using VocabularySheet.Domain.Pages;
 
 namespace VocabularySheet.Application.Commons.Interfaces;
