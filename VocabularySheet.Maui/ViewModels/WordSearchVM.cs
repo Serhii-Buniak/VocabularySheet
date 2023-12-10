@@ -11,34 +11,24 @@ using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.HttpClients;
-using VocabularySheet.Maui.Common;
 
 namespace VocabularySheet.Maui.ViewModels;
 
-[QueryProperty("Id", "Id")]
-public partial class WordDetailsVM : BaseViewModel
+public partial class WordSearchVM : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
     private readonly StreamFetcherClient _fetcher;
 
-    [ObservableProperty] long id = 0;
-    [ObservableProperty] WordModel? prevWord = null;
-    [ObservableProperty] WordModel word = WordModel.Sample;
-    [ObservableProperty] WordModel? nextWord = null;
- 
+    [ObservableProperty] string searchWord = "";
+    
+    [ObservableProperty] WordModel? word = null;
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     
-    public WordDetailsVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+    public WordSearchVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;
-    }
-    
-    [RelayCommand]
-    public async Task GoBack()
-    {
-        await Shell.Current.GoToBack();
     }
     
     [RelayCommand]
@@ -67,39 +57,24 @@ public partial class WordDetailsVM : BaseViewModel
         }
     }
 
-    public async Task LoadDataAsync()
-    {
-        await LoadWord(Id);
-    }
-
     [RelayCommand]
-    public async Task LoadWord(long wordId)
+    public async Task Search()
     {
-        if (wordId == Word.Id)
+        if (string.IsNullOrWhiteSpace(SearchWord))
         {
             return;
         }
 
         OriginalCambridge = null;
         TranslateCambridge = null;
-        Word = await Mediator.Send(new GetSpinWord.QueryId()
+        Word = await Mediator.Send(new GetSpinWord.QueryName()
         {
-            Id = wordId
-        }) ?? Word;
-
-        PrevWord = await Mediator.Send(new GetSpinWord.QueryId()
-        {
-            Id = (Word.Id - 1)
+            Word = SearchWord
         });
-
-        NextWord = await Mediator.Send(new GetSpinWord.QueryId()
+        
+        var cambridge = await Mediator.Send(new GetCambridgePage.QuerySimple()
         {
-            Id = (Word.Id + 1)
-        });
-
-        var cambridge = await Mediator.Send(new GetCambridgePage.Query()
-        {
-            Word = Word
+            Word = SearchWord
         });
 
         var localization = await Mediator.Send(new GetLanguageWord.Query());
@@ -108,23 +83,23 @@ public partial class WordDetailsVM : BaseViewModel
         {
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
             {
-                Word = Word.Original,
+                Word = SearchWord,
                 Language = localization.OriginLang,
-                Link = CambridgeClient.WordLink(Word.Original, localization.OriginLang),
+                Link = CambridgeClient.WordLink(Word?.Original ?? SearchWord, localization.OriginLang),
                 Content = new CambridgeContent()
                 {
-                    Title = Word.Original,
+                    Title = Word?.Original ?? SearchWord,
                     Blocks = new List<CambridgeWordBlock>(),
                 }
             };
             TranslateCambridge = cambridge.GetValueOrDefault(localization.TranslateLang) ?? new PublicCambridgeEntry()
             {
-                Word = Word.Translation,
+                Word = Word?.Translation ?? SearchWord,
                 Language = localization.TranslateLang,
-                Link = CambridgeClient.WordLink(Word.Translation, localization.TranslateLang),
+                Link = CambridgeClient.WordLink(Word?.Translation ?? SearchWord, localization.TranslateLang),
                 Content = new CambridgeContent()
                 {
-                    Title = Word.Translation,
+                    Title = Word?.Translation ?? SearchWord,
                     Blocks = new List<CambridgeWordBlock>(),
                 }
             };

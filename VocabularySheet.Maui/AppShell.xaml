@@ -34,4 +34,8 @@
         <ShellContent ContentTemplate="{DataTemplate view:WordDetails}" />
     </FlyoutItem>
     
+    <FlyoutItem Title="Search" Icon="search_word_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate view:WordSearch}" />
+    </FlyoutItem>
+    
 </Shell>

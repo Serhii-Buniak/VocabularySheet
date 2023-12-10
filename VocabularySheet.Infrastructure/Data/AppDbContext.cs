@@ -33,5 +33,15 @@ public sealed class AppDbContext : DbContext, IAppDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CambridgeEntry>().HasKeyPageEntry();
+        
+        modelBuilder.Entity<Word>()
+            .HasIndex(w => w.Original)
+            .IsUnique();
+
+        modelBuilder.Entity<Word>()
+            .HasIndex(w => w.Translation);
+
+        modelBuilder.Entity<Word>()
+            .HasIndex(w => w.Category);
     }
 }

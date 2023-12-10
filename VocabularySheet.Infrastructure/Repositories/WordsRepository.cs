@@ -49,6 +49,35 @@ public class WordsRepository : IWordsRepository
     {
        return await _context.Words.FirstOrDefaultId(id, cancellationToken);
     }
+    
+    public async Task<Word?> GetByName(string word, CancellationToken cancellationToken)
+    {
+        var strictOrigial = await _context.Words
+            .FirstOrDefaultAsync(w => w.Original == word, cancellationToken);
+        if (strictOrigial != null)
+        {
+            return strictOrigial;
+        }
+        
+        var strictTranslate = await _context.Words
+            .FirstOrDefaultAsync(w => w.Translation == word, cancellationToken);
+        if (strictTranslate != null)
+        {
+            return strictTranslate;
+        }
+
+        var original = await _context.Words.OrderBy(w => w.Original.Length)
+            .FirstOrDefaultAsync(w => w.Original.Contains(word), cancellationToken);
+        if (original != null)
+        {
+            return original;
+        }
+        
+        var translate = await _context.Words.OrderBy(w => w.Translation.Length)
+            .FirstOrDefaultAsync(w => w.Translation.Contains(word), cancellationToken);
+        
+        return translate;
+    }
 
     public async Task<int?> GetIndexOf(long id, CancellationToken cancellationToken)
     {

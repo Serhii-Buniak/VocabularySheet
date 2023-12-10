@@ -5,6 +5,7 @@ namespace VocabularySheet.Application.Commons.Interfaces;
 public interface IWordsRepository
 {
     Task<Word?> GetById(long id, CancellationToken cancellationToken);
+    Task<Word?> GetByName(string word, CancellationToken cancellationToken);
     Task<int?> GetIndexOf(long id, CancellationToken cancellationToken);
     Task<IEnumerable<Word>> GetAllAsync(CancellationToken cancellationToken);
     Task<IEnumerable<Word>> TakeAsync(int take, int skip, CancellationToken cancellationToken);

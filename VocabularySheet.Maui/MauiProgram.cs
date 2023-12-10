@@ -74,6 +74,9 @@ public static class MauiProgram
         
         builder.Services.AddSingleton<WordDetails>()
                         .AddSingleton<WordDetailsVM>();
+        
+        builder.Services.AddSingleton<WordSearch>()
+                        .AddSingleton<WordSearchVM>();
 
         return builder.Build();
     }

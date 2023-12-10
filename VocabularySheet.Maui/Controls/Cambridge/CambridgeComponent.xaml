@@ -36,20 +36,20 @@
             </FlexLayout>
         </HorizontalStackLayout>
 
-        <StackLayout BindableLayout.ItemsSource="{Binding Entry.Content.Blocks, Mode=OneWay, Source={x:Reference cambridgeCom}}">
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Entry.Content.Blocks, Mode=OneWay, Source={x:Reference cambridgeCom}}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout x:DataType="cambridge:CambridgeWordBlock">
                         <Label Text="{Binding Title, Mode=OneTime}"
                                FontSize="{OnPlatform WinUI=42, Android=32}" />
-                        <HorizontalStackLayout Margin="0,10">
+                        <VerticalStackLayout Margin="0,10, 0,0">
                         
                             <controls:MarkFrame
                                 Color="#114488"
                                 Text="{Binding Category, Mode=OneTime}"
                                 FontSize="{OnPlatform WinUI=21, Android=16}" />
                         
-                            <HorizontalStackLayout Margin="50,0,0,0"
+                            <HorizontalStackLayout Margin="0,10,0,0"
                                                    HorizontalOptions="Start"
                                                    BindableLayout.ItemsSource="{Binding Irregulars, Mode=OneTime}">
                                 <BindableLayout.ItemTemplate>
@@ -62,7 +62,7 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </HorizontalStackLayout>
-                        </HorizontalStackLayout>
+                        </VerticalStackLayout>
         
                         <StackLayout Orientation="{OnPlatform WinUI=Horizontal, Android=Vertical}" BindableLayout.ItemsSource="{Binding Audios, Mode=OneTime}">
                             <BindableLayout.ItemTemplate>
@@ -127,6 +127,7 @@
                                                 FontAttributes="Italic" />
                                         </HorizontalStackLayout>
                                         <controls:MarkFrame
+                                            Margin="0,5,0,0"
                                             Color="#122b20"
                                             Text="{Binding Header.Meaning, Mode=OneTime}"
                                             FontSize="{OnPlatform WinUI=18, Android=16}"
@@ -237,7 +238,7 @@
                     </VerticalStackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-        </StackLayout>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 
 </ContentView>
