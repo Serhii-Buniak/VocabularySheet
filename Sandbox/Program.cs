@@ -1,6 +1,7 @@
 using VocabularySheet.Application;
 using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.Infrastructure;
+using VocabularySheet.ReversoContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCambridgeDictionary();
+builder.Services.AddReversoContext();
 // builder.Services.AddInfrastructureServices(new()
 // {
 //     DataDirectory = @"C:\Users\Administrator\AppData\Local\Packages\58081b13-9b5a-4853-a7d3-0eb7306c2f3f_75cr2b68sm664\LocalState"

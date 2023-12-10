@@ -12,6 +12,7 @@ using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.HttpClients;
 using VocabularySheet.Maui.Common;
+using VocabularySheet.Parsing.Common;
 
 namespace VocabularySheet.Maui.ViewModels;
 
@@ -51,7 +52,7 @@ public partial class WordDetailsVM : BaseViewModel
     }
     
     [RelayCommand]
-    public async Task PlayAudio(CambridgeAudioLink audioLink, CancellationToken cancellationToken)
+    public async Task PlayAudio(IHaveAudioLink audioLink, CancellationToken cancellationToken)
     {
         try
         {
@@ -110,6 +111,7 @@ public partial class WordDetailsVM : BaseViewModel
             {
                 Word = Word.Original,
                 Language = localization.OriginLang,
+                TraslationLanguage = localization.TranslateLang,
                 Link = CambridgeClient.WordLink(Word.Original, localization.OriginLang),
                 Content = new CambridgeContent()
                 {
@@ -121,6 +123,7 @@ public partial class WordDetailsVM : BaseViewModel
             {
                 Word = Word.Translation,
                 Language = localization.TranslateLang,
+                TraslationLanguage = localization.OriginLang,
                 Link = CambridgeClient.WordLink(Word.Translation, localization.TranslateLang),
                 Content = new CambridgeContent()
                 {

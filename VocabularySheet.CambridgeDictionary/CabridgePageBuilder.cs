@@ -15,7 +15,7 @@ public class CabridgePageBuilder
 
     public async Task<CambridgePage?> Build(string word, WordLanguage language, CancellationToken cancellationToken)
     {
-        var response = await _client.Page(word, language, cancellationToken);
+        var response = await _client.Page(word, language, WordLanguage.En, cancellationToken);
         if (response == null)
         {
             return null;
@@ -31,6 +31,7 @@ public class CabridgePageBuilder
         {
             Word = response.Word,
             Language = response.Language,
+            TranslationLanguage = response.TranslationLanguage,
             Html = response.Html,
             Link = response.Link,
             CreatedAt = DateTime.UtcNow,

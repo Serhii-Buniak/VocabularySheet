@@ -10,6 +10,7 @@ public interface IParsedPageEntry
 {
     string Word { get; }
     WordLanguage Language { get; }
+    WordLanguage TranslationLanguage { get; }
     string Link { get; init; }
     string JsonContent { get; }
 }
@@ -18,6 +19,7 @@ public abstract record ParsedPageEntry : IParsedPageEntry
 {
     public required string Word { get; init; }
     public required WordLanguage Language { get; init; }
+    public required WordLanguage TranslationLanguage { get; init; }
     public required string Html { get; init; }
     public required string Link { get; init; }
     public required DateTime CreatedAt { get; init; }
@@ -32,6 +34,7 @@ public record CambridgeEntry : ParsedPageEntry
         {
             Word = page.Word,
             Language = page.Language,
+            TranslationLanguage = page.TranslationLanguage,
             Html = page.Html,
             Link = page.Link,
             CreatedAt = page.CreatedAt,
@@ -45,6 +48,7 @@ public record CambridgeEntry : ParsedPageEntry
         {
             Word = Word,
             Language = Language,
+            TraslationLanguage = TranslationLanguage,
             Link = Link,
             Content = JsonSerializer.Deserialize<CambridgeContent>(JsonContent) ?? new CambridgeContent()
             {
@@ -60,6 +64,7 @@ public record CambridgeEntry : ParsedPageEntry
         {
             Word = page.Word,
             Language = page.Language,
+            TraslationLanguage = page.TranslationLanguage,
             Link = page.Link,
             Content = JsonSerializer.Deserialize<CambridgeContent>(page.JsonContent) ?? new CambridgeContent()
             {

@@ -10,7 +10,7 @@ public static class Extensions
         string html = element.InnerHtml;
         
         // This regular expression removes HTML tags from the input string
-        return Regex.Replace(html, "<.*?>", string.Empty);
+        return Regex.Replace(html, "<.*?>", string.Empty).Trim();
     }
     
     

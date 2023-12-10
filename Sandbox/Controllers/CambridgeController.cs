@@ -4,7 +4,7 @@ using VocabularySheet.Domain.ConfigEntities;
 
 namespace Sandbox.Controllers;
 
-public record class CambridgeReq
+public record CambridgeReq
 {
     public required string Word { get; set; }
 }
@@ -26,13 +26,5 @@ public class CambridgeController : ControllerBase
         var page = await _cabridge.Build(req.Word, language, CancellationToken.None);
 
         return Ok(page);
-    }    
-    
-    
-    [HttpGet("Html/{word}")]
-    public async Task<IActionResult> GetHtml([FromBody]CambridgeReq req, [FromQuery]WordLanguage language = WordLanguage.En)
-    {
-        // var page = await _cambridgeClient.Page(word, language, cancellationToken);
-        return Ok("page");
     }
 }
