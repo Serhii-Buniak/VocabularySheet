@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using PuppeteerSharp;
 using VocabularySheet.Common;
 
 namespace VocabularySheet.Parsing.Common;
@@ -19,7 +20,8 @@ public abstract class WebPageClient
         try
         {
             Logger.LogInformation("Full link: {link}", link);
-            HttpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0");
+            HttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0");
             HttpResponseMessage httpResponse = await HttpClient.GetAsync(link, cancellationToken);
 
             if (!httpResponse.IsSuccessStatusCode)
@@ -28,6 +30,24 @@ public abstract class WebPageClient
             }
 
             return await httpResponse.Content.ReadAsStringAsync(cancellationToken);
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    protected async Task<string?> FetchJavaScript(string link, CancellationToken cancellationToken)
+    {
+        try
+        {
+            using var browserFetcher = new BrowserFetcher();
+            await browserFetcher.DownloadAsync();
+            await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = true });
+            await using var page = await browser.NewPageAsync();
+            await page.GoToAsync(link);
+            await page.WaitForTimeoutAsync(2000);
+            return await page.GetContentAsync();
         }
         catch (Exception)
         {

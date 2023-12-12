@@ -27,7 +27,9 @@
                 <controls:ShiftWordButton Word="{Binding NextWord}"
                                           OnClick="{Binding LoadWordCommand}"/>
             </FlexLayout>
-            
+            <controls:ImageBigButton TranslatorLink="{Binding TranslatorLink}"
+                                     OpenLinkCommand="{Binding OpenLinkCommand}"/>
+
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
                                                   Entry="{Binding OriginalCambridge, Mode=OneWay}"/>

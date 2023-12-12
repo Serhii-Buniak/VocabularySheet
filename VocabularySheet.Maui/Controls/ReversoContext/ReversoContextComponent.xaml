@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Controls.ReversoContext.ReversoContextComponent"
@@ -7,7 +8,7 @@
              xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.Controls.ReversoContext"
              xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             x:DataType="reversoContext:ReversoContextComponent" 
+             x:DataType="reversoContext:ReversoContextComponent"
              x:Name="reversoContextComponent">
 
     <VerticalStackLayout MaximumWidthRequest="{OnPlatform WinUI=1600}"
@@ -32,20 +33,13 @@
                             FontSize="{OnPlatform WinUI=24, Android=18}"
                             Margin="0,0,0,10"
                             FontAttributes="Bold" />
-        
-                        <FlexLayout Wrap="Wrap" Margin="0,0,0,5"
-                                    BindableLayout.ItemsSource="{Binding Translations, Mode=OneTime}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="system:String">
-                                    <StackLayout>
-                                        <controls:MarkFrame
-                                            Color="#122b20"
-                                            Text="{Binding ., Mode=OneTime}"
-                                            FontSize="{OnPlatform WinUI=18, Android=16}" />
-                                    </StackLayout>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </FlexLayout>
+                        <controls:LabelEditor
+                            Text="{Binding Translations, Mode=OneTime, Converter={converters:JoinListConverter}}"
+                            FontSize="{OnPlatform WinUI=24, Android=21}" />
+                        <BoxView HeightRequest="2"
+                                 Color="#114488"
+                                 HorizontalOptions="Fill"
+                                 Margin="0,1" />
                     </VerticalStackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
@@ -84,5 +78,5 @@
             </BindableLayout.ItemTemplate>
         </VerticalStackLayout>
     </VerticalStackLayout>
-    
+
 </ContentView>

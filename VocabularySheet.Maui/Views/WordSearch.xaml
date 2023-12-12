@@ -3,13 +3,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VocabularySheet.Maui.Views.WordSearch"
-             xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:controlsCambridge="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              xmlns:converters="clr-namespace:VocabularySheet.Maui.Converters"
              xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:reversoContext="using:VocabularySheet.Maui.Controls.ReversoContext"
+             xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              x:DataType="viewmodel:WordSearchVM"
              x:Name="wordSearch">
     <ScrollView>
@@ -40,6 +40,9 @@
                                         Command="{Binding SearchCommand}" />
             </Grid>
 
+            <controls:ImageBigButton TranslatorLink="{Binding LinkTranslate}"
+                                     OpenLinkCommand="{Binding OpenLinkCommand}"/>
+            
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
                                                   Entry="{Binding OriginalCambridge, Mode=OneWay}" />

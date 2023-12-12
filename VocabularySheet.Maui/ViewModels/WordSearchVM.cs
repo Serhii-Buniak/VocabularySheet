@@ -12,6 +12,7 @@ using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.HttpClients;
+using VocabularySheet.Parsing.Common;
 
 namespace VocabularySheet.Maui.ViewModels;
 
@@ -26,6 +27,7 @@ public partial class WordSearchVM : BaseViewModel
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     [ObservableProperty] PublicReversoContextEntry? reversoContext = null;
+    [ObservableProperty] GoogleTranslatorLink linkTranslate = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
     
     public WordSearchVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
@@ -89,6 +91,7 @@ public partial class WordSearchVM : BaseViewModel
 
         await Task.Run(() =>
         {
+            LinkTranslate = GoogleTranslatorLinker.Link(SearchWord, localization.OriginLang, localization.TranslateLang);
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
             {
                 Word = SearchWord,

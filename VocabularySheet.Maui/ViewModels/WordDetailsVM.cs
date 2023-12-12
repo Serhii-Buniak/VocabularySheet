@@ -33,6 +33,7 @@ public partial class WordDetailsVM : BaseViewModel
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
     [ObservableProperty] PublicReversoContextEntry? reversoContext = null;
+    [ObservableProperty] GoogleTranslatorLink translatorLink = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
 
     public WordDetailsVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
@@ -118,6 +119,7 @@ public partial class WordDetailsVM : BaseViewModel
         
         await Task.Run(() =>
         {
+            TranslatorLink = GoogleTranslatorLinker.Link(Word.Original, localization.OriginLang, localization.TranslateLang);
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
             {
                 Word = Word.Original,

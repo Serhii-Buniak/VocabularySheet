@@ -198,9 +198,9 @@ public class CambridgeParser
             {
                 Header = new CambridgeArticleHeader()
                 {
-                    Title = headerEl?.QuerySelector(".hw")?.InnerHtml,
-                    Category = headerEl?.QuerySelector(".pos")?.InnerHtml,
-                    Meaning = headerEl?.QuerySelector(".dsense_gw")?.QuerySelector("span")?.InnerHtml,
+                    Title = headerEl?.QuerySelector(".hw")?.InnerHtmlStriped(),
+                    Category = headerEl?.QuerySelector(".pos")?.InnerHtmlStriped(),
+                    Meaning = headerEl?.QuerySelector(".dsense_gw")?.QuerySelector("span")?.InnerHtmlStriped(),
                 },
                 SubArticles = SetSubArticles(subArticles),
             });

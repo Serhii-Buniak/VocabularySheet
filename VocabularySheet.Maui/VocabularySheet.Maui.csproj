@@ -126,6 +126,10 @@
 	    <DependentUpon>PrimaryButton.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="Controls\ImageBigButton.xaml.cs">
+	    <DependentUpon>ImageBigButton.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -192,6 +196,10 @@
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\ReversoContext\ReversoContextComponent.xaml">
 	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\ImageBigButton.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
