@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using PuppeteerSharp;
 using VocabularySheet.Common;
 
 namespace VocabularySheet.Parsing.Common;
