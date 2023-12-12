@@ -17,12 +17,10 @@ public partial class GoogleSheetsVM : BaseViewModel
 {
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
-    //private string googleSheetUrl = "https://docs.google.com/spreadsheets";
-    private string googleSheetUrl = "https://docs.google.com/spreadsheets/d/1VS2QXNmHjU04YjEBdhXsH8oO0vbtu_spS_i_1GslzIk/edit?usp=drivesdk";
+    private string googleSheetUrl = "https://docs.google.com/spreadsheets";
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
-    //private string googleScriptUrl = "https://script.google.com/macros/s";
-    private string googleScriptUrl = "https://script.google.com/macros/s/AKfycbxUTCm3Y1zLh_hj6AXLROjNfg47d3j4mjqBBwpEIDkeCHg9eKNMlYmnb93wPxAfmB-u/exec";
+    private string googleScriptUrl = "https://script.google.com/macros/s";
 
     public event SynchronizeEvent.Handler OnSynchronize = (_, _) => Task.CompletedTask;
     public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch(GoogleSheetUrl) && SetGoogleScriptUrl.Validation.UrlRegex.IsMatch(GoogleScriptUrl);
