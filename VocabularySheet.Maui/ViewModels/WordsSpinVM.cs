@@ -104,7 +104,7 @@ public partial class WordsSpinVM : BaseViewModel
     
     public void ResetSpin()
     {
-        StartCancelCommand.Execute(this);
+        PauseCommand.Execute(this);
     }
 
     public void ResetIndex()
