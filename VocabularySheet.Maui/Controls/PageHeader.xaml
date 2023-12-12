@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.Controls.PageHeader"  
+             x:Name="pageHeader">
+    
+    <HorizontalStackLayout HorizontalOptions="Start">
+        <Image Source="{Binding Image, Source={x:Reference pageHeader}}" 
+               Margin="0,0,20,0"
+               HeightRequest="{OnPlatform WinUI=200, Android=120}"
+               WidthRequest="{OnPlatform WinUI=200, Android=120}">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenLinkCommand, Source={x:Reference pageHeader}}" 
+                                      CommandParameter="{Binding Link, Source={x:Reference pageHeader}}"  />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <FlexLayout JustifyContent="SpaceAround"
+                    HorizontalOptions="Start"
+                    WidthRequest="{OnPlatform WinUI=400, Android=150}"
+                    Direction="Column">
+            <Label
+                FontSize="{OnPlatform WinUI=36, Android=21}"
+                Text="{Binding Title, Source={x:Reference pageHeader}}"
+                LineBreakMode="WordWrap" />
+            <Label FontSize="{OnPlatform WinUI=21, Android=16}"
+                   Text="{Binding Language, Source={x:Reference pageHeader}}" />
+        </FlexLayout>
+    </HorizontalStackLayout>
+
+
+</ContentView>

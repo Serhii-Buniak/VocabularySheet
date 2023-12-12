@@ -10,12 +10,14 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<WarningsAsErrors>Nullable</WarningsAsErrors>
-
+		<IsTrimmable>true</IsTrimmable>
+		<SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+		<UseInterpreter>false</UseInterpreter>
 		<!-- Display name -->
 		<ApplicationTitle>Vocabulary Sheet</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>serhiibuniak.vocabularysheet.maui</ApplicationId>
+		<ApplicationId>serhiibuniak.vocabularysheet2.maui</ApplicationId>
 		<ApplicationIdGuid>58081b13-9b5a-4853-a7d3-0eb7306c2f3f</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -116,6 +118,14 @@
 	    <DependentUpon>WordSearch.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="Controls\PageHeader.xaml.cs">
+	    <DependentUpon>PageHeader.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Controls\ReversoContext\ReversoContextComponent.xaml.cs">
+	    <DependentUpon>PrimaryButton.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -126,9 +136,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\EditorForUrl.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\PrimaryButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\PrimaryTriggerButton.xaml">
@@ -174,6 +181,17 @@
 	  <MauiXaml Update="Views\WordSearch.xaml">
 	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\PageHeader.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\ReversoContext\ReversoContextComponent.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\ReversoContext\ReversoContextComponent.xaml">
+	    <SubType>Designer</SubType>
 	  </MauiXaml>
 	</ItemGroup>
 

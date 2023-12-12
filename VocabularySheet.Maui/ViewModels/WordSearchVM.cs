@@ -6,6 +6,7 @@ using Plugin.Maui.Audio;
 using VocabularySheet.Application.Cambridge.Queries;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
+using VocabularySheet.Application.ReversoContext.Queries;
 using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
@@ -24,6 +25,7 @@ public partial class WordSearchVM : BaseViewModel
     [ObservableProperty] WordModel? word = null;
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
+    [ObservableProperty] PublicReversoContextEntry? reversoContext = null;
     
     public WordSearchVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
@@ -67,12 +69,18 @@ public partial class WordSearchVM : BaseViewModel
 
         OriginalCambridge = null;
         TranslateCambridge = null;
+        ReversoContext = null;
         Word = await Mediator.Send(new GetSpinWord.QueryName()
         {
             Word = SearchWord
         });
         
         var cambridge = await Mediator.Send(new GetCambridgePage.QuerySimple()
+        {
+            Word = SearchWord
+        });
+        
+        var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.QuerySimple()
         {
             Word = SearchWord
         });
@@ -105,6 +113,8 @@ public partial class WordSearchVM : BaseViewModel
                     Blocks = new List<CambridgeWordBlock>(),
                 }
             };
+
+            ReversoContext = reversoContextEntry;
         });
     }
 }

@@ -46,7 +46,7 @@ public class ReversoContextClient : WebPageClient
         return $"{Base}/{LangToString(language)}-{LangToString(translateLanguage)}";
     }
 
-    private static string LangToString(WordLanguage language)
+    public static string LangToString(WordLanguage language)
     {
         return language switch
         {

@@ -24,6 +24,7 @@ public sealed class AppDbContext : DbContext, IAppDbContext
     public DbSet<Word> Words => Set<Word>();
     public DbSet<ConfigEntry> Configs => Set<ConfigEntry>();
     public DbSet<CambridgeEntry> Cambridge => Set<CambridgeEntry>();
+    public DbSet<ReversoContextEntry> ReversoContext => Set<ReversoContextEntry>();
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
@@ -33,6 +34,7 @@ public sealed class AppDbContext : DbContext, IAppDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CambridgeEntry>().HasKeyPageEntry();
+        modelBuilder.Entity<ReversoContextEntry>().HasKeyPageEntry();
         
         modelBuilder.Entity<Word>()
             .HasIndex(w => w.Original)

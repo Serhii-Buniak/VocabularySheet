@@ -9,7 +9,7 @@
              x:DataType="viewmodel:WordDetailsVM"
              x:Name="wordDetails">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
 
             <controls:DescriptionArea
                 Text="{Binding Word.Description}"
@@ -29,10 +29,10 @@
             
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
-                                                  Entry="{Binding OriginalCambridge}"/>
+                                                  Entry="{Binding OriginalCambridge, Mode=OneWay}"/>
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
-                                                  Entry="{Binding TranslateCambridge}"/>
+                                                  Entry="{Binding TranslateCambridge, Mode=OneWay}"/>
             
         </VerticalStackLayout>
     </ScrollView>

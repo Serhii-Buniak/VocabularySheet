@@ -6,33 +6,49 @@
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:controlsCambridge="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
+             xmlns:converters="clr-namespace:VocabularySheet.Maui.Converters"
+             xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:reversoContext="using:VocabularySheet.Maui.Controls.ReversoContext"
              x:DataType="viewmodel:WordSearchVM"
              x:Name="wordSearch">
     <ScrollView>
-        <VerticalStackLayout>
-            
+        <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
+
             <controls:DescriptionArea
-                Text="{Binding Word.Description}"
+                Text="{Binding Word.Description, Mode=OneWay}"
                 IsDescriptionVisible="True" />
 
             <controls:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
                                    Margin="0,5"
-                                   Word="{Binding Word}" />
-            
-            <Grid ColumnDefinitions="*,Auto" Margin="0,10" ColumnSpacing="10" MaximumWidthRequest="{OnPlatform WinUI=1600}">
-                <Entry BackgroundColor="#111111" Grid.Column="0" Text="{Binding SearchWord}" FontSize="21"/>
-                <controls:PrimaryButton Text="Search" Grid.Column="1" Command="{Binding SearchCommand}"/>
+                                   Word="{Binding Word, Mode=OneWay}" />
+
+            <Grid ColumnDefinitions="{OnPlatform WinUI='*,Auto'}"
+                  RowDefinitions="{OnPlatform Android='*,Auto'}"
+                  Margin="0,10"
+                  ColumnSpacing="{OnPlatform WinUI=10}"
+                  RowSpacing="{OnPlatform Android=5}"
+                  MaximumWidthRequest="{OnPlatform WinUI=1600}">
+                <Entry BackgroundColor="#111111"
+                       Grid.Column="{OnPlatform WinUI=0}"
+                       Grid.Row="{OnPlatform Android=0}"
+                       Text="{Binding SearchWord}"
+                       FontSize="21" />
+                <controls:PrimaryButton Text="Search"
+                                        Grid.Column="{OnPlatform WinUI=1}"
+                                        Grid.Row="{OnPlatform Android=1}"
+                                        Command="{Binding SearchCommand}" />
             </Grid>
-    
-            
+
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
-                                                  Entry="{Binding OriginalCambridge}"/>
+                                                  Entry="{Binding OriginalCambridge, Mode=OneWay}" />
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
-                                                  Entry="{Binding TranslateCambridge}"/>
-            
+                                                  Entry="{Binding TranslateCambridge, Mode=OneWay}" />
+
+            <reversoContext:ReversoContextComponent OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                    Entry="{Binding ReversoContext, Mode=OneWay}"/>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

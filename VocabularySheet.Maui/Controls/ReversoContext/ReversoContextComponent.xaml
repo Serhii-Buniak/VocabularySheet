@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.Controls.ReversoContext.ReversoContextComponent"
+             xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
+             xmlns:converters="using:VocabularySheet.Maui.Converters"
+             xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.Controls.ReversoContext"
+             xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             x:DataType="reversoContext:ReversoContextComponent" 
+             x:Name="reversoContextComponent">
+
+    <VerticalStackLayout MaximumWidthRequest="{OnPlatform WinUI=1600}"
+                         HorizontalOptions="{OnPlatform WinUI=Fill}"
+                         Padding="5">
+        <controls:PageHeader Image="reverso_context_icon.png"
+                             Link="{Binding Entry.Link, Source={x:Reference reversoContextComponent}}"
+                             Title="{Binding Entry.Word, Source={x:Reference reversoContextComponent}}"
+                             OpenLinkCommand="{Binding OpenLinkCommand, Source={x:Reference reversoContextComponent}}"
+                             Language="{Binding Entry, Source={x:Reference reversoContextComponent}, Converter={converters:ReversoContextLanguageConverter}}" />
+
+        <VerticalStackLayout MaximumWidthRequest="{OnPlatform WinUI=600}"
+                             Margin="0,10,0,0"
+                             HorizontalOptions="Start"
+                             BindableLayout.ItemsSource="{Binding Entry.Content.CategoryGroups, Source={x:Reference reversoContextComponent}}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="entities:ReversoContextCetegoryGroup">
+                    <VerticalStackLayout>
+                        <controls:MarkFrame
+                            Color="#1d2956"
+                            Text="{Binding Title, Mode=OneTime}"
+                            FontSize="{OnPlatform WinUI=24, Android=18}"
+                            Margin="0,0,0,10"
+                            FontAttributes="Bold" />
+        
+                        <FlexLayout Wrap="Wrap" Margin="0,0,0,5"
+                                    BindableLayout.ItemsSource="{Binding Translations, Mode=OneTime}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="system:String">
+                                    <StackLayout>
+                                        <controls:MarkFrame
+                                            Color="#122b20"
+                                            Text="{Binding ., Mode=OneTime}"
+                                            FontSize="{OnPlatform WinUI=18, Android=16}" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+        <VerticalStackLayout HorizontalOptions="Start" MinimumHeightRequest="{OnPlatform WinUI=800}"
+                             BindableLayout.ItemsSource="{Binding Entry.Content.Examples, Source={x:Reference reversoContextComponent}}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="entities:ReversoContextExample">
+                    <VerticalStackLayout Margin="0,15">
+                        <BoxView HeightRequest="3"
+                                 Color="#FFE797"
+                                 HorizontalOptions="Fill"
+                                 Margin="0,1" />
+                        <Border StrokeThickness="0" StrokeShape="RoundRectangle 2" Padding="5"
+                                MinimumHeightRequest="75" BackgroundColor="#111111">
+                            <controls:LabelEditor
+                                Text="{Binding Origin, Mode=OneTime}"
+                                FontSize="{OnPlatform WinUI=24, Android=21}" />
+                        </Border>
+                        <BoxView HeightRequest="2"
+                                 Color="#772244"
+                                 HorizontalOptions="Fill"
+                                 Margin="0,1" />
+                        <Border StrokeThickness="0" StrokeShape="RoundRectangle 2" Padding="5"
+                                MinimumHeightRequest="75" BackgroundColor="#111111">
+                            <controls:LabelEditor
+                                Text="{Binding Translation, Mode=OneTime}"
+                                FontSize="{OnPlatform WinUI=24, Android=21}" />
+                        </Border>
+                        <BoxView HeightRequest="3"
+                                 Color="#FFE797"
+                                 HorizontalOptions="Fill"
+                                 Margin="0,1" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+    
+</ContentView>

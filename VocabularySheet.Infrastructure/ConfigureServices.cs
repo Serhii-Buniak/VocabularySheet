@@ -15,6 +15,7 @@ using VocabularySheet.Infrastructure.Repositories.Interfaces;
 using VocabularySheet.Infrastructure.Repositories.Pages;
 using VocabularySheet.Infrastructure.Services;
 using VocabularySheet.Infrastructure.Services.Interfaces;
+using VocabularySheet.ReversoContext;
 
 namespace VocabularySheet.Infrastructure;
 
@@ -34,22 +35,24 @@ public static class ConfigureServices
         services.AddCsvSteamers();
         
         services.AddCambridgeDictionary();
+        services.AddReversoContext();
 
         return services;
     }
-
+    
     private static void AddHttpClients(this IServiceCollection services)
     {
         services.AddHttpClient<StreamFetcherClient>();
         services.AddHttpClient<IGoogleSheetClient, GoogleSheetClient>();
     }
-
+    
     private static void AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IAppDbContext, AppDbContext>();
 
         services.AddScoped<IWordsRepository, WordsRepository>();
         services.AddScoped<ICambridgeRepository, CambridgeRepository>();
+        services.AddScoped<IReversoContextRepository, ReversoContextRepository>();
 
         services.AddConfigurationRepository<GoogleSheetConfig, GoogleSheetConfigurator>();
         services.AddConfigurationRepository<LocalizationConfig, LocalizationConfigurator>();

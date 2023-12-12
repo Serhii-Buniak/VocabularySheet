@@ -7,7 +7,7 @@
              x:DataType="viewmodel:WordsListVM"
              x:Name="wordList">
 
-    <CollectionView ItemsSource="{Binding Words}"
+    <CollectionView ItemsSource="{Binding Words, Mode=OneWay}"
                     MinimumWidthRequest="{OnPlatform WinUI=650}"
                     SelectionMode="None">
         <CollectionView.ItemTemplate>
