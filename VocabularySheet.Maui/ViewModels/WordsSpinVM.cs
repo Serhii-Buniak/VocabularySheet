@@ -172,6 +172,7 @@ public partial class WordsSpinVM : BaseViewModel
     [RelayCommand]
     public async Task OpenWord()
     {
+        ResetSpin();
         await Shell.Current.GoToWordDetails(Word.Id);
     }
     
