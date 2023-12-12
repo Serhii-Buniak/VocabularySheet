@@ -37,24 +37,6 @@ public abstract class WebPageClient
         }
     }
 
-    protected async Task<string?> FetchJavaScript(string link, CancellationToken cancellationToken)
-    {
-        try
-        {
-            using var browserFetcher = new BrowserFetcher();
-            await browserFetcher.DownloadAsync();
-            await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = true });
-            await using var page = await browser.NewPageAsync();
-            await page.GoToAsync(link);
-            await page.WaitForTimeoutAsync(2000);
-            return await page.GetContentAsync();
-        }
-        catch (Exception)
-        {
-            return null;
-        }
-    }
-
     public abstract Task<WebPageResponse?> Page(string word, WordLanguage language, WordLanguage translateLanguage,
         CancellationToken cancellationToken);
 }
