@@ -6,6 +6,7 @@ using Plugin.Maui.Audio;
 using VocabularySheet.Application.Cambridge.Queries;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
+using VocabularySheet.Application.ReversoContext.Queries;
 using VocabularySheet.Application.Words.Queries;
 using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.CambridgeDictionary.Entities;
@@ -13,6 +14,8 @@ using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.HttpClients;
 using VocabularySheet.Maui.Common;
 using VocabularySheet.Parsing.Common;
+using VocabularySheet.ReversoContext;
+using VocabularySheet.ReversoContext.Entities;
 
 namespace VocabularySheet.Maui.ViewModels;
 
@@ -29,7 +32,8 @@ public partial class WordDetailsVM : BaseViewModel
  
     [ObservableProperty] PublicCambridgeEntry? originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? translateCambridge = null;
-    
+    [ObservableProperty] PublicReversoContextEntry? reversoContext = null;
+
     public WordDetailsVM(IMediator mediator, ILogger<LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
         _audioManager = audioManager;
@@ -83,6 +87,8 @@ public partial class WordDetailsVM : BaseViewModel
 
         OriginalCambridge = null;
         TranslateCambridge = null;
+        ReversoContext = null;
+
         Word = await Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = wordId
@@ -104,7 +110,12 @@ public partial class WordDetailsVM : BaseViewModel
         });
 
         var localization = await Mediator.Send(new GetLanguageWord.Query());
-        await Task.Delay(50);
+
+        var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.Query()
+        {
+            Word = Word
+        });
+        
         await Task.Run(() =>
         {
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
@@ -129,6 +140,19 @@ public partial class WordDetailsVM : BaseViewModel
                 {
                     Title = Word.Translation,
                     Blocks = new List<CambridgeWordBlock>(),
+                }
+            };
+            ReversoContext = reversoContextEntry ?? new PublicReversoContextEntry()
+            {
+                Word = Word.Original,
+                Language = localization.OriginLang,
+                TraslationLanguage = localization.TranslateLang,
+                Link = ReversoContextClient.WordLink(Word.Original, localization.OriginLang, localization.TranslateLang),
+                Content = new ReversoContextContent()
+                {
+                    Title = Word.Original, 
+                    CategoryGroups = new List<ReversoContextCetegoryGroup>(),
+                    Examples= new List<ReversoContextExample>(),
                 }
             };
         });

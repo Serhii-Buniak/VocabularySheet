@@ -6,6 +6,7 @@
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:controlsCambridge="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
+             xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.Controls.ReversoContext"
              x:DataType="viewmodel:WordDetailsVM"
              x:Name="wordDetails">
     <ScrollView>
@@ -33,7 +34,9 @@
             <controlsCambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"
                                                   Entry="{Binding TranslateCambridge, Mode=OneWay}"/>
-            
+            <reversoContext:ReversoContextComponent OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                    Entry="{Binding ReversoContext, Mode=OneWay}"/>
+
         </VerticalStackLayout>
     </ScrollView>
 

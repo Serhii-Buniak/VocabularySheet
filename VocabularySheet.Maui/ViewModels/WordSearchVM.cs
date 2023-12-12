@@ -86,7 +86,7 @@ public partial class WordSearchVM : BaseViewModel
         });
 
         var localization = await Mediator.Send(new GetLanguageWord.Query());
-        await Task.Delay(50);
+
         await Task.Run(() =>
         {
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
