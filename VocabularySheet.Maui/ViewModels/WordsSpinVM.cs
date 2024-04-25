@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.Words.Queries;
+using VocabularySheet.Common.Extensions;
 using VocabularySheet.Domain;
 using VocabularySheet.Domain.Extensions;
 using VocabularySheet.Maui.Common;

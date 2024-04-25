@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace VocabularySheet.CambridgeDictionary;
+namespace WebSources.CambridgeDictionary;
 
 public static class ConfigureServices
 {

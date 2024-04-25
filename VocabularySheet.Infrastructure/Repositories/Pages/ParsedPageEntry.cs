@@ -1,10 +1,10 @@
 ﻿using System.Text.Json;
-using VocabularySheet.CambridgeDictionary;
-using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Common;
 using VocabularySheet.Domain.Pages;
-using VocabularySheet.ReversoContext;
-using VocabularySheet.ReversoContext.Entities;
+using WebSources.CambridgeDictionary;
+using WebSources.CambridgeDictionary.Entities;
+using WebSources.ReversoContext;
+using WebSources.ReversoContext.Entities;
 
 namespace VocabularySheet.Infrastructure.Repositories.Pages;
 

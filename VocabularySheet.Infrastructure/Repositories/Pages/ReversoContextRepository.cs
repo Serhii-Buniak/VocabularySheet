@@ -4,7 +4,7 @@ using VocabularySheet.Common;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data;
-using VocabularySheet.ReversoContext;
+using WebSources.ReversoContext;
 
 namespace VocabularySheet.Infrastructure.Repositories.Pages;
 

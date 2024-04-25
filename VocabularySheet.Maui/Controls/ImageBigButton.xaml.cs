@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using VocabularySheet.Parsing.Common;
+using WebSources.Common;
 
 namespace VocabularySheet.Maui.Controls;
 

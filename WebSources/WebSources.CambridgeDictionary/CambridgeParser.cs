@@ -1,11 +1,11 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
-using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Domain.Extensions;
-using VocabularySheet.Parsing.Common;
+using VocabularySheet.Common.Extensions;
+using WebSources.CambridgeDictionary.Entities;
+using WebSources.Common;
 
-namespace VocabularySheet.CambridgeDictionary;
+namespace WebSources.CambridgeDictionary;
 
 public class CambridgeParser
 {

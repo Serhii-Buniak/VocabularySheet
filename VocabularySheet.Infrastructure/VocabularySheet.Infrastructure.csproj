@@ -29,12 +29,14 @@
 
 	  <PackageReference Include="System.Linq.Async" Version="6.0.1" />
   </ItemGroup>
-
+    
+    <ItemGroup>
+        <InternalsVisibleTo Include="Sandbox" />
+    </ItemGroup>
+    
   <ItemGroup>
     <ProjectReference Include="..\VocabularySheet.Application\VocabularySheet.Application.csproj" />
-    <ProjectReference Include="..\VocabularySheet.CambridgeDictionary\VocabularySheet.CambridgeDictionary.csproj" />
     <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
-    <ProjectReference Include="..\VocabularySheet.ReversoContext\VocabularySheet.ReversoContext.csproj" />
   </ItemGroup>
 
 

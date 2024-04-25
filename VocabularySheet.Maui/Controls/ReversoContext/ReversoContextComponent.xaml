@@ -6,7 +6,7 @@
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:converters="using:VocabularySheet.Maui.Converters"
              xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.Controls.ReversoContext"
-             xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
+             xmlns:entities="clr-namespace:WebSources.ReversoContext.Entities;assembly=WebSources.ReversoContext"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:DataType="reversoContext:ReversoContextComponent"
              x:Name="reversoContextComponent">

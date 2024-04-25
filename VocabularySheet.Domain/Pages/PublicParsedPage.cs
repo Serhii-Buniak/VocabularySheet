@@ -1,6 +1,6 @@
-﻿using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Common;
-using VocabularySheet.ReversoContext.Entities;
+﻿using VocabularySheet.Common;
+using WebSources.CambridgeDictionary.Entities;
+using WebSources.ReversoContext.Entities;
 
 namespace VocabularySheet.Domain.Pages;
 

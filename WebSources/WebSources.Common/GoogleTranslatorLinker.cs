@@ -1,8 +1,7 @@
 ﻿using System.Web;
 using VocabularySheet.Common;
-using VocabularySheet.Domain;
 
-namespace VocabularySheet.Parsing.Common;
+namespace WebSources.Common;
 
 public static class GoogleTranslatorLinker
 {

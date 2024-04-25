@@ -4,7 +4,7 @@
              x:Class="VocabularySheet.Maui.Controls.Cambridge.CambridgeComponent"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"
              xmlns:converter="clr-namespace:VocabularySheet.Maui.Converters"
-             xmlns:cambridge="clr-namespace:VocabularySheet.CambridgeDictionary.Entities;assembly=VocabularySheet.CambridgeDictionary"
+             xmlns:cambridge="clr-namespace:WebSources.CambridgeDictionary.Entities;assembly=WebSources.CambridgeDictionary"
              xmlns:cambridgeControls="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:DataType="cambridgeControls:CambridgeComponent"             

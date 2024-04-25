@@ -8,14 +8,14 @@ using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.LanguageWords;
 using VocabularySheet.Application.ReversoContext.Queries;
 using VocabularySheet.Application.Words.Queries;
-using VocabularySheet.CambridgeDictionary;
-using VocabularySheet.CambridgeDictionary.Entities;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.HttpClients;
 using VocabularySheet.Maui.Common;
-using VocabularySheet.Parsing.Common;
-using VocabularySheet.ReversoContext;
-using VocabularySheet.ReversoContext.Entities;
+using WebSources.CambridgeDictionary;
+using WebSources.CambridgeDictionary.Entities;
+using WebSources.Common;
+using WebSources.ReversoContext;
+using WebSources.ReversoContext.Entities;
 
 namespace VocabularySheet.Maui.ViewModels;
 

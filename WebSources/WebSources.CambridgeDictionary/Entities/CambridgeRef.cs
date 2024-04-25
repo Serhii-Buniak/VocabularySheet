@@ -1,4 +1,4 @@
-﻿namespace VocabularySheet.CambridgeDictionary.Entities;
+﻿namespace WebSources.CambridgeDictionary.Entities;
 
 public record CambridgeRef
 {

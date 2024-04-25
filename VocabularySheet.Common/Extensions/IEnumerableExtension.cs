@@ -1,6 +1,6 @@
-﻿namespace VocabularySheet.Domain.Extensions;
+﻿namespace VocabularySheet.Common.Extensions;
 
-public static class IEnumerableExtension
+public static class EnumerableExtension
 {
     private static Random RANDOM => new();
 

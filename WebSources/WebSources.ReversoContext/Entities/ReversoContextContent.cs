@@ -1,4 +1,4 @@
-﻿namespace VocabularySheet.ReversoContext.Entities;
+﻿namespace WebSources.ReversoContext.Entities;
 
 public record ReversoContextContent
 {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VocabularySheet.Application.Commons.Interfaces;
-using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.Common;
 using VocabularySheet.Domain.Pages;
 using VocabularySheet.Infrastructure.Commons;
 using VocabularySheet.Infrastructure.Data;
+using WebSources.CambridgeDictionary;
 
 namespace VocabularySheet.Infrastructure.Repositories.Pages;
 

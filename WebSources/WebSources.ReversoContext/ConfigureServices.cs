@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace VocabularySheet.ReversoContext;
+namespace WebSources.ReversoContext;
 
 public static class ConfigureServices
 {

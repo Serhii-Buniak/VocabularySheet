@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using VocabularySheet.Common;
 
-namespace VocabularySheet.Parsing.Common;
+namespace WebSources.Common;
 
 public abstract class WebPageClient
 {

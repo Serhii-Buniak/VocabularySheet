@@ -1,6 +1,6 @@
-﻿using VocabularySheet.Parsing.Common;
+﻿using WebSources.Common;
 
-namespace VocabularySheet.CambridgeDictionary.Entities;
+namespace WebSources.CambridgeDictionary.Entities;
 
 public record CambridgeSubArticle : IHaveNullImageUrl
 {

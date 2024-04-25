@@ -1,8 +1,8 @@
-﻿using VocabularySheet.CambridgeDictionary.Entities;
-using VocabularySheet.Common;
-using VocabularySheet.Parsing.Common;
+﻿using VocabularySheet.Common;
+using WebSources.CambridgeDictionary.Entities;
+using WebSources.Common;
 
-namespace VocabularySheet.CambridgeDictionary;
+namespace WebSources.CambridgeDictionary;
 
 public record CambridgePage : IParsedPage<CambridgeContent>
 {

@@ -6,7 +6,7 @@
              xmlns:controlsCambridge="clr-namespace:VocabularySheet.Maui.Controls.Cambridge"
              xmlns:viewmodel="clr-namespace:VocabularySheet.Maui.ViewModels"
              xmlns:converters="clr-namespace:VocabularySheet.Maui.Converters"
-             xmlns:entities="clr-namespace:VocabularySheet.ReversoContext.Entities;assembly=VocabularySheet.ReversoContext"
+             xmlns:entities="clr-namespace:WebSources.ReversoContext.Entities;assembly=WebSources.ReversoContext"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:reversoContext="using:VocabularySheet.Maui.Controls.ReversoContext"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Controls"

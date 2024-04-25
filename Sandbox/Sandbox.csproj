@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\VocabularySheet.Infrastructure\VocabularySheet.Infrastructure.csproj" />
-      <ProjectReference Include="..\VocabularySheet.ReversoContext\VocabularySheet.ReversoContext.csproj" />
     </ItemGroup>
 
 </Project>

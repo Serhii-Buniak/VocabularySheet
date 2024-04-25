@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using VocabularySheet.Domain.Pages;
-using VocabularySheet.ReversoContext;
+using WebSources.ReversoContext;
 
 namespace VocabularySheet.Maui.Converters;
 

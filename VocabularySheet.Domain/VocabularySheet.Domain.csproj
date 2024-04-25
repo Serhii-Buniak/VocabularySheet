@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VocabularySheet.Common\VocabularySheet.Common.csproj" />
+    <ProjectReference Include="..\WebSources\WebSources.CambridgeDictionary\WebSources.CambridgeDictionary.csproj" />
+    <ProjectReference Include="..\WebSources\WebSources.ReversoContext\WebSources.ReversoContext.csproj" />
   </ItemGroup>
 
 </Project>

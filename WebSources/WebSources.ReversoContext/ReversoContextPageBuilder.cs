@@ -1,8 +1,8 @@
 ﻿using VocabularySheet.Common;
-using VocabularySheet.Parsing.Common;
-using VocabularySheet.ReversoContext.Entities;
+using WebSources.Common;
+using WebSources.ReversoContext.Entities;
 
-namespace VocabularySheet.ReversoContext;
+namespace WebSources.ReversoContext;
 
 public class ReversoContextPageBuilder
 {

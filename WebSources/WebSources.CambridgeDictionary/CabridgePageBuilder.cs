@@ -1,7 +1,6 @@
-﻿
-using VocabularySheet.Common;
+﻿using VocabularySheet.Common;
 
-namespace VocabularySheet.CambridgeDictionary;
+namespace WebSources.CambridgeDictionary;
 
 public class CabridgePageBuilder
 {

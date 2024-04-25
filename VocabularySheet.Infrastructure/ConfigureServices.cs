@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using VocabularySheet.Application.Commons.Interfaces;
-using VocabularySheet.CambridgeDictionary;
 using VocabularySheet.Domain.ConfigEntities;
 using VocabularySheet.Infrastructure.Csv;
 using VocabularySheet.Infrastructure.Csv.Interfaces;
@@ -14,8 +13,8 @@ using VocabularySheet.Infrastructure.Repositories.Configurations;
 using VocabularySheet.Infrastructure.Repositories.Interfaces;
 using VocabularySheet.Infrastructure.Repositories.Pages;
 using VocabularySheet.Infrastructure.Services;
-using VocabularySheet.Infrastructure.Services.Interfaces;
-using VocabularySheet.ReversoContext;
+using VocabularySheet.Infrastructure.Services.Interfaces;using WebSources.CambridgeDictionary;
+using WebSources.ReversoContext;
 
 namespace VocabularySheet.Infrastructure;
 
@@ -58,7 +57,7 @@ public static class ConfigureServices
         services.AddConfigurationRepository<LocalizationConfig, LocalizationConfigurator>();
         
         
-        services.AddSingleton<IGoogleSheetWordsRepository, GoogleSheetWordsRepository>();
+        services.AddScoped<IGoogleSheetWordsRepository, GoogleSheetWordsRepository>();
     }
 
     private static void AddDatabase(this IServiceCollection services, InfrastructureOptions options)
@@ -74,8 +73,8 @@ public static class ConfigureServices
     
     private static void AddServices(this IServiceCollection services)
     {
-        services.AddSingleton<IAppDataService, AppDataService>();
-        services.AddSingleton<IGoogleSheetService, GoogleSheetService>();
+        services.AddScoped<IAppDataService, AppDataService>();
+        services.AddScoped<IGoogleSheetService, GoogleSheetService>();
     }
 
     private static void AddCsvSteamers(this IServiceCollection services)

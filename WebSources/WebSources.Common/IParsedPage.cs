@@ -1,6 +1,6 @@
 ﻿using VocabularySheet.Common;
 
-namespace VocabularySheet.Parsing.Common;
+namespace WebSources.Common;
 
 public interface IParsedPage<TContent> where TContent : class
 {

@@ -1,9 +1,9 @@
 ﻿using System.Web;
 using Microsoft.Extensions.Logging;
 using VocabularySheet.Common;
-using VocabularySheet.Parsing.Common;
+using WebSources.Common;
 
-namespace VocabularySheet.CambridgeDictionary;
+namespace WebSources.CambridgeDictionary;
 
 public class CambridgeClient : WebPageClient
 {

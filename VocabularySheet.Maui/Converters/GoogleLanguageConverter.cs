@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using VocabularySheet.Common;
-using VocabularySheet.Parsing.Common;
+using WebSources.Common;
 
 namespace VocabularySheet.Maui.Converters;
 

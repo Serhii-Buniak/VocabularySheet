@@ -5,21 +5,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>Nullable</WarningsAsErrors>
+
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="AngleSharp" Version="1.0.7" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     </ItemGroup>
-
-
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
+        <ProjectReference Include="..\..\VocabularySheet.Common\VocabularySheet.Common.csproj" />
     </ItemGroup>
 
 </Project>

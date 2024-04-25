@@ -1,11 +1,11 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
-using VocabularySheet.Domain.Extensions;
-using VocabularySheet.Parsing.Common;
-using VocabularySheet.ReversoContext.Entities;
+using VocabularySheet.Common.Extensions;
+using WebSources.Common;
+using WebSources.ReversoContext.Entities;
 
-namespace VocabularySheet.ReversoContext;
+namespace WebSources.ReversoContext;
 
 public class ReversoContextParser
 {
