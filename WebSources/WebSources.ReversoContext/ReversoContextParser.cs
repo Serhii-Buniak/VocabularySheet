@@ -28,7 +28,7 @@ public class ReversoContextParser
         
         var translationsLabels = bodyContentEl
             .QuerySelector("#translations-content")?
-            .QuerySelectorAll("a")
+            .QuerySelectorAll(".translation")
             .ToList() ?? new List<IElement>();
         
         var examples = bodyContentEl

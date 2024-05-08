@@ -32,10 +32,10 @@ public class CambridgeController : ControllerBase
         return Ok(page);
     }
 
-    [HttpPost("image/file")]
-    public async Task<IActionResult> GetImageWord([FromBody]CambridgeReq req, [FromQuery]WordLanguage language = WordLanguage.En)
+    [HttpGet("image/file/{word}")]
+    public async Task<IActionResult> GetImageWord([FromRoute] string word, [FromQuery]WordLanguage language = WordLanguage.En)
     {
-        var page = await _cabridge.Get(req.Word, language, CancellationToken.None);
+        var page = await _cabridge.Get(word, language, CancellationToken.None);
         if (page == null)
         {
             return NotFound();
@@ -57,5 +57,23 @@ public class CambridgeController : ControllerBase
         }
 
         return File(stream, "image/png");
+    }
+    
+    [HttpGet("examples/{word}")]
+    public async Task<IActionResult> GetExamples([FromRoute] string word)
+    {
+        var page = await _cabridge.Get(word, WordLanguage.En, CancellationToken.None);
+        if (page == null)
+        {
+            return Ok(new List<string>());
+        }
+
+        List<string> examples = page.Content.Blocks
+            .SelectMany(x => x.Articles)
+            .SelectMany(x => x.SubArticles)
+            .SelectMany(x => x.Examples)
+            .ToList();
+        
+        return Ok(examples);
     }
 }

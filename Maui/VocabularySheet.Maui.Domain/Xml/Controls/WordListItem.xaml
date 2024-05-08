@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.Domain.Xml.Controls.WordListItem"
+             x:Name="WordListItemX">
+	<Border StrokeThickness="0" BackgroundColor="#111111"
+	        MinimumHeightRequest="70"
+	        Margin="{Binding Margin, Source={Reference WordListItemX}}"
+	        VerticalOptions="Center"
+	        Padding="{OnPlatform Android=5, WinUI=20}"
+	        MaximumWidthRequest="{Binding MaximumWidth, Source={Reference WordListItemX}}">
+		<Border.GestureRecognizers>
+			<TapGestureRecognizer Tapped="Tapped"/>
+		</Border.GestureRecognizers>
+		<Grid VerticalOptions="Fill" ColumnSpacing="{OnPlatform WinUI=20, Android=10}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{OnPlatform WinUI=90, Android=60}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
+				<ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
+			</Grid.ColumnDefinitions>
+
+			<Label Text="{Binding Word.Index, Source={Reference WordListItemX}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="0"
+			       VerticalOptions="Center"/>
+			<Label Text="{Binding Word.Original, Source={Reference WordListItemX}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="1" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference WordListItemX}}" 
+			       VerticalOptions="Center"/>
+			<Label Text="{Binding Word.Translation, Source={Reference WordListItemX}}" 
+			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="2" 
+			       IsVisible="{Binding IsWordVisible, Source={Reference WordListItemX}}" 
+			       VerticalOptions="Center"/>
+		</Grid>
+	</Border>
+
+</ContentView>
