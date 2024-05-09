@@ -23,11 +23,5 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Maui\VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj" />
-      <ProjectReference Include="..\ML\VocabularySheet.MLApp\VocabularySheet.MLApp.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Maui\VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj" />
-    </ItemGroup>
-    
 </Project>

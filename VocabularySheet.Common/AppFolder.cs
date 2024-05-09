@@ -1,8 +1,8 @@
 ﻿using VocabularySheet.Common.Extensions;
 
-namespace VocabularySheet.MLApp;
+namespace VocabularySheet.Common;
 
-internal record MlFileEntry
+public record AppFileEntry
 {
     public required string Name { get; init; }
     public required string Path { get; init; }
@@ -12,36 +12,34 @@ internal record MlFileEntry
     public required string Content { get; init; }
 }
 
-internal record MlFolderEntry
+public record AppFolderEntry
 {
     public required string Name { get; init; }
     public required string Path { get; init; }
     public required string FullPath { get; init; }
 }
 
-internal static class MlFolder
+public static class AppFolder
 {
-    // VocabularySheet\ML\VocabularySheet.MLApp\DataSets
-    private static readonly string BaseFolderPath = Path.Combine(AppDomain.CurrentDomain.AppPath(), "ML", "VocabularySheet.MLApp", "mldata", "DataSets");
-    public static readonly string ModelsPath = Path.Combine(AppDomain.CurrentDomain.AppPath(), "ML", "VocabularySheet.MLApp", "mldata", "MLModels");
-    public static string CreateModelsPath(string file) => Path.Combine(ModelsPath, file);
+    public static readonly string BasePath = AppDomain.CurrentDomain.AppPath();
+    public static string CreatePath(string path) => Path.Combine(BasePath, path);
     
-    public static MlFileEntry GetFilePath(string fileName)
+    public static AppFileEntry GetFilePath(string fileName)
     {
-        string path = Path.Combine(BaseFolderPath, fileName);
+        string path = Path.Combine(BasePath, fileName);
 
-        return new MlFileEntry
+        return new AppFileEntry
         {
             Name = fileName,
-            Path = path.Replace(BaseFolderPath, string.Empty),
+            Path = path.Replace(BasePath, string.Empty),
             FullPath = path,
             Content = File.ReadAllText(path)
         };
     }
     
-    public static Dictionary<string, MlFileEntry> GetFilesPath(string folderPath)
+    public static Dictionary<string, AppFileEntry> GetFilesPath(string folderPath, string? removeFromPath = null)
     {
-        string fullPath = Path.Combine(BaseFolderPath, folderPath);
+        string fullPath = Path.Combine(BasePath, folderPath);
         if (!Directory.Exists(fullPath))
         {
             throw new DirectoryNotFoundException($"The folder '{folderPath}' does not exist.");
@@ -49,13 +47,19 @@ internal static class MlFolder
 
         string[] files = Directory.GetFiles(fullPath);
 
-        var mlFiles = new List<MlFileEntry>(files.Length);
+        var mlFiles = new List<AppFileEntry>(files.Length);
         foreach (var file in files)
         {
-            mlFiles.Add(new MlFileEntry
+            string path = file.Replace(BasePath, string.Empty);
+            if (removeFromPath != null)
+            {
+                path = path.Replace(removeFromPath, string.Empty);
+            }
+            
+            mlFiles.Add(new AppFileEntry
             {
                 Name = Path.GetFileName(file),
-                Path = file.Replace(BaseFolderPath, string.Empty),
+                Path = path,
                 FullPath = file,
                 Content = File.ReadAllText(file)
             });
@@ -64,27 +68,34 @@ internal static class MlFolder
         return mlFiles.ToDictionary(f => f.Name);
     }
     
-    public static Dictionary<string, MlFolderEntry> GetFoldersPath(string folderPath)
+    public static Dictionary<string, AppFolderEntry> GetFoldersPath(string folderPath, string? removeFromPath = null)
     {
-        string fullPath = Path.Combine(BaseFolderPath, folderPath);
+        string fullPath = Path.Combine(BasePath, folderPath);
         if (!Directory.Exists(fullPath))
         {
             throw new DirectoryNotFoundException($"The folder '{folderPath}' does not exist.");
         }
 
         string[] directories = Directory.GetDirectories(fullPath);
-        var mlFolders = new List<MlFolderEntry>(directories.Length);
+        var mlFolders = new List<AppFolderEntry>(directories.Length);
 
         foreach (string directory in directories)
         {
-            mlFolders.Add(new MlFolderEntry
+            string path = directory.Replace(BasePath, string.Empty);
+            if (removeFromPath != null)
+            {
+                path = path.Replace(removeFromPath, string.Empty);
+            }
+            
+            mlFolders.Add(new AppFolderEntry
             {
                 Name = directory.Replace(fullPath, string.Empty).TrimStart(Path.DirectorySeparatorChar),
-                Path = directory.Replace(BaseFolderPath, string.Empty).TrimStart(Path.DirectorySeparatorChar),
+                Path = path.TrimStart(Path.DirectorySeparatorChar),
                 FullPath = directory
             });
         }
         
         return mlFolders.ToDictionary(f => f.Name);
     }
+
 }

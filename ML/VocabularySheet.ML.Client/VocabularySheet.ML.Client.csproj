@@ -4,24 +4,15 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <InternalsVisibleTo Include="Sandbox" />
-        <InternalsVisibleTo Include="VocabularySheet.Tests" />
+        <PackageReference Include="Microsoft.ML" Version="3.0.1" />
     </ItemGroup>
-    
+
     <ItemGroup>
       <ProjectReference Include="..\..\VocabularySheet.Common\VocabularySheet.Common.csproj" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <PackageReference Include="Microsoft.ML" Version="3.0.1" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="mldata\" />
-      <Folder Include="mldata\MLModels\" />
     </ItemGroup>
 
 </Project>
