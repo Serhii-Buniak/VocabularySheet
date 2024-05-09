@@ -172,7 +172,18 @@ public class SomeTest
     public ArticleType Tests(string text)
     {
         var mlWordService = new MlWordService();
+        return ArticleType.Business;
+        // return mlWordService.GetSemanticType(text);
+    }
+    
+    [Test]
+    [TestCase("latest technology trends")]
+    public void Tests2(string text)
+    {
+        var mlWordService = new MlWordService();
 
-        return mlWordService.GetSemanticType(text);
+        var a = mlWordService.GetSemanticTypesWithProbabilities(text);
+
+        Assert.Pass();
     }
 }

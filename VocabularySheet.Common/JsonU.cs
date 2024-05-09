@@ -2,7 +2,7 @@
 
 namespace VocabularySheet.Common;
 
-public static class JsonU
+public static class Json
 {
     public static readonly JsonSerializerOptions Pretty = new JsonSerializerOptions()
     {

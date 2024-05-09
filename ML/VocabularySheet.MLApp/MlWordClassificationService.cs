@@ -1,7 +1,9 @@
-﻿using Microsoft.ML;
+﻿using System.Text.Json;
+using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Transforms.Text;
 using Newtonsoft.Json;
+using VocabularySheet.Common;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace VocabularySheet.MLApp;
@@ -127,10 +129,11 @@ internal class MlWordClassificationService
         var mlContext = new MLContext(seed: 1);
 
         // Define data schema
-        IDataView? dataView = mlContext.Data.LoadFromEnumerable(GetDataSet());
+        IDataView? dataView = mlContext.Data.LoadFromEnumerable(data);
 
         // Split the data into training and testing sets
-        var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.01);
+        var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
+
 
         // Separate train and test data
         var trainData = trainTestData.TrainSet;
@@ -142,16 +145,20 @@ internal class MlWordClassificationService
             .Append(mlContext.Transforms.Text.TokenizeIntoWords("Tokens", "NormalizedText"))
             .Append(mlContext.Transforms.Text.NormalizeText("Tokens", keepNumbers: false, keepPunctuations: false))
             .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Tokens"))
-            .Append(mlContext.Transforms.Text.FeaturizeText("Features", "Tokens"));
+            .Append(mlContext.Transforms.Text.FeaturizeText("Features", "Tokens"))
+            .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)));
 
+        var averagedPerceptronBinaryTrainer = mlContext.BinaryClassification.Trainers.AveragedPerceptron(numberOfIterations: 10);
+        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.OneVersusAll(averagedPerceptronBinaryTrainer);
+        
         // Define data preparation pipeline
-        var dataPipeline = preprocessingPipeline
-            .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)))
-            .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy());
+        var dataPipeline = preprocessingPipeline.Append(trainer)
+            // .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy())
+            .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
 
         // Train the model
         var model = dataPipeline.Fit(trainData);
-
+        
         // Save the model
         var modelPath = MlFolder.CreateModelsPath(MlWordService.FileName);
         mlContext.Model.Save(model, trainTestData.TrainSet.Schema, modelPath);
@@ -160,7 +167,7 @@ internal class MlWordClassificationService
         var predictions = model.Transform(testData);
         var metrics = mlContext.MulticlassClassification.Evaluate(predictions);
 
-        Console.WriteLine(JsonSerializer.Serialize(metrics));
+        Console.WriteLine(Json.Pretty.Serialize(metrics));
         Console.WriteLine();
         Console.WriteLine("ConfusionTable");
         Console.WriteLine(metrics.ConfusionMatrix.GetFormattedConfusionTable());
@@ -171,7 +178,19 @@ internal class MlWordClassificationService
 internal record ArticlePrediction
 {
     [ColumnName("PredictedLabel")]
-    public uint PredictedLabel { get; set; }
-    
-    public ArticleType PredictedType => (ArticleType)PredictedLabel;
+    public int PredictedLabel { get; set; }
+
+    [ColumnName("Score")] 
+    public float[] Probabilities { get; set; } = [];
+
+    public List<ArticleProbability> GetArticleTypesWithProbabilities()
+    {
+        var result = new List<ArticleProbability>();
+        for (int i = 0; i < Probabilities.Length; i++)
+        {
+            var type = (ArticleType)(i + 1);
+            result.Add(new ArticleProbability(type, Probabilities[i]));
+        }
+        return result;
+    }
 }
