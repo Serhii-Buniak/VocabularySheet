@@ -1,5 +1,8 @@
+
+using System.Text.Json;
 using VocabularySheet.Application.Words.Queries;
-using VocabularySheet.Maui.ViewModels;
+using VocabularySheet.Maui.Domain.ViewModels;
+using VocabularySheet.MLApp;
 
 namespace VocabularySheet.Tests;
 
@@ -135,5 +138,41 @@ public class GoogleSheetsVMTests
         
         Assert.That(WordsSpinVM.FromIndex, Is.EqualTo(1));
         Assert.That(WordsSpinVM.ToIndex, Is.EqualTo(10));
+    }
+}
+
+public class SomeTest
+{
+    [Test]
+    public void Evaluate()
+    {
+        MlWordClassificationService.Evaluation();
+    }
+    
+    [Test]
+    [TestCase("glory", ExpectedResult = (ArticleType)0)]
+    [TestCase("big deal", ExpectedResult = (ArticleType)0)]
+    [TestCase("acceleration", ExpectedResult = (ArticleType)0)]
+    [TestCase("hero", ExpectedResult = (ArticleType)0)]
+    [TestCase("official", ExpectedResult = (ArticleType)0)]
+    [TestCase("bbq", ExpectedResult = (ArticleType)0)]
+    [TestCase("documents", ExpectedResult = (ArticleType)0)]
+    [TestCase("funny attrations", ExpectedResult = (ArticleType)0)]
+    [TestCase("history", ExpectedResult = (ArticleType)0)]
+    [TestCase("stock market", ExpectedResult = ArticleType.Business)]
+    [TestCase("celebrity gossip", ExpectedResult = ArticleType.Entertainment)]
+    [TestCase("healthy recipes", ExpectedResult = ArticleType.Food)]
+    [TestCase("graphic design tutorials", ExpectedResult = ArticleType.Graphics)]
+    [TestCase("World War II", ExpectedResult = ArticleType.Historical)]
+    [TestCase("latest medical research", ExpectedResult = ArticleType.Medical)]
+    [TestCase("political analysis", ExpectedResult = ArticleType.Politics)]
+    [TestCase("space exploration", ExpectedResult = ArticleType.Space)]
+    [TestCase("soccer matches", ExpectedResult = ArticleType.Sport)]
+    [TestCase("latest technology trends", ExpectedResult = ArticleType.Technologie)]
+    public ArticleType Tests(string text)
+    {
+        var mlWordService = new MlWordService();
+
+        return mlWordService.GetSemanticType(text);
     }
 }

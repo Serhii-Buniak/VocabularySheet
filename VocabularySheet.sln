@@ -14,21 +14,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSources", "WebSources", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{F5B1797B-5B16-4367-A46F-648328208908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Common", "VocabularySheet.Common\VocabularySheet.Common.csproj", "{0228FBBA-9983-415F-9D6B-E8F6EC1ED9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularySheet.Common", "VocabularySheet.Common\VocabularySheet.Common.csproj", "{0228FBBA-9983-415F-9D6B-E8F6EC1ED9EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSources.CambridgeDictionary", "WebSources\WebSources.CambridgeDictionary\WebSources.CambridgeDictionary.csproj", "{1D53D021-5B08-4B78-B2FB-467E74DFF3E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSources.CambridgeDictionary", "WebSources\WebSources.CambridgeDictionary\WebSources.CambridgeDictionary.csproj", "{1D53D021-5B08-4B78-B2FB-467E74DFF3E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSources.ReversoContext", "WebSources\WebSources.ReversoContext\WebSources.ReversoContext.csproj", "{BC9DF4CE-764E-43BC-A554-6E72366EF680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSources.ReversoContext", "WebSources\WebSources.ReversoContext\WebSources.ReversoContext.csproj", "{BC9DF4CE-764E-43BC-A554-6E72366EF680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSources.Common", "WebSources\WebSources.Common\WebSources.Common.csproj", "{3E3E52AC-48D8-4B4C-8BB3-13416AD4A8C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSources.Common", "WebSources\WebSources.Common\WebSources.Common.csproj", "{3E3E52AC-48D8-4B4C-8BB3-13416AD4A8C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Maui.Domain", "VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj", "{EC495B80-39CC-4DE5-9827-B50C10AE0B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularySheet.Maui.Domain", "VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj", "{EC495B80-39CC-4DE5-9827-B50C10AE0B75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maui", "Maui", "{E0F7D819-5320-4884-8B47-1304F477E5DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Maui.Domain", "Maui\VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj", "{E9FA43A7-C6A0-48E1-B3DF-63F4C0634247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularySheet.Maui.Domain", "Maui\VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj", "{E9FA43A7-C6A0-48E1-B3DF-63F4C0634247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.Maui.AppRunner", "Maui\VocabularySheet.Maui.AppRunner\VocabularySheet.Maui.AppRunner.csproj", "{5737D97B-72AF-4F25-BE57-9A05D2FE4985}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularySheet.Maui.AppRunner", "Maui\VocabularySheet.Maui.AppRunner\VocabularySheet.Maui.AppRunner.csproj", "{5737D97B-72AF-4F25-BE57-9A05D2FE4985}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ML", "ML", "{CCF3C3AA-75BC-488F-9AC1-DCB7DA52545A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularySheet.MLApp", "ML\VocabularySheet.MLApp\VocabularySheet.MLApp.csproj", "{09377D8C-1096-44A7-9B48-45CD5F5C1EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,13 +88,13 @@ Global
 		{5737D97B-72AF-4F25-BE57-9A05D2FE4985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5737D97B-72AF-4F25-BE57-9A05D2FE4985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5737D97B-72AF-4F25-BE57-9A05D2FE4985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09377D8C-1096-44A7-9B48-45CD5F5C1EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09377D8C-1096-44A7-9B48-45CD5F5C1EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09377D8C-1096-44A7-9B48-45CD5F5C1EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09377D8C-1096-44A7-9B48-45CD5F5C1EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-										SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
-		SolutionGuid = {0B543622-8983-49AE-9922-E9B313640D98}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1D53D021-5B08-4B78-B2FB-467E74DFF3E5} = {4CDDEDBE-248E-474F-AB16-8B58F56312B7}
@@ -98,5 +102,9 @@ Global
 		{3E3E52AC-48D8-4B4C-8BB3-13416AD4A8C7} = {4CDDEDBE-248E-474F-AB16-8B58F56312B7}
 		{E9FA43A7-C6A0-48E1-B3DF-63F4C0634247} = {E0F7D819-5320-4884-8B47-1304F477E5DA}
 		{5737D97B-72AF-4F25-BE57-9A05D2FE4985} = {E0F7D819-5320-4884-8B47-1304F477E5DA}
+		{09377D8C-1096-44A7-9B48-45CD5F5C1EA1} = {CCF3C3AA-75BC-488F-9AC1-DCB7DA52545A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B543622-8983-49AE-9922-E9B313640D98}
 	EndGlobalSection
 EndGlobal
