@@ -1,50 +1,37 @@
-﻿using System.Globalization;
-using System.Windows;
+﻿using VocabularySheet.ML.Evaluation.App.Helpers;
+
+using Windows.UI.ViewManagement;
 
 namespace VocabularySheet.ML.Evaluation.App;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
-public partial class MainWindow : Window
+public sealed partial class MainWindow : WindowEx
 {
-    private readonly MlWordEvaluationService _evaluationService;
+    private Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue;
+
+    private UISettings settings;
 
     public MainWindow()
     {
         InitializeComponent();
-        _evaluationService = new MlWordEvaluationService();
+
+        AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
+        Content = null;
+        Title = "AppDisplayName".GetLocalized();
+
+        // Theme change code picked from https://github.com/microsoft/WinUI-Gallery/pull/1239
+        dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+        settings = new UISettings();
+        settings.ColorValuesChanged += Settings_ColorValuesChanged; // cannot use FrameworkElement.ActualThemeChanged event
     }
 
-    private async void RunEvaluation_Click(object sender, RoutedEventArgs e)
+    // this handles updating the caption button colors correctly when indows system theme is changed
+    // while the app is open
+    private void Settings_ColorValuesChanged(UISettings sender, object args)
     {
-        try
+        // This calls comes off-thread, hence we will need to dispatch it to current app's thread
+        dispatcherQueue.TryEnqueue(() =>
         {
-            RunEvaluationButton.IsEnabled = false;
-
-            var metrics = await _evaluationService.EvaluateAsync(CancellationToken.None);
-
-            if (metrics != null)
-            {
-                var results = new Dictionary<string, string>
-                {
-                    ["LogLoss"] = metrics.LogLoss.ToString(CultureInfo.InvariantCulture),
-                    ["Macro Accuracy"] = metrics.MacroAccuracy.ToString(CultureInfo.InvariantCulture),
-                    ["Micro Accuracy"] = metrics.MicroAccuracy.ToString(CultureInfo.InvariantCulture),
-                    ["Confusion Matrix"] = metrics.ConfusionMatrix.GetFormattedConfusionTable(),
-                };
-
-                ResultList.ItemsSource = results;
-            }
-            else
-            {
-                ResultList.ItemsSource = new Dictionary<string, string> { { "Result", "Evaluation failed." } };
-            }
-        }
-        finally
-        {
-            RunEvaluationButton.IsEnabled = true;
-        }
+            TitleBarHelper.ApplySystemThemeToCaptionButtons();
+        });
     }
-    
 }

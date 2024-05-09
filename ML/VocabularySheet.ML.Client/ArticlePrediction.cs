@@ -2,7 +2,13 @@
 
 namespace VocabularySheet.ML.Client;
 
-public record ArticleProbability(ArticleType Type, float Probability);
+public record ArticleProbabilityResult
+{
+    public required string Text { get; init; }
+    public required Dictionary<ArticleType, float> Probabilities { get; init; }
+    
+    public List<KeyValuePair<ArticleType, float>> OrderedList => Probabilities.OrderByDescending(x => x.Value).ToList();
+}
 
 public record ArticlePrediction
 {
@@ -11,14 +17,14 @@ public record ArticlePrediction
 
     [ColumnName("Score")] 
     public float[] Probabilities { get; set; } = [];
-
-    public List<ArticleProbability> GetArticleTypesWithProbabilities()
+    
+    public Dictionary<ArticleType, float> GetArticleTypesWithProbabilities()
     {
-        var result = new List<ArticleProbability>();
+        var result = new Dictionary<ArticleType, float>();
         for (int i = 0; i < Probabilities.Length; i++)
         {
             var type = (ArticleType)(i + 1);
-            result.Add(new ArticleProbability(type, Probabilities[i]));
+            result[type] = Probabilities[i];
         }
         return result;
     }

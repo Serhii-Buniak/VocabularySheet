@@ -4,7 +4,13 @@ using VocabularySheet.ML.Client;
 
 namespace VocabularySheet.ML.Evaluation;
 
-public class MlWordEvaluationService
+public interface IWordEvaluationService
+{
+    MulticlassClassificationMetrics? Evaluate();
+    Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken);
+}
+
+internal class MlWordEvaluationService : IWordEvaluationService
 {
     public MulticlassClassificationMetrics? Evaluate()
     {

@@ -4,9 +4,7 @@ namespace VocabularySheet.ML.Client;
 
 public interface IWordClassificationService
 {
-    // ArticleType GetSemanticType(string text);
-    // public List<(ArticleType Type, float Probability)> GetProbability(string text)
-
+    ArticleProbabilityResult GetProbability(string text);
 }
 
 internal class MlWordService : IWordClassificationService
@@ -22,12 +20,16 @@ internal class MlWordService : IWordClassificationService
         _engine = mlContext.Model.CreatePredictionEngine<MlArticleRecord, ArticlePrediction>(model);
     }
 
-    public List<ArticleProbability> GetProbability(string text)
+    public ArticleProbabilityResult GetProbability(string text)
     {
         var articleRecord = new MlArticleRecord { Text = text, Type = 0 };
         
         var prediction = _engine.Predict(articleRecord);
-
-        return prediction.GetArticleTypesWithProbabilities().OrderByDescending(x => x.Probability).ToList();
+        
+        return new ArticleProbabilityResult
+        {
+            Text = text,
+            Probabilities = prediction.GetArticleTypesWithProbabilities()
+        };
     }
 }

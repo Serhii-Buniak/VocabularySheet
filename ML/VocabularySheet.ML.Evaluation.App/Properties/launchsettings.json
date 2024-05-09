@@ -1,0 +1,8 @@
+﻿{
+    "profiles": {
+      "VocabularySheet.ML.Evaluation.App": {
+        "commandName": "MsixPackage",
+        "nativeDebugging": false
+      }
+    }
+}
