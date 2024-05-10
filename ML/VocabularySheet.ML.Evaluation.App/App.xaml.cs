@@ -41,7 +41,6 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-
         Host = Microsoft.Extensions.Hosting.Host.
         CreateDefaultBuilder().
         UseContentRoot(AppContext.BaseDirectory).
@@ -55,8 +54,12 @@ public partial class App : Application
             // Services
             services.AddTransient<INavigationViewService, NavigationViewService>();
 
-            services.AddPredictionTransient();
-            services.AddEvaluation();
+            services.AddPredictionTransient(new MlModelsFolder());
+            services.AddEvaluation(new MlDatasetsFolder
+            {
+                FolderPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "datasets"),
+                SaveModelsPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "models")
+            });
             
             services.AddSingleton<IActivationService, ActivationService>();
             services.AddSingleton<IPageService, PageService>();

@@ -1,5 +1,6 @@
 ﻿using VocabularySheet.Common;
 using VocabularySheet.Common.Extensions;
+using VocabularySheet.ML.Client;
 
 namespace VocabularySheet.Maui.Domain.Common.Services;
 
@@ -35,3 +36,15 @@ public class TextToSpeechService
 }
 
 public record LocaleAndText(string Text, Locale Locale);
+
+
+public class MlModelsFolder : IMlModelsFolder
+{
+    public string CreatePath(string path) => Path.Combine("MlModels", path);
+    
+    public Task<Stream> GetModel(string path)
+    {
+        path = CreatePath(path);
+        return FileSystem.OpenAppPackageFileAsync(path);
+    }
+}

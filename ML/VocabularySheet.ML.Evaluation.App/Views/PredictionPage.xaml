@@ -12,6 +12,8 @@
     </Page.DataContext>
     <Grid>
         <StackPanel>
+            <TextBox Text="{Binding FolderPath}" FontSize="20"/>
+
             <Button FontSize="42" 
                     Content="Run Prediction" 
                     Margin="0,0,0,10"

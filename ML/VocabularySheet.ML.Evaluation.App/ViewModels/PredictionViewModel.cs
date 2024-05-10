@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VocabularySheet.ML.Client;
+using VocabularySheet.ML.Evaluation.App.Services;
 
 namespace VocabularySheet.ML.Evaluation.App.ViewModels;
 
@@ -47,10 +48,11 @@ public partial class PredictionViewModel : ObservableRecipient
 {
     private readonly IWordClassificationService _wordClassificationService;
 
+    public string FolderPath => MlModelsFolder.BasePath;
     public PredictionViewModel()
     {
         _wordClassificationService = App.GetService<IWordClassificationService>();
-        Shared = App.GetService<SharedViewModel>();;
+        Shared = App.GetService<SharedViewModel>();
     }
 
     public SharedViewModel Shared

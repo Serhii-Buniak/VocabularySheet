@@ -34,7 +34,7 @@
                         <StackLayout Padding="10">
                             <Border Stroke="{Binding BorderColor}" 
                                     BackgroundColor="{Binding BackgroundColor}" 
-                                    Height="100"
+                                    HeightRequest="{OnPlatform WinUI=100, Android=70}"
                                     VerticalOptions="Center"
                                     MaximumWidthRequest="{OnPlatform WinUI=1600}"
                                     Padding="{OnPlatform Android=5, WinUI=20}">
@@ -46,17 +46,17 @@
                                     </Grid.ColumnDefinitions>
                                     
                                     <Label Text="{Binding ArticleFormatted}" 
-                                           FontSize="36"
+                                           FontSize="{OnPlatform WinUI=36, Android=18}"
                                            Grid.Column="0"
                                            VerticalOptions="Center"/>
                                     <Label Text="{Binding ProbabilityFormatted}" 
-                                           FontSize="42"
+                                           FontSize="{OnPlatform WinUI=42, Android=21}"
                                            Grid.Column="1"
                                            VerticalOptions="Center"/>
                                     <Image Source="{Binding Icon}" 
                                            HorizontalOptions="End"
-                                           HeightRequest="80"
-                                           WidthRequest="80"
+                                           HeightRequest="{OnPlatform WinUI=80, Android=50}"
+                                           WidthRequest="{OnPlatform WinUI=80, Android=50}"
                                            Grid.Column="2"/>
                                 </Grid>
                             </Border>

@@ -12,10 +12,17 @@ public partial class MainViewModel : ObservableRecipient
         get;
     }
 
+    public string FolderPath
+    {
+        get;
+    }
+
     public MainViewModel()
     {
         _evaluationService = App.GetService<IWordEvaluationService>();;
         Shared = App.GetService<SharedViewModel>();;
+        var folder = App.GetService<IMlDatasetsFolder>();
+        FolderPath = folder.FolderPath;
     }
     
     [RelayCommand]

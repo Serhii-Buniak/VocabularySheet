@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 using Microsoft.UI.Xaml.Controls;
-
+using VocabularySheet.ML.Client;
 using VocabularySheet.ML.Evaluation.App.Contracts.Services;
 using VocabularySheet.ML.Evaluation.App.ViewModels;
 using VocabularySheet.ML.Evaluation.App.Views;
@@ -51,6 +51,26 @@ public class PageService : IPageService
             }
 
             _pages.Add(key, type);
+        }
+    }
+}
+
+internal class MlModelsFolder : IMlModelsFolder
+{
+    public static readonly string BasePath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "models");
+    
+    public async Task<Stream> GetModel(string path)
+    {
+        await Task.CompletedTask;
+        var modelPath = Path.Combine(BasePath, path);
+        
+        if (File.Exists(modelPath))
+        {
+            return File.OpenRead(modelPath);
+        }
+        else
+        {
+            throw new FileNotFoundException($"Model file not found at path: {modelPath}");
         }
     }
 }

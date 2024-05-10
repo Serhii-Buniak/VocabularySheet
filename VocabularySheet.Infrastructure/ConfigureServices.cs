@@ -37,8 +37,6 @@ public static class ConfigureServices
         
         services.AddCambridgeDictionary();
         services.AddReversoContext();
-
-        services.AddPrediction();
         
         return services;
     }

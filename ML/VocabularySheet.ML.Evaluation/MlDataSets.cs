@@ -3,18 +3,22 @@ using VocabularySheet.ML.Client;
 
 namespace VocabularySheet.ML.Evaluation;
 
-internal static class MlDataSets
+internal class MlDataSets
 {
-    public static List<MlArticleRecord> Article { get; } = GetArticleDataSet();
+    private readonly IMlDatasetsFolder _folder;
 
-    private static string[] GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path)
+    public MlDataSets(IMlDatasetsFolder folder)
     {
-        return MlDatasetsFolder.GetFilesPath(folders[path].Path).Select(x => x.Value.Content).ToArray();
+        _folder = folder;
+    }
+    private string[] GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path)
+    {
+        return _folder.GetFilesPath(folders[path].Path).Select(x => x.Value.Content).ToArray();
     }
     
-    private static List<MlArticleRecord> GetArticleDataSet()
+    public List<MlArticleRecord> GetArticleDataSet()
     {
-        Dictionary<string, AppFolderEntry> folders = MlDatasetsFolder.GetFoldersPath("document-classification");
+        Dictionary<string, AppFolderEntry> folders = _folder.GetFoldersPath("document-classification");
         var files = new MlArticlesFiles
         {
             Business = GetFilesContents(folders, "business"),

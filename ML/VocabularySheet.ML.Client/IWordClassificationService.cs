@@ -9,14 +9,13 @@ public interface IWordClassificationService
 
 internal class MlWordService : IWordClassificationService
 {
-    private static readonly string FilePath = MlModelsFolder.CreatePath(MlModelConstants.WordArticlesFileName);
-    
     private readonly PredictionEngine<MlArticleRecord, ArticlePrediction> _engine;
     
-    public MlWordService()
+    public MlWordService(IMlModelsFolder mlModelsFolder)
     {
         var mlContext = new MLContext(seed: 1);
-        var model = mlContext.Model.Load(FilePath, out _);
+        using var stream = mlModelsFolder.GetModel(MlModelConstants.WordArticlesFileName).GetAwaiter().GetResult();
+        var model = mlContext.Model.Load(stream, out _);
         _engine = mlContext.Model.CreatePredictionEngine<MlArticleRecord, ArticlePrediction>(model);
     }
 

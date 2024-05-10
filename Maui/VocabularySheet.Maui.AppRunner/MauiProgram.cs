@@ -7,6 +7,7 @@ using VocabularySheet.Maui.Domain.Common.Services;
 using VocabularySheet.Maui.Domain.ViewModels;
 using VocabularySheet.Maui.Domain.Views;
 using VocabularySheet.Maui.Domain.Xml.Controls;
+using VocabularySheet.ML.Client;
 
 namespace VocabularySheet.Maui.AppRunner;
 
@@ -54,6 +55,8 @@ public static class MauiProgram
         {
             DataDirectory = FileSystem.Current.AppDataDirectory
         });
+        builder.Services.AddPrediction(new MlModelsFolder());
+
         builder.Services.AddApplicationServices();
 
         builder.Services.AddSingleton<AppShellVM>();

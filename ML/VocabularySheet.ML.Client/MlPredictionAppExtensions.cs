@@ -2,15 +2,23 @@
 
 namespace VocabularySheet.ML.Client;
 
+public interface IMlModelsFolder
+{
+    Task<Stream> GetModel(string path);
+}
+
 public static class MlPredictionAppExtensions
 {
-    public static void AddPrediction(this IServiceCollection serviceCollection)
+    public static void AddPrediction<T>(this IServiceCollection serviceCollection, T folder) where T : IMlModelsFolder
     {
         serviceCollection.AddSingleton<IWordClassificationService, MlWordService>();
+        serviceCollection.AddSingleton<IMlModelsFolder>(folder);
+
     }
     
-    public static void AddPredictionTransient(this IServiceCollection serviceCollection)
+    public static void AddPredictionTransient<T>(this IServiceCollection serviceCollection, T folder) where T : IMlModelsFolder
     {
         serviceCollection.AddTransient<IWordClassificationService, MlWordService>();
+        serviceCollection.AddSingleton<IMlModelsFolder>(folder);
     }
 }

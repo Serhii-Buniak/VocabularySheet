@@ -67,6 +67,10 @@ public partial class WordSearchVm : BaseViewModel
     [RelayCommand]
     public async Task Search(CancellationToken cancellationToken)
     {
+        using var stream = await FileSystem.OpenAppPackageFileAsync("AboutAssets.txt");
+
+        using var reader = new StreamReader(stream);
+        var data = await reader.ReadToEndAsync(cancellationToken);
         if (string.IsNullOrWhiteSpace(SearchWord))
         {
             return;

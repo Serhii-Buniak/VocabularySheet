@@ -12,14 +12,22 @@ public interface IWordEvaluationService
 
 internal class MlWordEvaluationService : IWordEvaluationService
 {
+    private readonly IMlDatasetsFolder _mlDatasetsFolder;
+    private readonly MlDataSets _dataSets;
+
+    public MlWordEvaluationService(IMlDatasetsFolder mlDatasetsFolder, MlDataSets dataSets)
+    {
+        _mlDatasetsFolder = mlDatasetsFolder;
+        _dataSets = dataSets;
+    }
     public MulticlassClassificationMetrics? Evaluate()
     {
         // Load data
-        var data = MlDataSets.Article; 
+        var data = _dataSets.GetArticleDataSet(); 
         var mlContext = new MLContext(seed: 1);
 
         // Define data schema
-        IDataView? dataView = mlContext.Data.LoadFromEnumerable(data);
+        var dataView = mlContext.Data.LoadFromEnumerable(data);
 
         // Split the data into training and testing sets
         var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
@@ -49,8 +57,8 @@ internal class MlWordEvaluationService : IWordEvaluationService
         var model = dataPipeline.Fit(trainData);
         
         // Save the model
-        var modelPath = MlModelsFolder.CreatePath(MlModelConstants.WordArticlesFileName);
-        mlContext.Model.Save(model, trainTestData.TrainSet.Schema, modelPath);
+        var path = Path.Combine(_mlDatasetsFolder.SaveModelsPath, MlModelConstants.WordArticlesFileName);
+        mlContext.Model.Save(model, trainTestData.TrainSet.Schema, path);
         
         // Evaluate the model
         var predictions = model.Transform(testData);
