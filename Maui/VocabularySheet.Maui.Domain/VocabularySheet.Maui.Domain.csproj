@@ -43,9 +43,6 @@
       <MauiXaml Update="Xml\Controls\EditorForUrl.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="Xml\Controls\ImageBigButton.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
       <MauiXaml Update="Xml\Controls\PageHeader.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>

@@ -6,7 +6,7 @@
              x:Class="VocabularySheet.Maui.Domain.Xml.Controls.BoxModels"  
              x:DataType="controls:BoxModels"
              x:Name="BoxModelsX">
-    <FlexLayout MaximumWidthRequest="{OnPlatform WinUI=1600}" BindableLayout.ItemsSource="{Binding BoxVm.BoxModels, Source={Reference BoxModelsX}}">
+    <FlexLayout Wrap="Wrap" MaximumWidthRequest="{OnPlatform WinUI=1600}" BindableLayout.ItemsSource="{Binding BoxVm.BoxModels, Source={Reference BoxModelsX}}">
         <BindableLayout.ItemTemplate>
             <DataTemplate x:DataType="viewModels:LinkBoxModel">
                 <controls:ButtonIcon BorderColor="{Binding BorderColor}"

@@ -45,7 +45,7 @@ public partial class LinkBoxVm(IMediator mediator, ILogger logger) : BaseViewMod
         new LinkBoxModel
         {
             BorderColor = "#ee8ed4f5",
-            BackgroundColor = "#338ed4f5",
+            BackgroundColor = "#598ed4f5",
             Image = "deepl_logo.png",
             Command = OpenDeepLTranslateCommand
         },
