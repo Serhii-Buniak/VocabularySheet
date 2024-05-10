@@ -1,12 +1,12 @@
-using WordSearchVM = VocabularySheet.Maui.Domain.ViewModels.WordSearchVM;
+using VocabularySheet.Maui.Domain.ViewModels;
 
 namespace VocabularySheet.Maui.Domain.Views;
 
 public partial class WordSearch : ContentPage
 {
-    private readonly WordSearchVM _wordDetails;
+    private readonly WordSearchVm _wordDetails;
 
-    public WordSearch(WordSearchVM wordDetails)
+    public WordSearch(WordSearchVm wordDetails)
     {
         InitializeComponent();
         _wordDetails = wordDetails;

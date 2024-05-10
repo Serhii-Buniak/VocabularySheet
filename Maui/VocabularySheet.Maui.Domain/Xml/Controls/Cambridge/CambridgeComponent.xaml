@@ -25,7 +25,7 @@
                     <VerticalStackLayout x:DataType="cambridge:CambridgeWordBlock">
                         <Label Text="{Binding Title, Mode=OneTime}"
                                FontSize="{OnPlatform WinUI=42, Android=32}" />
-                        <VerticalStackLayout Margin="0,10, 0,0">
+                        <VerticalStackLayout Margin="0,10,0,0">
         
                             <controls:MarkFrame
                                 Color="#114488"

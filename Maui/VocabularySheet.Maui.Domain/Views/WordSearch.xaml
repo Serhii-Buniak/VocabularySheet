@@ -7,7 +7,8 @@
              xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.Domain.Xml.Controls.ReversoContext;assembly=VocabularySheet.Maui.Domain"
              xmlns:controls="clr-namespace:VocabularySheet.Maui.Domain.Xml.Controls;assembly=VocabularySheet.Maui.Domain"
              xmlns:viewModels="clr-namespace:VocabularySheet.Maui.Domain.ViewModels;assembly=VocabularySheet.Maui.Domain"
-             x:DataType="viewModels:WordSearchVM"
+             xmlns:components="clr-namespace:VocabularySheet.Maui.Domain.Xml.Components"
+             x:DataType="viewModels:WordSearchVm"
              x:Name="wordSearch">
     <ScrollView>
         <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
@@ -37,8 +38,39 @@
                                         Command="{Binding SearchCommand}" />
             </Grid>
 
-            <controls:ImageBigButton TranslatorLink="{Binding LinkTranslate}"
-                                     OpenLinkCommand="{Binding OpenLinkCommand}"/>
+            <controls:BoxModels BoxVm="{Binding Box}"/>
+            
+            <!-- <Grid ColumnSpacing="10" MaximumWidthRequest="1600" Padding="5" HorizontalOptions="Start"> -->
+            <!--     <Grid.ColumnDefinitions> -->
+            <!--         <ColumnDefinition Width="*" /> -->
+            <!--         <ColumnDefinition Width="*" /> -->
+            <!--         <ColumnDefinition Width="*" /> -->
+            <!--         <ColumnDefinition Width="*" /> -->
+            <!--     </Grid.ColumnDefinitions> -->
+            <!-- -->
+            <!--     <controls:ButtonIcon BorderColor="#ee184787" -->
+            <!--                          Grid.Column="1" -->
+            <!--                          Color="#33184787" -->
+            <!--                          ImageSource="google_traslator_logo.png" -->
+            <!--                          ClickCommand="{Binding OpenGoogleTranslateCommand}"/> -->
+            <!--     <controls:ButtonIcon BorderColor="#ee184787" -->
+            <!--                          Grid.Column="2" -->
+            <!--                          Color="#33184787"  -->
+            <!--                          ImageSource="google_traslator_logo.png" -->
+            <!--                          ClickCommand="{Binding OpenGoogleTranslateCommand}"/> -->
+            <!--     <controls:ButtonIcon BorderColor="#ee184787" -->
+            <!--                          Grid.Column="3" -->
+            <!--                          Color="#33184787"  -->
+            <!--                          ImageSource="google_traslator_logo.png" -->
+            <!--                          ClickCommand="{Binding OpenGoogleTranslateCommand}"/> -->
+            <!-- -->
+            <!-- </Grid> -->
+            
+            <HorizontalStackLayout MaximumWidthRequest="1600" Padding="5">
+                
+            </HorizontalStackLayout>
+            <!-- <controls:ImageBigButton TranslatorLink="{Binding LinkTranslate}" -->
+            <!--                          OpenLinkCommand="{Binding OpenLinkCommand}"/> -->
             
             <cambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
                                                   OpenLinkCommand="{Binding OpenLinkCommand}"

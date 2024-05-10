@@ -1,11 +1,15 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CsvHelper;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using VocabularySheet.Application.Commons.Dtos;
 using VocabularySheet.Application.GoogleSheets.Commands;
 using VocabularySheet.Application.GoogleSheets.Queries;
+using VocabularySheet.Application.LanguageWords;
 using VocabularySheet.Application.Words.Commands;
+using VocabularySheet.Common;
 using VocabularySheet.Domain.Exceptions;
 using VocabularySheet.Domain.Exceptions.HttpClientExceptions;
 using VocabularySheet.Infrastructure.Csv.Models;
@@ -25,6 +29,18 @@ public partial class GoogleSheetsVM : BaseViewModel
     public event SynchronizeEvent.Handler OnSynchronize = (_, _) => Task.CompletedTask;
     public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch((string)GoogleSheetUrl) && SetGoogleScriptUrl.Validation.UrlRegex.IsMatch((string)GoogleScriptUrl);
 
+    [ObservableProperty]
+    private WordLanguageItem _origin = new WordLanguageItem(WordLanguage.En, "English");
+    
+    [ObservableProperty]
+    private WordLanguageItem _translation = new WordLanguageItem(WordLanguage.En, "English");
+
+    public ObservableCollection<WordLanguageItem> LanguageItems { get; init; } = new()
+    {
+        new WordLanguageItem(WordLanguage.En, "English"),
+        new WordLanguageItem(WordLanguage.Ua, "Ukranian"),
+        new WordLanguageItem(WordLanguage.Ru, "404?"),
+    };
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsErrorVisible))]
     private string? _error;
@@ -36,6 +52,17 @@ public partial class GoogleSheetsVM : BaseViewModel
     {
     }
 
+        
+    [RelayCommand]
+    private async Task Save()
+    {
+        await Mediator.Send(new SetLanguageWord.Command()
+        {
+            WordLang = Origin.Key,
+            TranslateLang = Translation.Key,
+        });
+    }
+    
     [RelayCommand]
     private async Task Synchronize()
     {
@@ -85,5 +112,9 @@ public partial class GoogleSheetsVM : BaseViewModel
         {
             GoogleScriptUrl = scriptUrl;
         }
+        
+        var configuration = await Mediator.Send(new GetLanguageWord.Query());
+        Origin = LanguageItems.First(l => l.Key == configuration.OriginLang);
+        Translation = LanguageItems.First(l => l.Key == configuration.TranslateLang);
     }
 }

@@ -3,14 +3,19 @@ using VocabularySheet.Common;
 
 namespace WebSources.Common;
 
-public static class GoogleTranslatorLinker
+public static class UrbanDictionaryTranslatorLinker
 {
-    private const string Base = "https://translate.google.com";
+    private const string Base = "https://www.urbandictionary.com/define.php";
     
     private static string WordLink(string word, WordLanguage language, WordLanguage translationLanguage)
     {
+        if (language != WordLanguage.En)
+        {
+            throw new ArgumentException("UrbanDictionary support only En", nameof(language));
+        }
+        
         word = HttpUtility.UrlEncode(word);
-        string link = $"{Base}/?sl={LangToString(language)}&tl={LangToString(translationLanguage)}&text={word}&op=translate";
+        string link = $"{Base}?term={word}";
         return link;
     }
 
@@ -22,16 +27,6 @@ public static class GoogleTranslatorLinker
             Language = language,
             TranslationLanguage = translationLanguage,
             Link = WordLink(word, language, translationLanguage),
-        };
-    }
-    
-    private static string LangToString(WordLanguage language)
-    {
-        return language switch
-        {
-            WordLanguage.Ua => "uk",
-            WordLanguage.Ru => "ru",
-            _ => "en",
         };
     }
 }

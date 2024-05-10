@@ -67,9 +67,6 @@
       <MauiXaml Update="Views\GoogleSheets.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="Views\LanguageWord.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
       <MauiXaml Update="Views\WordDetails.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
@@ -83,13 +80,17 @@
         <SubType>Designer</SubType>
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
+      <MauiXaml Update="Xml\Controls\ButtonIcon.xaml">
+        <SubType>Designer</SubType>
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Xml\Controls\BoxModels.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 
     <ItemGroup>
       <AdditionalFiles Include="Views\GoogleSheets.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </AdditionalFiles>
-      <AdditionalFiles Include="Views\LanguageWord.xaml">
         <Generator>MSBuild:Compile</Generator>
       </AdditionalFiles>
       <AdditionalFiles Include="Views\WordDetails.xaml">
@@ -149,6 +150,14 @@
     <ItemGroup>
       <Compile Update="Views\WordClassification.xaml.cs">
         <DependentUpon>WordClassification.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Xml\Controls\ButtonIcon.xaml.cs">
+        <DependentUpon>ButtonIcon.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Xml\Controls\BoxModels.xaml.cs">
+        <DependentUpon>BoxModels.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>

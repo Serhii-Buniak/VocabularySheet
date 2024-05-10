@@ -3,14 +3,14 @@ using VocabularySheet.Common;
 
 namespace WebSources.Common;
 
-public static class GoogleTranslatorLinker
+public static class DeepLTranslatorLinker
 {
-    private const string Base = "https://translate.google.com";
+    private const string Base = "https://www.deepl.com/translator";
     
     private static string WordLink(string word, WordLanguage language, WordLanguage translationLanguage)
     {
         word = HttpUtility.UrlEncode(word);
-        string link = $"{Base}/?sl={LangToString(language)}&tl={LangToString(translationLanguage)}&text={word}&op=translate";
+        string link = $"{Base}#{LangToString(language)}/{LangToString(translationLanguage)}/{word}";
         return link;
     }
 

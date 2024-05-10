@@ -8,7 +8,7 @@ public class GoogleLanguageConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is GoogleTranslatorLink link)
+        if (value is ExternalSourceLink link)
         {
             return $"{ToText(link.Language)} - {ToText(link.TranslationLanguage)}";
         }

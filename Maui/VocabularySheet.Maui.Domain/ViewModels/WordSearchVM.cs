@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,7 @@ using WebSources.Common;
 
 namespace VocabularySheet.Maui.Domain.ViewModels;
 
-public partial class WordSearchVM : BaseViewModel
+public partial class WordSearchVm : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
     private readonly StreamFetcherClient _fetcher;
@@ -27,12 +28,14 @@ public partial class WordSearchVM : BaseViewModel
     [ObservableProperty] PublicCambridgeEntry? _originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? _translateCambridge = null;
     [ObservableProperty] PublicReversoContextEntry? _reversoContext = null;
-    [ObservableProperty] GoogleTranslatorLink _linkTranslate = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
-    
-    public WordSearchVM(IMediator mediator, ILogger<Domain.ViewModels.WordSearchVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+
+    [ObservableProperty] private LinkBoxVm _box;
+
+    public WordSearchVm(IMediator mediator, ILogger<WordSearchVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;
+        _box = new LinkBoxVm(mediator, logger);
     }
     
     [RelayCommand]
@@ -62,7 +65,7 @@ public partial class WordSearchVM : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task Search()
+    public async Task Search(CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(SearchWord))
         {
@@ -75,23 +78,22 @@ public partial class WordSearchVM : BaseViewModel
         Word = await Mediator.Send(new GetSpinWord.QueryName()
         {
             Word = SearchWord
-        });
+        }, cancellationToken);
         
         var cambridge = await Mediator.Send(new GetCambridgePage.QuerySimple()
         {
             Word = SearchWord
-        });
+        }, cancellationToken);
         
         var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.QuerySimple()
         {
             Word = SearchWord
-        });
+        }, cancellationToken);
 
-        var localization = await Mediator.Send(new GetLanguageWord.Query());
-
+        var localization = await Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
+        await Box.SetWord(SearchWord, cancellationToken);
         await Task.Run(() =>
         {
-            LinkTranslate = GoogleTranslatorLinker.Link(SearchWord, localization.OriginLang, localization.TranslateLang);
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
             {
                 Word = SearchWord,

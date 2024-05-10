@@ -4,7 +4,7 @@
              x:Class="VocabularySheet.Maui.Domain.Xml.Controls.WordListItem"
              x:Name="WordListItemX">
 	<Border StrokeThickness="0" BackgroundColor="#111111"
-	        MinimumHeightRequest="70"
+	        MinimumHeightRequest="90"
 	        Margin="{Binding Margin, Source={Reference WordListItemX}}"
 	        VerticalOptions="Center"
 	        Padding="{OnPlatform Android=5, WinUI=20}"

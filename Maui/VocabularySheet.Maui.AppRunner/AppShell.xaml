@@ -26,20 +26,16 @@
         <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate views:GoogleSheets}" />
     </FlyoutItem>
     
-    <FlyoutItem Title="Language" Icon="language_icon.png">
-        <ShellContent Route="Language" ContentTemplate="{DataTemplate views:LanguageWord}" />
+    <FlyoutItem Title="Classification" Icon="machine_learning.png">
+        <ShellContent Route="WordClassification" ContentTemplate="{DataTemplate views:WordClassification}" />
     </FlyoutItem>
     
     <FlyoutItem Title="Word Details" Icon="word_details_icon.png">
-        <ShellContent ContentTemplate="{DataTemplate views:WordDetails}" />
+        <ShellContent Route="WordDetails" ContentTemplate="{DataTemplate views:WordDetails}" />
     </FlyoutItem>
-    
-    <FlyoutItem Title="Classification" Icon="machine_learning.png">
-        <ShellContent ContentTemplate="{DataTemplate views:WordClassification}" />
-    </FlyoutItem>
-    
+
     <FlyoutItem Title="Search" Icon="search_word_icon.png">
-        <ShellContent ContentTemplate="{DataTemplate views:WordSearch}" />
+        <ShellContent  ContentTemplate="{DataTemplate views:WordSearch}" />
     </FlyoutItem>
     
 </Shell>

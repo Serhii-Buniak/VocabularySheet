@@ -92,14 +92,26 @@ public record WordClassificationRecord : IHasPercentage
     }
 }
 
-
+[QueryProperty("WordParam", "WordParam")]
 public partial class WordClassificationVm : BaseViewModel
 {
     [ObservableProperty] private string _searchWord = string.Empty;
     [ObservableProperty] private List<WordClassificationRecord> _records = [];
     
+    [ObservableProperty] private string _wordParam = string.Empty;
+
     public WordClassificationVm(IMediator mediator, ILogger<WordClassificationVm> logger) : base(mediator, logger)
     {
+    }
+    
+    public async Task LoadDataAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(WordParam))
+        {
+            SearchWord = WordParam;
+        }
+        
+        await Classify();
     }
     
     [RelayCommand]
@@ -110,6 +122,11 @@ public partial class WordClassificationVm : BaseViewModel
             return;
         }
 
+        if (!string.IsNullOrWhiteSpace(WordParam))
+        {
+            await Shell.Current.GoToWordClassification();
+        }
+        
         ArticleProbabilityResult probabilityResult = await Mediator.Send(new ArticlePrediction.Query
         {
             Word = SearchWord

@@ -28,6 +28,35 @@
 
         <controls:EditorForUrl Text="{Binding GoogleScriptUrl, Mode=TwoWay}"/>
 
+        <BoxView HeightRequest="3"
+                 Color="#FFE797"
+                 HorizontalOptions="Fill"
+                 Margin="10" />
+        
+        <controls:PrimaryButton Margin="0,50,0,20" Text="Save"
+                                Command="{Binding SaveCommand}"
+        />
+
+        <StackLayout HorizontalOptions="Center" Margin="10"  WidthRequest="300">
+            <Label Text="Origin" HorizontalOptions="Start" FontSize="27" />
+            <Picker HorizontalOptions="Center" 
+                    FontSize="25"
+                    WidthRequest="300"
+                    ItemsSource="{Binding LanguageItems}"
+                    SelectedItem="{Binding Origin}"
+            />
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="Center" Margin="10" WidthRequest="300">
+            <Label Text="Translation"  HorizontalOptions="Start" FontSize="27" />
+            <Picker HorizontalOptions="Center" 
+                    FontSize="25"
+                    WidthRequest="300"
+                    ItemsSource="{Binding LanguageItems}"
+                    SelectedItem="{Binding Translation}"
+            />
+        </StackLayout>
+
     </VerticalStackLayout>
     
 </ContentPage>

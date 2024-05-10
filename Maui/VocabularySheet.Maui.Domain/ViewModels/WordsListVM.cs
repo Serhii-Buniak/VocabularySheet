@@ -15,7 +15,7 @@ public partial class WordsListVM : BaseViewModel
     [ObservableProperty] List<WordModel> _words = new List<WordModel>();
     [ObservableProperty] GetSpinWords.Query? _savedQuery = null;
     
-    public WordsListVM(IMediator mediator, ILogger<Domain.ViewModels.LanguageWordVM> logger, WordsSpinVM wordsSpinVm) : base(mediator, logger)
+    public WordsListVM(IMediator mediator, ILogger<WordsListVM> logger, WordsSpinVM wordsSpinVm) : base(mediator, logger)
     {
         _wordsSpinVm = wordsSpinVm;
     }

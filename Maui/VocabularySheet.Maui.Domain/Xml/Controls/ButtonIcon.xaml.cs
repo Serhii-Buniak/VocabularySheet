@@ -3,27 +3,45 @@ using WebSources.Common;
 
 namespace VocabularySheet.Maui.Domain.Xml.Controls;
 
-public partial class ImageBigButton : ContentView
+public partial class ButtonIcon : ContentView
 {
-    public static readonly BindableProperty TranslatorLinkProperty = BindableProperty.Create(
-        nameof(TranslatorLink),
-        typeof(ExternalSourceLink),
-        typeof(ImageBigButton));
-    
     public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
         nameof(ImageSource),
         typeof(ImageSource),
-        typeof(ImageBigButton));
+        typeof(ButtonIcon));
     
-    public static readonly BindableProperty OpenLinkCommandProperty = BindableProperty.Create(
-        nameof(OpenLinkCommand),
+    public static readonly BindableProperty ClickCommandProperty = BindableProperty.Create(
+        nameof(ClickCommand),
         typeof(ICommand),
-        typeof(ImageBigButton));
+        typeof(ButtonIcon));
     
-    public ImageBigButton()
+    public static readonly BindableProperty ColorProperty = BindableProperty.Create(
+        nameof(Color),
+        typeof(Color),
+        typeof(ButtonIcon));  
+    public static readonly BindableProperty BorderColorProperty = BindableProperty.Create(
+        nameof(BorderColor),
+        typeof(Color),
+        typeof(ButtonIcon));  
+
+    
+    public ButtonIcon()
     {
         InitializeComponent();
     }
+    
+    public Color BorderColor
+    {
+        get => (Color)GetValue(BorderColorProperty);
+        set => SetValue(BorderColorProperty, value);
+    }
+
+    public Color Color
+    {
+        get => (Color)GetValue(ColorProperty);
+        set => SetValue(ColorProperty, value);
+    }
+
     
     public ImageSource ImageSource
     {
@@ -31,16 +49,10 @@ public partial class ImageBigButton : ContentView
         set => SetValue(ImageSourceProperty, value);
     }
     
-    public ExternalSourceLink TranslatorLink
+    public ICommand ClickCommand
     {
-        get => (ExternalSourceLink)GetValue(TranslatorLinkProperty);
-        set => SetValue(TranslatorLinkProperty, value);
-    }
-    
-    public ICommand OpenLinkCommand
-    {
-        get => (ICommand)GetValue(OpenLinkCommandProperty);
-        set => SetValue(OpenLinkCommandProperty, value);
+        get => (ICommand)GetValue(ClickCommandProperty);
+        set => SetValue(ClickCommandProperty, value);
     }
     
     private async void Tapped(object sender, EventArgs e)
@@ -65,7 +77,7 @@ public partial class ImageBigButton : ContentView
             await frame.FadeTo(1, 10, Easing.Linear);
         }
         
-        OpenLinkCommand.Execute(TranslatorLink.Link);
+        ClickCommand.Execute(new object());
     }
 }
 

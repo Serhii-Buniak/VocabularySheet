@@ -20,7 +20,7 @@ using WebSources.ReversoContext.Entities;
 namespace VocabularySheet.Maui.Domain.ViewModels;
 
 [QueryProperty("Id", "Id")]
-public partial class WordDetailsVM : BaseViewModel
+public partial class WordDetailsVm : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
     private readonly StreamFetcherClient _fetcher;
@@ -33,12 +33,15 @@ public partial class WordDetailsVM : BaseViewModel
     [ObservableProperty] PublicCambridgeEntry? _originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? _translateCambridge = null;
     [ObservableProperty] PublicReversoContextEntry? _reversoContext = null;
-    [ObservableProperty] GoogleTranslatorLink _translatorLink = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
+    [ObservableProperty] ExternalSourceLink _translatorLink = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
+    
+    [ObservableProperty] private LinkBoxVm _box;
 
-    public WordDetailsVM(IMediator mediator, ILogger<Domain.ViewModels.LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+    public WordDetailsVm(IMediator mediator, ILogger<WordDetailsVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;
+        _box = new LinkBoxVm(mediator, logger);
     }
     
     [RelayCommand]
@@ -75,11 +78,11 @@ public partial class WordDetailsVM : BaseViewModel
 
     public async Task LoadDataAsync()
     {
-        await LoadWord(Id);
+        await LoadWord(Id, CancellationToken.None);
     }
 
     [RelayCommand]
-    public async Task LoadWord(long wordId)
+    public async Task LoadWord(long wordId, CancellationToken cancellationToken)
     {
         if (wordId == Word.Id)
         {
@@ -93,30 +96,31 @@ public partial class WordDetailsVM : BaseViewModel
         Word = await Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = wordId
-        }) ?? Word;
+        }, cancellationToken) ?? Word;
 
         PrevWord = await Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = (Word.Id - 1)
-        }) ?? WordModel.Sample;
+        }, cancellationToken) ?? WordModel.Sample;
 
         NextWord = await Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = (Word.Id + 1)
-        }) ?? WordModel.Sample;
+        }, cancellationToken) ?? WordModel.Sample;
 
         var cambridge = await Mediator.Send(new GetCambridgePage.Query()
         {
             Word = Word
-        });
+        }, cancellationToken);
 
-        var localization = await Mediator.Send(new GetLanguageWord.Query());
+        var localization = await Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
 
         var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.Query()
         {
             Word = Word
-        });
+        }, cancellationToken);
         
+        await Box.SetWord(Word.Original, cancellationToken);
         await Task.Run(() =>
         {
             TranslatorLink = GoogleTranslatorLinker.Link(Word.Original, localization.OriginLang, localization.TranslateLang);
@@ -157,6 +161,6 @@ public partial class WordDetailsVM : BaseViewModel
                     Examples= new List<ReversoContextExample>(),
                 }
             };
-        });
+        }, cancellationToken);
     }
 }

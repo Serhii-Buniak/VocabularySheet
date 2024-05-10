@@ -1,12 +1,12 @@
-using WordDetailsVM = VocabularySheet.Maui.Domain.ViewModels.WordDetailsVM;
+using VocabularySheet.Maui.Domain.ViewModels;
 
 namespace VocabularySheet.Maui.Domain.Views;
 
 public partial class WordDetails : ContentPage
 {
-    private readonly WordDetailsVM _wordDetails;
+    private readonly WordDetailsVm _wordDetails;
 
-    public WordDetails(WordDetailsVM wordDetails)
+    public WordDetails(WordDetailsVm wordDetails)
     {
         InitializeComponent();
         _wordDetails = wordDetails;

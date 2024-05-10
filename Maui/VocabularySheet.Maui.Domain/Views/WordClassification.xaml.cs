@@ -12,4 +12,10 @@ public partial class WordClassification : ContentPage
         _wordClassificationVm = wordClassificationVm;
         BindingContext = _wordClassificationVm;
     }
+    
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await _wordClassificationVm.LoadDataAsync();
+    }
 }
