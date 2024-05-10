@@ -13,7 +13,9 @@ using VocabularySheet.Infrastructure.Repositories.Configurations;
 using VocabularySheet.Infrastructure.Repositories.Interfaces;
 using VocabularySheet.Infrastructure.Repositories.Pages;
 using VocabularySheet.Infrastructure.Services;
-using VocabularySheet.Infrastructure.Services.Interfaces;using WebSources.CambridgeDictionary;
+using VocabularySheet.Infrastructure.Services.Interfaces;
+using VocabularySheet.ML.Client;
+using WebSources.CambridgeDictionary;
 using WebSources.ReversoContext;
 
 namespace VocabularySheet.Infrastructure;
@@ -36,6 +38,8 @@ public static class ConfigureServices
         services.AddCambridgeDictionary();
         services.AddReversoContext();
 
+        services.AddPrediction();
+        
         return services;
     }
     

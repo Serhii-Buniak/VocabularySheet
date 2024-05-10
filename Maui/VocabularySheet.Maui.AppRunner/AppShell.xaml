@@ -34,6 +34,10 @@
         <ShellContent ContentTemplate="{DataTemplate views:WordDetails}" />
     </FlyoutItem>
     
+    <FlyoutItem Title="Classification" Icon="machine_learning.png">
+        <ShellContent ContentTemplate="{DataTemplate views:WordClassification}" />
+    </FlyoutItem>
+    
     <FlyoutItem Title="Search" Icon="search_word_icon.png">
         <ShellContent ContentTemplate="{DataTemplate views:WordSearch}" />
     </FlyoutItem>

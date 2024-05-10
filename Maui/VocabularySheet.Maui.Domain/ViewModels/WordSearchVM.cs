@@ -29,7 +29,7 @@ public partial class WordSearchVM : BaseViewModel
     [ObservableProperty] PublicReversoContextEntry? _reversoContext = null;
     [ObservableProperty] GoogleTranslatorLink _linkTranslate = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
     
-    public WordSearchVM(IMediator mediator, ILogger<Domain.ViewModels.LanguageWordVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+    public WordSearchVM(IMediator mediator, ILogger<Domain.ViewModels.WordSearchVM> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;

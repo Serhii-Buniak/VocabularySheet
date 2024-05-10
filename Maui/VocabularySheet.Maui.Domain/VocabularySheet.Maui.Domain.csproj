@@ -79,6 +79,10 @@
       <MauiXaml Update="Views\WordsList.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
+      <MauiXaml Update="Views\WordClassification.xaml">
+        <SubType>Designer</SubType>
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
     </ItemGroup>
 
     <ItemGroup>
@@ -140,6 +144,13 @@
       <AdditionalFiles Include="Xml\Controls\WordListItem.xaml">
         <Generator>MSBuild:Compile</Generator>
       </AdditionalFiles>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\WordClassification.xaml.cs">
+        <DependentUpon>WordClassification.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

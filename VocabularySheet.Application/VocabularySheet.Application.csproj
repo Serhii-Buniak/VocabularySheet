@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ML\VocabularySheet.ML.Client\VocabularySheet.ML.Client.csproj" />
     <ProjectReference Include="..\VocabularySheet.Domain\VocabularySheet.Domain.csproj" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@
 
 public enum ArticleType
 {
+    Other = 0,
     Business = 1,
     Entertainment = 2,
     Food = 3,
