@@ -2,6 +2,10 @@
 
 namespace VocabularySheet.ML.Client;
 
+public static class MlModelConstants
+{
+    public const string WordArticlesFileName = "wordArticles.zip"; 
+}
 public interface IMlModelsFolder
 {
     Task<Stream> GetModel(string path);

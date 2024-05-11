@@ -23,6 +23,7 @@ public interface IMlDatasetsFolder
 {
     string FolderPath { get; }
     string SaveModelsPath { get; }
+    AppFileEntry GetFilePath(string filePath);
     Dictionary<string, AppFileEntry> GetFilesPath(string folderPath);
     Dictionary<string, AppFolderEntry> GetFoldersPath(string folderPath);
 }
@@ -31,6 +32,25 @@ public class MlDatasetsFolder : IMlDatasetsFolder
 {
     public required string FolderPath { get; init; }
     public required string SaveModelsPath { get; init; }
+
+    public AppFileEntry GetFilePath(string filePath)
+    {
+        string fullPath = Path.Combine(FolderPath, filePath);
+        if (!File.Exists(fullPath))
+        {
+            throw new DirectoryNotFoundException($"The file '{filePath}' does not exist.");
+        }
+        
+        string path = fullPath.Replace(FolderPath, string.Empty);
+
+        return new AppFileEntry
+        {
+            Name = Path.GetFileName(fullPath),
+            Path = path,
+            FullPath = fullPath,
+            Content = File.ReadAllText(fullPath)
+        };
+    }
     
     public Dictionary<string, AppFileEntry> GetFilesPath(string folderPath)
     {

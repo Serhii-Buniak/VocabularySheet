@@ -33,7 +33,7 @@ public record ArticlePrediction
 
 public record MlArticleRecord
 {
-    public required string Text { get; init; }
+    public required string Text { get; set; }
     public required int Type { get; init; }
     
     public ArticleType GetArticleType() => (ArticleType)Type;

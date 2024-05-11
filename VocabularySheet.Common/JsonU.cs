@@ -4,6 +4,11 @@ namespace VocabularySheet.Common;
 
 public static class Json
 {
+    public static readonly JsonSerializerOptions Camel = new JsonSerializerOptions()
+    {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
+    
     public static readonly JsonSerializerOptions Pretty = new JsonSerializerOptions()
     {
         WriteIndented = true

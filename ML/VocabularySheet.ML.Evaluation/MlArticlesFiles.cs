@@ -9,7 +9,7 @@ internal record MlArticlesFiles
     public required string[] Historical { get; init; }
     public required string[] Medical { get; init; }
     public required string[] Politics { get; init; }
-    public required string[] Space { get; init; }
     public required string[] Sport { get; init; }
     public required string[] Technologie { get; init; }
+    public required string[] Religion { get; init; }
 }

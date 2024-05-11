@@ -10,7 +10,7 @@ public enum ArticleType
     Historical = 5,
     Medical = 6,
     Politics = 7,
-    Space = 8,
-    Sport = 9,
-    Technologie = 10,
+    Sport = 8,
+    Technologie = 9,
+    Religion = 10,
 }

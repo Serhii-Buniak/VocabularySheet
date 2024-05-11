@@ -27,7 +27,6 @@ public record WordClassificationRecord : IHasPercentage
         ArticleType.Historical => "#3338261f",
         ArticleType.Medical => "#337d0420",
         ArticleType.Politics => "#33bababa",
-        ArticleType.Space => "#333b0670",
         ArticleType.Sport => "#3306706e",
         ArticleType.Technologie => "#33c7b708",
         _ => "#33424242"
@@ -42,7 +41,6 @@ public record WordClassificationRecord : IHasPercentage
         ArticleType.Historical => "#ee38261f",
         ArticleType.Medical => "#ee7d0420",
         ArticleType.Politics => "#eebababa",
-        ArticleType.Space => "#ee3b0670",
         ArticleType.Sport => "#ee06706e",
         ArticleType.Technologie => "#eec7b708",
         _ => "#ee424242"
@@ -57,7 +55,6 @@ public record WordClassificationRecord : IHasPercentage
         ArticleType.Historical => "article_historical.png",
         ArticleType.Medical => "article_medical.png",
         ArticleType.Politics => "article_politics.png",
-        ArticleType.Space => "article_space.png",
         ArticleType.Sport => "article_sport.png",
         ArticleType.Technologie => "article_technologie.png",
         _ => "article_other.png"

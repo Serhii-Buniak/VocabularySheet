@@ -2,11 +2,11 @@
 
 public static class EnumerableExtension
 {
-    private static Random RANDOM => new();
+    private static Random RandomInstance { get; } = new();
 
     public static List<T> OrderRandom<T>(this IEnumerable<T> source)
     {
-        return source.OrderBy(_ => RANDOM.Next()).ToList();
+        return source.OrderBy(_ => RandomInstance.Next()).ToList();
     }      
     
     public static T? Random<T>(this IEnumerable<T> source) where T : class
@@ -18,7 +18,7 @@ public static class EnumerableExtension
             return null;
         }
 
-        int index = RANDOM.Next(0, count);
+        int index = RandomInstance.Next(0, count);
         return list.ElementAt(index);
     }   
     
@@ -32,7 +32,7 @@ public static class EnumerableExtension
             return null;
         }
 
-        int index = RANDOM.Next(0, count);
+        int index = RandomInstance.Next(0, count);
         return list.ElementAt(index);
     }
     
