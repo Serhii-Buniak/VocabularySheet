@@ -1,6 +1,10 @@
-﻿using VocabularySheet.Common;
+﻿using System.Text.RegularExpressions;
+using Catalyst;
+using Mosaik.Core;
+using VocabularySheet.Common;
 using VocabularySheet.Common.Extensions;
 using VocabularySheet.ML.Client;
+using Catalyst.Models;
 
 namespace VocabularySheet.ML.Evaluation;
 
@@ -12,7 +16,6 @@ internal record EnWordsPopular1000()
         set;
     }
 }
-
 internal record EnWordPopular()
 {
     public required int Rank
@@ -28,6 +31,41 @@ internal record EnWordPopular()
     }
 }
 
+internal record CountryRecord
+{
+    public required CountryNameRecord Name
+    {
+        get;
+        init;
+    }
+}
+
+internal record CountryNameRecord
+{
+    public required string Common
+    {
+        get;
+        init;
+    }
+    
+    public required string Official
+    {
+        get;
+        init;
+    }
+
+    public HashSet<string> Names => [Common, Official];
+}
+
+internal record LanguageNameRecord
+{
+    public required string Full
+    {
+        get;
+        init;
+    }
+}
+
 internal class MlDataSets
 {
     private readonly IMlDatasetsFolder _folder;
@@ -38,37 +76,53 @@ internal class MlDataSets
     }
     
     
-    public HashSet<string> Get300EnWords()
+    public HashSet<string> GetEnStopWords()
     {
         var file = _folder.GetFilePath("en1000words.json");
+        var stopFile = _folder.GetFilePath("stop_words_english.json");
+        var stop2File = _folder.GetFilePath("stop_words_english_2.json");
+        var countriesFile = _folder.GetFilePath("countries.json");
+        var languagesFile = _folder.GetFilePath("languages.json");
+        
         var list = Json.Camel.Deserialize<EnWordsPopular1000>(file.Content);
+        var stop = Json.Camel.Deserialize<List<string>>(stopFile.Content) ?? [];
+        var stop2 = Json.Camel.Deserialize<List<string>>(stop2File.Content) ?? [];
+        var countries = Json.Camel.Deserialize<Dictionary<string, CountryRecord>>(countriesFile.Content) ?? new Dictionary<string, CountryRecord>();
+        var languages = Json.Camel.Deserialize<Dictionary<string, LanguageNameRecord>>(languagesFile.Content) ?? new Dictionary<string, LanguageNameRecord>();
 
-        return list?.Words.OrderBy(x => x.Rank).Take(300).Select(w => w.EnglishWord.ToLowerInvariant()).ToHashSet() ?? [];
+        var words = list?.Words.OrderBy(x => x.Rank).Take(300).Select(w => w.EnglishWord).ToHashSet() ?? [];
+
+        HashSet<string> result = [..words, ..stop, ..stop2, ..countries.SelectMany(x => x.Value.Name.Names), ..languages.Select(x => x.Value.Full)];
+
+        return result.Select(x => x.ToLowerInvariant()).ToHashSet();
     }
     
     private string[] GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path, HashSet<string> stopWords)
     {
-        string[] files = _folder.GetFilesPath(folders[path].Path).SelectMany(x => x.Value.Content.Split(new[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries))
+        string[] files = _folder.GetFilesPath(folders[path].Path).SelectMany(x => x.Value.Content.Split(new[] { '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries))
             .Select(x => string.Join(" ", x
-                    .RemoveEscapes()
-                    .RemovePunctuations()
-                    .RemoveNumbers()
-                    .RemoveEscapes()
-                    .RemoveZeroSymbol()
+                    .RemoveEmails()
+                    .RemoveHtmlTags()
+                    .RemovePunctuations(" ")
+                    .RemoveNumbers(" ")
+                    .RemoveZeroSymbol(" ")
+                    .KeepOnlyLettersAndSpaces()
                     .ToLowerInvariant()
                     .ReplaceDoubleSpaces()
-                    .Split(" ")
+                    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                    .Where(w => !stopWords.Contains(w))
+                    .Select(w => w.Trim().Lemmatize())
                     .Where(w => !stopWords.Contains(w))
                     .Where(w => w.Length > 2)
                 )
-            ).OrderRandom().ToArray();
+            ).Distinct().ToArray();
 
-        return files;
+        return files.AdjustWordsCount().Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
     }
     
     public List<MlArticleRecord> GetArticleDataSet()
     {
-        var stopWords = Get300EnWords();
+        var stopWords = GetEnStopWords();
         Dictionary<string, AppFolderEntry> folders = _folder.GetFoldersPath("document-classification");
         var files = new MlArticlesFiles
         {
@@ -139,4 +193,84 @@ internal class MlDataSets
         ];
     }
 
+}
+
+public static class StringDataSetsExtensions
+{
+    static StringDataSetsExtensions()
+    {
+        English.Register();
+    }
+
+    private record Wrap
+    {
+        public required string Input
+        {
+            get;
+            set;
+        }
+    };
+    
+    public static string[] AdjustWordsCount(this string[] input)
+    {
+        var inputRef = input.Select(x => new Wrap
+        {
+            Input = x
+        }).ToList();
+        
+        if (input.Length == 0)
+        {
+            return input;
+        }
+
+        // Find all distinct words in all strings
+        var allWords = input.SelectMany(s => s.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+            .GroupBy(x => x)
+            .Select(x => new
+            {
+                Word = x.Key,
+                Count = x.Count()
+            }).ToList();
+
+        foreach (string wordToRemove in allWords.Where(x => x.Count > 30).Select(x => x.Word))
+        {
+            var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).Skip(30).ToList();
+            foreach (var toRemove in needToRemove)
+            {
+                toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));
+            }
+        }
+        
+
+        foreach (string wordToRemove in allWords.Where(x => x.Count == 1).Select(x => x.Word))
+        {
+            var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).ToList();
+            foreach (var toRemove in needToRemove)
+            {
+                toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));
+            }
+        }        
+        return inputRef.Select(x => x.Input).ToArray();
+    }
+    
+    public static string Lemmatize(this string text, Language language = Language.English)
+    {
+        var lemetizer = LemmatizerStore.Get(language);
+        var token = new SingleToken(text, language);   
+        return lemetizer.GetLemma(token);
+    }
+    
+    public static string RemoveEmails(this string input)
+    {
+        // Regular expression pattern to match email addresses
+        string pattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b";
+        return Regex.Replace(input, pattern, " ");
+    }
+    
+    public static string RemoveHtmlTags(this string input)
+    {
+        // Regular expression pattern to match HTML tags
+        string pattern = @"<[^>]+>|&nbsp;";
+        return Regex.Replace(input, pattern, " ");
+    }
 }

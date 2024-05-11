@@ -1,6 +1,5 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.Data;
-using Microsoft.ML.Transforms;
 using Microsoft.ML.Transforms.Text;
 using VocabularySheet.Common;
 using VocabularySheet.Common.Extensions;
@@ -25,6 +24,18 @@ internal class MlWordEvaluationService : IWordEvaluationService
         _dataSets = dataSets;
     }
 
+    // var pipeline = mlContext.Transforms.Text
+    //     .NormalizeText("Text", nameof(MlArticleRecord.Text))
+    //     .Append(mlContext.Transforms.Text.TokenizeIntoWords("Text"))
+    //     .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Text"))
+    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Text"))
+    //     .Append(mlContext.Transforms.Text.ProduceNgrams("Text"))
+    //     .Append(mlContext.Transforms.NormalizeLpNorm("Text"))
+    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)))
+    //     .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(featureColumnName: "Text"))
+    //     .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+
+    
     public MulticlassClassificationMetrics? Evaluate()
     {
         // Load data
@@ -49,16 +60,22 @@ internal class MlWordEvaluationService : IWordEvaluationService
             .Append(mlContext.Transforms.Text.TokenizeIntoWords("Tokens", "NormalizedText"))
             .Append(mlContext.Transforms.Text.NormalizeText("Tokens"))
             .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Tokens"))
-            .Append(mlContext.Transforms.Text.FeaturizeText("Features", "Tokens"))
+            .Append(mlContext.Transforms.Text.FeaturizeText("Features", new TextFeaturizingEstimator.Options()
+            {
+                WordFeatureExtractor = new WordBagEstimator.Options()
+                {
+                    Weighting = NgramExtractingEstimator.WeightingCriteria.TfIdf
+                }
+            }, "Tokens"))
             .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)));
         
-        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy();
+        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy();
 
         // Define data preparation pipeline
         var dataPipeline = preprocessingPipeline.Append(trainer)
             // .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy())
             .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
-
+        
         // Train the model
         var model = dataPipeline.Fit(trainData);
 
@@ -82,7 +99,24 @@ internal class MlWordEvaluationService : IWordEvaluationService
         var filteredData = RemoveCommonTexts(data, commonTexts);
 
         // Step 3: Perform under-sampling to balance the dataset
-        return PerformBalancedUnderSampling(filteredData);
+        var sampled = PerformBalancedUnderSampling(filteredData);
+
+        return sampled.GroupBy(x => x.Type).SelectMany(x =>
+        {
+            string[] str = x.Select(x => x.Text).ToArray();
+            string joined = string.Join(" ", str);
+
+            string[] words = joined.Split(" ");
+            
+            IEnumerable<string> chunks = Enumerable.Range(0, words.Length / 5)
+                    .Select(i => string.Join(" ", words.Skip(i * 5).Take(5)));
+
+            return chunks.Select(c => new MlArticleRecord
+            {
+                Text = c,
+                Type = x.Key
+            });
+        }).Where(x => !string.IsNullOrWhiteSpace(x.Text)).ToList();
     }
 
     private HashSet<string> FindCommonTexts(IEnumerable<MlArticleRecord> data)
@@ -115,20 +149,40 @@ internal class MlWordEvaluationService : IWordEvaluationService
 
     private IEnumerable<MlArticleRecord> PerformBalancedUnderSampling(IEnumerable<MlArticleRecord> data)
     {
-        // Count the number of records for each type
+        // Group the records by their classification type
         var groupByType = data.GroupBy(record => record.Type).ToList();
-        var minCount = groupByType.Min(group => group.Count());
 
-        // Perform under-sampling to balance the dataset
+        // Calculate the total number of words for each group
+        var totalWordsByGroup = groupByType.ToDictionary(
+            group => group.Key,
+            group => group.Sum(record => CountWords(record.Text))
+        );
+
+        // Determine the minimum total word count across all groups
+        var minTotalWordCount = totalWordsByGroup.Min(kv => kv.Value);
+
+        // Perform under-sampling to balance the dataset based on total word count
         var underSampledData = new List<MlArticleRecord>();
 
         foreach (var group in groupByType)
         {
-            var underSampledGroup = group.OrderRandom().Take(minCount);
-            underSampledData.AddRange(underSampledGroup);
+            var wordsCount = 0;
+            foreach (MlArticleRecord record in group)
+            {
+                underSampledData.Add(record);
+                wordsCount += CountWords(record.Text);
+                if (wordsCount >= minTotalWordCount)
+                {
+                    break;
+                }
+            }
         }
 
         return underSampledData;
+    }
+    private int CountWords(string text)
+    {
+        return text.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
     }
 
     public Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken)

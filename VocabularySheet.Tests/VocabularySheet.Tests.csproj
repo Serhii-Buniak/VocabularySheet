@@ -31,5 +31,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Maui\VocabularySheet.Maui.Domain\VocabularySheet.Maui.Domain.csproj" />
+      <ProjectReference Include="..\ML\VocabularySheet.ML.Evaluation\VocabularySheet.ML.Evaluation.csproj" />
     </ItemGroup>
 </Project>

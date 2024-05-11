@@ -133,14 +133,14 @@ public static class StringExtensions
         return Convert.ToBase64String(bytes);
     }
 
-    public static string RemovePunctuations(this string value)
+    public static string RemovePunctuations(this string value, string newValue)
     {
-        return RegexUtilities.Punctuations.Replace(value, string.Empty);
+        return RegexUtilities.Punctuations.Replace(value, newValue);
     }
 
-    public static string RemoveNumbers(this string value)
+    public static string RemoveNumbers(this string value, string newValue)
     {
-        return RegexUtilities.Numbers.Replace(value, string.Empty);
+        return RegexUtilities.Numbers.Replace(value, newValue);
     }
 
     public static string RemoveSpaces(this string value)
@@ -165,14 +165,14 @@ public static class StringExtensions
         return regex.Replace(value, $"{symbol}");
     }
 
-    public static string RemoveEscapes(this string value)
+    public static string ReplaceEscapes(this string value, string newValue)
     {
-        return RegexUtilities.Escapes.Replace(value, string.Empty);
+        return RegexUtilities.Escapes.Replace(value, newValue);
     }    
     
-    public static string RemoveZeroSymbol(this string value)
+    public static string RemoveZeroSymbol(this string value, string newValue)
     {
-        return value.Replace("\0", string.Empty);
+        return value.Replace("\0", newValue);
     }
     
     public static string NormalizeQuery(this string value)
@@ -185,6 +185,14 @@ public static class StringExtensions
         return items.Any(value.Contains);
     }
     
+    public static string KeepOnlyLettersAndSpaces(this string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return string.Empty;
+
+        return Regex.Replace(input, "[^a-zA-Z ]", " ");
+    }
+
     public static bool ContainsAny(this string value, params string[] items)
     {
         return items.Any(value.Contains);
