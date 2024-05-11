@@ -1,0 +1,2297 @@
+A
+abrasion The wearing away of the landscape by
+rivers, glaciers, the sea or wind, caused by the load
+of debris that they carry. See also corrasion.
+abrasion platform See wave-cut platform.
+accuracy A measure of the degree of correctness.
+acid rain Rain that contains a high concentration
+of pollutants, notably sulphur and nitrogen oxides.
+These pollutants are produced from factories,
+power stations burning fossil fuels, and car
+exhausts. Once in the atmosphere, the sulphur
+and nitrogen oxides combine with moisture to give
+sulphuric and nitric acids which fall as corrosive
+rain.
+administrative region An area in which
+organizations carry out administrative functions;
+for example, the regions of local health authorities
+and water companies, and commercial sales
+regions.
+adult literacy rate A percentage measure which
+shows the proportion of an adult population able
+to read. It is one of the measures used to assess the
+level of development of a country.
+aerial photograph A photograph taken from
+above the ground. There are two types of aerial
+photograph – a vertical photograph (or ‘bird’s-
+eye view’) and an oblique photograph where the
+camera is held at an angle. Aerial photographs
+are often taken from aircraft and provide useful
+information for map-making and surveys.
+Compare satellite image.
+afforestation The conversion of open land to
+forest; especially, in Britain, the planting of
+coniferous trees in upland areas for commercial
+gain. Compare deforestation.
+agglomerate A mass of coarse rock fragments or
+blocks of lava produced during a volcanic eruption.
+agribusiness Modern intensive farming which
+uses machinery and artificial fertilizers to increase
+yield and output.
+Thus agriculture resembles an industrial process
+in which the general running and managing of the
+farm could parallel that of large-scale industry.
+agriculture Human management of the
+en vironment to produce food. The numerous
+forms of agriculture fall into three groups:
+commercial agriculture, subsistence agriculture
+and peasant agriculture. See also agribusiness.
+aid The provision of finance, personnel
+and equipment for furthering economic
+development and improving standards of living
+in the Third World. Most aid is organized by
+international institutions (e.g. the United Nations),
+by charities (e.g. Oxfam) (see non-governmental
+organizations (NGOs); or by national governments.
+Aid to a country from the international institutions
+is called multilateral aid. Aid from one country to
+another is called bilateral aid.
+air mass A large body of air with generally the same
+temperature and moisture conditions throughout.
+Warm or cold and moist air masses usually develop
+over large bodies of water (oceans). Hot or cold and
+dry air masses develop over large land areas
+(continents).
+alluvial fan A cone of sediment deposited
+at an abrupt change of slope; for example, where
+a post-glacial stream meets the flat floor of a
+U-shaped valley. Alluvial fans are also common
+in arid regions where streams flowing off
+escarpments may periodically carry large loads of
+sediment during flash fl oods.
+alluvium Material deposited by a river in
+its middle and lower course. Alluvium comprises
+silt, sand and coarser debris eroded from the
+river’s upper course and transported downstream.
+Alluvium is deposited in a graded sequence:
+coarsest first (heaviest) and finest last (lightest).
+Regular floods in the lower course create extensive
+layers of alluvium which can build up to a
+considerable depth on the flood plain.
+alp A gentle slope above the steep sides of
+a glaciated valley, often used for summer grazing.
+See also transhumance.
+analysis The examination of the constituent parts
+of a complex entity.
+anemometer An instrument for measuring the
+velocity of the wind. An anemometer should be
+fixed on a post at least 5 m above ground level. The
+wind blows the cups around and the speed is read
+off the dial in km/hr (or knots).
+annotation Labels in the form of text or graphics
+that can be individually selected, positioned or
+stored in a database.
+antarctic circle Imaginary line that encircles the
+South Pole at latitude 66º 32'S.
+anthracite A hard form of coal with a high carbon
+content and few impurities.
+anticline An arch in folded strata; the opposite of
+syncline. See fold.
+anticyclone An area of high atmospheric pressure
+with light winds, clear skies and settled weather.
+In summer, anticyclones are associated with warm
+and sunny conditions; in winter, they bring frost
+and fog as well as sunshine.
+API (application programming interface) A set
+of interfaces, methods, procedures and tools used
+to build or customise a software program.
+aquifer See artesian basin.
+arable farming The production of cereal and root
+crops – as opposed to the keeping of livestock.
+arc A coverage feature class representing lines and
+polygon boundaries.
+archipelago A group or chain of islands.
+arctic circle Imaginary line that encircles the North
+Pole at latitude 66º 32'N.
+arête A knife-edged ridge separating two corries
+in a glaciated upland. The arête is formed by the
+progressive enlargement of corries by weathering
+and erosion. See also pyramidal peak.
+artesian basin This consists of a shallow syncline
+with a layer of permeable rock, e.g. chalk,
+sandwiched between two impermeable layers, e.g.
+clay. Where the permeable rock is exposed at the
+surface, rainwater will enter the rock and the rock
+will become saturated. This is known as an aquifer.
+Boreholes can be sunk into the structure to tap the
+water in the aquifer.
+asymmetrical fold Folded strata where the two
+limbs are at different angles to the horizontal.
+atlas A collection of maps.
+atmosphere The air which surrounds the Earth,
+and consists of three layers:
+the troposphere (6 to 10km from the Earth’s surface),
+the stratosphere (50km from the Earth’s surface), and
+the mesosphere and ionosphere, an ionised region of
+rarefied gases (1000km from the Earth’s surface).
+The atmosphere comprises oxygen (21%), nitrogen
+(78%), carbon dioxide, argon, helium and other
+gases in minute quantities.
+attrition The process by which a river’s load is
+alluvial fan
+alp
+anemometer
+anticyclone
+arête
+asymmetrical fold
+Using the Dictionary
+Geographical terms in the
+dictionary are arranged
+alphabetically. Bold words in
+an entry identify key terms which
+are explained in greater detail
+within separate entries of their
+own. Important terms which
+do not have separate entries are
+shown in italic and are explained
+in the entry in which they occur.
+eroded through particles, such as pebbles and
+boulders, striking each other.
+B
+backwash The return movement of seawater off the
+beach after a wave has broken. See also longshore
+drift and swash.
+bar graph A graph on which the values of
+a certain variable are shown by the length
+of shaded columns, which are numbered
+in sequence. Compare histogram.
+barchan A type of crescent-shaped sand dune
+formed in desert regions where the wind direction
+is very constant. Wind blowing round the edges of
+the dune causes the crescent shape, while the dune
+may advance in a downwind direction as particles
+are blown over the crest.
+barograph An aneroid barometer connected to an
+arm and inked pen which records pressure changes
+continuously on a rotating drum. The drum
+usually takes a week to make one rotation.
+barometer An instrument for measuring
+atmospheric pressure. There are two types,
+the mercury barometer and the aneroid barometer.
+The mercury barometer consists of a glass tube
+containing mercury which fluctuates in height as
+pressure varies. The aneroid barometer is a small
+metal box from which some of the air has been
+removed. The box expands and contracts as the
+air pressure changes. A series of levers joined to a
+pointer shows pressure on a dial.
+barrage A type of dam built across a wide stretch
+of water, e.g. an estuary, for the purposes of water
+management. Such a dam may be intended to
+provide water supply, to harness wave energy or to
+control flooding, etc. There is a large barrage across
+Cardiff Bay in South Wales.
+basalt A dark, fine-grained extrusive igneous rock
+formed when magma emerges onto the Earth’s
+surface and cools rapidly. A succession of basalt
+lava flows may lead to the formation of a lava
+plateau.
+base flow The water fl owing in a stream which is
+fed only by groundwater. During dry periods it is
+only the base flow which passes through the stream
+channel.
+base map Map on which thematic information can
+be placed.
+batholith A large body of igneous material intruded
+into the Earth’s crust. As the batholith slowly cools,
+large-grained rocks such as granite are formed.
+Batholiths may eventually be exposed at the Earth’s
+surface by the removal of overlying rocks through
+weathering and erosion.
+bay An indentation in the coastline with a headland
+on either side. Its formation is due to the more
+rapid erosion of softer rocks
+beach A strip of land sloping gently towards the sea,
+usually recognized as the area lying between high
+and low tide marks.
+bearing A compass reading between
+0 and 360 degrees, indicating direction
+of one location from another.
+Beaufort wind scale An international scale of wind
+velocities, ranging from 0 (calm) to 12 (hurricane).
+bedrock The solid rock which usually lies beneath
+the soil.
+bergschrund A large crevasse located at the rear of
+a corrie icefield in a glaciated region, formed by the
+weight of the ice in the corrie dragging away from the
+rear wall as the glacier moves downslope.
+biodiversity The existence of a wide variety of plant
+and animal species in their natural environment.
+biogas The production of methane and carbon
+dioxide, which can be obtained from plant or crop
+waste. Biogas is an example of a renewable source
+of energy (see renewable resources, nonrenewable
+resources).
+biomass The total number of living organisms,
+both plant and animal, in a given area.
+biome A complex community of plants and animals
+in a specifi c physical and climatic region. See
+climate.
+biosphere The part of the Earth which contains
+living organisms. The biosphere contains a variety
+of habitats, from the highest mountains to the
+deepest oceans.
+birth rate The number of live births per 1000
+people in a population per year.
+bituminous coal Sometimes called house coal – a
+medium-quality coal with some impurities; the
+typical domestic coal. It is also the major fuel
+source for thermal power stations.
+block mountain or horst A section of the Earth’s
+crust uplifted by faulting. Mt Ruwenzori in the
+East African Rift System is an example of a block
+mountain.
+blowhole A crevice, joint or fault in coastal rocks,
+enlarged by marine erosion. A blowhole often
+leads from the rear of a cave (formed by wave action
+at the foot of a cliff) up to the cliff top. As waves
+break in the cave they erode the roof at the point
+of weakness and eventually a hole is formed. Air
+and sometimes spray are forced up the blowhole to
+erupt at the surface.
+bluff See river cliff.
+boreal forest See taiga.
+boulder clay or till The unsorted mass of debris
+dragged along by a glacier as ground moraine and
+dumped as the glacier melts. Boulder clay may
+be several metres thick and may comprise any
+combination of finely ground ‘rock flour’, sand,
+pebbles or boulders.
+breakwater or groyne A wall built at right angles
+to a beach in order to prevent sand loss due to
+longshore drift.
+breccia Rock fragments cemented together by a
+matrix of finer material; the fragments are angular
+and unsorted. An example of this is volcanic
+breccia, which is made up of coarse angular
+fragments of lava and crust rocks welded by finer
+material such as ash and tuff .
+buffers Memory devices for temporarily storing
+data.
+bush fallowing or shifting cultivation
+A system of agriculture in which there are no
+permanent fields. For example in the tropical
+rainforest, remote societies cultivate forest
+clearings for one year and then move on. The
+system functions successfully when forest
+regeneration occurs over a sufficiently long period
+to allow the soil to regain its fertility.
+bar graph
+barchan
+batholith
+bay
+beach
+bearing The bearing from A to B is 110º.
+bergschrund
+blowhole
+breakwater or groyne
+bushfire An uncontrolled fire in forests and
+grasslands.
+business park An out-of-town site accommodating
+offices, high-technology companies and light
+industry. Compare science park.
+butte An outlier of a mesa in arid regions.
+C
+cache A small high-speed memory that improves
+computer performance.
+caldera A large crater formed by the collapse of the
+summit cone of a volcano during an eruption. The
+caldera may contain subsidiary cones built up by
+subsequent eruptions, or a crater lake if the
+volcano is extinct or dormant.
+canal An artificial waterway, usually connecting
+existing rivers, lakes or oceans, constructed for
+navigation and transportation.
+canyon A deep and steep-sided river valley
+occurring where rapid vertical corrasion takes
+place in arid regions. In such an environment the
+rate of weathering of the valley sides is slow. If
+the rocks of the region are relatively soft then the
+canyon profile becomes even more pronounced.
+The Grand Canyon of the Colorado River in the
+USA is the classic example.
+capital city Seat of government of a country or
+political unit.
+cartogram A map showing statistical data in
+diagrammatic form.
+cartography The technique of drawing maps or
+charts.
+catchment 1. In physical geography, an alternative
+term to river basin.
+2. In human geography, an area around a town or
+city – hence ‘labour catchment’ means the area
+from which an urban workforce is drawn.
+cavern In limestone country, a large underground
+cave formed by the dissolving of limestone by
+subterranean streams.
+See also stalactite, stalagmite.
+cay A small low island or bank composed of sand
+and coral fragments. Commonly found in the
+Caribbean Sea.
+CBD (Central Business District) This is the
+central zone of a town or city, and is characterized by
+high accessibility, high land values and limited space.
+The visible result of these factors is a concentration
+of high-rise buildings at the city centre. The CBD is
+dominated by retail and business functions, both of
+which require maximum accessibility.
+CFCs (Chlorofluorocarbons) Chemicals used
+in the manufacture of some aerosols, the cooling
+systems of refrigerators and fast-food cartons.
+These chemicals are harmful to the ozone layer.
+chalk A soft, whitish sedimentary rock formed by
+the accumulation of small fragments of skeletal
+matter from marine organisms; the rock may
+be almost pure calcium carbonate. Due to the
+permeable and soluble nature of the rock, there is
+little surface drainage in chalk landscapes.
+channel See strait.
+chernozem A deep, rich soil of the plains of
+southern Russia. The upper horizons are rich in
+lime and other plant nutrients; in the dry climate
+the predominant movement of soil moisture is
+upwards (contrast with leaching), and lime and
+other chemical nutrients therefore accumulate in
+the upper part of the soil profile.
+chloropleth map See shading map.
+choropleth A symbol or marked area on a map
+which denotes the distribution of some property.
+cirrus High, wispy or strand-like, thin cloud
+associated with the advance of a depression.
+clay A soil composed of very small particles of
+sediment, less than 0.002 mm in diameter. Due
+to the dense packing of these minute particles,
+clay is almost totally impermeable, i.e. it does not
+allow water to drain through. Clay soils very rapidly
+waterlog in wet weather.
+cliff A steep rockface between land and sea, the
+profile of which is determined largely by the nature
+of the coastal rocks. For example, resistant rocks
+such as granite (e.g. at Land’s End, England) will
+produce steep and rugged cliffs.
+climate The average atmospheric conditions
+prevailing in a region, as distinct from its weather.
+A statement of climate is concerned with long-
+term trends. Thus the climate of, for example, the
+Amazon Basin is described as hot and wet all the
+year round; that of the Mediterranean Region as
+having hot dry summers and mild wet winters.
+See extreme climate, maritime climate.
+clint A block of limestone, especially when part
+of a limestone pavement, where the surface is
+composed of clints and grykes.
+cloud A mass of small water drops or ice crystals
+formed by the condensation of water vapour in the
+atmosphere, usually at a considerable height above
+the Earth’s surface. There are three main types of
+cloud: cumulus, stratus and cirrus, each of which
+has many variations.
+CMYK A colour model that combines cyan,
+magenta, yellow and black to create a range of
+colours.
+coal A sedimentary rock composed of decayed
+and compressed vegetative matter. Coal is usually
+classified according to a scale of hardness and
+purity ranging from anthracite (the hardest),
+through bituminous coal and lignite to peat.
+cold front See depression.
+commercial agriculture A system of agriculture in
+which food and materials are produced specifically
+for sale in the market, in contrast to subsistence
+agriculture. Commercial agriculture tends to be
+capital intensive. See also agribusiness.
+Common Agricultural Policy (CAP)
+The policy of the European Union to support and
+subsidize certain crops and methods of animal
+husbandry.
+common land Land which is not in the ownership
+of an individual or institution, but which is
+historically available to any member of the local
+community.
+communications The contacts and linkages in
+an environment. For example, roads and railways
+are communications, as are telephone systems,
+newspapers, and radio and television.
+commuter zone An area on or near to the outskirts
+of an urban area. Commuters are among the
+most affluent and mobile members of the urban
+community and can afford the greatest physical
+separation of home and work.
+concordant coastline A coastline that is parallel to
+mountain ranges immediately inland. A rise in sea
+level or a sinking of the land cause the valleys to be
+flooded by the sea and the mountains to become a
+line of islands. Compare discordant coastline.
+condensation The process by which cooling
+vapour turns into a liquid. Clouds, for example,
+are formed by the condensation of water vapour
+caldera
+canyon
+cliff
+cloud
+concordant coastline
+in the atmosphere.
+coniferous forest A forest of evergreen trees such
+as pine, spruce and fir. Natural coniferous forests
+occur considerably further north than forests of
+broad-leaved deciduous species, as coniferous trees
+are able to withstand harsher climatic conditions.
+The taiga areas of the northern hemisphere consist
+of coniferous forests.
+conservation The preservation and management
+of the natural environment. In its strictest form,
+conservation may mean total protection of
+endangered species and habitats, as in nature
+reserves. In some cases, conservation of the man-
+made environment, e.g. ancient buildings,
+is undertaken.
+continent One of the earth’s large land masses. The
+world’s continents are generally defined as Asia,
+Africa, North America, South America, Europe,
+Oceania and Antarctica.
+continental climate The climate at the centre of
+large landmasses, typifi ed by a large annual range
+in temperature, with precipitation most likely in
+the summer.
+continental drift The theory that the Earth’s
+continents move gradually over a layer of semi-
+molten rock underneath the Earth’s crust. It is
+thought that the present-day continents once
+formed the supercontinent, Pangaea, which
+existed approximately 200 million years ago. See also
+Gondwanaland, Laurasia and plate tectonics.
+continental shelf The seabed bordering the
+continents, which is covered by shallow water
+– usually of less than 200 metres. Along some
+coastlines the continental shelf is so narrow it is
+almost absent.
+contour A line drawn on a map to join all places at
+the same height above sea level.
+conurbation A continuous built-up urban area
+formed by the merging of several formerly separate
+towns or cities. Twentieth-century urban sprawl
+has led to the merging of towns.
+coombe See dry valley.
+cooperative A system whereby individuals pool their
+resources in order to optimize individual gains.
+coordinates A set of numbers that defines the
+location of a point with reference to a system of
+axes.
+core 1. In physical geography, the core is the
+innermost zone of the Earth. It is probably solid at
+the centre, and composed of iron and nickel.
+2. In human geography, a central place or central
+region, usually the centre of economic and political
+activity in a region or nation.
+corrasion The abrasive action of an agent of
+erosion (rivers, ice, the sea) caused by its load. For
+example the pebbles and boulders carried along
+by a river wear away the channel bed and the river
+bank. Compare with hydraulic action.
+corrie, cirque or cwm A bowl-shaped hollow on a
+mountainside in a glaciated region; the area where
+a valley glacier originates. In glacial times the
+corrie contained an icefield, which in cross
+section appears as in diagram a above. The shape
+of the corrie is determined by the rotational
+erosive force of ice as the glacier moves downslope
+(diagram b).
+corrosion Erosion by solution action, such as the
+dissolving of limestone by running water.
+crag Rocky outcrop on a valley side formed,
+for example, when a truncated spur exists in a
+glaciated valley.
+crag and tail A feature of lowland glaciation, where
+a resistant rock outcrop withstands erosion by a
+glacier and remains as a feature after the Ice Age.
+Rocks of volcanic or metamorphic origin are likely
+to produce such a feature. As the ice advances over
+the crag, material will be eroded from the face and
+sides and will be deposited as a mass of boulder
+clay and debris on the leeward side, thus producing
+a ‘tail’.
+crevasse A crack or fissure in a glacier resulting
+from the stressing and fracturing of ice at a change
+in gradient or valley shape.
+cross section A drawing of a vertical section of a
+line of ground, deduced from a map. It depicts the
+topography of a system of contours.
+crust The outermost layer of the Earth,
+representing only 0.1% of the Earth’s total volume.
+It comprises continental crust and oceanic crust,
+which differ from each other in age as well as in
+physical and chemical characteristics. The crust,
+together with the uppermost layer of the mantle, is
+also known as the lithosphere.
+culvert An artifi cial drainage channel for
+transporting water quickly from place to place.
+cumulonimbus A heavy, dark cloud of great
+vertical height. It is the typical thunderstorm
+cloud, producing heavy showers of rain, snow
+or hail. Such clouds form where intense solar
+radiation causes vigorous convection.
+cumulus A large cloud (smaller than a
+cumulonimbus) with a ‘cauliflower’ head and
+almost horizontal base. It is indicative of fair or,
+at worst, showery weather in generally sunny
+conditions.
+cut-off See oxbow lake.
+cyclone See hurricane.
+D
+dairying A pastoral farming system in which dairy
+cows produce milk that is used by itself or used
+to produce dairy products such as cheese, butter,
+cream and yoghurt.
+dam A barrier built across a stream, river or estuary
+to create a body of water.
+data A series of observations, measurements or
+facts which can be operated on by a computer
+programme.
+data capture Any process for converting
+information into a form that can be handled by a
+computer.
+database A large store of information. A GIS
+database includes data about spatial locations and
+shapes of geographical features.
+datum A single piece of information.
+death rate The number of deaths per 1000 people
+in a population per year.
+deciduous woodland Trees which are generally of
+broad-leaved rather than coniferous habit, and
+which shed their leaves during the cold season.
+defl ation The removal of loose sand by wind
+erosion in desert regions. It often exposes a bare
+rock surface beneath.
+deforestation The practice of clearing trees.
+Much deforestation is a result of development
+pressures, e.g. trees are cut down to provide land
+for agriculture and industry. Compare afforestation.
+delta A fan-shaped mass consisting of the
+deposited load of a river where it enters the sea. A
+delta only forms where the river deposits material
+at a faster rate than can be removed by coastal
+currents. While deltas may take almost any shape
+and size, three types are generally recognized, as
+shown in the diagram overleaf.
+DEM (Digital elevation model)
+Representation of the relief of a topographic
+surface.
+denudation The wearing away of the Earth’s
+surface by the processes of weathering and erosion.
+depopulation A long-term decrease in the
+population of any given area, frequently caused by
+economic migration to other areas.
+deposition The laying down of sediments resulting
+from denudation.
+(a) A corrie in glacial times.
+(b) Erosion of a corrie.
+crag and tail
+crevasse
+cross section Map and corresponding cross section.
+depression An area of low atmospheric pressure
+occurring where warm and cold air masses come
+into contact. The passage of a depression is
+marked by thickening cloud, rain, a period of dull
+and drizzly weather and then clearing skies with
+showers. A depression develops as in the diagrams
+below.
+desert An area where all forms of precipitation are
+so low that very little, if anything, can grow.
+Deserts can be broadly divided into
+three types, depending upon average temperatures:
+(a) hot deserts: occur in tropical latitudes
+in regions of high pressure where air is sinking
+and therefore making rainfall unlikely. See cloud.
+(b) temperate deserts: occur in mid-latitudes in areas
+of high pressure. They are far inland, so moisture-
+bearing winds rarely deposit rainfall in these areas.
+(c) cold deserts: occur in the northern latitudes,
+again in areas of high pressure. Very low
+temperatures throughout the year mean the air is
+unable to hold much moisture.
+desertifi cation The encroachment of desert
+conditions into areas which were once productive.
+Desertification can be due partly to climatic
+change, i.e. a move towards a drier climate in
+some parts of the world (possibly due to global
+warming), though human activity has also played
+a part through bad farming practices. The problem
+is particularly acute along the southern margins
+of the Sahara desert in the Sahel region between
+Mali and Mauritania in the west, and Ethiopia and
+Somalia in the east.
+developing countries A collective term for
+those nations in Africa, Asia and Latin America
+which are undergoing the complex processes of
+modernization, industrialization and urbanization.
+See also Third World.
+dew point The temperature at which the
+atmosphere, being cooled, becomes saturated with
+water vapour. This vapour is then deposited as
+drops of dew.
+digitising Translating into a digital format for
+computer processing.
+dip slope The gentler of the two slopes on either
+side of an escarpment crest; the dip slope inclines
+in the direction of the dipping strata; the steep
+slope in front of the crest is the scarp slope.
+discharge The volume of run-off in the channels of
+a river basin.
+discordant coastline A coastline that is at right
+angles to the mountains and valleys immediately
+inland. A rise in sea level or a sinking of the land
+will cause the valleys to be flooded. A flooded river
+valley is known as a ria, whilst a flooded glaciated
+valley is known as a fjord. Compare concordant
+coastline.
+distributary An outlet stream which drains from a
+larger river or stream. Often found in a delta area.
+Compare tributary.
+doldrums An equatorial belt of low atmospheric
+pressure where the trade winds converge. Winds
+are light and variable but the strong upward
+movement of air caused by this convergence
+produces frequent thunderstorms and heavy rains.
+domain name That part of an internet address
+which identifi es a group of computers by country
+or institution.
+dormitory settlement A village located beyond
+the edge of a city but inhabited by residents who
+work in that city (see commuter zone).
+drainage The removal of water from the land
+surface by processes such as streamflow and
+infiltration.
+drainage basin See river basin.
+drift Material transported and deposited by glacial
+action on the Earth’s surface. See also boulder clay.
+drought A prolonged period where rainfall falls
+below the requirement for a region.
+dry valley or coombe A feature of limestone and
+chalk country, where valleys have been eroded in
+dry landscapes.
+dune A mound or ridge of drifted sand, occurring
+on the sea coast and in deserts.
+dyke 1. An artifi cial drainage channel.
+2. An artificial bank built to protect low-lying land
+from fl ooding.
+3. A vertical or semi-vertical igneous intrusion
+occurring where a stream of magma has extended
+through a line of weakness in the surrounding
+rock. See igneous rock.
+E
+earthquake A movement or tremor of the Earth’s
+crust. Earthquakes are associated with plate
+boundaries (see plate tectonics) and especially
+with subduction zones, where one plate plunges
+beneath another. Here the crust is subjected to
+tremendous stress. The rocks are forced to bend,
+and eventually the stress is so great that the rocks
+‘snap’ along a fault line.
+eastings The fi rst element of a grid reference. See
+northing.
+ecology The study of living things, their
+interrelationships and their relationships with the
+environment.
+ecosystem A natural system comprising living
+organisms and their environment. The concept
+can be applied at the global scale or in the context
+of a smaller defined environment. The principle
+of the ecosystem is constant: all elements are
+intricately linked by flows of energy and nutrients.
+El Niño The occasional development of warm ocean
+surface waters along the coast of Ecuador and Peru.
+Where this warming occurs the tropical Pacific
+trade winds weaken and the usual up-welling
+of cold, deep ocean water is reduced. El Niño
+normally occurs late in the calendar year and lasts
+for a few weeks to a few months and can have a
+dramatic impact on weather patterns throughout
+the world.
+emigration The movement of population out of a
+given area or country.
+employment structure The distribution of the
+workforce between the primary, secondary, tertiary
+Arcuate delta,
+e.g. Nile.
+Note bifurcation of
+river into
+distributaries in delta
+Bird’s foot delta,
+e.g. Mississippi
+Estuarine delta,
+e.g. Amazon
+sea
+land
+sea
+sea
+land
+land
+delta
+depression The development of a depression.
+dip slope
+discordant coastline
+dyke Cross section of eroded dyke, showing how
+metamorphic margins, harder than dyke or surrounding
+rocks, resist erosion.
+ecosystem
+and quaternary sectors of the economy. Primary
+employment is in agriculture, mining, forestry
+and fishing; secondary in manufacturing; tertiary
+in the retail, service and administration category;
+quaternary in information and expertise.
+environment Physical surroundings: soil,
+vegetation, wildlife and the atmosphere.
+equator The great circle of the Earth with
+a latitude of 0º, lying equidistant from the poles.
+erosion The wearing away of the Earth’s surface
+by running water (rivers and streams), moving ice
+(glaciers), the sea and the wind. These are called the
+agents of erosion.
+erratic A boulder of a certain rock type resting on
+a surface of different geology. For example, blocks
+of granite resting on a surface of carboniferous
+limestone.
+escarpment A ridge of high ground as, for
+example, the chalk escarpments of southern
+England (the Downs and the Chilterns).
+esker A low, winding ridge of pebbles and finer
+sediment on a glaciated lowland.
+estuary The broad mouth of a river where it
+enters the sea. An estuary forms where opposite
+conditions to those favourable for delta formation
+exist: deep water offshore, strong marine currents
+and a smaller sediment load.
+ethnic group A group of people with a common
+identity such as culture, religion or skin colour.
+evaporation The process whereby a substance
+changes from a liquid to a vapour. Heat from the
+sun evaporates water from seas, lakes, rivers, etc.,
+and this process produces water vapour in
+the atmosphere.
+evergreen A vegetation type in which leaves
+are continuously present. Compare deciduous
+woodland.
+exfoliation A form of weathering whereby the
+outer layers of a rock or boulder shear off due to
+the alternate expansion and contraction produced
+by diurnal heating and cooling. Such a process is
+especially active in desert regions.
+exports Goods and services sold to a foreign
+country (compare imports).
+extensive farming A system of agriculture in
+which relatively small amounts of capital or labour
+investment are applied to relatively large areas of
+land. For example, sheep ranching is an extensive
+form of farming, and yields per unit area are low.
+external processes Landscape-forming processes
+such as weather and erosion, in contrast to internal
+processes.
+extreme climate A climate that is characterized
+by large ranges of temperature and sometimes
+of rainfall. Compare temperate climate, maritime
+climate.
+F
+fault A fracture in the Earth’s crust on either side
+of which the rocks have been relatively displaced.
+Faulting occurs in response to stress in the Earth’s
+crust; the release of this stress in fault movement is
+experienced as an earthquake. See also rift valley.
+feature class A collection of features with the same
+properties, attributes and spatial reference.
+fell Upland rough grazing in a hill farming system,
+for example in the English Lake District.
+fjord A deep, generally straight inlet of the sea along
+a glaciated coast. A fjord is a glaciated valley which
+has been submerged either by a post-glacial rise in
+sea level or a subsidence of the land.
+flash flood A sudden increase in river discharge
+and overland flow due to a violent rainstorm in the
+upper river basin.
+flood plain The broad, flat valley floor of the lower
+course of a river, levelled by annual flooding and
+by the lateral and downstream movement of
+meanders.
+flow line A diagram showing volumes
+of movement, e.g. of people, goods or information
+between places. The width of the flow line is
+proportional to the amount of movement, for
+example in portraying commuter flows into an
+urban centre from surrounding towns and villages.
+fodder crop A crop grown for animal feed.
+fold A bending or buckling of once horizontal rock
+strata. Many folds are the result of rocks being
+crumpled at plate boundaries (see plate tectonics),
+though earthquakes can also cause rocks to fold, as
+can igneous intrusions.
+fold mountains Mountains which have been
+formed by large-scale and complex folding. Studies
+of typical fold mountains (the Himalayas, Andes,
+Alps and Rockies) indicate that folding has taken
+place deep inside the Earth’s crust and upper
+mantle as well as in the upper layers of the crust.
+fossil fuel Any naturally occurring carbon or
+hydrocarbon fuel, notably coal, oil, peat and
+natural gas. These fuels have been formed by
+decomposed prehistoric organisms.
+free trade The movement of goods and services
+between countries without any restrictions (such as
+quotas, tariffs or taxation) being imposed.
+freeze-thaw A type of physical weathering whereby
+rocks are denuded by the freezing of water in
+cracks and crevices on the rock face. Water expands
+on freezing, and this process causes stress and
+fracture along any line of weakness in the rock.
+Nivation debris accumulates at the bottom of a
+rock face as scree.
+front A boundary between two air masses. See also
+depression.
+G
+gazetteer A list of place names with their
+geographical coordinates.
+GDP See Gross Domestic Product.
+geosyncline A basin (a large syncline) in which
+thick marine sediments have accumulated.
+geothermal energy A method of producing
+power from heat contained in the lower layers of
+the Earth’s crust. New Zealand and Iceland both
+use superheated water or steam from geysers
+and volcanic springs to heat buildings and for
+hothouse cultivation and also to drive steam
+turbines to generate electricity. Geothermal energy
+is an example of a renewable resource of energy (see
+renewable resources, nonrenewable resources).
+glaciation A period of cold climate during which
+time ice sheets and glaciers are the dominant
+forces of denudation.
+glacier A body of ice occupying a valley and
+originating in a corrie or icefield. A glacier moves
+at a rate of several metres per day, the precise
+escarpment
+exfoliation
+fault The main types.
+fjord
+flood plain
+Flow line Commuter flows into a city.
+fold
+speed depending upon climatic and topographic
+conditions in the area in question.
+global warming or greenhouse effect
+The warming of the Earth’s atmosphere caused
+by an excess of carbon dioxide,which acts like a
+blanket, preventing the natural escape of heat.
+This situation has been developing over the last
+150 years because of (a) the burning of fossil fuels,
+which releases vast amounts of carbon dioxide
+into the atmosphere, and (b) deforestation, which
+results in fewer trees being available to take up
+carbon dioxide (see photosynthesis).
+globalization The process that enables financial
+markets and companies to operate internationally
+(as a result of deregulation and improved
+communications). Transnational corporations
+now locate their manufacturing in places that best
+serve their global market at the lowest cost.
+GNI (gross national income) formerly GNP
+(gross national product) The total value of the
+goods and services produced annually by a nation,
+plus net property income from abroad.
+Gondwanaland The southern-hemisphere
+super-continent, consisting of the present South
+America, Africa, India, Australasia and Antarctica,
+which split from Pangaea c.200 million years ago.
+Gondwanaland is part of the theory of continental
+drift. See also plate tectonics.
+GPS (global positioning system) A system of
+earth-orbiting satellites, transmitting signals
+continuously towards earth, which enable the
+position of a receiving device on the earth’s surface
+to be accurately estimated from the difference in
+arrival of the signals.
+gradient 1. The measure of steepness of a line or
+slope. In mapwork, the average gradient between
+two points can be calculated as:
+diff erence in altitude
+distance apart
+2. The measure of change in a property such as
+density. In human geography gradients are found
+in, for example, population density, land values
+and settlement ranking.
+granite An igneous rock having large crystals due to
+slow cooling at depth in the Earth’s crust.
+green belt An area of land, usually around the
+outskirts of a town or city on which building and
+other developments are restricted by legislation.
+greenfield site A development site for industry,
+retailing or housing that has previously been used
+only for agriculture or recreation. Such sites are
+frequently in the green belt.
+greenhouse effect See global warming.
+Greenwich Meridian See prime meridian.
+grid reference A method for specifying position
+on a map. See eastings and northings.
+Gross Domestic Product (GDP) The total value
+of all goods and services produced domestically
+by a nation during a year. It is equivalent to
+Gross National Income (GNI) minus investment
+incomes from foreign nations.
+groundwater Water held in the bedrock of a
+region, having percolated through the soil from
+the surface. Such water is an important resource in
+areas where surface run-off is limited or absent.
+groyne See breakwater.
+gryke An enlarged joint between blocks of limestone
+(clints), especially in a limestone pavement.
+gulf A large coastal indentation, similar to a bay but
+larger in extent. Commonly formed as a result of
+rising sea levels.
+H
+habitat A preferred location for particular species
+of plants and animals to live and reproduce.
+hanging valley A tributary valley entering a main
+valley at a much higher level because of deepening
+of the main valley, especially by glacial erosion.
+HDI (human development index)
+A measurement of a country’s achievements in
+three areas: longevity, knowledge and standard of
+living. Longevity is measured by life expectancy at
+birth; knowledge is measured by a combination
+of the adult literacy rate and the combined gross
+primary, secondary and tertiary school enrolment
+ratio; standard of living is measured by GDP per
+capita.
+headland A promontory of resistant rock along the
+coastline. See bay.
+hemisphere Any half of a globe or sphere.
+The earth has traditionally been divided into
+hemispheres by the equator (northern and
+southern hemispheres) and by the prime
+meridian and International Date Line (eastern
+and western hemispheres).
+hill farming A system of agriculture where sheep
+(and to a lesser extent cattle) are grazed on upland
+rough pasture.
+hill shading Shadows drawn on a map to create a
+3-dimensional effect and a sense of visual relief.
+histogram A graph for showing values of classed
+data as the areas of bars.
+horizon The distinct layers found in the soil
+profi le. Usually three horizons are identified – A, B
+and C, as in the diagram.
+horst See block mountain.
+horticulture The growing of plants and flowers for
+commercial sale. It is now an international trade,
+for example, orchids are grown in Southeast Asia
+for sale in Europe.
+human geography The study of people and their
+activities in terms of patterns and processes of
+population, settlement, economic activity and
+communications. Compare physical geography.
+hunter/gatherer economy A pre-agricultural
+phase of development in which people survive
+by hunting and gathering the animal and plant
+resources of the natural environment. No
+cultivation or herding is involved.
+hurricane, cyclone or typhoon A wind of force
+12 on the Beaufort wind scale, i.e. one having a
+velocity of more than 118 km per hour. Hurricanes
+can cause great damage by wind as well as from the
+storm waves and floods that accompany them.
+hydraulic action The erosive force of water alone,
+as distinct from corrasion. A river or the sea will
+erode partially by the sheer force of moving water
+and this is termed ‘hydraulic action’.
+hydroelectric power The generation of
+electricity by turbines driven by flowing water.
+Hydroelectricity is most efficiently generated
+in rugged topography where a head of water can
+most easily be created, or on a large river where a
+dam can create similar conditions. Whatever the
+location, the principle remains the same – that
+water descending via conduits from an upper
+storage area passes through turbines and thus
+creates electricity.
+hydrological cycle The cycling of water through
+sea, land and atmosphere.
+hydrosphere All the water on Earth, including that
+present in the atmosphere as well as in oceans,
+seas, ice sheets, etc.
+hygrometer An instrument for measuring the
+relative humidity of the atmosphere. It comprises
+two thermometers, one of which is kept moist by
+a wick inserted in a water reservoir. Evaporation
+from the wick reduces the temperature of the ‘wet
+bulb’ thermometer, and the difference between
+the dry and the wet bulb temperatures is used to
+calculate relative humidity from standard tables.
+hanging valley
+grid reference
+4000
+4000 6000
+6001 8000
+8001
+10 000
+10 000
+histogram
+horizon A typical soil profile.
+hydrological cycle
+I
+Ice Age A period of glaciation in which a cooling of
+climate leads to the development of ice sheets, ice
+caps and valley glaciers.
+ice cap A covering of permanent ice over a relatively
+small land mass, e.g. Iceland.
+ice sheet A covering of permanent ice over a
+substantial continental area such as Antarctica.
+iceberg A large mass of ice which has broken off an
+ice sheet or glacier and left fl oating in the sea.
+ID (Identifier) A unique value given to a particular
+object.
+igneous rock A rock which originated as magma
+(molten rock) at depth in or below the Earth’s crust.
+Igneous rocks are generally classified according to
+crystal size, colour and mineral composition. See
+also plutonic rock.
+immigration The movement of people into a
+country or region from other countries or regions.
+impermeable rock A rock that is non-porous
+and therefore incapable of taking in water or of
+allowing it to pass through between the grains.
+Compare impervious rock. See also permeable rock.
+impervious rock A non-porous rock with no
+cracks or fissures through which water might pass.
+imports Goods or services bought into one country
+from another (compare exports).
+industrialization The development of industry on
+an extensive scale.
+infi ltration The gradual movement of water into
+the ground.
+infrastructure The basic structure of an
+organization or system. The infrastructure of a
+city includes, for example, its roads and railways,
+schools, factories, power and water supplies.
+inner city The ring of buildings around the Central
+Business District (CBD) of a town or city.
+intensive farming A system of agriculture where
+relatively large amounts of capital and/or labour
+are invested on relatively small areas of land.
+interglacial A warm period between two periods
+of glaciation and cold climate. The present
+interglacial began about 10,000 years ago.
+interlocking spurs Obstacles of hard rock round
+which a river twists and turns in a V-shaped valley.
+Erosion is pronounced on the concave banks, and
+this ultimately causes the development of spurs
+which alternate on either side of the river and
+interlock as shown in the diagram.
+International Date Line An imaginary line which
+approximately follows 180° longitude.The area of
+the world just east of the line is one day ahead of
+the area just west of the line.
+international trade The exchange of goods and
+services between countries.
+intrusion A body of igneous rock injected into the
+Earth’s crust from the mantle below. See dyke, sill,
+batholith.
+ionosphere See atmosphere.
+irrigation A system of artificial watering of the land
+in order to grow crops. Irrigation is particularly
+important in areas of low or unreliable rainfall.
+island A mass of land, smaller than a continent,
+which is completely surrounded by water.
+isobar A line joining points of equal atmospheric
+pressure, as on the meteorological map below.
+isohyet A line on a meteorological map joining
+places of equal rainfall.
+isotherm A line on a meteorological map joining
+places of equal temperature.
+J
+joint A vertical or semi-vertical fissure in a
+sedimentary rock, contrasted with roughly
+horizontal bedding planes. In igneous rocks
+jointing may occur as a result of contraction on
+cooling from the molten state. Joints should
+be distinguished from faults in that they are on
+a much smaller scale and there is no relative
+displacement of the rocks on either side of the
+joint. Joints, being lines of weakness are exploited
+by weathering.
+K
+kame A short ridge of sand and gravel deposited
+from the water of a melted glacier.
+karst topography An area of limestone scenery
+where drainage is predominantly subterranean.
+kettle hole A small depression or hollow in a
+glacial outwash plain, formed when a block of ice
+embedded in the outwash deposits eventually
+melts, causing the sediment above to subside.
+L
+laccolith An igneous intrusion, domed and often of
+considerable dimensions, caused where a body of
+viscous magma has been intruded into the strata of
+the Earth’s crust. These strata are buckled upwards
+over the laccolith.
+lagoon 1. An area of sheltered coastal water behind
+a bay bar or tombolo.
+2. The calm water behind a coral reef.
+lahar A landslide of volcanic debris mixed with
+water down the sides of a volcano, caused either by
+heavy rain or the heat of the volcano melting snow
+and ice.
+lake A body of water completely surrounded by land.
+land tenure A system of land ownership or
+allocation.
+land use The function of an area of land. For
+example, the land use in rural areas could be
+farming or forestry, whereas urban land use could
+be housing or industry.
+landform Any natural feature of the Earth’s
+surface, such as mountains or valleys.
+laterite A hard (literally ‘brick-like’) soil in tropical
+regions caused by the baking of the upper
+horizons by exposure to the sun.
+latitude Distance north or south of the equator,
+as measured by degrees of the angle at the Earth’s
+centre:
+Laurasia The northern hemisphere
+supercontinent, consisting of the present North
+America, Europe and Asia (excluding India), which
+split from Pangaea c. 200 million years ago. Laurasia
+is part of the theory of continental drift. See also
+plate tectonics.
+lava Magma extruded onto the Earth’s surface via
+some form of volcanic eruption. Lava varies in
+viscosity (see viscous lava), colour and chemical
+composition. Acidic lavas tend to be viscous and
+flow slowly; basic lavas tend to be nonviscous and
+flow quickly. Commonly, lava fl ows comprise
+basaltic material, as for example in the process of
+sea-fl oor spreading (see plate tectonics).
+lava flow A stream of lava issuing from some form
+of volcanic eruption. See also viscous lava.
+lava plateau A relatively flat upland composed of
+layer upon layer of approximately horizontally
+bedded lavas. An example of this is the Deccan
+Plateau of India.
+leaching The process by which soluble substances
+such as mineral salts are washed out of the upper
+soil layer into the lower layer by rain water.
+levée The bank of a river, raised above the general
+level of the flood plain by sediment deposition
+during flooding. When the river bursts its banks,
+relatively coarse sediment is deposited first, and
+recurrent flooding builds up the river’s banks
+accordingly. See diagram overleaf.
+lignite A soft form of coal, harder than peat but
+softer than bituminous coal.
+igneous rock
+interlocking spurs A V-shaped valley with interlocking spurs.
+isobar
+laccolith
+lagoon
+latitude
+limestone Calcium-rich sedimentary rock formed
+by the accumulation of the skeletal matter of
+marine organisms.
+limestone pavement An exposed limestone
+surface on which the joints have been enlarged by
+the action of rainwater dissolving the limestone
+to form weak carbonic acid. These enlarged joints,
+or grykes, separate roughly rectangular blocks of
+limestone called clints.
+location The position of population, settlement
+and economic activity in an area or areas. Location
+is a basic theme in human geography.
+loess A very fi ne silt deposit, often of considerable
+thickness, transported by the wind prior to
+deposition. When irrigated, loess can be very fertile
+and, consequently, high yields can be obtained
+from crops grown on loess deposits.
+longitude A measure of distance on the Earth’s surface
+east or west of the Greenwich Meridian, an imaginary
+line running from pole to pole through Greenwich
+in London. Longitude, like latitude, is measured in
+degrees of an angle taken from the centre of the Earth.
+The precise location of a place can be given by a
+grid reference comprising longitude and latitude.
+See also map projection, prime meridian.
+longshore drift The net movement of material
+along a beach due to the oblique approach of waves
+to the shore. Beach deposits move in a zig-zag
+fashion, as shown in the diagram. Longshore drift
+is especially active on long, straight coastlines.
+As waves approach, sand is carried up the beach
+by the swash, and retreats back down the beach
+with the backwash. Thus a single representative
+grain of sand will migrate in the pattern A, B, C, D,
+E, F in the diagram.
+M
+magma Molten rock originating in the Earth’s
+mantle; it is the source of all igneous rocks.
+malnutrition The condition of being poorly
+nourished, as contrasted with undernutrition,
+which is lack of a sufficient quantity of food. The
+diet of a malnourished person may be high in
+starchy foods but is invariably low in protein and
+essential minerals and vitamins.
+mantle The largest of the concentric zones of
+the Earth’s structure, overlying the core and
+surrounded in turn by the crust.
+manufacturing industry The making of articles
+using physical labour or machinery, especially on a
+large scale. See secondary sector.
+map Diagrammatic representation of an area – for
+example part of the earth’s surface.
+map projection A method by which the curved
+surface of the Earth is shown on a flat surface map.
+As it is not possible to show all the Earth’s features
+accurately on a flat surface, some projections aim
+to show direction accurately at the expense of
+area, some the shape of the land and oceans, while
+others show correct area at the expense of accurate
+shape.
+One of the projections most commonly used is
+the Mercator projection, devised in 1569, in which all
+lines of latitude are the same length as the equator.
+This results in increased distortion of area,
+moving from the equator towards the poles. This
+projection is suitable for navigation charts.
+The Mollweide projection shows the land masses
+the correct size in relation to each other but there
+is distortion of shape. As the Mollweide projection
+has no area distortion it is useful for showing
+distributions such as population distribution.
+The only true representation of the Earth’s
+surface is a globe.
+marble A whitish, crystalline metamorphic rock
+produced when limestone is subjected to great heat
+or pressure (or both) during Earth movements.
+maritime climate A temperate climate that is
+affected by the closeness of the sea, giving a small
+annual range of temperatures – a coolish summer
+and a mild winter – and rainfall throughout the
+year. Britain has a maritime climate. Compare
+extreme climate.
+market gardening An intensive type of agriculture
+traditionally located on the margins of urban areas
+to supply fresh produce on a daily basis to the
+city population. Typical market-garden produce
+includes salad crops, such as tomatoes, lettuce,
+cucumber, etc., cut flowers, fruit and some green
+vegetables.
+mask A method of hiding features on a map to
+improve legibility.
+maximum and minimum thermometer An
+instrument for recording the highest and lowest
+temperatures over a 24-hour period.
+meander A large bend, especially in the middle
+or lower stages of a river’s course. See fl ood plain.
+A meander is the result of lateral corrasion,
+which becomes dominant over vertical corrasion
+as the gradient of the river’s course decreases.
+The characteristic features of a meander are
+summarized in the diagrams below.
+See also oxbow lake.
+mesa A fl at-topped, isolated hill in arid regions. A
+limestone
+limestone pavement
+longitude A grid showing the location of Lagos, Nigeria.
+longshore drift
+mantle
+levée
+map projection Mollweide projection.
+map projection Mercator projection.
+maximum and minimum thermometer
+meander A river meander.
+meander Fully formed meanders.
+mesa has a protective cap of hard rock underlain
+by softer, more readily eroded sedimentary rock. A
+butte is a relatively small outlier of a mesa.
+mesosphere See atmosphere.
+metadata All Information used to describe content,
+quality, condition, origin and other characteristics
+of data.
+metamorphic rock A rock which has been
+changed by intensive heat or pressure.
+Metamorphism implies an increase in hardness
+and resistance to erosion. Shale, for example,
+may be metamorphosed by pressure into slate;
+sandstone by heat into quartzite, limestone into
+marble. Metamorphism of pre-existing rocks is
+associated with the processes of folding, faulting
+and vulcanicity.
+migration A permanent or semipermanent change
+of residence.
+monoculture The growing of a single crop.
+monsoon The term strictly means ‘seasonal wind’
+and is used generally to describe a situation where
+there is a reversal of wind direction from one
+season to another. This is especially the case in
+South and Southeast Asia, where two monsoon
+winds occur, both related to the extreme pressure
+gradients created by the large land mass of the
+Asian continent.
+moraine A collective term for debris deposited on
+or by glaciers and ice bodies in general. Several
+types of moraine are recognized: lateral moraine
+forms along the edges of a valley glacier where
+debris eroded from the valley sides, or weathered
+from the slopes above the glacier, collects; medial
+moraine forms where two lateral moraines meet
+at a glacier junction; englacial moraine is material
+which is trapped within the body of the glacier; and
+ground moraine is material eroded from the floor
+of the valley and used by the glacier as an abrasive
+tool. A terminal moraine is material bulldozed
+by the glacier during its advance and deposited
+at its maximum down-valley extent. Recessional
+moraines may be deposited at standstills during a
+period of general glacial retreat.
+mortlake See oxbow lake.
+mountain A natural upward projection of the
+Earth’s surface, higher and steeper than a hill, and
+often having a rocky summit.
+N
+national park An area of scenic countryside
+protected by law from uncontrolled development.
+A national park has two main functions:
+(a) to conserve the natural beauty of the landscape;
+(b) to enable the public to visit and enjoy the
+countryside for leisure and recreation.
+natural hazard A natural event which, in extreme
+cases, can lead to loss of life and destruction
+of property. Some natural hazards result from
+geological events, such as earthquakes and the
+eruption of volcanoes, whilst others are due to
+weather events such as hurricanes, fl oods and
+droughts.
+natural increase The increase in population due to
+the difference between birth rate and death rate.
+neap tides See tides.
+névé Compact snow. In a corrie icefield, for
+example, four layers are recognized: blue and white
+ice at the bottom of the ice mass; névé overlying the
+ice and powder snow on the surface.
+new town A new urban location created
+(a) to provide overspill accommodation for a large
+city or conurbation;
+(b) to provide a new focus for industrial
+development.
+newly industralized country (NIC)
+A developing country which is becoming
+industrialized, for example Malaysia and Thailand.
+Some NICs have successfully used large-scale
+development to move into the industrialized
+world. Usually the capital for such developments
+comes from outside the country.
+nivation The process of weathering by snow and
+ice, particularly through freeze-thaw action.
+Particularly active in cold climates and high
+altitudes – for example on exposed slopes above a
+glacier.
+node A point representing the beginning or ending
+point of an edge or arc.
+nomadic pastoralism A system of agriculture in
+dry grassland regions. People and stock (cattle,
+sheep, goats) are continually moving in search
+of pasture and water. The pastoralists subsist on
+meat, milk and other animal products.
+non-governmental organizations
+(NGOs) Independent organizations, such as
+charities (Oxfam, Water Aid) which provide aid and
+expertise to economically developing countries.
+nonrenewable resources Resources of which
+there is a fixed supply, which will eventually be
+exhausted. Examples of these are metal ores and
+fossil fuels. Compare renewable resources.
+North and South A way of dividing the
+industrialized nations, found predominantly
+in the North from those less developed nations
+in the South. The gap which exists between the
+rich ‘North’ and the poor ‘South’ is called the
+development gap.
+northings The second element of a grid reference.
+See eastings.
+nuclear power station An electricity-generating
+plant using nuclear fuel as an alternative to the
+conventional fossil fuels of coal, oil and gas.
+nuée ardente A very hot and fast-moving cloud
+of gas, ash and rock that flows close to the ground
+after a violent ejection from a volcano. It is very
+destructive.
+nunatak A mountain peak projecting above the
+general level of the ice near the edge of an ice sheet.
+nutrient cycle The cycling of nutrients through
+the environment.
+O
+ocean A large area of sea. The world’s oceans are the
+Pacific, Atlantic, Indian and Arctic. The Southern
+Ocean is made up of the areas of the Pacific,
+Atlantic and Indian Oceans south of latitude 60ºS.
+ocean current A movement of the surface water of
+an ocean.
+opencast mining A type of mining where the
+mineral is extracted by direct excavation rather
+than by shaft or drift methods.
+organic farming A system of farming that avoids
+the use of any artificial fertilizers or chemical
+pesticides, using only organic fertilizers and
+pesticides derived directly from animal or
+vegetable matter. Yields from organic farming
+are lower, but the products are sold at a premium
+price.
+overfold See fold.
+oxbow lake, mortlake or cut-off
+A crescent-shaped lake originating in a meander
+that was abandoned when erosion breached the
+neck between bends, allowing the stream to flow
+straight on, bypassing the meander. The ends
+of the meander rapidly silt up and it becomes
+separated from the river.
+ozone A form of oxygen found in a layer
+in the stratosphere, where it protects the Earth’s
+surface from ultraviolet rays.
+P
+Pangaea The supercontinent or universal
+land mass in which all continents were joined
+together approximately 200 million years ago. See
+continental drift.
+passage See strait.
+pastoral farming A system of farming in which the
+raising of livestock is the dominant element. See also
+nomadic pastoralism.
+peasant agriculture The growing of crops or
+raising of animals, partly for subsistence needs and
+partly for market sale. Peasant agriculture is thus
+an intermediate stage between subsistence and
+commercial farming.
+peat Partially decayed and compressed vegetative
+mesa
+moraine
+opencast mining
+oxbow lake
+matter accumulating in areas of high rainfall and/
+or poor drainage.
+peneplain A region that has been eroded until it is
+almost level. The more resistant rocks will stand
+above the general level of the land.
+per capita income The GNI (gross national
+income) of a country divided by the size of its
+population. It gives the average income per head
+of the population if the national income were
+shared out equally. Per capita income comparisons
+are used as one indicator of levels of economic
+development.
+periglacial features A periglacial landscape is
+one which has not been glaciated per se, but which
+has been affected by the severe climate prevailing
+around the ice margin.
+permafrost The permanently frozen subsoil that is
+a feature of areas of tundra.
+permeable rock Rock through which water can
+pass via a network of pores between the grains.
+Compare pervious rock. See also impermeable rock.
+pervious rock Rock which, even if non-porous,
+can allow water to pass through via interconnected
+joints, bedding planes and fissures. An example
+is limestone. Compare permeable rock. See also
+impervious rock.
+photosynthesis The process by which green plants
+make carbohydrates from carbon dioxide and
+water, and give off oxygen. Photosynthesis balances
+respiration.
+physical feature See topography.
+physical geography The study of our environment,
+comprising such elements as geomorphology,
+hydrology, pedology, meteorology, climatology and
+biogeography.
+pie chart A circular graph for displaying values as
+proportions:
+plain A level or almost level area of land.
+plantation agriculture A system of agriculture
+located in a tropical or semi-tropical environment,
+producing commodities for export to Europe,
+North America and other industrialized regions.
+Coff ee, tea, bananas, rubber and sisal are examples
+of plantation crops.
+plateau An upland area with a fairly flat surface and
+steep slopes. Rivers often dissect plateau surfaces.
+plate tectonics The theory that the Earth’s crust is
+divided into seven large, rigid plates, and several
+smaller ones, which are moving relative to each
+other over the upper layers of the Earth’s mantle.
+See continental drift. Earthquakes and volcanic
+activity occur at the boundaries between the plates.
+plucking A process of glacial erosion whereby,
+during the passage of a valley glacier or other ice
+body, ice forming in cracks and fissures drags out
+material from a rock face. This is particularly the
+case with the backwall of a corrie.
+plug The solidified material which seals the vent of
+a volcano after an eruption.
+plutonic rock Igneous rock formed at depth in
+the Earth’s crust; its crystals are large due to the
+slow rate of cooling. Granite, such as is found in
+batholiths and other deep-seated intrusions, is a
+common example.
+podzol The characteristic soil of the taiga
+coniferous forests of Canada and northern Russia.
+Podzols are leached, greyish soils: iron and lime
+especially are leached out of the upper horizons, to
+be deposited as hardpan in the B horizon.
+pollution Environmental damage caused by
+improper management of resources, or by careless
+human activity.
+polygons Closed shapes defined by a connected
+sequences of coordinate pairs, where the first and
+last coordinate pair are the same.
+polyline A series of connected segments which
+form a path to define a shape.
+population change The increase of a population,
+the components of which are summarized in the
+following diagram.
+population density The number of people
+per unit area. Population densities are usually
+expressed per square kilometre.
+population distribution The pattern of
+population location at a given scale.
+population explosion On a global scale, the dramatic
+increase in population during the 20th century.
+The graph below shows world population growth.
+population growth An increase in the population
+of a given region. This may be the result of
+natural increase (more births than deaths) or of
+in-migration, or both.
+population pyramid A type of bar graph used to
+show population structure, i.e. the age and sex
+composition of the population for a given region
+or nation.
+pothole 1. A deep hole in limestone, caused by
+the enlargement of a joint through the dissolving
+effect of rainwater.
+2. A hollow scoured in a river bed by the swirling of
+pebbles and small boulders in eddies.
+precipitation Water deposited on the Earth’s surface
+in the form of e.g. rain, snow, sleet, hail and dew.
+prevailing wind The dominant wind direction of a
+region. Prevailing winds are named by the direction
+from which they blow.
+primary keys A set of properties in a database that
+uniquely identifies each record.
+permeable rock (a) Permeable rock, (b) impermeable rock,
+(c) pervious rock.
+The journey to work: mode of transport.
+(Sample of urban population)
+Mode No. % Sectoro (% x 3.6)
+Foot 25 3.2 11.5
+Cycle 10 1.3 4.7
+Bus 86 11.1 40.0
+Train 123 15.9 57.2
+Car 530 68.5 246.6
+Total 774 100 360
+per cent degrees
+pie chart
+a) Constructive plate boundary
+b) Destructive plate boundary
+plate tectonics
+population change
+BR= birth rate DR= death rate
+population explosion
+a) population pyramid Pyramid for India, showing high
+birth rates and death rates.
+b) population pyramid Pyramid for England and Wales,
+showing low birth and death rates.
+primary sector That sector of the national
+economy which deals with the production of
+primary materials: agriculture, mining, forestry
+and fishing. Primary products such as these have
+had no processing or manufacturing involvement.
+The total economy comprises the primary sector,
+the secondary sector, the tertiary sector and the
+quaternary sector.
+primary source See secondary source.
+prime meridian or Greenwich Meridian
+The line of 0° longitude passing through
+Greenwich in London.
+pumped storage Water pumped back up to the
+storage lake of a hydroelectric power station, using
+surplus ‘off-peak’ electricity.
+pyramidal peak A pointed mountain summit
+resulting from the headward extension of corries
+and arêtes. Under glacial conditions a given
+summit may develop corries on all sides, especially
+those facing north and east. As these erode into
+the summit, a formerly rounded profile may be
+changed into a pointed, steep-sided peak.
+pyroclasts Rocky debris emitted during a volcanic
+eruption, usually following a previous emission
+of gases and prior to the outpouring of lava –
+although many eruptions do not reach the final
+lava stage.
+Q
+quality of life The level of wellbeing of
+a community and of the area in which the
+community lives.
+quartz One of the commonest minerals
+found in the Earth’s crust, and a form of silica
+(silicon+oxide). Most sandstones are composed
+predominantly of quartz.
+quartzite A very hard and resistant rock formed by
+the metamorphism of sandstone.
+quaternary sector That sector of the economy
+providing information and expertise. This
+includes the microchip and microelectronics
+industries. Highly developed economies are
+seeing an increasing number of their workforce
+employed in this sector. Compare primary sector,
+secondary sector, tertiary sector.
+query A request to select features or records from a
+database.
+R
+rain guage An instrument used to measure rainfall.
+Rain passes through a funnel into the jar below and
+is then transferred to a measuring cylinder. The
+reading is in millimetres and indicates the depth
+of rain which has fallen over an area. See diagram.
+raised beach See wave-cut platform.
+range A long series or chain of mountains.
+rapids An area of broken, turbulent water in a
+river channel, caused by a stratum of resistant
+rock that dips downstream. The softer rock
+immediately upstream and downstream erodes
+more quickly, leaving the resistant rock sticking
+up, obstructing the flow of the water. Compare
+waterfall.
+raster A pattern of closely spaced rows of dots that
+form an image.
+raw materials The resources supplied to industries
+for subsequent manufacturing processes.
+reef A ridge of rock, sand or coral whose top lies
+close to the sea’s surface.
+regeneration Renewed growth of, for example,
+forest after felling. Forest regeneration is crucial to
+the long-term stability of many resource systems,
+from bush fallowing to commercial forestry.
+region An area of land which has marked
+boundaries or unifying internal characteristics.
+Geographers may identify regions according to
+physical, climatic, political, economic or other
+factors.
+rejuvenation Renewed vertical corrasion by rivers
+in their middle and lower courses, caused by a fall
+in sea level, or a rise in the level of land relative to
+the sea.
+relative humidity The relationship between the
+actual amount of water vapour in the air and
+the amount of vapour the air could hold at a
+particular temperature. This is usually expressed
+as a percentage. Relative humidity gives a measure
+of dampness in the atmosphere, and this can be
+determined by a hygrometer.
+relief The differences in height between any parts
+of the Earth’s surface. Hence a relief map will aim
+to show differences in the height of land by, for
+example, contour lines or by a colour key.
+remote sensing The gathering of information by
+the use of electronic or other sensing devices in
+satellites.
+renewable resources Resources that can be used
+repeatedly, given appropriate management and
+conservation. Compare non-renewable resources.
+representative fraction The fraction of real
+size to which objects are reduced on a map; for
+example, on a 1:50 000 map, any object is shown at
+1/50 000 of its real size.
+reserves Resources which are available for future
+use.
+reservoir A natural or artificial lake used for
+collecting or storing water, especially for water
+supply or irrigation.
+resolution The smallest allowable separation
+between two coordinate values in a feature class.
+resource Any aspect of the human and physical
+environments which people find useful in
+satisfying their needs.
+respiration The release of energy from food in
+the cells of all living organisms (plants as well as
+animals). The process normally requires oxygen
+and releases carbon dioxide. It is balanced by
+photosynthesis.
+revolution The passage of the Earth around the
+sun; one revolution is completed in 365.25 days.
+Due to the tilt of the Earth’s axis (231–2° from the
+vertical), revolution results in the sequence of
+seasons experienced on the Earth’s surface.
+ria A submerged river valley, caused by a rise in sea
+level or a subsidence of the land relative to the sea.
+ribbon lake A long, relatively narrow lake, usually
+occupying the floor of a U-shaped glaciated valley.
+A ribbon lake may be caused by the overdeepening of
+a section of the valley floor by glacial abrasion.
+Richter scale A scale of earthquake measurement
+that describes the magnitude of an earthquake
+according to the amount of energy released, as
+recorded by seismographs.
+rift valley A section of the Earth’s crust which has
+been downfaulted. The faults bordering the rift
+valley are approximately parallel. There are two
+main theories related to the origin of rift valleys.
+The first states that tensional forces within the
+Earth’s crust have caused a block of land to sink
+between parallel faults. The second theory states
+that compression within the Earth’s crust has
+caused faulting in which two side blocks have risen
+up towards each other over a central block.
+The most complex rift valley system in the world
+is that ranging from Syria in the Middle East to the
+river Zambezi in East Africa.
+river A large natural stream of fresh water flowing
+along a definite course, usually into the sea.
+pyramidal peak
+rain gauge
+rapids
+revolution The seasons of the year.
+ria
+rift valley
+river basin The area drained by a river and its
+tributaries, sometimes referred to as a catchment
+area.
+river cliff or bluff The outer bank of a meander.
+The cliff is kept steep by undercutting since river
+erosion is concentrated on the outer bank.
+See meander and river’s course.
+river’s course The route taken by a river from its
+source to the sea. There are three major sections:
+the upper course, the middle course and the lower
+course.
+river terrace A platform of land beside a river.
+This is produced when a river is rejuvenated in its
+middle or lower courses. The river cuts down into
+its flood plain, which then stands above the new
+general level of the river as paired terraces.
+roche moutonnée An outcrop of resistant rock
+sculpted by the passage of a glacier.
+rock The solid material of the Earth’s crust. See
+igneous rock, sedimentary rock, metamorphic
+rock.
+rotation The movement of the Earth about its
+own axis. One rotation is completed in 24 hours.
+Due to the tilt of the Earth’s axis, the length of day
+and night varies at different points on the Earth’s
+surface. Days become longer with increasing
+latitude north; shorter with increasing latitude
+south. The situation is reversed during the
+northern midwinter (= the southern midsummer).
+See diagram.
+rural depopulation The loss of population from
+the countryside as people move away from rural
+areas towards cities and conurbations.
+rural–urban migration The movement of people
+from rural to urban areas. See migration and rural
+depopulation.
+S
+saltpan A shallow basin, usually in a desert region,
+containing salt which has been deposited from an
+evaporated salt lake.
+sandstone A common sedimentary rock deposited
+by either wind or water. Sandstones vary in texture
+from fine- to coarse- grained, but are invariably
+composed of grains of quartz, cemented by such
+substances as calcium carbonate or silica.
+satellite image An image giving information about
+an area of the Earth or another planet, obtained
+from a satellite. Instruments on an Earth-orbiting
+satellite, such as Landsat, continually scan the
+Earth and sense the brightness of reflected light.
+When the information is sent back to Earth,
+computers turn it into false-colour images in which
+built-up areas appear in one colour (perhaps blue),
+vegetation in another (often red), bare ground in a
+third, and water in a fourth colour, making it easy to
+see their distribution and to monitor any changes.
+Compare aerial photograph.
+savanna The grassland regions of Africa which lie
+between the tropical rainforest and the hot deserts.
+In South America, the Llanos and Campos regions
+are representative of the savanna type.
+scale The size ratio represented by a map; for
+example, on a map of scale 1:25 000, the real
+landscape is portrayed at 1/25 000 of its actual size.
+scarp slope The steeper of the two slopes which
+comprise an escarpment of inclined strata.
+Compare dip slope.
+science park A site accommodating several
+companies involved in scientific work or research.
+Science parks are linked to universities and tend to
+be located on greenfi eld and/or landscaped sites.
+Compare business park.
+scree or talus The accumulated weathering debris
+below a crag or other exposed rock face. Larger
+boulders will accumulate at the base of the scree,
+carried there by greater momentum.
+sea level The average height of the surface of the
+oceans and seas.
+secondary sector The sector of the economy
+which comprises manufacturing and processing
+industries, in contrast with the primary sector
+which produces raw materials, the tertiary sector
+which provides services, and the quaternary sector
+which provides information.
+secondary source A supply of information or
+data that has been researched or collected by an
+individual or group of people and made available
+for others to use; census data is an example of
+this. A primary source of data or information is
+one collected at first hand by the researcher who
+needs it; for example, a traffic count in an area,
+undertaken by a student for his or her own project.
+sediment The material resulting from the
+weathering and erosion of the landscape, which
+has been deposited by water, ice or wind. It may be
+reconsolidated to form sedimentary rock.
+sedimentary rock A rock which has been formed
+by the consolidation of sediment derived from pre-
+existing rocks. Sandstone is a common example
+of a rock formed in this way. Chalk and limestone
+are other types of sedimentary rock, derived from
+organic and chemical precipitations.
+seif dune A linear sand dune, the ridge of sand
+lying parallel to the prevailing wind direction. The
+eddying movement of the wind keeps the sides of
+the dune steep.
+seismograph An instrument which measures and
+records the seismic waves which travel through the
+Earth during an earthquake.
+seismology The study of earthquakes.
+serac A pinnacle of ice formed by the tumbling and
+shearing of a glacier at an ice fall, i.e. the broken ice
+associated with a change in gradient of the valley
+floor.
+service industry The people and organizations
+that provide a service to the public.
+river basin
+river’s course Upper course.
+river’s course Lower course.
+river terrace Paired river terraces above a flood plain.
+roche moutonnée
+rotation The tilt of the Earth at the northern summer and
+southern winter solstice.
+savanna The position of the savanna in West Africa.
+scarp slope
+scree or talus
+seif dunes
+seismograph A typical seismograph trace.
+settlement Any location chosen by people as a
+permanent or semi-permanent dwelling place.
+shading map or choropleth map A map in which
+shading of varying intensity is used. For example,
+the pattern of population densities in a region.
+shanty town An area of unplanned, random, urban
+development often around the edge of a city. The
+shanty town is a major element of the structure of
+many Third World cities such as São Paulo, Mexico
+City, Nairobi, Kolkata and Lagos. The shanty
+town is characterized by high-density/low-quality
+dwellings, often constructed from the simplest
+materials such as scrap wood, corrugated iron
+and plastic sheeting – and by the lack of standard
+services such as sewerage and water supply, power
+supplies and refuse collection.
+shape fi les A storage format for storing the location,
+shape and attributes of geographic features.
+shifting cultivation See bush fallowing.
+shoreface terrace A bank of sediment
+accumulating at the change of slope which marks
+the limit of a marine wave-cut platform.
+Material removed from the retreating cliff base
+is transported by the undertow off the wave-cut
+platform to be deposited in deeper water offshore.
+silage Any fodder crop harvested whilst still green.
+The crop is kept succulent by partial fermentation
+in a silo. It is used as animal feed during the winter.
+sill 1. An igneous intrusion of roughly horizontal
+disposition. See igneous rock.
+2. (Also called threshold) the lip of a corrie.
+silt Fine sediment, the component particles of
+which have a mean diameter of between 0.002 mm
+and 0.02 mm.
+sinkhole See pothole.
+slash and burn See tropical rainforest.
+slate Metamorphosed shale or clay. Slate is a
+dense, fi ne-grained rock distinguished by the
+characteristic of perfect cleavage, i.e. it can be split
+along a perfectly smooth plane.
+slip The amount of vertical displacement
+of strata at a fault.
+smog A mixture of smoke and fog associated
+with urban and industrial areas, that creates an
+unhealthy atmosphere.
+snow line The altitude above which permanent
+snow exists, and below which any snow that falls
+will not persist during the summer months.
+socioeconomic group A group defined by
+particular social and economic characteristics,
+such as educational qualifications, type of job, and
+earnings.
+soil The loose material which forms the uppermost
+layer of the Earth’s surface, composed of the
+inorganic fraction, i.e. material derived from the
+weathering of bedrock, and the organic fraction –
+that is material derived from the decay of vegetable
+matter.
+soil erosion The accelerated breakdown and removal
+of soil due to poor management. Soil erosion is
+particularly a problem in harsh environments.
+soil profile The sequence of layers or horizons
+usually seen in an exposed soil section.
+solar power Heat radiation from the sun converted
+into electricity or used directly to provide heating.
+Solar power is an example of a renewable source of
+energy (see renewable resources).
+solifluction A process whereby thawed surface
+soil creeps downslope over a permanently frozen
+subsoil (permafrost).
+spatial distribution The pattern of locations of, for
+example, population or settlement in a region.
+spit A low, narrow bank of sand and shingle built
+out into an estuary by the process of longshore
+drift.
+spring The emergence of an underground
+stream at the surface, often occurring where
+impermeable rock underlies permeable rock or
+pervious rock or strata.
+spring tides See tides.
+squatter settlement An area of peripheral urban
+settlement in which the residents occupy land to
+which they have no legal title. See shanty town.
+stack A coastal feature resulting from the collapse
+of a natural arch. The stack remains after less
+resistant strata have been worn away by weathering
+and marine erosion.
+stalactite A column of calcium carbonate hanging
+from the roof of a limestone cavern. As water
+passes through the limestone it dissolves a
+certain proportion, which is then precipitated by
+evaporation of water droplets dripping from the
+cavern roof. The drops splashing on the floor of
+a cavern further evaporate to precipitate more
+calcium carbonate as a stalagmite.
+stalagmite A column of calcium carbonate growing
+upwards from a cavern floor. Compare stalactite.
+Stalactites and stalagmites may meet, forming a
+column or pillar.
+staple diet The basic foodstuff which comprises
+the daily meals of a given people.
+stereoplotter An instrument used for projecting
+an aerial photograph and converting locations of
+objects on the image to x-, y-, and z-coordinates. It
+plots these coordinates as a map.
+Stevenson’s screen A shelter used in weather
+stations, in which thermometers and other
+instruments may be hung.
+strait, channel or passage A narrow body of water,
+between two land masses, which links two larger
+bodies of water.
+strata Layers of rock superimposed one upon the
+other.
+stratosphere The layer of the atmosphere which
+lies immediately above the troposphere and
+below the mesosphere and ionosphere. Within
+the stratosphere, temperature increases with
+altitutude.
+stratus Layer-cloud of uniform grey appearance,
+often associated with the warm sector of a
+depression. Stratus is a type of low cloud which
+shading map
+shoreface terrace
+sill
+soil erosion a) Stable environment, b) unstable environment.
+spit Spurn Head, a coastal spit.
+spring Rainwater enters through the fissures of the limestone
+and the stream springs out where the limestone meets slate.
+stack
+Stevenson’s screen
+stratosphere
+may hang as mist over mountain tops.
+striations The grooves and scratches left on bare
+rock surfaces by the passage of a glacier.
+strip cropping A method of soil conservation
+whereby different crops are planted in a series of
+strips, often following contours around a hillside.
+The purpose of such a sequence of cultivation is
+to arrest the downslope movement of soil. See soil
+erosion.
+subduction zone See plate tectonics.
+subsistence agriculture A system of agriculture
+in which farmers produce exclusively for their own
+consumption, in contrast to commercial agriculture
+where farmers produce purely for sale at the market.
+subsoil See soil profile.
+suburbs The outer, and largest, parts of a town or
+city.
+surface run-off That proportion of rainfall
+received at the Earth’s surface which runs off
+either as channel flow or overland flow. It is
+distinguished from the rest of the rainfall, which
+either percolates into the soil or evaporates back
+into the atmosphere.
+sustainable development The ability of a country
+to maintain a level of economic development, thus
+enabling the majority of the population to have a
+reasonable standard of living.
+swallow hole See pothole.
+swash The rush of water up the beach as a wave
+breaks. See also backwash and longshore drift.
+syncline A trough in folded strata; the opposite of
+anticline. See fold.
+T
+taiga The extensive coniferous forests of Siberia
+and Canada, lying immediately south of the arctic
+tundra.
+talus See scree.
+tarn The postglacial lake which often occupies a
+corrie.
+temperate climate A climate typical of mid-
+latitudes. Such a climate is intermediate between
+the extremes of hot (tropical) and cold (polar)
+climates. Compare extreme climate. See also
+maritime climate.
+terminal moraine See moraine.
+terracing A means of soil conservation and land
+utilization whereby steep hillsides are engineered
+into a series of flat ledges which can be used for
+agriculture, held in places by stone banks to
+prevent soil erosion.
+tertiary sector That sector of the economy which
+provides services such as transport, finance and
+retailing, as opposed to the primary sector which
+provides raw materials, the secondary sector which
+processes and manufactures products, and the
+quaternary sector which provides information and
+expertise.
+thermal power station An electricity-generating
+plant which burns coal, oil or natural gas to
+produce steam to drive turbines.
+Third World A collective term for the poor nations
+of Africa, Asia and Latin America, as opposed to the
+‘fi rst world’ of capitalist, developed nations and the
+‘second world’ of formerly communist, developed
+nations. The terminology is far from satisfactory
+as there are great social and political variations
+within the ‘Third World’. Indeed, there are some
+countries where such extreme poverty prevails
+that these could be regarded as a fourth group.
+Alternative terminology includes ‘developing
+countries’, ‘economically developing countries’
+and ‘less economically developed countries’
+(LEDC). Newly industrialized countries are those
+showing greatest economic development.
+threshold See sill (sense 2).
+tidal range The mean difference in water level
+between high and low tides at a given location. See
+tides.
+tides The alternate rise and fall of the surface of
+the sea, approximately twice a day, caused by the
+gravitational pull of the moon and, to a lesser
+extent, of the sun.
+till See boulder clay.
+tombolo A spit which extends to join an island to
+the mainland.
+topography The composition of the visible
+landscape, comprising both physical features and
+those made by people.
+topsoil The uppermost layer of soil, more rich in
+organic matter than the underlying subsoil. See
+horizon, soil profi le.
+tornado A violent storm with winds circling around
+a small area of extremely low pressure. Characterized
+by a dark funnel-shaped cloud. Winds associated
+with tornadoes can reach speeds of over 300 mph
+(480 km/h).
+trade winds Winds which blow from the subtropical
+belts of high pressure towards the equatorial belt
+of low pressure. In the northern hemisphere, the
+winds blow from the northeast and in the southern
+hemisphere from the southeast.
+transhumance The practice whereby herds of farm
+animals are moved between regions of different
+climates. Pastoral farmers (see pastoral farming)
+take their herds from valley pastures in the winter
+to mountain pastures in the summer. See also alp.
+transnational corporation (TNC)
+A company that has branches in many countries
+of the world, and often controls the production of
+the primary product and the sale of the finished
+article.
+tributary A stream or river which feeds into a larger
+one. Compare distributary.
+tropical rainforest The dense forest cover of the
+equatorial regions, reaching its greatest extent in
+the Amazon Basin of South America, the Congo
+Basin of Africa, and in parts of South East Asia and
+Indonesia. There has been much concern in recent
+years about the rate at which the world’s rainforests
+are being cut down and burnt. The burning of large
+tracts of rainforest is thought to be contributing
+to global warming. Many governments and
+conservation bodies are now examining ways of
+protecting the remaining rainforests, which are
+unique ecosystems containing millions of plant
+and animal species.
+tropics The region of the Earth lying between the
+tropics of Cancer (231–2°N) and Capricorn (231–2°S). See
+latitude.
+troposphere See atmosphere.
+trough An area of low pressure, not sufficiently
+well-defined to be regarded as a depression.
+truncated spur A spur of land that previously
+projected into a valley and has been completely or
+partially cut off by a moving glacier.
+tsunami A very large, and often destructive,
+sea wave produced by a submarine earthquake.
+Tsunamis tend to occur along the coasts of Japan
+and parts of the Pacific Ocean, and can be the cause
+of large numbers of deaths.
+tuff Volcanic ash or dust which has been
+consolidated into rock.
+tundra The barren, often bare-rock plains of the
+far north of North America and Eurasia where
+subarctic conditions prevail and where, as a result,
+vegetation is restricted to low-growing, hardy
+shrubs and mosses and lichens.
+typhoon See hurricane.
+U
+undernutrition A lack of a sufficient quantity of
+food, as distinct from malnutrition which is a
+consequence of an unbalanced diet.
+urban decay The process of deterioration in the
+infrastructure of parts of the city. It is the result of
+terracing
+tides Tidal ranges.
+tombolo Chesil Beach, England.
+a forest giant in the tropical rainforest
+long-term shifts in patterns of economic activity,
+residential location and infrastructure.
+urban sprawl The growth in extent of an urban
+area in response to improvements in transport
+and rising incomes, both of which allow a greater
+physical separation of home and work.
+urbanization The process by which a national
+population becomes predominantly urban through
+a migration of people from the countryside to
+cities, and a shift from agricultural to industrial
+employment.
+U-shaped valley A glaciated valley, characteristically
+straight in plan and U-shaped in cross section. See
+diagram. Compare V-shaped valley.
+V
+valley A long depression in the Earth’s surface,
+usually containing a river, formed by erosion or by
+movements in the Earth’s crust.
+vector A quantity that has both magnitude and
+direction.
+vegetation The plant life of a particular region.
+viscous lava Lava that resists the tendency to flow.
+It is sticky, flows slowly and congeals rapidly. Non-
+viscous lava is very fluid, fl ows quickly and congeals
+slowly.
+volcanic rock A category of igneous rock which
+comprises those rocks formed from magma
+which has reached the Earth’s surface. Basalt is an
+example of a volcanic rock.
+volcano A fissure in the Earth’s crust through
+which magma reaches the Earth’s surface.
+There are four main types of volcano:
+(a) Acid lava cone – a very steep-sided cone
+composed entirely of acidic, viscous lava which
+flows slowly and congeals very quickly.
+(b) Composite volcano – a single cone comprising
+alternate layers of ash (or other pyroclasts) and lava.
+(c) Fissure volcano – a volcano that erupts along
+a linear fracture in the crust, rather than from a
+single cone.
+(d) Shield volcano – a volcano composed of very
+basic, non-viscous lava which flows quickly and
+congeals slowly, producing a very gently sloping
+cone.
+V-shaped valley A narrow, steep-sided valley made
+by the rapid erosion of rock by streams and rivers.
+It is V-shaped in cross-section. Compare U-shaped
+valley.
+vulcanicity A collective term for those processes
+which involve the intrusion of magma into the
+crust, or the extrusion of such molten material
+onto the Earth’s surface.
+W
+wadi A dry watercourse in an arid region; occasional
+rainstorms in the desert may cause a temporary
+stream to appear in a wadi.
+warm front See depression.
+waterfall An irregularity in the long profile of a
+river’s course, usually located in the upper course.
+Compare rapids.
+watershed The boundary, often a ridge
+of high ground, between two river basins.
+water table The level below which the ground is
+permanently saturated. The water table is thus
+the upper level of the groundwater. In areas where
+permeable rock predominates, the water table may
+be at some considerable depth.
+wave-cut platform or abrasion platform A gently
+sloping surface eroded by the sea along a coastline.
+weather The day-to-day conditions of e.g. rainfall,
+temperature and pressure, as experienced at a
+particular location.
+weather chart A map or chart of an area giving
+details of weather experienced at a particular
+time of day. Weather charts are sometimes called
+synoptic charts, as they give a synopsis of the weather
+at a particular time.
+weather station A place where all elements of the
+weather are measured and recorded. Each station
+will have a Stevenson’s screen and a variety of
+instruments such as a maximum and minimum
+thermometer, a hygrometer, a rain gauge, a wind
+vane and an anemometer.
+weathering The breakdown of rocks in situ;
+contrasted with erosion in that no large-scale
+transport of the denuded material is involved.
+wet and dry bulb thermometer
+See hygrometer.
+wind vane An instrument used to indicate wind
+direction. It consists of a rotating arm which
+always points in the direction from which the wind
+blows.
+Y
+yardang Long, roughly parallel ridges of rock
+in arid and semi-arid regions. The ridges are
+undercut by wind erosion and the corridors
+between them are swept clear of sand by the wind.
+The ridges are oriented in the direction of the
+prevailing wind.
+yield The productivity of land as measured by the
+weight or volume of produce per unit area.
+Z
+Zeugen Pedestal rocks in arid regions; wind erosion
+is concentrated near the ground, where corrasion
+by wind-borne sand is most active. This leads to
+undercutting and the pedestal profile emerges.
+U-shaped valley
+volcano Composite volcano.
+volcano Shield volcano.
+waterfall
+watershed
+wave-cut platform a) Early in formation,
+b) later in formation.
+weather chart
+Zeugen
+wind vane

@@ -1,0 +1,207 @@
+Amplification : technique most often based on enzymes, allowing to multiply nucleic acids to increase the sensitivity of the detection methods.
+
+ 
+
+Antibiotic susceptibility test: analysis to determine the sensitivity of a bacterium to antibiotics and to classify it as sensitive, resistant or intermediate.
+
+ 
+
+Antibiotic: a substance of natural or synthetic origin, with the ability to stop the multiplication of bacteria.
+
+ 
+
+Antibodies: molecules produced by the immune system to detect and neutralize pathogens, particularly viruses.
+
+ 
+
+Antigen: a substance foreign to an organism that causes it to form an antibody (immune reaction
+
+
+
+Bacteria: unicellular microorganisms without chlorophyll and visible only under the microscope. Bacteria are elements that do not belong to the plant or animal kingdom.
+
+ 
+
+Commensal bacteria: the skin and mucous membranes are permanently colonized by commensal bacteria that do not cause disease, unless the subject becomes fragile.
+
+ 
+
+Multi-resistant bacteria: a bacterium is said to be multi-resistant to antibiotics when, due to the accumulation of natural and acquired resistances, it is only sensitive to a small number of antibiotics that are usually active in therapy.
+
+ 
+
+Extended-spectrum beta-lactamase: beta-lactamases are a family of enzymes responsible for the resistance of bacteria to certain antibiotics such as penicillin.
+
+ 
+
+Biochemistry: science that studies the correlation between the structure of natural molecules and the consequences on their activity.
+
+ 
+
+Molecular biology: technique that allows the detection of a bacterium, a virus, a yeast, a parasite or a biomarker by the presence of genetic sequences of DNA or RNA in a sample.
+
+ 
+
+Biomarker / marker: any indicator (nucleic acid, enzyme, metabolite or other types of molecules: histamine, hormone, protein, etc.) present in the body or excreted by it, as a biological response to a physiological or pathological state. A biomarker is likely to identify the presence, effect and/or measurement of particular phenomena, such as
+
+   - the rapid or early detection of a disease, before the first symptoms,
+
+   - the progression of a disease,
+
+   - the impact of a drug or a treatment.
+
+
+Campylobacter: a genus of Gram-negative bacteria that can cause food poisoning.
+
+Candida albicans: the most important and best-known yeast species of the Candida genus. It causes infections (candidiasis), mainly of the digestive and vaginal mucosa.
+
+Carbapenemases: b-lactamase type enzymes which hydrolyze carbapenems, a class of antibiotics with extended-spectrum activity, mainly used for the treatment of multi-drug resistant bacterial infections.
+
+Chromogen: molecule that gives off a color under certain conditions. When incorporated into a culture medium, it reveals the presence of an enzyme specific to a given bacteria, thereby indicating the bacteria that is cultured.
+
+Commensal bacteria: the skin and mucous membranes are continuously colonized by commensal bacteria that do not cause disease unless the subject is weakened.
+
+Consumable: a single-use accessory, generally employed in an analysis instrument.
+
+Contaminant: a substance present where it should not be.
+
+Corynebacterium: a genus of bacteria including many species of Gram-positive bacilli which account for a large proportion of the flora of the skin and of the mucosa.
+
+Culture medium: a simple or complex nutrient composition in liquid or solid form, used to maintain or increase the development of a microbial species under appropriate biological conditions.
+
+Cytology (or cellular biology): an area of biology concerning the study of cells and their organelles, the vital processes taking place therein as well as the mechanisms allowing for their survival (reproduction, metabolism).
+
+Cytomegalovirus: a virus responsible for infections, usually undetected. It becomes pathogenic especially in patients with weak immune defenses. Member of the herpes virus family, which includes inter alia herpes simplex virus (HSV) or herpes virus hominis (HVH), cytomegalovirus (CMV), varicellazoster virus (VZV) and Epstein-Barr virus (EBV).
+
+Cytometry: the counting of cells
+
+DNA: the acronym of "Deoxyribonucleic Acid". These nucleotides consist of a sugar (deoxyribose), a phosphate group and one of the following nitrogen-containing bases: adenine (A), cytosine (C), guanine (G) or thymine (T), and serve as a medium for genetic information.
+
+DNA sequencing: method used to determine the order of the nucleotide bases for a given DNA fragment
+
+
+
+Endotoxin: component of the outer membrane of certain Gram-negative bacteria that can cause high fevers. 
+
+Enterobacteria: a family of bacilli (bacteria) revealed by Gram-negative staining which are aerobic or anaerobic (they can live and reproduce with or without oxygen).
+
+Enterococcus: oval-shaped bacterium of the group D of the Streptococcus family, usually resident in the intestine of healthy humans.
+
+Enumeration: counting how many microbes (bacteria or fungi) are present in a sample.
+
+Enzyme: a protein macromolecule which speeds up a biochemical reaction.
+
+Extended-spectrum beta-lactamase: beta-lactamases are a family of enzymes responsible for bacterial resistance to certain antibiotics such as penicillin.
+
+Extraction: term applied to the steps which extract nucleic acids from the cells that contain them and process them so they can be used in molecular biology techniques such as amplification.
+
+
+
+Flow cytometry: technique of passing a stream of cells, particles or molecules at high speed through a laser beam. The light re-emitted (by diffusion or fluorescence) enables the population to be classified and sorted according to several criteria.
+
+Functionalized polymer: an organic or inorganic macromolecule formed by a chain of repeating units to which chemical groups are grafted in order to give the macromolecule a particular function.
+
+Fungal: that which relates to fungi.
+
+
+
+Genotyping: determination of all the genes contained in the cells of an organism.
+
+Gram staining: staining which reveals the properties of the bacterial wall so that they can be used to distinguish and classify bacteria. The main distinction is between Gram-positive and Gram-negative bacteria.
+
+
+
+Healthcare-associated infection: an infection that patients acquire during the course of receiving treatment for other conditions within a hospital or healthcare setting.
+
+Histology: the study of tissue in order to research tissue composition, structure and renewal and cellular exchanges within themselves.
+
+HLA: the acronym of “Human Leukocyte Antigens”: histocompatibility antigens whose role is essential in the tolerance of organ transplants and which are specific to a given individual.
+
+
+Immunoassay:  diagnostic test based on an antigen/antibody reaction, enabling the detection of infectious agents (bacteria, viruses, parasites) and pathogen markers.
+
+In vitro diagnostics: analysis of biological samples (urine, blood, etc.) performed outside the human body.
+
+In vivo diagnostics: tests or research performed on a living organism.
+
+IVD: abbreviation for in vitro diagnostics.
+
+
+Listeria: a genus of bacteria that can cause listeriosis, an infectious disease which is potentially serious in new-born babies, pregnant women or individuals with low resistance.
+
+
+
+Marker: a reagent used to detect the substance to which it is bound. A biological marker (biomarker) is a substance that is assayed to help diagnose a pathology.
+
+Mass spectrometry: a technique used to identify a molecule and determine its chemical structure by analyzing the mass and the charge of its ions. 
+
+Methicillin: a semi-synthetic penicillin used primarily against non-resistant Staphylococcus aureus.
+
+Microbiology: study of microorganisms. In the field of in vitro diagnostics: culturing biological, food and pharmaceutical samples in growth medium allows any bacteria that may be present to multiply.The bacteria are subsequently identified and their susceptibility to antibiotics tested in certain cases.
+
+Microorganism: a living organism of microscopic size.
+
+Molecular biology: technique that can detect a bacterium, virus, yeast, parasite or a biomarker through the presence of DNA or RNA genetic sequences in a sample.
+
+MRSA: methicillin-resistant Staphylococcus aureus bacterium.
+
+Multiplex: the ability to transmit multiple data on a single physical medium.
+
+Multi-resistant bacteria: bacteria are said to be multi-resistant to antibiotics when they are sensitive only to a small number of the antibiotics customarily used in therapy, as a consequence of the accumulation of natural and acquired resistances.
+
+Mycobacteria: rod-shaped bacillus-type bacteria. Some species of mycobacterium are pathogenic: M. leprae responsible for leprosy; M. tuberculosis, responsible for tuberculosis.
+
+Healthcare-Associated Infections: a disease contracted in a hospital or other healthcare establishment by a patient who did not have this disease on admission.
+
+
+
+
+Nucleic acid: a naturally-occurring molecule found in each cell. It has the ability to hold and transmit coded hereditary instructions allowing for an organism's development. There are two types of nucleic acids: DNA and RNA.
+
+
+Oncology (or cancerology): the medical specialty of the study, diagnosis and treatment of cancers.
+
+
+Parasite: an organism that feeds off, lives or reproduces itself by establishing a lasting interaction with another organism (the host).
+
+Pathogen: a microbe that causes or has the potential to cause an infectious disease.
+
+PCR (Polymerase Chain Reaction): molecular biology technology for in vitro amplification of genetic sequences, used to copy known DNA or RNA sequences in large quantities (by an order of magnitude of a billion) from an initially small quantity. This technology is particularly useful for detecting the presence of viruses.
+
+PCT (Procalcitonin): an early and specific host marker of a bacterial infection, PCT is useful to adapt antimicrobial prescriptions.
+
+Phage recombinant protein: bacteriophage tail protein that has been obtained by a biological process. Bacteriophages: highly specific viruses that only infect bacteria. They are used for the targeted capture of bacteria and to isolate them
+from a sample.
+
+POC (point-of-care) - POCT (point-of-care testing): services offered “at the bedside”, including in particular the analysis of the diagnosis.
+
+Protein: a basic constituent of all living cells. A biological macromolecule is composed of one or more amino acid chains linked by peptide bonds.
+
+Pulmonary embolism: obstruction of one of the branches of the pulmonary artery or of the pulmonary artery itself by a blood clot.
+
+
+
+Rheumatoid arthritis: the most frequent chronic inflammatory rheumatism. Its cause is not fully known, but it is one of the autoimmune diseases (the body produces antibodies against its own tissues).
+
+RNA: the acronym of "ribonucleic acid". A polymer similar to DNA which, like DNA, has a role as a vector of genetic information. The sugar in RNA is a ribose.
+
+
+Sepsis: a serious systemic infection characterized by the presence of bacteria, fungi, viruses and parasites in the blood and combined with an inflammatory immune-reaction (host response) that can result in the rapid deterioration of the patient’s general condition leading to possible organ failure. 
+
+Septicaemia: serious systemic infection of the organism by pathogenic germs, indicated by the presence of microorganisms in the blood.
+
+Staphylococcus: a genus of Gram-positive bacteria, usually observed in clusters resembling bunches of grapes.
+
+Substrate: a molecule used as a starting product which binds to the active ste of ain enzyme and is converted into one or more products.
+
+Syndromic approach: medical approach based on analyzing a syndrome (i.e., a set of symptoms and/or clinical signs) that uses a single test to identify the disease-causing organism(s) responsible for  this syndrome, whether they are viruses, bacteria, fungi or parasites.
+
+
+Theranostics: the association of a diagnostic test with a therapy. The foundation of personalized medicine.
+
+Typing: a method which can help in the assessment of the compatibility between two individuals, their organs, tissues or blood. A technique used to characterize bacteria.
+
+
+Venous thrombosis: the formation of a blood clot in a vein. It usually occurs in a vein of the lower limbs, in the leg or hip, rarely in the upper limbs.
+
+Virus: a rudimentary infectious microorganism, containing a single type of nucleic acid encaged in a protein capsid, which uses the materials of the cell that it parasitizes to synthesize its own constituents. It reproduces using just its own genetic material.

@@ -1,0 +1,17 @@
+capital	The resources needed to produce things, such as land, raw materials and equipment
+commerce	The business of buying and selling, particularly on a large scale
+debt	Money owed to another party, usually because it has been previously borrowed
+deficit	The shortfall that exists when spending is greater than income
+exports	Resources or goods sold and shipped to another country, which boosts national income
+finance	Describes the sections of an economy concerned with managing money, such as banking
+imports	Resources or goods bought and shipped in from another country, depleting national income
+industry	The production of raw materials and manufactured goods within an economy
+inflation	An increase in prices for goods and services, reducing the purchasing power of money
+labour	The people who provide work to enable production or delivery of services; the workers
+laissez-faire	French for “let it be”; an economy free of trade regulations, tariffs or costs
+manufacturing	The process of making or producing goods, particularly on a large scale
+production	The process of making things, particularly things that have additional value
+profit	Financial reward obtained from business or investment, where income exceeds costs
+revenue	Money received for normal activities, such as sales (business) or taxation (government)
+taxation	Money collected from individuals and groups by the government to fund the state
+trade	The buying or selling of goods, usually in exchange for money

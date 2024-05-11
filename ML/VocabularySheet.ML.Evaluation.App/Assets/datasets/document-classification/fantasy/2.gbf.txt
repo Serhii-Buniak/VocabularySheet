@@ -1,0 +1,496 @@
+Adds - Additional Enemies; refers to the additional enemies that accompanies raid bosses, such as the 2 Wyvern Orders during Grand Order raid.
+
+Affects All Allies - Effects that affect all allies only affect the player's characters that are in combat.
+
+Affects All Parties - Effects that affect all parties affect every player's characters that are in combat. Also referred to as 'raidwide'
+
+Angel Halo - A special quest which drops Angel items and rarely Rusted Weapons.
+
+AH - Acronym for Angel Halo.
+
+AR - Acronym for Arrow Rain ("Rain of Arrows" in English), a commonly used subskill in the Ranger class family.
+
+Asparagus - An intentional misspelling of Apsaras.
+
+Assassin - Refers to characters with a conditional damage boost, usually Defiance
+("Overdrive Assassin") or Salted Wound
+("Break Assassin").
+
+    "Anytime Assassin" refers to characters and effects with similar functions that do not rely on Overdrive or Break, eg.
+        Anre's Fleeting Spark
+        Shiva (Summon)'s Path of Destruction
+    "Turnwide Assassin" refers to characters and effects with similar functions that last the entire turn and are not consumed on the first damaging action. These are noted with "1 Turn" as opposed to "1 Time"
+
+AT - Acronym for Assault Time, a crew effect active two hours a day where all crew members to begin most raids with 100% charge bar for all characters, as well as a bonus to exp and rupies. "Strike Time" in English.
+
+Auto - Refers to a regular attack of an ally or an enemy. Notated as a "one-foe" attack in-game.
+
+Autonuke - A damaging skill that activates automatically without having to be pressed by the player.
+B
+
+BA - Acronym for Break Assassin, aka Salted Wound
+.
+
+Babu / Babusan - Refers to Beelzebub or sometimes Helel ben Shalem.
+
+Backline - Refers to the sub members of a party.
+
+Backwater - Refers to Skills or the effects of Abilities which increase the attack power of characters as they lose HP. Named after the JP term for the ability, 背水の陣, where one is fighting with their back towards the water, equivalent to "backed into a corner" in English. See Enmity.
+
+Baha -  for Bahamut. Can refer to the summon Bahamut, the raid Proto Bahamut or the race-boosting Bahamut Weapons.
+
+Battery - Unofficial term for a character with the role of providing "Charge Bar" to allies.
+
+Bead - Also known as "charge diamonds". Refers to the set of diamonds beneath an enemy's HP bar that denotes when they will perform a Charge Attack. Used both to refer to the size of the gauge, as well as current progress in the gauge.
+
+Bingo - The act of collecting all of a certain set. Commonly used for recruiting all of The Eternals or Evokers.
+
+Birdman - Fan nickname for Nezahualpilli, due to his appearance and hard-to-remember name.
+
+Bluuten - Fan nickname for the Guider to the Eternal Edge MC Skin because of the change in hair color in combination with "Juuten", the Japanese name for The Eternals.
+
+Box - Fan nickname for Charlotta. Can also appear as "Box Potato" or "Boxtato".
+
+Boxing - The act of grinding events to open event boxes.
+
+BP - Acronym for Battle Points, the resource used to join raids. Known as "EP" in English.
+
+Break Assassin (BA) - Refers to any skill that greatly amplifies the damage of the next attack/skill/Charge Attack, but only if the target is in Break mode. Named after the Hawkeye class's Crack Shot skill, which is named "Break Assassin" in Japanese.
+
+BSC - Acronym for Blue Sky Crystal.
+
+Buncle - Shorthand for "Carbuncle", a set of SR summons that improve elemental attack and defense of their element. Commonly prefixed by its element (e.g. the carbuncle obtained from Pinboard Missions is referred to as a windbuncle).
+
+Burst - Indicates dealing the highest amount of damage as you can in the shortest amount of time and turn.
+
+Bubs - Refers to Beelzebub
+C
+
+Cake - Nickname for Threo because she really likes cake.
+
+Cav - Shorthand for Cavalier.
+
+CCW -  for Class Champion Weapons.
+
+CEQ / CQ -  for Campaign-Exclusive Quest.
+
+Chain / Chaining - Can refer to using multiple Charge Attacks in one turn or when a player calls a summon to combo with another player's summon that was last called.
+
+Charge Gauge/Bar - Can refer to a character's charge bar or an enemy's. For enemies, it is set of diamonds beneath the enemy's HP bar. Each turn, an enemy will typically fill one diamond. When the gauge is filled, the enemy will perform a Charge Attack and the gauge will empty. Various skills can halt the accumulation or even remove diamonds from the Charge Gauge during battle.
+
+Chev -  for Chevalier, the main Light primal beast. "Luminiera" in English.
+
+Chrys - Shorthand for Chrysaor
+
+Clear, Cleanse - Refers to any skill that removes one or more debuffs from allies. The former is named after the Cleric job's "Clear All" skill in Japanese ("Clarity" in English). See also Clear.
+
+Colo -  for Colossus.
+
+CR -  for Chaos Ruler.
+
+Crimfin - Shorthand for Crimson Finger, a common weapon used in Primal Fire grids.
+
+Crit -  for Critical Hit. Certain buffs or passive skills allow a character to deal extra damage when attacking with a strong element. Some field effects also allow critical hits regardless of element. This is denoted by the attack specifying "Critical!" instead of "Weakpoint!" above the damage dealt. The likelihood of the Critical effect, as well as the amount of increased damage, vary depending on the source of the Critical effect.
+D
+
+DA -  for Double Attack.
+
+DAO -  for Dark Angel Olivia.
+
+DATA -  for Double Attack/Triple Attack, used to refer to multiattack just like "MA".
+
+DE - Short for Devil Element, a material weapon which is used to increase the skill level of weapons more efficiently. "Skill Shard" and "Skill Jewel" in English.
+
+DF -  for Dark Fencer.
+
+DI - Short for "Dual Impulse," a Valkyrie skill that improves multi-attack rate when equipped with a spear. Called "Double Trouble" in English.
+
+Dirt - A slang term that refers to the Earth element.
+
+Discoverer - The player who spends AP to start a raid.
+
+Dispel - Refers to any skill that removes one or more buffs from an enemy. Refers to the Bishop's Dispel skill. See also Dispel.
+
+DJ -  for Djeeta.
+
+DLF -  for De La Fille.
+
+DMG -  for Damage.
+
+DPS -  for "Damage Per Second". A high DPS is good when racing, but it is often optimized by using risky or unsustainable strategy that are ill-suited to difficult content.
+
+DPT -  for "Damage Per Turn". Maximizing it can often be slow and is not suited to racing, but is also usually safer as it offers less opportunities for a foe to take actions.
+
+Dokkan - Refers to Clarisse. It's a Japanese onomatopoeia for an explosion and is commonly said by Clarisse when she uses her spells.
+
+Dopus - Refers to the Dark Opus Weapons.
+
+DS -  for Double Strike
+.
+E
+
+Echo - Nickname for Bonus DMG
+on attacks.
+
+Eggs - Refers to Tears of the Apocalypse due to their egg-like shape.
+
+EMP - Extended Mastery Points, earned by "leveling up" when your class is already level 20. These are spent on Extended Mastery Skills and Extended Mastery bonuses.
+
+EX - May refer to:
+
+    Any skill that is learned from one class that can be equipped on other classes. Called "subskills" in English.
+    Any unique weapon skill which can be easily distinguished by the 'EX' label on the skill icon.
+    Shorthand for Extra Stages in Co-op Quests.
+    Shorthand for Extreme difficulty.
+
+F
+
+FA - Refers to the autoplay mode of Full-Auto, where characters will use yellow, blue, and red skills in that order of priority before attacking. By default the autoplay of the game uses Semi-Auto, which uses only attacks and charge attacks. The setting can be changed on a per-battle basis by entering a fight and clicking Menu, and selecting Semi or Full under Auto Settings. You can change the game-wide default outside of combat by going to Menu > Settings > Battle > Auto Settings.
+
+Faa / Faasan - Refers to Lucilius. In Japanese, Lucilius’ name is written as ルシファー (Lucifā), which is another way of romanizing Lucifer, who already existed in series as ルシフェル (Luciferu).
+
+FAAHL -  for the Dark Rapture (Hard) Raid
+
+Farm - Refers to repeating a quest or raid in order to acquire its loot; Grind is one common synonym.
+
+FC -  for Fated Chain, a mechanic exclusive to Battle System 2.0
+
+Feru - Refers to Lucifer.
+
+FG - Flame=Glass or Flamme-Glace, refers to the Twin Elements (Raid). It's the literal translation of the Twin Elements in Japanese.
+
+Flaretato - Refers to Zahlhamelina because of her primary usage in raids for her Flare skill.
+
+Flashfes(t) - short for "Flash Festival," a promotion where Premium Draw SSR rates are double and include special limited characters. "Flash Gala" in English.
+
+FLB -  for Final Limit Break. It refers to blue star uncaps that require special materials or actions in order to uncap. Generally, 5★ uncaps for characters and 4★ uncaps for weapons and summons.
+
+Flip (Chest) - Sometimes a gold chest does a flip as it pops up and plays a special sound, signifying a rare drop. Notably, on Omega raids, a flip chest is always either a SSR summon or a SSR weapon.
+
+FoD -  for Fist of Destruction, a common weapon in Primal Fire grids.
+
+Fodder - Weapons that are used only to increase the skill levels of other weapons. Omega SR and HP SSR weapons are commonly used as skill-up fodder.
+
+Frontline - Refers to the main members in your party, including your Main Character.
+
+Frontwater - Refers to the Stamina weapon skill. Named to parallel Enmity, as its Japanese name is colloquially translated to Backwater.
+
+FS -  for Fallen Sword, a common weapon in Primal Dark grids.
+
+Full Burst - Refers to your entire Party executing a Charge Attack in the same turn leading to a specific Chain Burst named Full Burst.
+G
+
+Gacha - The system of using tickets, Crystals, or real life money to obtain a random item. Refers to gachapon, a physical machine that releases a plastic ball with a random toy inside. Called Draw in the English Translation
+
+Gao - Refers to the Berserker class. It's a Japanese onomatopoeia for a growl that a big animal would make, and also the noise that Gran/Djeeta would be making in their Berserker art.
+
+GB - Can refer to either Glorybringer or Gold Brick.
+
+GDA - Acronym for Guarantee Double Attack.
+
+Gizoku - The Japanese name for Bandit Tycoon, the Row IV version of Hawkeye.
+
+Glory - May refer to:
+
+    Shorthand for Glorybringer
+    The weapon skill that boosts C.A. specs and chain burst specs.
+
+GO -  for Grand Order
+
+GOHL -  for the Grand Order (Impossible) Raid
+
+Goo / Goop - Refers to Shadow Substance.
+
+Grande - Shorthand for "The Order Grande," the Japanese name for Grand Order. May also refer to the SSR summon of the same name.
+
+Grid - The set of weapons equipped to the party. Also called "pool."
+
+GTA - Acronym for Guarantee Triple Attack.
+
+GW - Guild Wars, the colloquial term for "Unite and Fight", a recurring event that pits guilds against each other.
+H
+
+Halo - Shorthand for Angel Halo.
+
+Hard Cap - A maximum attainable value. No value above this can be obtained.
+
+HE -  for Hawkeye.
+
+Hell - Japanese name for "Nightmare" difficulty fights.
+
+Highlander - Refers to a type of weapon grid in which each equipped weapon is unique in order utilize skills such as Scales of Dominion's "Absolute Equality" or Caim's  The Hanged Man's Charity
+.
+
+HL -  for High Level, the highest difficulty raids that only rank 101+ can access. In the English translation, this difficulty is called "Impossible."
+
+Host - A colloquialism for raid discoverers.
+I
+
+Imposter - A colloquial term derived from the popular multiplayer game Among Us used to describe a party setup that has an off-element Main Character, typically played with Nighthound due to its ability to swap party members between the frontline and backline. This strategy is primarily used in the Super Ultimate Bahamut raid to lower specific Tenets
+
+
+
+
+
+
+
+
+
+
+without having to bring a full party of that element. An example of this setup would be having a full Dark grid and team, but replacing the mainhand with a Light weapon therefore changing the MC's element to Light in order to clear the Light Tenet
+.
+
+Ix - Shorthand for Ixaba, a popular weapon used in Primal Fire grids.
+J
+
+JD(s) - Journey Drops
+
+JK -  of Joshi Kousei, literally means "high school girl". Usually used to refer Rosetta or Rose Queen (Raid). See ぐらぶるっ！ (Grand Blues! in Japanese) Strip #183.
+
+Juuten / Juutenshu - The Japanese name for The Eternals.
+L
+
+Labors - Used to describe a condition a player must meet to cancel or lower the attacks of a raid boss. The term comes from the 12 Labor buffs Lucilius gains in the Dark Rapture (Hard) raid battle that each have a separate condition that must be met to remove.
+
+Lanx - Shorthand for the Phalanx skills in the Knight family, commonly Phalanx II or III. See also Damage Cut.
+
+LB - Limit Break, a colloquial term for "Uncap", the act of raising the level cap for a character, weapon, or summon. May be proceeded by a number, which indicates the number of limit breaks performed (i.e. LB3 = 3 times limit broken). The Japanese equivalent for Uncap, "上限解放," translates approximately to "limit release."
+
+Leeching - Someone that does the bare minimal amount of effort in a raid. Often attacking once and leaving the fight prematurely.
+
+Legend Gacha - The Japanese term for what is "Premium Draw" in English.
+
+Legfes(t) - short for "Legend Festival," a promotion where Premium Draw SSR rates are double and include special limited characters. "Premium Gala" in English.
+
+Levi -  for Leviathan.
+
+Limited - Refers to any character that only appears in the Premium Draw for certain time periods. Often broken down into "Seasonal Limited" (Summer, Halloween, Christmas, etc) and "Legfest Limited" (Grand Series, Zodiacs)
+
+Lockout - The period of time where a player cannot use any skills or actions after pressing the attack button. This is notated by the "Waiting" loading icon at the top left of the battle screen. Typically the more Charge Attacks used in one turn, the longer the waiting time is.
+
+Lumi - Shorthand for Luminiera.
+M
+
+MA -  for multiattack.
+
+Magna - Officially "Omega" in English. Magna is the Japanese term. The Extreme difficulty of the main 6 primal beasts that are frequently farmed for endgame weapons, also referred as M1 by most players.
+
+Magna 2 - These are the second set of Omega Raids known as Omega HL 2, they are High Rank content but only available for those who have achieve rank 120, they are also referred as M2 by most players.
+
+Magnafest / Magfest - A colloquial term for when main quests and raid battles are 1/2 AP/EP. Because most players need many weapon drops from Omega raids, this event is ideal for using up a lot of consumables, so it is a "festival of magnas." The term parallels "legfest."
+
+Mainwheel - Refers to Fire, Water, Earth, and Wind. Named after how the elemental weakness chart displays these four elements in a circle.
+
+Mashing - Mashing is a racing strategy revolving around taking as many turns as possible, as fast as possible, while using a limited amount or no skills at all, and relying entirely on grid and characters intrinsic strength to deal damage and survive. It also usually involves disabling charge attacks.
+
+Masq - Shorthand for Masquerade
+
+MC -  for Main Character.
+
+MH -  for Main Hand. Is the 10th weapon slot in weapon grids, the one that is located on the left side of the screen.
+
+Mist / MM - Shorthand for Miserable Mist, an attack and defense debuff skill learned by Dark Fencers. A popular subskill choice due to its effectiveness. Other abilities with attack and defense debuffs are sometimes referred to as mini-mists.
+
+ML -  for the Master Level of a class. Commonly written as ML20 or ML30 to refer to the upgrades at those Master Levels.
+
+MLB -  for Maximum Limit Break. It is a universal shorthand for a character, weapon, or summon that has been fully uncapped, excluding their blue star. In the case of weapons and summons, they usually gain extra benefits at maximum limit break status.
+
+Moon - When you draw a duplicate character weapon from the Premium Draw or Rupie Draw you'll receive a Bronze Moon, Silver Moon or Gold Moon instead of the character.
+
+MSQ -  for Main Story Quest.
+
+MVP - The player that earns the most honor in a raid battle. The MVP and the 2nd place player (Vice MVP, vice) both get extra rewards.
+N
+
+Neko - Shorthand for Nekomancer.
+
+NH -  for Nighthound.
+
+NM - Shorthand for Nightmare difficulty.
+
+Nuke - Unofficial term for any skill with a high damage cap.
+
+Null - Unofficial term for non-elemental (). This element is referred to as "non-elemental" in the official English game client.
+O
+
+OC - Stands for "over chain", a chain burst of 5 or more charge attacks. Mainly used in reference to Dark Rapture's Eighth Labor
+.
+
+OD - Overdrive, a state that an enemy enters when it takes enough damage to fill its Mode Gauge. While in Overdrive, most enemies change their behavior for using charge attacks.
+
+ODA / OD Assassin - Refers to any skill that greatly amplifies the damage of the next attack/skill/charge attack, but only if the target is in Overdrive. Named to parallel the Hawkeye class's Crack Shot skill, which is named "Break Assassin" in Japanese.
+
+Off-element - To play without element advantage towards the foe. For example using a Wind configuration fight anything that isn't aligned towards Earth, which Wind has advantages against.
+
+OTK - One Turn Kill, refers to the act of clearing a quest or raid in a single turn, and setups used for this purpose.
+
+Ougi - Japanese name for charge attacks.
+P
+
+Paper - Refers to Champion Merit, Supreme Merit, Legendary Merit, and Lapis Merit. Often referred to with the color of the merit (e.g. Red Paper).
+
+PBHL -  for Proto Bahamut (Impossible).
+
+PBN -  for the standard difficulty Proto Bahamut raid.
+
+Phalanx - Any skill that provides a party-wide Damage Cut effect, typically a very high cut for a single turn. Refers to the Phalanx skills in the Knight family, commonly Phalanx II or III. See also Damage Cut.
+
+Pilfer - Short for "Soul Pilfer", a Superstar skill. Called "Soul Soloist" in English.
+
+Plain damage - Non-elemental damage that ignores defense. Damage pop-up appears in a plain white color. Useful against enemies with very high defense. Sometimes called true damage, white damage, non-elemental damage, or non-attribute damage by the international GBF community.
+
+PL - Plain damage. Can also refer to Paradise Lost, a special attack associated with Lucifer, particularly in the context of Dark Rapture's Eleventh Labor
+.
+
+PnS -  for Pain and Suffering, a common weapon in Dark grids.
+
+Pool - The set of weapons equipped to the party. Also called "grid".
+
+Pot - Refers to a Half Elixir, Full Elixir, or the use of a healing potion in battle.
+
+Potato - A slang term used to refer to characters of the Harvin race.
+
+Primal Summon - An unofficial term used to refer to the Optimus Series summons: Agni, Varuna, Titan, Zephyrus, Zeus, and Hades
+
+Prog - Shorthand for "Progression", a weapon skill that boosts Elemental ATK based on the number of turns passed.
+
+Pub - When the player makes their raid public by requesting backup to everyone.
+R
+
+R - Rare, a rarity class above Normal, below Super Rare.
+
+Racing - Using specialized strategies to maximize DPS, in order to compete for MVP or maximize Blue Chest drop chance. Sometimes also refers to simply clearing a quest as fast as possible.
+
+Rage - Any skill that provides a party-wide boost to attack. Refers to the Rage skills in the Fighter family.
+
+Rain - Shorthand for Rain of Arrows, a subskill in the Ranger class family.
+
+Rainbow - Colloquial term for the "rainbow meta" in which players must now build teams and weapon grids for each element. This change in the meta is a response to bosses gaining elemental resistance against elements they're not weak against in high-end content and events. It can also be used to refer to having a player of each element, commonly used in endgame fights that have mechanics that encourage this playstyle.
+
+RB -  for Relic Buster.
+
+Red Chests - Extra boxes that drop from raid battles. One is earned by the raid host, and the other by the MVP. Red boxes have a unique drop table and may contain unique items, or have a higher chance to contain rarer items.
+
+Reroll - Rerolling, a process to attempt to gain an advantageous initial character pool by repeatedly restarting the game with new accounts.
+
+Resonator - A colloquial term for the skill which is found on a set of Grand Weapons
+
+
+
+that provide a boost to ATK, DEF, and Special DMG Cap when certain grid requirements are met. This term came from Landslide Scepter's Amber Resonator skill which was the first of this weapon skill type.
+
+RF -  for Rising Force.
+
+RH - for Robin Hood
+
+RoA - Acronym for Rain of Arrows.
+
+RQ - Refers to the Rose Queen (Raid)
+S
+
+Sac / Sacking / Saccing - May refer to:
+
+    Short for "sacrifice". Can be used for a character brought specifically to sacrifice to an enemy attack or to bring in backline party members. Commonly done to bring in Evokers due to their additional passives gained when switching to the frontline.
+    Short for "lucksack", a slang term for a player who has very good luck in raid drops or gacha pulls.
+
+Scamcha - Refers to Star Premium Draw, which is a draw promotion that can be purchased for 3,000 Mobacoins to perform a 10-draw from the current draw banner and obtain a guaranteed SSR item from a specified pool as well as a bonus item. The name is a combination of "scam" and "gacha" due to how players often feel "scammed" when they do not get their desired SSR item especially after seemingly good odds.
+
+SD -  for Start Dash, otherwise known as Beginner's Draw Set in English.
+
+Selfie - A term used to describe any SSR Summon that is a copy of the boss it drops from. Mostly used in reference to Omega Raids, as their SSR summons heavily drop in value after obtaining four copies to fully uncap one compared to even undesirable SSR weapons that can be used as skill fodder.
+
+Shiny - A slang term referring to Ultimate Bahamut (Impossible) because of its bright shiny gold coloring.
+
+Sin -  for Assassin.
+
+Slimeblasting or Sliming - Refers to farming Shiny Slime Search! (and before the release of Shiny Slime Search, Co-op Hard Stage 3-1), where the gold/silver slimes can be defeated in mere seconds with Plain Damage.
+
+SM - Acronym for Sword Master.
+
+Snek - A slang term referring to Leviathan or Tsuchinoko
+
+Soft Cap - A maximum attainable value before diminishing returns are applied.
+
+Spark - Each Premium Draw rewards you with a Cerulean Spark. With 300 Cerulean Sparks you can "spark" a character (or summon). The list of sparkable characters and summons change each time the Premium Draw is updated; for the current pool. check the Available Items page in the game. Note that all your Cerulean Sparks are converted to Cerulean Stones when the Premium Draw is updated.
+
+SR - Acronym for Super Rare, a rarity above Rare and below SS Rare.
+
+SS -  for the following: the Superstar class, "Swimsuit" (i.e. Summer Premium Draw versions of characters), Sunlight Stone or Side Stories.
+
+SSR - Super Super Rare, the highest rarity in the game.
+
+SSR Carbuncles - Refers to the following 6 summons, due to their call effect having similar effect with Carbuncles: Prometheus, Ca Ong, Morrigna (Summon), Gilgamesh, Hector, Anubis.
+
+ST - Acronym for Strike Time, a crew effect active two hours a day where all crew members to begin most raids with 100% charge bar for all characters, as well as a bonus to exp and rupies. "Assault Time" in Japanese.
+
+Stamina - The weapon skill that boosts ATK based on how high current HP is. One of the notable example is Fimbul.
+
+Stat Stick - A weapon or summon used for its HP and ATK stats.
+
+Static Damage - Any source of damage that has no damage spread. Ignores base elemental resistance.
+
+Status Shield - Any skill, such as Katalina's Dispel Mount, that protects against the next debuff. More commonly called "Veil" after the Bishop Extended Mastery Skill. See also Veil.
+
+SUBHL / SuBaha -  for Super_Ultimate_Bahamut_(Raid)
+
+Sus - Another colloquial term to describe the "Imposter" playstyle. Short for "suspicious", this term was commonly used to refer to the Imposter role in the popular multiplayer game Among Us.
+
+Suptix -  for Surprise Special Draw Set.
+
+SW -  for Sidewinder.
+T
+
+TA - Acronym for Triple Attack.
+
+TE - Twin Elements
+
+Tezcat - Shorthand for Tezcatlipoca. Sometimes used to refer to teams that meet its mixed race requirements.
+
+TH - Acronym for Treasure Hunt, a buff placed on an enemy to cause them to drop more items at the end of the fight. "Bounty Hunter" in English. See Drop Rate Boosts.
+
+Tia - Shorthand for Tiamat.
+
+Tokage - Japanese word translating to "Lizard". Can be referring to the two Bahamut raids, Proto Bahamut (Impossible) and Ultimate Bahamut (Impossible), which players try to host daily due to the chance of a Gold Bar drop.
+
+Torching - Refers to farming the Co-op Hard Stage 2-2 (Unsmothered Flame). See also: Sliming
+
+Torm - Shorthand for Tormentor.
+
+TOT - Time On Target from Nighthound's one of Extended Mastery Skills.
+
+Train - Refers to a group of players each hosting the same raid in sequence. Most common with Huanglong and Qilin during Rise of the Beasts due to the expensive Golden Beast Seal required to host them. Can also apply to raids such as Rose Queen or Ultimate Bahamut for the purpose of farming Pendants or other materials. Trains can be organized through the game client in Co-op Raid Rooms, or informally through online communities or tools such as Discord.
+U
+
+UBHL -  for Ultimate Bahamut (Impossible).
+
+UBN -  the standard difficulty Ultimate Bahamut raid battle.
+
+ULB -  for Ultimate Limit Break, refers to 5★ uncap of summons (such as Lucifer or Bahamut) or weapons (Omega, Dark Opus, etc) or the 6★ uncap of The Eternals characters.
+
+UM -  for Ultimate Mastery.
+V
+
+Veil - Any skill, such as Katalina's Dispel Mount, that protects against the next debuff. This term is commonly used due to the Bishop Extended Mastery Skill of the same name. See Veil.
+W
+
+Wanpan - Meaning "One-Punch", the player attacks and leaves. Essentially Leeching.
+
+Whale/Whaling - Spending lots of money to get the characters/weapons/summons you want, often associated with Sparking. Refers to both the act itself and players who frequently indulge in it.
+
+Whale Tears - A slang term that refers to Cerulean Stones.
+
+WL -  for Warlock.
+
+WM - Acronym for Weapon Master.
+Y
+
+Ygg / Yggy / Yugu - Shorthand for Yggdrasil.
+Z
+
+Zenith EX (ZEx) - An subskill that can only be learned when a particular class has been mastered in exchange for EMP. These EX abilities can only be equipped to classes within the same job line.
+
+Zenith Perk - Passive stat bonuses that can only be acquired when a particular job line has been fully mastered, in exchange for ZP. These stat bonuses apply only to the specific job they are purchased on. "Extended Mastery bonus" in English.
+
+Zerker - Shorthand for the Berserker class.
+
+ZP - Acronym for Zenith Points. See EMP. 
