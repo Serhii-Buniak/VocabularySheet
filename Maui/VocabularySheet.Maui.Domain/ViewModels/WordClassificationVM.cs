@@ -10,7 +10,7 @@ namespace VocabularySheet.Maui.Domain.ViewModels;
 
 public record WordClassificationRecord : IHasPercentage
 {
-    private const float OtherPercentage = 0.05f;
+    private const float OtherPercentage = 0.1f;
         
     public required ArticleType ArticleType { get; init; }
     public required string ArticleFormatted { get; init; }
@@ -58,6 +58,7 @@ public record WordClassificationRecord : IHasPercentage
         ArticleType.Medical => "article_medical.png",
         ArticleType.Politics => "article_politics.png",
         ArticleType.Sport => "article_sport.png",
+        ArticleType.Science => "article_chemical.png",
         ArticleType.Religion => "article_religion.png",
         _ => "article_other.png"
     };
