@@ -32,7 +32,7 @@ government	A system responsible for leadership, making decisions and making laws
 ideology	A system of ideas and beliefs that shapes one’s views about politics and government
 legislature	An assembly that exists to pass new laws or review, amend or abolish existing laws
 parliament	An elected legislature from which an executive government is also formed
-participation	The involvement of ordinary people in selecting government and in political discourse
+participation	The involnegotiatevement of ordinary people in selecting government and in political discourse
 popular sovereignty	The idea that governments derive their power and authority from the consent of the people
 representation	A political concept where some individuals act, speak or make decisions on behalf of others
 sovereignty	The supreme authority of a government, the basis for its power and autonomy

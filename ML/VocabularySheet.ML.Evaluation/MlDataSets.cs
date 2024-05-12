@@ -230,11 +230,11 @@ public static class StringDataSetsExtensions
 
         List<Task> tasks = [];
         
-        foreach (string wordToRemove in allWords.Where(x => x.Count > 30).Select(x => x.Word))
+        foreach (string wordToRemove in allWords.Where(x => x.Count > 20).Select(x => x.Word))
         {
             tasks.Add(Task.Run(() =>
             {
-                var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).Skip(30).ToList();
+                var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).Skip(20).ToList();
                 foreach (var toRemove in needToRemove)
                 {
                     toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));

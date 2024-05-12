@@ -59,16 +59,10 @@ internal class MlWordEvaluationService : IWordEvaluationService
             .Append(mlContext.Transforms.Text.TokenizeIntoWords("Tokens", "NormalizedText"))
             .Append(mlContext.Transforms.Text.NormalizeText("Tokens"))
             .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Tokens"))
-            .Append(mlContext.Transforms.Text.FeaturizeText("Features", new TextFeaturizingEstimator.Options()
-            {
-                WordFeatureExtractor = new WordBagEstimator.Options()
-                {
-                    Weighting = NgramExtractingEstimator.WeightingCriteria.TfIdf
-                }
-            }, "Tokens"))
+            .Append(mlContext.Transforms.Text.FeaturizeText("Features", "Tokens"))
             .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)));
         
-        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy();
+        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy();
 
         // Define data preparation pipeline
         var dataPipeline = preprocessingPipeline.Append(trainer)
@@ -107,15 +101,15 @@ internal class MlWordEvaluationService : IWordEvaluationService
 
             string[] words = joined.Split(" ");
             
-            IEnumerable<string> chunks = Enumerable.Range(0, words.Length / 5)
-                    .Select(i => string.Join(" ", words.Skip(i * 5).Take(5)));
+            IEnumerable<string> chunks = Enumerable.Range(0, words.Length / 2)
+                    .Select(i => string.Join(" ", words.Skip(i * 2).Take(2)));
 
             return chunks.Select(c => new MlArticleRecord
             {
                 Text = c,
                 Type = x.Key
             });
-        }).Where(x => !string.IsNullOrWhiteSpace(x.Text)).ToList();
+        }).Where(x => !string.IsNullOrWhiteSpace(x.Text)).Distinct().ToList();
     }
 
     private HashSet<string> FindCommonTexts(IEnumerable<MlArticleRecord> data)

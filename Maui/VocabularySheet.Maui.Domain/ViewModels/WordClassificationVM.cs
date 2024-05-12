@@ -20,43 +20,45 @@ public record WordClassificationRecord : IHasPercentage
 
     public string BackgroundColor => ArticleType switch
     {
-        ArticleType.Business => "#33124530",
-        ArticleType.Entertainment => "#33c74d10",
-        ArticleType.Food => "#3372854e",
-        ArticleType.Graphics => "#3303a874",
+        ArticleType.Economic => "#33124530",
+        ArticleType.Fantasy => "#33c74d10",
+        ArticleType.Culinary => "#3372854e",
+        ArticleType.Digital => "#3303a874",
         ArticleType.Historical => "#3338261f",
         ArticleType.Medical => "#337d0420",
         ArticleType.Politics => "#33bababa",
         ArticleType.Sport => "#3306706e",
-        ArticleType.Technologie => "#33c7b708",
+        ArticleType.Science => "#33c7b708",
+        ArticleType.Religion => "#33ededed",
         _ => "#33424242"
     };
     
     public string BorderColor => ArticleType switch
     {
-        ArticleType.Business => "#ee124530",
-        ArticleType.Entertainment => "#eec74d10",
-        ArticleType.Food => "#ee72854e",
-        ArticleType.Graphics => "#ee03a874",
+        ArticleType.Economic => "#ee124530",
+        ArticleType.Fantasy => "#eec74d10",
+        ArticleType.Culinary => "#ee72854e",
+        ArticleType.Digital => "#ee03a874",
         ArticleType.Historical => "#ee38261f",
         ArticleType.Medical => "#ee7d0420",
         ArticleType.Politics => "#eebababa",
         ArticleType.Sport => "#ee06706e",
-        ArticleType.Technologie => "#eec7b708",
+        ArticleType.Science => "#eec7b708",
+        ArticleType.Religion => "#eeededed",
         _ => "#ee424242"
     };
     
     public string Icon => ArticleType switch
     {
-        ArticleType.Business => "article_business.png",
-        ArticleType.Entertainment => "article_entertainment.png",
-        ArticleType.Food => "article_food.png",
-        ArticleType.Graphics => "article_graphics.png",
+        ArticleType.Economic => "article_business.png",
+        ArticleType.Fantasy => "article_entertainment.png",
+        ArticleType.Culinary => "article_food.png",
+        ArticleType.Digital => "article_graphics.png",
         ArticleType.Historical => "article_historical.png",
         ArticleType.Medical => "article_medical.png",
         ArticleType.Politics => "article_politics.png",
         ArticleType.Sport => "article_sport.png",
-        ArticleType.Technologie => "article_technologie.png",
+        ArticleType.Religion => "article_religion.png",
         _ => "article_other.png"
     };
     
