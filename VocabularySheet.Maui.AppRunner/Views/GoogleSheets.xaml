@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:VocabularySheet.Maui.AppRunner.ViewModels"
+             xmlns:controls1="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls"
+             x:Class="VocabularySheet.Maui.AppRunner.Views.GoogleSheets"
+             x:DataType="viewModels:GoogleSheetsVM">
+
+    <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
+
+        <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
+
+            <StackLayout HeightRequest="50">
+                <Label Text="{Binding Error}"
+                       TextColor="{StaticResource Error}"
+                       FontSize="21"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       Margin="20"
+                       IsVisible="{Binding IsErrorVisible}" />
+            </StackLayout>
+
+            <controls1:PrimaryButton Margin="10" Text="Synchronize"
+                                    Command="{Binding SynchronizeCommand}"
+                                    IsEnabled="{Binding IsGoogleSheetEnable}" />
+
+            <controls1:EditorForUrl Text="{Binding GoogleSheetUrl, Mode=TwoWay}" />
+
+            <controls1:EditorForUrl Text="{Binding GoogleScriptUrl, Mode=TwoWay}" />
+
+            <BoxView HeightRequest="3"
+                     Color="#FFE797"
+                     HorizontalOptions="Fill"
+                     Margin="10" />
+
+            <controls1:PrimaryButton Margin="0,50,0,20" Text="Save"
+                                    Command="{Binding SaveCommand}" />
+
+            <StackLayout HorizontalOptions="Center" Margin="10" WidthRequest="300">
+                <Label Text="Origin" HorizontalOptions="Start" FontSize="27" />
+                <Picker HorizontalOptions="Center"
+                        FontSize="25"
+                        WidthRequest="300"
+                        ItemsSource="{Binding LanguageItems}"
+                        SelectedItem="{Binding Origin}" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Margin="10" WidthRequest="300">
+                <Label Text="Translation" HorizontalOptions="Start" FontSize="27" />
+                <Picker HorizontalOptions="Center"
+                        FontSize="25"
+                        WidthRequest="300"
+                        ItemsSource="{Binding LanguageItems}"
+                        SelectedItem="{Binding Translation}" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

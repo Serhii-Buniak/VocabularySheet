@@ -1,5 +1,5 @@
 using VocabularySheet.Application.Words.Queries;
-using VocabularySheet.Maui.Domain.ViewModels;
+using VocabularySheet.Maui.AppRunner.ViewModels;
 
 namespace VocabularySheet.Tests;
 

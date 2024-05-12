@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocabularySheet.Maui.AppRunner.Xml.Controls.Cambridge.CambridgeComponent"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:cambridge="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls.Cambridge"
+             xmlns:converters="clr-namespace:VocabularySheet.Maui.AppRunner.Converters"
+             xmlns:controls1="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls"
+             xmlns:entities="using:WebSources.CambridgeDictionary.Entities"
+             x:DataType="cambridge:CambridgeComponent"             
+             x:Name="cambridgeCom">
+
+    <VerticalStackLayout HorizontalOptions="{OnPlatform WinUI=Fill}"
+                         Padding="5"
+                         MaximumWidthRequest="{OnPlatform WinUI=1600}">
+        <controls1:PageHeader Image="cambridge_logo.png"
+                             Link="{Binding Entry.Link, Mode=OneWay, Source={x:Reference cambridgeCom}}"
+                             Title="{Binding Entry.Word, Mode=OneWay, Source={x:Reference cambridgeCom}}"
+                             OpenLinkCommand="{Binding OpenLinkCommand, Source={x:Reference cambridgeCom}}"
+                             Language="{Binding Entry.Language, Mode=OneWay, Converter={converters:CambridgeLanguageConverter}, Source={x:Reference cambridgeCom}}" />
+        
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Entry.Content.Blocks, Mode=OneWay, Source={x:Reference cambridgeCom}}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout x:DataType="entities:CambridgeWordBlock">
+                        <Label Text="{Binding Title, Mode=OneTime}"
+                               FontSize="{OnPlatform WinUI=42, Android=32}" />
+                        <VerticalStackLayout Margin="0,10,0,0">
+        
+                            <controls1:MarkFrame
+                                Color="#114488"
+                                Text="{Binding Category, Mode=OneTime}"
+                                FontSize="{OnPlatform WinUI=21, Android=16}" />
+        
+                            <HorizontalStackLayout Margin="0,10,0,0"
+                                                   HorizontalOptions="{OnPlatform WinUI=Start}"
+                                                   BindableLayout.ItemsSource="{Binding Irregulars, Mode=OneTime}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <controls1:MarkFrame
+                                            Color="#116688"
+                                            Text="{Binding ., Mode=OneTime}"
+                                            FontSize="{OnPlatform WinUI=21, Android=16}"
+                                            FontAttributes="Bold" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+        
+                        <StackLayout Orientation="{OnPlatform WinUI=Horizontal, Android=Vertical}" BindableLayout.ItemsSource="{Binding Audios, Mode=OneTime}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout x:DataType="entities:CambridgeAudio"
+                                                           Margin="0,10,25,0">
+                                        <controls1:MarkFrame
+                                            Color="#1d2956"
+                                            Text="{Binding LanguageCode, Mode=OneTime}"
+                                            IsVisible="{Binding LanguageCode, Mode=OneTime, Converter={converters:IsNotEmptyConverter}}"
+                                            FontSize="{OnPlatform WinUI=24, Android=18}"
+                                            TextTransform="Uppercase"
+                                            FontAttributes="Bold" />
+        
+                                        <controls1:MarkFrame
+                                            Color="#772244"
+                                            Text="{Binding Transcription, Mode=OneTime}"
+                                            FontSize="{OnPlatform WinUI=24, Android=18}"
+                                            FontAttributes="Italic" />
+        
+                                        <Border BackgroundColor="#DDDDDD"
+                                                StrokeThickness="0"
+                                                IsVisible="{Binding Links, Mode=OneTime, Converter={converters:IsNotEmptyConverter}}"
+                                                Padding="10,10">
+        
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding AudioCommand, Source={x:Reference cambridgeCom}}"
+                                                    CommandParameter="{Binding Links[0], Mode=OneTime}"
+                                                    Tapped="AudioTapped" />
+                                            </Border.GestureRecognizers>
+        
+                                            <Image Source="audio_play_icon.png"
+                                                   HeightRequest="{OnPlatform WinUI=24, Android=18}"
+                                                   WidthRequest="{OnPlatform WinUI=24, Android=18}" />
+                                        </Border>
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+        
+                        <BoxView HeightRequest="5"
+                                 Color="#FFE797"
+                                 HorizontalOptions="Fill"
+                                 Margin="0,20,0,10" />
+        
+                        <StackLayout BindableLayout.ItemsSource="{Binding Articles, Mode=OneTime}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <VerticalStackLayout x:DataType="entities:CambridgeArticle">
+                                        <HorizontalStackLayout Margin="0,30,0,0"
+                                                               IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converters:IsNotNullConverter}}">
+                                            <controls1:MarkFrame
+                                                Color="#772244"
+                                                Text="{Binding Header.Title, Mode=OneTime}"
+                                                FontSize="{OnPlatform WinUI=18, Android=16}" />
+        
+                                            <controls1:MarkFrame
+                                                Color="#114488"
+                                                Text="{Binding Header.Category, Mode=OneTime}"
+                                                FontSize="{OnPlatform WinUI=18, Android=16}"
+                                                FontAttributes="Italic" />
+                                        </HorizontalStackLayout>
+                                        <controls1:MarkFrame
+                                            Margin="0,5,0,0"
+                                            Color="#122b20"
+                                            Text="{Binding Header.Meaning, Mode=OneTime}"
+                                            FontSize="{OnPlatform WinUI=18, Android=16}"
+                                            FontAttributes="Bold" />
+                                        <BoxView HeightRequest="2"
+                                                 Color="#43A88F"
+                                                 IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converters:IsNotNullConverter}}"
+                                                 HorizontalOptions="Fill"
+                                                 Margin="0,10" />
+                                        <VerticalStackLayout BindableLayout.ItemsSource="{Binding SubArticles, Mode=OneTime}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate x:DataType="entities:CambridgeSubArticle">
+                                                    <Border Stroke="Azure"
+                                                            Padding="10"
+                                                            Margin="0,20,0,0"
+                                                            BackgroundColor="#111111"
+                                                            HorizontalOptions="{OnPlatform WinUI=Fill}">
+                                                        <Border.Triggers>
+                                                            <DataTrigger TargetType="Border"
+                                                                         Binding="{Binding Header.BlueTitle, Mode=OneTime, Converter={converters:IsNotNullConverter}}"
+                                                                         Value="True">
+                                                                <Setter Property="BackgroundColor"
+                                                                        Value="#0A0F1C" />
+                                                            </DataTrigger>
+                                                        </Border.Triggers>
+                                                        <VerticalStackLayout>
+                                                            <controls1:MarkFrame
+                                                                Color="#1d2956"
+                                                                Text="{Binding Header.Level, Mode=OneTime}"
+                                                                FontSize="{OnPlatform WinUI=21, Android=16}"
+                                                                FontAttributes="Bold" />
+        
+                                                            <controls1:LabelEditor
+                                                                Text="{Binding Header.BlueTitle, Mode=OneTime}"
+                                                                FontSize="{OnPlatform WinUI=22, Android=19}"
+                                                                IsVisible="{Binding Header.BlueTitle, Mode=OneTime, Converter={converters:IsNotNullConverter}}" />
+        
+                                                            <BoxView HeightRequest="3"
+                                                                     IsVisible="{Binding Header.BlueTitle, Mode=OneTime, Converter={converters:IsNotNullConverter}}"
+                                                                     Color="#114488"
+                                                                     HorizontalOptions="Fill"
+                                                                     Margin="0,5" />
+        
+                                                            <controls1:LabelEditor Text="{Binding Header.Title, Mode=OneTime}"
+                                                                FontSize="{OnPlatform WinUI=24, Android=21}"
+                                                                IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converters:IsNotNullConverter}}" />
+        
+                                                            <BoxView HeightRequest="3"
+                                                                     IsVisible="{Binding Header.Title, Mode=OneTime, Converter={converters:IsNotNullConverter}}"
+                                                                     Color="#772244"
+                                                                     HorizontalOptions="Fill"
+                                                                     Margin="0,5" />
+        
+                                                            <controls1:LabelEditor
+                                                                Text="{Binding Header.Translation, Mode=OneTime}"
+                                                                FontSize="{OnPlatform WinUI=27, Android=24}"
+                                                                IsVisible="{Binding Header.Translation, Mode=OneTime, Converter={converters:IsNotNullConverter}}" />
+        
+                                                            <BoxView HeightRequest="3"
+                                                                     IsVisible="{Binding Header.Translation, Mode=OneTime, Converter={converters:IsNotNullConverter}}"
+                                                                     Color="#43A88F"
+                                                                     HorizontalOptions="Fill"
+                                                                     Margin="0,5" />
+        
+                                                            <VerticalStackLayout
+                                                                BindableLayout.ItemsSource="{Binding Examples, Mode=OneTime}">
+                                                                <BindableLayout.ItemTemplate>
+                                                                    <DataTemplate x:DataType="system:String">
+                                                                        <Grid>
+                                                                            <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="20" />
+                                                                                <ColumnDefinition Width="*" />
+                                                                            </Grid.ColumnDefinitions>
+        
+                                                                            <Label
+                                                                                HorizontalOptions="Center"
+                                                                                Grid.Column="0"
+                                                                                FontSize="{OnPlatform WinUI=20, Android=18}"
+                                                                                VerticalOptions="Center"
+                                                                                Text="•" />
+        
+                                                                            <controls1:LabelEditor
+                                                                                Grid.Column="1"
+                                                                                Text="{Binding ., Mode=OneTime}"
+                                                                                FontSize="{OnPlatform WinUI=20, Android=18}"
+                                                                                VerticalOptions="Center" />
+                                                                        </Grid>
+                                                                    </DataTemplate>
+                                                                </BindableLayout.ItemTemplate>
+                                                            </VerticalStackLayout>
+                                                            <Image
+                                                                Source="{Binding ., Mode=OneTime, Converter={converters:ImageUrlConverter}}"
+                                                                MaximumWidthRequest="400"
+                                                                MaximumHeightRequest="250"
+                                                                HorizontalOptions="{OnPlatform WinUI=Start}"
+                                                                IsVisible="{Binding ImageUrl, Mode=OneTime, Converter={converters:IsNotNullConverter}}" />
+        
+                                                        </VerticalStackLayout>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </VerticalStackLayout>
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentView>

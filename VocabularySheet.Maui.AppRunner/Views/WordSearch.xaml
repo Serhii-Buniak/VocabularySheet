@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:VocabularySheet.Maui.AppRunner.ViewModels"
+             xmlns:reversoContext="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls.ReversoContext"
+             xmlns:cambridge="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls.Cambridge"
+             xmlns:controls1="clr-namespace:VocabularySheet.Maui.AppRunner.Xml.Controls"
+             x:Class="VocabularySheet.Maui.AppRunner.Views.WordSearch"
+             x:DataType="viewModels:WordSearchVm"
+             x:Name="wordSearch">
+    <ScrollView>
+        <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
+
+            <controls1:DescriptionArea
+                Text="{Binding Word.Description, Mode=OneWay}"
+                IsDescriptionVisible="True" />
+
+            <controls1:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
+                                   Margin="0,5"
+                                   Word="{Binding Word, Mode=OneWay}" />
+
+            <Grid ColumnDefinitions="{OnPlatform WinUI='*,Auto'}"
+                  RowDefinitions="{OnPlatform Android='*,Auto'}"
+                  Margin="0,10"
+                  ColumnSpacing="{OnPlatform WinUI=10}"
+                  RowSpacing="{OnPlatform Android=5}"
+                  MaximumWidthRequest="{OnPlatform WinUI=1600}">
+                <Entry BackgroundColor="#111111"
+                       Grid.Column="{OnPlatform WinUI=0}"
+                       Grid.Row="{OnPlatform Android=0}"
+                       Text="{Binding SearchWord}"
+                       FontSize="21" />
+                <controls1:PrimaryButton Text="Search"
+                                        Grid.Column="{OnPlatform WinUI=1}"
+                                        Grid.Row="{OnPlatform Android=1}"
+                                        Command="{Binding SearchCommand}" />
+            </Grid>
+
+            <controls1:BoxModels BoxVm="{Binding Box}"/>
+            
+            <cambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                  Entry="{Binding OriginalCambridge, Mode=OneWay}" />
+            <cambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                  Entry="{Binding TranslateCambridge, Mode=OneWay}" />
+            
+            <reversoContext:ReversoContextComponent OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                    Entry="{Binding ReversoContext, Mode=OneWay}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
