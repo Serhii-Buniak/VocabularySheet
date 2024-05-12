@@ -9,7 +9,6 @@ namespace VocabularySheet.ML.Evaluation;
 
 public interface IWordEvaluationService
 {
-    MulticlassClassificationMetrics? Evaluate();
     Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken);
 }
 
@@ -36,10 +35,10 @@ internal class MlWordEvaluationService : IWordEvaluationService
     //     .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
 
     
-    public MulticlassClassificationMetrics? Evaluate()
+    public async Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken)
     {
         // Load data
-        var data = _dataSets.GetArticleDataSet();
+        var data = await _dataSets.GetArticleDataSet();
         data = PerformUnderSampling(data).ToList();
         var mlContext = new MLContext(seed: 1);
 
@@ -47,7 +46,7 @@ internal class MlWordEvaluationService : IWordEvaluationService
         var dataView = mlContext.Data.LoadFromEnumerable(data);
 
         // Split the data into training and testing sets
-        var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
+        var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.000001);
 
 
         // Separate train and test data
@@ -183,10 +182,5 @@ internal class MlWordEvaluationService : IWordEvaluationService
     private int CountWords(string text)
     {
         return text.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
-    }
-
-    public Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken)
-    {
-        return Task.Run(Evaluate, cancellationToken);
     }
 }

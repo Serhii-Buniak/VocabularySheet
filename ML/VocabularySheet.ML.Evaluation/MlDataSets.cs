@@ -81,23 +81,19 @@ internal class MlDataSets
         var file = _folder.GetFilePath("en1000words.json");
         var stopFile = _folder.GetFilePath("stop_words_english.json");
         var stop2File = _folder.GetFilePath("stop_words_english_2.json");
-        var countriesFile = _folder.GetFilePath("countries.json");
-        var languagesFile = _folder.GetFilePath("languages.json");
         
         var list = Json.Camel.Deserialize<EnWordsPopular1000>(file.Content);
         var stop = Json.Camel.Deserialize<List<string>>(stopFile.Content) ?? [];
         var stop2 = Json.Camel.Deserialize<List<string>>(stop2File.Content) ?? [];
-        var countries = Json.Camel.Deserialize<Dictionary<string, CountryRecord>>(countriesFile.Content) ?? new Dictionary<string, CountryRecord>();
-        var languages = Json.Camel.Deserialize<Dictionary<string, LanguageNameRecord>>(languagesFile.Content) ?? new Dictionary<string, LanguageNameRecord>();
 
         var words = list?.Words.OrderBy(x => x.Rank).Take(300).Select(w => w.EnglishWord).ToHashSet() ?? [];
 
-        HashSet<string> result = [..words, ..stop, ..stop2, ..countries.SelectMany(x => x.Value.Name.Names), ..languages.Select(x => x.Value.Full)];
+        HashSet<string> result = [..words, ..stop, ..stop2];
 
         return result.Select(x => x.ToLowerInvariant()).ToHashSet();
     }
     
-    private string[] GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path, HashSet<string> stopWords)
+    private async Task<string[]> GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path, HashSet<string> stopWords)
     {
         string[] files = _folder.GetFilesPath(folders[path].Path).SelectMany(x => x.Value.Content.Split(new[] { '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries))
             .Select(x => string.Join(" ", x
@@ -117,78 +113,78 @@ internal class MlDataSets
                 )
             ).Distinct().ToArray();
 
-        return files.AdjustWordsCount().Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+        return (await files.AdjustWordsCount()).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
     }
     
-    public List<MlArticleRecord> GetArticleDataSet()
+    public async Task<List<MlArticleRecord>> GetArticleDataSet()
     {
         var stopWords = GetEnStopWords();
         Dictionary<string, AppFolderEntry> folders = _folder.GetFoldersPath("document-classification");
         var files = new MlArticlesFiles
         {
-            Business = GetFilesContents(folders, "business", stopWords),
-            Entertainment = GetFilesContents(folders, "entertainment", stopWords),
-            Food = GetFilesContents(folders, "food", stopWords),
-            Graphics = GetFilesContents(folders, "graphics", stopWords),
-            Historical = GetFilesContents(folders, "historical", stopWords),
-            Medical = GetFilesContents(folders, "medical", stopWords),
-            Politics = GetFilesContents(folders, "politics", stopWords),
-            Sport = GetFilesContents(folders, "sport", stopWords),
-            Technologie = GetFilesContents(folders, "technologie", stopWords),
-            Religion = GetFilesContents(folders, "religion", stopWords),
+            Sport = await GetFilesContents(folders, "sport", stopWords),
+            Science = await GetFilesContents(folders, "science", stopWords),
+            Religion = await GetFilesContents(folders, "religion", stopWords),
+            Politics = await GetFilesContents(folders, "politics", stopWords),
+            Medical = await GetFilesContents(folders, "medical", stopWords),
+            Historical = await GetFilesContents(folders, "historical", stopWords),
+            Fantasy = await GetFilesContents(folders, "fantasy", stopWords),
+            Economic = await GetFilesContents(folders, "economic", stopWords),
+            Digital = await GetFilesContents(folders, "digital", stopWords),
+            Culinary = await GetFilesContents(folders, "culinary", stopWords),
         };
 
         return
         [
-            ..files.Business.Select(x => new MlArticleRecord
+            ..files.Sport.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Business
+                Type = (int)ArticleType.Sport
             }),
-            ..files.Entertainment.Select(x => new MlArticleRecord
+            ..files.Science.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Entertainment
+                Type = (int)ArticleType.Science
             }),
-            ..files.Food.Select(x => new MlArticleRecord
+            ..files.Religion.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Food
-            }),
-            ..files.Graphics.Select(x => new MlArticleRecord
-            {
-                Text = x,
-                Type = (int)ArticleType.Graphics
-            }),
-            ..files.Historical.Select(x => new MlArticleRecord
-            {
-                Text = x,
-                Type = (int)ArticleType.Historical
-            }),
-            ..files.Medical.Select(x => new MlArticleRecord
-            {
-                Text = x,
-                Type = (int)ArticleType.Medical
+                Type = (int)ArticleType.Religion
             }),
             ..files.Politics.Select(x => new MlArticleRecord
             {
                 Text = x,
                 Type = (int)ArticleType.Politics
             }),
-            ..files.Sport.Select(x => new MlArticleRecord
+            ..files.Medical.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Sport
+                Type = (int)ArticleType.Medical
             }),
-            ..files.Technologie.Select(x => new MlArticleRecord
+            ..files.Historical.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Technologie
+                Type = (int)ArticleType.Historical
             }),
-            ..files.Religion.Select(x => new MlArticleRecord
+            ..files.Fantasy.Select(x => new MlArticleRecord
             {
                 Text = x,
-                Type = (int)ArticleType.Religion
+                Type = (int)ArticleType.Fantasy
+            }),
+            ..files.Economic.Select(x => new MlArticleRecord
+            {
+                Text = x,
+                Type = (int)ArticleType.Economic
+            }),
+            ..files.Digital.Select(x => new MlArticleRecord
+            {
+                Text = x,
+                Type = (int)ArticleType.Digital
+            }),
+            ..files.Culinary.Select(x => new MlArticleRecord
+            {
+                Text = x,
+                Type = (int)ArticleType.Culinary
             }),
         ];
     }
@@ -211,7 +207,7 @@ public static class StringDataSetsExtensions
         }
     };
     
-    public static string[] AdjustWordsCount(this string[] input)
+    public static async Task<string[]> AdjustWordsCount(this string[] input)
     {
         var inputRef = input.Select(x => new Wrap
         {
@@ -232,24 +228,20 @@ public static class StringDataSetsExtensions
                 Count = x.Count()
             }).ToList();
 
+        List<Task> tasks = [];
+        
         foreach (string wordToRemove in allWords.Where(x => x.Count > 30).Select(x => x.Word))
         {
-            var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).Skip(30).ToList();
-            foreach (var toRemove in needToRemove)
+            tasks.Add(Task.Run(() =>
             {
-                toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));
-            }
+                var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).Skip(30).ToList();
+                foreach (var toRemove in needToRemove)
+                {
+                    toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));
+                }
+            }));
         }
-        
-
-        foreach (string wordToRemove in allWords.Where(x => x.Count == 1).Select(x => x.Word))
-        {
-            var needToRemove = inputRef.Where(s => s.Input.Split(" ").Contains(wordToRemove)).ToList();
-            foreach (var toRemove in needToRemove)
-            {
-                toRemove.Input = string.Join(" ", toRemove.Input.Split(" ").Where(x => x != wordToRemove));
-            }
-        }        
+        await Task.WhenAll(tasks);
         return inputRef.Select(x => x.Input).ToArray();
     }
     

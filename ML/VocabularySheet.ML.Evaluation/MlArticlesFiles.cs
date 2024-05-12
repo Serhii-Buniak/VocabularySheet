@@ -2,14 +2,14 @@
 
 internal record MlArticlesFiles
 {
-    public required string[] Business { get; init; }
-    public required string[] Entertainment { get; init; }
-    public required string[] Food { get; init; }
-    public required string[] Graphics { get; init; }
-    public required string[] Historical { get; init; }
-    public required string[] Medical { get; init; }
-    public required string[] Politics { get; init; }
     public required string[] Sport { get; init; }
-    public required string[] Technologie { get; init; }
+    public required string[] Science { get; init; }
     public required string[] Religion { get; init; }
+    public required string[] Politics { get; init; }
+    public required string[] Medical { get; init; }
+    public required string[] Historical { get; init; }
+    public required string[] Fantasy { get; init; }
+    public required string[] Economic { get; init; }
+    public required string[] Digital { get; init; }
+    public required string[] Culinary { get; init; }
 }
