@@ -160,7 +160,7 @@ public partial class WordsSpinVM : BaseViewModel
         }
         catch (TaskCanceledException ex)
         {
-            Logger.LogInformation("StartCommand throw {@Type} with message {@Message}:", ex.GetType().Name, ex.Message);
+            Logger.LogInformation("StartCommand throw {@Label} with message {@Message}:", ex.GetType().Name, ex.Message);
         }
         finally
         {

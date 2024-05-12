@@ -4,7 +4,7 @@
              x:Class="VocabularySheet.Maui.Domain.Xml.Controls.SwiftButton"  
              x:Name="ShiftBtnX">
     
-    <Button Text="{Binding Text, Source={Reference ShiftBtnX}}"
+    <Button Text="{Binding Features, Source={Reference ShiftBtnX}}"
             Command="{Binding Command, Source={Reference ShiftBtnX}}"
             CommandParameter="{Binding CommandParameter, Source={Reference ShiftBtnX}}"
             FontSize="21"

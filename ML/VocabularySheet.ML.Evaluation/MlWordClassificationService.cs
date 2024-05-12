@@ -1,8 +1,10 @@
 ﻿using Microsoft.ML;
+using Microsoft.ML.AutoML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Transforms.Text;
 using VocabularySheet.Common;
 using VocabularySheet.Common.Extensions;
+using VocabularySheet.Common.Parsers;
 using VocabularySheet.ML.Client;
 
 namespace VocabularySheet.ML.Evaluation;
@@ -23,63 +25,69 @@ internal class MlWordEvaluationService : IWordEvaluationService
         _dataSets = dataSets;
     }
 
-    // var pipeline = mlContext.Transforms.Text
-    //     .NormalizeText("Text", nameof(MlArticleRecord.Text))
-    //     .Append(mlContext.Transforms.Text.TokenizeIntoWords("Text"))
-    //     .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Text"))
-    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Text"))
-    //     .Append(mlContext.Transforms.Text.ProduceNgrams("Text"))
-    //     .Append(mlContext.Transforms.NormalizeLpNorm("Text"))
-    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)))
-    //     .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(featureColumnName: "Text"))
+    // var pipeline = mlContext.Transforms.Features
+    //     .NormalizeText("Features", nameof(MlArticleRecord.Features))
+    //     .Append(mlContext.Transforms.Features.TokenizeIntoWords("Features"))
+    //     .Append(mlContext.Transforms.Features.RemoveDefaultStopWords("Features"))
+    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Features"))
+    //     .Append(mlContext.Transforms.Features.ProduceNgrams("Features"))
+    //     .Append(mlContext.Transforms.NormalizeLpNorm("Features"))
+    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Label)))
+    //     .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(featureColumnName: "Features"))
     //     .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
 
     
     public async Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken)
     {
         // Load data
-        var data = await _dataSets.GetArticleDataSet();
-        data = PerformUnderSampling(data).ToList();
-        var mlContext = new MLContext(seed: 1);
-
-        // Define data schema
-        var dataView = mlContext.Data.LoadFromEnumerable(data);
-
-        // Split the data into training and testing sets
-        var trainTestData = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.000001);
-
-
-        // Separate train and test data
-        var trainData = trainTestData.TrainSet;
-        var testData = trainTestData.TestSet;
-
-        // Define preprocessing pipeline
-        var preprocessingPipeline = mlContext.Transforms.Text
-            .NormalizeText("NormalizedText", nameof(MlArticleRecord.Text))
-            .Append(mlContext.Transforms.Text.TokenizeIntoWords("Tokens", "NormalizedText"))
-            .Append(mlContext.Transforms.Text.NormalizeText("Tokens"))
-            .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("Tokens"))
-            .Append(mlContext.Transforms.Text.FeaturizeText("Features", "Tokens"))
-            .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Type)));
+        List<MlArticleRecord> records = await _dataSets.GetArticleDataSet();
+        records = PerformUnderSampling(records).ToList();
+        string csvText = CsvParser.HeaderTab.Serialize(records);
+        var csvPath = _mlDatasetsFolder.SaveAndGetPath("normalized_article_records.tsv", csvText);
         
-        IEstimator<ITransformer> trainer = mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy();
-
-        // Define data preparation pipeline
-        var dataPipeline = preprocessingPipeline.Append(trainer)
-            // .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy())
-            .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+        var ctx = new MLContext(seed: 1);
         
         // Train the model
-        var model = dataPipeline.Fit(trainData);
+        ctx.Log += (_, e) => {
+            if (e.Source.Equals("AutoMLExperiment"))
+            {
+                Console.WriteLine(e.RawMessage);
+            }
+        };
+        
+        var columnInference = ctx.Auto().InferColumns(csvPath, groupColumns: false);
+        
+        // Create text loader
+        var loader = ctx.Data.CreateTextLoader(columnInference.TextLoaderOptions);
 
+        // Load data into IDataView
+        var data = loader.Load(csvPath);
+        var trainValidationData = ctx.Data.TrainTestSplit(data, testFraction: 0.2);
+        
+        var pipeline = ctx.Auto()
+            .Featurizer(data, columnInformation: columnInference.ColumnInformation)
+            .Append(ctx.Transforms.Conversion.MapValueToKey(inputColumnName: "Label", outputColumnName: "Label"))
+            .Append(ctx.Auto().MultiClassification(labelColumnName: columnInference.ColumnInformation.LabelColumnName))
+            .Append(ctx.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+        
+        AutoMLExperiment experiment = ctx.Auto().CreateExperiment();
+        
+        experiment
+            .SetPipeline(pipeline)
+            .SetTrainingTimeInSeconds(600)
+            .SetMulticlassClassificationMetric(MulticlassClassificationMetric.MicroAccuracy, labelColumn: columnInference.ColumnInformation.LabelColumnName)
+            .SetDataset(trainValidationData);
+        
+        TrialResult experimentResults = await experiment.RunAsync(cancellationToken);
+        
         // Save the model
         var path = Path.Combine(_mlDatasetsFolder.SaveModelsPath, MlModelConstants.WordArticlesFileName);
-        mlContext.Model.Save(model, trainTestData.TrainSet.Schema, path);
+        ctx.Model.Save(experimentResults.Model, trainValidationData.TrainSet.Schema, path);
 
         // Evaluate the model
-        var predictions = model.Transform(testData);
-        MulticlassClassificationMetrics? metrics = mlContext.MulticlassClassification.Evaluate(predictions);
-        var json = Json.Pretty.Serialize(metrics);
+        var predictions = experimentResults.Model.Transform(trainValidationData.TestSet);
+        MulticlassClassificationMetrics? metrics = ctx.MulticlassClassification.Evaluate(predictions);
+        var json = JsonParser.Pretty.Serialize(metrics);
         return metrics;
     }
 
@@ -93,33 +101,32 @@ internal class MlWordEvaluationService : IWordEvaluationService
 
         // Step 3: Perform under-sampling to balance the dataset
         var sampled = PerformBalancedUnderSampling(filteredData);
-
-        return sampled.GroupBy(x => x.Type).SelectMany(x =>
+        return sampled.GroupBy(x => x.Label).SelectMany(x =>
         {
-            string[] str = x.Select(x => x.Text).ToArray();
+            string[] str = x.Select(x => x.Features).ToArray();
             string joined = string.Join(" ", str);
-
+        
             string[] words = joined.Split(" ");
             
             IEnumerable<string> chunks = Enumerable.Range(0, words.Length / 2)
                     .Select(i => string.Join(" ", words.Skip(i * 2).Take(2)));
-
+        
             return chunks.Select(c => new MlArticleRecord
             {
-                Text = c,
-                Type = x.Key
+                Features = c,
+                Label = x.Key
             });
-        }).Where(x => !string.IsNullOrWhiteSpace(x.Text)).Distinct().ToList();
+        }).Where(x => !string.IsNullOrWhiteSpace(x.Features)).Distinct().ToList();
     }
 
     private HashSet<string> FindCommonTexts(IEnumerable<MlArticleRecord> data)
     {
-        var groupByType = data.GroupBy(record => record.Type).ToList();
-        var commonTexts = new HashSet<string>(groupByType.First().Select(record => record.Text));
+        var groupByType = data.GroupBy(record => record.Label).ToList();
+        var commonTexts = new HashSet<string>(groupByType.First().Select(record => record.Features));
 
         foreach (var group in groupByType.Skip(1))
         {
-            commonTexts.IntersectWith(group.Select(record => record.Text));
+            commonTexts.IntersectWith(group.Select(record => record.Features));
         }
 
         return commonTexts;
@@ -131,7 +138,7 @@ internal class MlWordEvaluationService : IWordEvaluationService
 
         foreach (var record in data)
         {
-            if (!commonTexts.Contains(record.Text))
+            if (!commonTexts.Contains(record.Features))
             {
                 filteredData.Add(record);
             }
@@ -143,12 +150,12 @@ internal class MlWordEvaluationService : IWordEvaluationService
     private IEnumerable<MlArticleRecord> PerformBalancedUnderSampling(IEnumerable<MlArticleRecord> data)
     {
         // Group the records by their classification type
-        var groupByType = data.GroupBy(record => record.Type).ToList();
+        var groupByType = data.GroupBy(record => record.Label).ToList();
 
         // Calculate the total number of words for each group
         var totalWordsByGroup = groupByType.ToDictionary(
             group => group.Key,
-            group => group.Sum(record => CountWords(record.Text))
+            group => group.Sum(record => CountWords(record.Features))
         );
 
         // Determine the minimum total word count across all groups
@@ -163,7 +170,7 @@ internal class MlWordEvaluationService : IWordEvaluationService
             foreach (MlArticleRecord record in group)
             {
                 underSampledData.Add(record);
-                wordsCount += CountWords(record.Text);
+                wordsCount += CountWords(record.Features);
                 if (wordsCount >= minTotalWordCount)
                 {
                     break;

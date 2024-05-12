@@ -2,8 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain.ConfigEntities;
-using VocabularySheet.Infrastructure.Csv;
-using VocabularySheet.Infrastructure.Csv.Interfaces;
+using VocabularySheet.Infrastructure.CsvStreamers;
 using VocabularySheet.Infrastructure.Data;
 using VocabularySheet.Infrastructure.Data.Interfaces;
 using VocabularySheet.Infrastructure.HttpClients;
@@ -14,7 +13,6 @@ using VocabularySheet.Infrastructure.Repositories.Interfaces;
 using VocabularySheet.Infrastructure.Repositories.Pages;
 using VocabularySheet.Infrastructure.Services;
 using VocabularySheet.Infrastructure.Services.Interfaces;
-using VocabularySheet.ML.Client;
 using WebSources.CambridgeDictionary;
 using WebSources.ReversoContext;
 
@@ -81,8 +79,7 @@ public static class ConfigureServices
 
     private static void AddCsvSteamers(this IServiceCollection services)
     {
-        services.AddSingleton(typeof(ICsvStreamer<,>), typeof(CsvStreamer<,>))
-                .AddSingleton<ICsvWordStreamer, CsvWordStreamer>();
+        services.AddSingleton<CsvWordStreamer>();
     }
     
     private static void AddConfigurationRepository<TEntity, TRepository>(this IServiceCollection services)

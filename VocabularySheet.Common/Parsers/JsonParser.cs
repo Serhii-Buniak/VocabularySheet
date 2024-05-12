@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace VocabularySheet.Common;
+namespace VocabularySheet.Common.Parsers;
 
-public static class Json
+public static class JsonParser
 {
     public static readonly JsonSerializerOptions Camel = new JsonSerializerOptions()
     {

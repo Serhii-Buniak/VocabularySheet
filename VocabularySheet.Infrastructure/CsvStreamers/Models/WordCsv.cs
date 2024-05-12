@@ -1,6 +1,8 @@
-﻿namespace VocabularySheet.Infrastructure.Csv.Models;
+﻿using VocabularySheet.Common.Parsers;
 
-public record WordCsv
+namespace VocabularySheet.Infrastructure.CsvStreamers.Models;
+
+public record WordCsv : ICsvAutoFile<WordCsv>
 {
     public required string Original { get; set; }
     public required string Translation { get; set; }

@@ -6,13 +6,13 @@
              x:Name="LabelEditorX">
 
 	<Border BackgroundColor="{Binding Color, Source={Reference LabelEditorX}}"
-	        IsVisible="{Binding Text, Source={Reference LabelEditorX}, Converter={converters:IsNotNullConverter}}"
+	        IsVisible="{Binding Features, Source={Reference LabelEditorX}, Converter={converters:IsNotNullConverter}}"
 	        Margin="0,0,5,0"
 	        StrokeThickness="0"
 	        Padding="10,5"
 	        HorizontalOptions="Start">
 		<Border.Triggers>
-			<DataTrigger TargetType="Border" Binding="{Binding Text, Source={Reference LabelEditorX}, Converter={converters:IsNotNullConverter}}" Value="False">
+			<DataTrigger TargetType="Border" Binding="{Binding Features, Source={Reference LabelEditorX}, Converter={converters:IsNotNullConverter}}" Value="False">
 				<!-- Set width and height to zero when not visible -->
 				<Setter Property="WidthRequest" Value="0" />
 				<Setter Property="HeightRequest" Value="0" />
@@ -20,7 +20,7 @@
 				<Setter Property="Margin" Value="0" />
 			</DataTrigger>
 		</Border.Triggers>
-		<Label Text="{Binding Text, Source={Reference LabelEditorX}}"
+		<Label Text="{Binding Features, Source={Reference LabelEditorX}}"
 		       FontSize="{OnPlatform WinUI=27, Android=21}"
 		       TextTransform="{Binding TextTransform, Source={Reference LabelEditorX}}"
 		       FontAttributes="{Binding FontAttributes, Source={Reference LabelEditorX}}" />

@@ -12,7 +12,7 @@ using VocabularySheet.Application.Words.Commands;
 using VocabularySheet.Common;
 using VocabularySheet.Domain.Exceptions;
 using VocabularySheet.Domain.Exceptions.HttpClientExceptions;
-using VocabularySheet.Infrastructure.Csv.Models;
+using VocabularySheet.Infrastructure.CsvStreamers.Models;
 using VocabularySheet.Maui.Domain.Common.Events;
 
 namespace VocabularySheet.Maui.Domain.ViewModels;

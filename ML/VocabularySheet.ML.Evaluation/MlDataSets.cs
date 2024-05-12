@@ -5,6 +5,7 @@ using VocabularySheet.Common;
 using VocabularySheet.Common.Extensions;
 using VocabularySheet.ML.Client;
 using Catalyst.Models;
+using VocabularySheet.Common.Parsers;
 
 namespace VocabularySheet.ML.Evaluation;
 
@@ -82,9 +83,9 @@ internal class MlDataSets
         var stopFile = _folder.GetFilePath("stop_words_english.json");
         var stop2File = _folder.GetFilePath("stop_words_english_2.json");
         
-        var list = Json.Camel.Deserialize<EnWordsPopular1000>(file.Content);
-        var stop = Json.Camel.Deserialize<List<string>>(stopFile.Content) ?? [];
-        var stop2 = Json.Camel.Deserialize<List<string>>(stop2File.Content) ?? [];
+        var list = JsonParser.Camel.Deserialize<EnWordsPopular1000>(file.Content);
+        var stop = JsonParser.Camel.Deserialize<List<string>>(stopFile.Content) ?? [];
+        var stop2 = JsonParser.Camel.Deserialize<List<string>>(stop2File.Content) ?? [];
 
         var words = list?.Words.OrderBy(x => x.Rank).Take(300).Select(w => w.EnglishWord).ToHashSet() ?? [];
 
@@ -93,7 +94,7 @@ internal class MlDataSets
         return result.Select(x => x.ToLowerInvariant()).ToHashSet();
     }
     
-    private async Task<string[]> GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path, HashSet<string> stopWords)
+    private string[] GetFilesContents(Dictionary<string, AppFolderEntry> folders, string path, HashSet<string> stopWords)
     {
         string[] files = _folder.GetFilesPath(folders[path].Path).SelectMany(x => x.Value.Content.Split(new[] { '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries))
             .Select(x => string.Join(" ", x
@@ -113,78 +114,79 @@ internal class MlDataSets
                 )
             ).Distinct().ToArray();
 
-        return (await files.AdjustWordsCount()).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+        return (files).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
     }
     
     public async Task<List<MlArticleRecord>> GetArticleDataSet()
     {
+        await Task.CompletedTask;
         var stopWords = GetEnStopWords();
         Dictionary<string, AppFolderEntry> folders = _folder.GetFoldersPath("document-classification");
         var files = new MlArticlesFiles
         {
-            Sport = await GetFilesContents(folders, "sport", stopWords),
-            Science = await GetFilesContents(folders, "science", stopWords),
-            Religion = await GetFilesContents(folders, "religion", stopWords),
-            Politics = await GetFilesContents(folders, "politics", stopWords),
-            Medical = await GetFilesContents(folders, "medical", stopWords),
-            Historical = await GetFilesContents(folders, "historical", stopWords),
-            Fantasy = await GetFilesContents(folders, "fantasy", stopWords),
-            Economic = await GetFilesContents(folders, "economic", stopWords),
-            Digital = await GetFilesContents(folders, "digital", stopWords),
-            Culinary = await GetFilesContents(folders, "culinary", stopWords),
+            Sport =  GetFilesContents(folders, "sport", stopWords),
+            Science =  GetFilesContents(folders, "science", stopWords),
+            Religion =  GetFilesContents(folders, "religion", stopWords),
+            Politics =  GetFilesContents(folders, "politics", stopWords),
+            Medical =  GetFilesContents(folders, "medical", stopWords),
+            Historical =  GetFilesContents(folders, "historical", stopWords),
+            Fantasy =  GetFilesContents(folders, "fantasy", stopWords),
+            Economic =  GetFilesContents(folders, "economic", stopWords),
+            Digital =  GetFilesContents(folders, "digital", stopWords),
+            Culinary =  GetFilesContents(folders, "culinary", stopWords),
         };
 
         return
         [
             ..files.Sport.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Sport
+                Features = x,
+                Label = (int)ArticleType.Sport
             }),
             ..files.Science.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Science
+                Features = x,
+                Label = (int)ArticleType.Science
             }),
             ..files.Religion.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Religion
+                Features = x,
+                Label = (int)ArticleType.Religion
             }),
             ..files.Politics.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Politics
+                Features = x,
+                Label = (int)ArticleType.Politics
             }),
             ..files.Medical.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Medical
+                Features = x,
+                Label = (int)ArticleType.Medical
             }),
             ..files.Historical.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Historical
+                Features = x,
+                Label = (int)ArticleType.Historical
             }),
             ..files.Fantasy.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Fantasy
+                Features = x,
+                Label = (int)ArticleType.Fantasy
             }),
             ..files.Economic.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Economic
+                Features = x,
+                Label = (int)ArticleType.Economic
             }),
             ..files.Digital.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Digital
+                Features = x,
+                Label = (int)ArticleType.Digital
             }),
             ..files.Culinary.Select(x => new MlArticleRecord
             {
-                Text = x,
-                Type = (int)ArticleType.Culinary
+                Features = x,
+                Label = (int)ArticleType.Culinary
             }),
         ];
     }

@@ -38,9 +38,9 @@ public partial class ShiftWordButton : ContentView
         if (sender is Border frame)
         {
             Color originalColor = frame.BackgroundColor;
-#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Label or member is obsolete
             Color darkerColor = Color.FromHex("#0A0F1C"); // Adjust the color code as needed
-#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Label or member is obsolete
 
             // Animate to darker color
             await frame.FadeTo(0.8, 10, Easing.Linear);

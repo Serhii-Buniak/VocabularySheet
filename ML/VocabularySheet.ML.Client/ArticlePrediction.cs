@@ -1,4 +1,5 @@
 ﻿using Microsoft.ML.Data;
+using VocabularySheet.Common.Parsers;
 
 namespace VocabularySheet.ML.Client;
 
@@ -13,7 +14,7 @@ public record ArticleProbabilityResult
 public record ArticlePrediction
 {
     [ColumnName("PredictedLabel")]
-    public int PredictedLabel { get; set; }
+    public float PredictedLabel { get; set; }
 
     [ColumnName("Score")] 
     public float[] Probabilities { get; set; } = [];
@@ -31,10 +32,18 @@ public record ArticlePrediction
 }
 
 
-public record MlArticleRecord
+public record MlArticleRecord : ICsvAutoFile<MlArticleRecord>
 {
-    public required string Text { get; set; }
-    public required int Type { get; init; }
     
-    public ArticleType GetArticleType() => (ArticleType)Type;
+    [ColumnName("Features")]
+    public string Features
+    {
+        get;
+        set;
+    } = string.Empty;
+    
+    [ColumnName("Label")]
+    public float Label { get; set; }
+    
+    public ArticleType GetArticleType() => (ArticleType)Label;
 }

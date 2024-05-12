@@ -1,6 +1,6 @@
 ﻿using VocabularySheet.Domain;
 using VocabularySheet.Domain.Extensions;
-using VocabularySheet.Infrastructure.Csv.Models;
+using VocabularySheet.Infrastructure.CsvStreamers.Models;
 
 namespace VocabularySheet.Infrastructure.Commons.Mappings;
 

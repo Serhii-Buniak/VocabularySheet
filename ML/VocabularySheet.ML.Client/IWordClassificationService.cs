@@ -27,13 +27,13 @@ internal class MlWordService : IWordClassificationService
     {
         var articleRecord = new MlArticleRecord
         {
-            Text = string.Join(" ", text
+            Features = string.Join(" ", text
                 .ToLowerInvariant()
                 .KeepOnlyLettersAndSpaces()
                 .Split(" ")
                 .Select(x => x.Lemmatize())
             ),
-            Type = 0 };
+            Label = 0 };
         
         var prediction = _engine.Predict(articleRecord);
         

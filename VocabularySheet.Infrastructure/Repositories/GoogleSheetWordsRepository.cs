@@ -1,22 +1,19 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.IO;
-using VocabularySheet.Application.Commons.Interfaces;
+﻿using VocabularySheet.Application.Commons.Interfaces;
 using VocabularySheet.Domain;
 using VocabularySheet.Domain.ConfigEntities;
-using VocabularySheet.Infrastructure.Csv.Interfaces;
+using VocabularySheet.Infrastructure.CsvStreamers;
 using VocabularySheet.Infrastructure.HttpClients.Interfaces;
-using VocabularySheet.Infrastructure.Repositories.Configurations;
 using VocabularySheet.Infrastructure.Repositories.Interfaces;
 
 namespace VocabularySheet.Infrastructure.Repositories;
 
-public class GoogleSheetWordsRepository : IGoogleSheetWordsRepository
+internal class GoogleSheetWordsRepository : IGoogleSheetWordsRepository
 {
     private readonly IGoogleSheetClient _client;
-    private readonly ICsvWordStreamer _streamer;
+    private readonly CsvWordStreamer _streamer;
     private readonly IConfigurator<GoogleSheetConfig> _configuration;
 
-    public GoogleSheetWordsRepository(IGoogleSheetClient client, ICsvWordStreamer streamer, IConfigurator<GoogleSheetConfig> configuration)
+    public GoogleSheetWordsRepository(IGoogleSheetClient client, CsvWordStreamer streamer, IConfigurator<GoogleSheetConfig> configuration)
     {
         _client = client;
         _streamer = streamer;

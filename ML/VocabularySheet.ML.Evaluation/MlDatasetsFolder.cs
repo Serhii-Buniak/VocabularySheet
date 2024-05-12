@@ -23,6 +23,8 @@ public interface IMlDatasetsFolder
 {
     string FolderPath { get; }
     string SaveModelsPath { get; }
+
+    string SaveAndGetPath(string fileName, string content);
     AppFileEntry GetFilePath(string filePath);
     Dictionary<string, AppFileEntry> GetFilesPath(string folderPath);
     Dictionary<string, AppFolderEntry> GetFoldersPath(string folderPath);
@@ -33,6 +35,24 @@ public class MlDatasetsFolder : IMlDatasetsFolder
     public required string FolderPath { get; init; }
     public required string SaveModelsPath { get; init; }
 
+    public string SaveAndGetPath(string fileName, string content)
+    {
+        const string crutches = "crutches";
+        string fullPath = Path.Combine(FolderPath, crutches);
+
+        if (!Directory.Exists(fullPath))
+        {
+            Directory.CreateDirectory(fullPath);
+        }
+        
+        string filePath = Path.Combine(fullPath, fileName);
+        
+        // Write the content to the file (overwrite if exists)
+        File.WriteAllText(filePath, content);
+
+        return filePath;
+    }
+    
     public AppFileEntry GetFilePath(string filePath)
     {
         string fullPath = Path.Combine(FolderPath, filePath);
