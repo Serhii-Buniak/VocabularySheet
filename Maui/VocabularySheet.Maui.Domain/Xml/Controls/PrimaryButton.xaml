@@ -6,7 +6,7 @@
 
     <Button FontSize="24"
 			WidthRequest="170"
-			Text="{Binding Features, Source={Reference PrimaryBtnX}}"
+			Text="{Binding Text, Source={Reference PrimaryBtnX}}"
 			Command="{Binding Command, Source={Reference PrimaryBtnX}}"
 			IsEnabled="{Binding IsEnabled, Source={Reference PrimaryBtnX}}"
 			IsVisible="{Binding IsVisible, Source={Reference PrimaryBtnX}}"

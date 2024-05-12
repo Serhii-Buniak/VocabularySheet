@@ -115,9 +115,6 @@
       <AdditionalFiles Include="Xml\Controls\EditorForUrl.xaml">
         <Generator>MSBuild:Compile</Generator>
       </AdditionalFiles>
-      <AdditionalFiles Include="Xml\Controls\ImageBigButton.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </AdditionalFiles>
       <AdditionalFiles Include="Xml\Controls\LabelEditor.xaml" />
       <AdditionalFiles Include="Xml\Controls\MarkFrame.xaml" />
       <AdditionalFiles Include="Xml\Controls\PageHeader.xaml">

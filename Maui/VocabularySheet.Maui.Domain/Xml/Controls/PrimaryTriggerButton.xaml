@@ -5,7 +5,7 @@
              xmlns:controls1="clr-namespace:VocabularySheet.Maui.Domain.Xml.Controls"
              x:Name="PrimaryTriggerBtnX">
 
-    <controls1:PrimaryButton Text="{Binding Features, Source={Reference PrimaryTriggerBtnX}}" 
+    <controls1:PrimaryButton Text="{Binding Text, Source={Reference PrimaryTriggerBtnX}}" 
                             Command="{Binding Command, Source={Reference PrimaryTriggerBtnX}}"                                                                          
                             IsEnabled="{Binding IsEnabled, Source={Reference PrimaryTriggerBtnX}}"                                                                          
                             IsVisible="{Binding IsVisible, Source={Reference PrimaryTriggerBtnX}}"                                                                          
@@ -14,7 +14,7 @@
             <DataTrigger TargetType="controls1:PrimaryButton"
                                      Binding="{Binding TriggerCondition, Source={Reference PrimaryTriggerBtnX}}"
                                      Value="True">
-                <Setter Property="Features" Value="{Binding TriggerText, Source={Reference PrimaryTriggerBtnX}}" />
+                <Setter Property="Text" Value="{Binding TriggerText, Source={Reference PrimaryTriggerBtnX}}" />
                 <Setter Property="Command" Value="{Binding TriggerCommand, Source={Reference PrimaryTriggerBtnX}}" />
             </DataTrigger>
         </controls1:PrimaryButton.Triggers>

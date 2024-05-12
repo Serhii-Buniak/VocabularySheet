@@ -10,7 +10,7 @@
 	        Padding="10"
 	>
 		<ScrollView HeightRequest="400">
-			<Label Text="{Binding Features, Source={Reference DescriptionAreaX}}"
+			<Label Text="{Binding Text, Source={Reference DescriptionAreaX}}"
 			       LineBreakMode="WordWrap"
 			       FontSize="{OnPlatform WinUI=24, Android=18}"    
 			       IsVisible="{Binding IsDescriptionVisible, Source={Reference DescriptionAreaX}}"/>

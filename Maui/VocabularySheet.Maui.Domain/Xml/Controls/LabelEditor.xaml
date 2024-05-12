@@ -5,7 +5,7 @@
              x:Class="VocabularySheet.Maui.Domain.Xml.Controls.LabelEditor"
              x:Name="LabelEditorX">
 	<controls:BorderlessEditor x:Name="LabelEditorElX"
-	                           Text="{Binding Features, Source={Reference LabelEditorX}}"
+	                           Text="{Binding Text, Source={Reference LabelEditorX}}"
 	                           IsVisible="{Binding IsVisible, Source={Reference LabelEditorX}}"
 	                           FontSize="{Binding FontSize, Source={Reference LabelEditorX}}"
 	                           BackgroundColor="Transparent"
