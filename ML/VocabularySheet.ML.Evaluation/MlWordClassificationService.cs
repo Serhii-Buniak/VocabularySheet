@@ -1,9 +1,6 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.AutoML;
 using Microsoft.ML.Data;
-using Microsoft.ML.Transforms.Text;
-using VocabularySheet.Common;
-using VocabularySheet.Common.Extensions;
 using VocabularySheet.Common.Parsers;
 using VocabularySheet.ML.Client;
 
@@ -24,18 +21,6 @@ internal class MlWordEvaluationService : IWordEvaluationService
         _mlDatasetsFolder = mlDatasetsFolder;
         _dataSets = dataSets;
     }
-
-    // var pipeline = mlContext.Transforms.Features
-    //     .NormalizeText("Features", nameof(MlArticleRecord.Features))
-    //     .Append(mlContext.Transforms.Features.TokenizeIntoWords("Features"))
-    //     .Append(mlContext.Transforms.Features.RemoveDefaultStopWords("Features"))
-    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Features"))
-    //     .Append(mlContext.Transforms.Features.ProduceNgrams("Features"))
-    //     .Append(mlContext.Transforms.NormalizeLpNorm("Features"))
-    //     .Append(mlContext.Transforms.Conversion.MapValueToKey("Label", nameof(MlArticleRecord.Label)))
-    //     .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(featureColumnName: "Features"))
-    //     .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
-
     
     public async Task<MulticlassClassificationMetrics?> EvaluateAsync(CancellationToken cancellationToken)
     {
@@ -74,8 +59,8 @@ internal class MlWordEvaluationService : IWordEvaluationService
         
         experiment
             .SetPipeline(pipeline)
-            .SetTrainingTimeInSeconds(600)
-            .SetMulticlassClassificationMetric(MulticlassClassificationMetric.MicroAccuracy, labelColumn: columnInference.ColumnInformation.LabelColumnName)
+            .SetTrainingTimeInSeconds(1000)
+            .SetMulticlassClassificationMetric(MulticlassClassificationMetric.MacroAccuracy, labelColumn: columnInference.ColumnInformation.LabelColumnName)
             .SetDataset(trainValidationData);
         
         TrialResult experimentResults = await experiment.RunAsync(cancellationToken);
@@ -109,7 +94,7 @@ internal class MlWordEvaluationService : IWordEvaluationService
             string[] words = joined.Split(" ");
             
             IEnumerable<string> chunks = Enumerable.Range(0, words.Length / 2)
-                    .Select(i => string.Join(" ", words.Skip(i * 2).Take(2)));
+                    .Select(i => string.Join(" ", words.Skip(i * 2).Take(2).Distinct()));
         
             return chunks.Select(c => new MlArticleRecord
             {
