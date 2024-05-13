@@ -1,6 +1,6 @@
 ﻿using System.Web;
+using Domain.Localization;
 using Microsoft.Extensions.Logging;
-using VocabularySheet.Common;
 using WebSources.Common;
 
 namespace WebSources.CambridgeDictionary;

@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Common;
+﻿using Domain.Localization;
 using WebSources.CambridgeDictionary.Entities;
 using WebSources.Common;
 

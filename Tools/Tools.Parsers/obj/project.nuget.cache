@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RBh5q6dhMLmKjJJSvokq+S16VepALt6UGYfN1165S1+UV4c6C2Y+HlS+lEIGhxNJUt2aIxBuvxmScIoc/R6f5A==",
+  "success": true,
+  "projectFilePath": "Q:\\repos\\VocabularySheet\\Tools\\Tools.Parsers\\Tools.Parsers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\csvhelper\\32.0.2\\csvhelper.32.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

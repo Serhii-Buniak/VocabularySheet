@@ -1,0 +1,1 @@
+C:\repositories\VocabularySheet\ML\VocabularySheet.ML.Evaluation.App\VocabularySheet.ML.Evaluation.App.csproj;x64

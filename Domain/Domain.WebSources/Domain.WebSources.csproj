@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\WebSources\WebSources.CambridgeDictionary\WebSources.CambridgeDictionary.csproj" />
+      <ProjectReference Include="..\..\WebSources\WebSources.ReversoContext\WebSources.ReversoContext.csproj" />
+      <ProjectReference Include="..\Domain.Localization\Domain.Localization.csproj" />
+    </ItemGroup>
+
+</Project>

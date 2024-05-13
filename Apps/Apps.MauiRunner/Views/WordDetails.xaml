@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels1="using:Apps.MauiRunner.ViewModels"
+             xmlns:cambridge="using:Apps.MauiRunner.Xml.Controls.Cambridge"
+             xmlns:reversoContext="using:Apps.MauiRunner.Xml.Controls.ReversoContext"
+             xmlns:controls1="using:Apps.MauiRunner.Xml.Controls"
+             x:Class="Apps.MauiRunner.Views.WordDetails"
+             x:DataType="viewModels1:WordDetailsVm"
+             x:Name="wordDetails">
+    <ScrollView>
+        <VerticalStackLayout MinimumWidthRequest="{OnPlatform WinUI=600}">
+        
+            <controls1:DescriptionArea
+                Text="{Binding Word.Description}"
+                IsDescriptionVisible="True" />
+        
+            <controls1:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
+                                   Margin="0,5"
+                                   OnClick="{Binding GoBackCommand}"
+                                   Word="{Binding Word}" />
+            <FlexLayout MaximumWidthRequest="{OnPlatform WinUI=1600}" HorizontalOptions="Center" JustifyContent="SpaceBetween">
+                <controls1:ShiftWordButton Word="{Binding PrevWord}"
+                                          OnClick="{Binding LoadWordCommand}"/>
+                
+                <controls1:ShiftWordButton Word="{Binding NextWord}"
+                                          OnClick="{Binding LoadWordCommand}"/>
+            </FlexLayout>
+            
+            <controls1:BoxModels BoxVm="{Binding Box}"/>
+            
+            <cambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                  Entry="{Binding OriginalCambridge, Mode=OneWay}"/>
+            <cambridge:CambridgeComponent AudioCommand="{Binding PlayAudioCommand}"
+                                                  OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                  Entry="{Binding TranslateCambridge, Mode=OneWay}"/>
+            <reversoContext:ReversoContextComponent OpenLinkCommand="{Binding OpenLinkCommand}"
+                                                    Entry="{Binding ReversoContext, Mode=OneWay}"/>
+        
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

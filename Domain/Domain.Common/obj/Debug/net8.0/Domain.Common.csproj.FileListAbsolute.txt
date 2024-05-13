@@ -1,0 +1,15 @@
+Q:\repos\VocabularySheet\Domain\Domain.Common\bin\Debug\net8.0\Domain.Common.deps.json
+Q:\repos\VocabularySheet\Domain\Domain.Common\bin\Debug\net8.0\Domain.Common.dll
+Q:\repos\VocabularySheet\Domain\Domain.Common\bin\Debug\net8.0\Domain.Common.pdb
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.GeneratedMSBuildEditorConfig.editorconfig
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.AssemblyInfoInputs.cache
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.AssemblyInfo.cs
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.csproj.CoreCompileInputs.cache
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.dll
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\refint\Domain.Common.dll
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.pdb
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\ref\Domain.Common.dll
+Q:\repos\VocabularySheet\Domain\Domain.Common\bin\Debug\net8.0\Tools.Parsers.dll
+Q:\repos\VocabularySheet\Domain\Domain.Common\bin\Debug\net8.0\Tools.Parsers.pdb
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.Common.csproj.AssemblyReference.cache
+Q:\repos\VocabularySheet\Domain\Domain.Common\obj\Debug\net8.0\Domain.C.D62037FA.Up2Date

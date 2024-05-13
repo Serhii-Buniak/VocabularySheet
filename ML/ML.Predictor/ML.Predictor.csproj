@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.ML" Version="3.0.1" />
+        <PackageReference Include="Catalyst" Version="1.0.47753" />
+        <PackageReference Include="Catalyst.Models.English" Version="1.0.30952" />
+        <PackageReference Include="Catalyst.Spacy" Version="1.0.47753" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Tools\Tools.Common\Tools.Common.csproj" />
+      <ProjectReference Include="..\..\Tools\Tools.Parsers\Tools.Parsers.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Tools\Tools.Common\Tools.Common.csproj" />
+      <ProjectReference Include="..\..\Tools\Tools.Parsers\Tools.Parsers.csproj" />
+    </ItemGroup>
+
+</Project>

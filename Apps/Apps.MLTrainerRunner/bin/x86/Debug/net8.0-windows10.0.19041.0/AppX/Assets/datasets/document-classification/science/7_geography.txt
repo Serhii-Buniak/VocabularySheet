@@ -1,0 +1,338 @@
+altitude
+Altitude is the height of an area, measured from sea level. 	Antarctic Circle
+The Antarctic Circle is an imaginary circle at latitude 66°30' S, around the south pole. 	
+analemma
+The analemma is a figure-8-shaped diagram that shows the declination of the sun (the angle that the sun is from the equator), for each day in the year. If you took a snapshot of the sun at the same time each day (from the same location), the Sun would make a figure shaped like an analemma during the course of a year (this is because the Earth is tilted on its axis and because it doesn't orbit the Sun in a perfect circle).
+antipodes
+Antipodes are a pair of points that are on opposite sides of a planet (like the North Pole and the South Pole). 	
+
+archipelago
+An archipelago is a group or chain of islands clustered together in a sea or ocean. 	Arctic Circle
+The Arctic Circle is an imaginary circle at latitude 66°30' N, around the north pole.
+
+
+atlas
+A book containing maps and charts. 	
+
+atoll
+An atoll is a ring (or partial ring) of coral that forms an island in an ocean or sea. 	azimuth
+An azimuth is the angle that a line makes with a meridian (a line of longitude), going clockwise from north.
+bathymetric map
+A bathymetric map is a map of the bottom of a body of water, noting the depth contours (these are called isobaths). 	
+
+bay
+A bay is a body of water that is partly enclosed by land (and is usually smaller than a gulf). 	
+
+butte
+A butte is a flat-topped rock or hill formation with steep sides. 	canal
+A canal is a man-made waterway used for transportation or irrigation.
+
+
+canyon
+A canyon is a deep valley with very steep sides - often carved from the Earth by a river. 	
+
+cape
+A cape is a pointed piece of land that sticks out into a sea, ocean, lake, or river. 	cartographer
+A cartographer is a map maker. 	
+cartography
+Cartography is the study and the construction of maps.
+
+
+cave
+A cave is a large hole in the ground or in the side of a hill or mountain. 	
+
+central meridian
+A central meridian is a meridian that passes through the center of a projection. The central meridian is often a straight line that is an axis of symmetry of the projection. 	
+
+channel
+A channel is a narrow body of water that connects two larger bodies of water (like the English Channel). A channel is also a part of a river or harbor that is deep enough to let ships sail through. 	
+
+cliff
+A cliff is a steep face of rock and soil.
+
+compass
+A compass is a device that always points north. It is used for navigation. 	
+compass rose
+A compass rose is a design on a map that shows direction. It points which way is north, south, east, west, and some intermediate directions on the map. 	
+
+conic projection
+A conic projection is a type of map in which a cone is wrapped around a sphere (the globe), and the details of the globe are projected onto the conic surface. Then, the cone is unwrapped into a flat surface. 	
+
+continent
+The land mass on Earth is divided into continents. The seven current continents are Africa, Antarctica, Asia, Australia, Europe, North America, and South America.
+
+
+contour
+A contour is a line on a topographic map that represents locations that have the same altitude. 	
+
+cove
+A cove is small, horseshoe-shaped body of water along the coast; the water is surrounded by land formed of soft rock. 	
+
+cylindrical projection
+A cylindrical projection is a type of map in which a cylinder is wrapped around a sphere (the globe), and the details of the globe are projected onto the cylindrical surface. Then, the cylinder is unwrapped into a flat surface, yielding a rectangular-shaped map. Cylindrical maps have a lot of distortion in the polar regions (that is, the size of the polar regions is greatly exaggerated on these maps). 	
+
+degree
+A degree is a unit of measurement; a degree is also written °. There are 360 degrees in a circle. Each degree is divided into 60 minutes, written as the symbol '. For example, 10 and a half degrees is written 10° 30'.
+
+
+delta
+A delta is a low, watery land formed at the mouth of a river. It is formed from the silt, sand and small rocks that flow downstream in the river and are deposited in the delta. A delta is often (but not always) shaped like a triangle (hence its name, delta, a Greek letter that is shaped like a triangle). 	
+
+desert
+A desert is a very dry area. 	
+
+dune
+A dune is a hill or a ridge made of sand. Dunes are shaped by the wind, and change all the time. 	Eastern Hemisphere
+The Eastern Hemisphere consists of Africa, Asia, Australia, and Europe.
+
+
+equator
+The equator is an imaginary circle around the earth, halfway between the north and south poles. 	
+
+estuary
+An estuary is where a river meets the sea or ocean. 	
+
+fjord
+A fjord is a long, narrow sea inlet that is bordered by steep cliffs. 	forestry map
+A forestry map is a map that notes the density, kind, size, and value of the trees in an area.
+geography
+Geography is the study of the Earth's surface. 	geologic map
+A geologic map is a map that notes the structure and composition of geologic features, like the presence of minerals, rock types, earthquake faults, underground water, and landslide areas. 	
+
+geomorphology
+Geomorphology is the scientific field that investigates how landforms are formed on the Earth (and other planets). 	
+
+geyser
+A geyser is a natural hot spring that occasionally sprays water and steam above the ground.
+
+
+geographical coordinate system
+A geographical coordinate system is a system that uses latitude and longitude to describe points on the spherical surface of the globe. 	
+
+glacier
+A glacier is a slowly moving river of ice. 	GPS
+GPS is short for global positioning system. GPS devices tell you your exact longitude and latitude (it gets the information from orbiting satellites). 	
+
+gulf
+A gulf is a part of the ocean (or sea) that is partly surrounded by land (it is usually larger than a bay).
+
+
+hill
+A hill is a raised area or mound of land. 	
+
+ice shelf
+An ice shelf is a thick slab of floating ice that is next to land. 	International Date Line
+The International Date Line (IDL) is an imaginary north-south line (at the 180th meridian), in the Pacific Ocean, at which the date changes. The east side of the IDL is a calendar day earlier than the west side. The actual IDL used is not a straight line, but zigzags around certain populated areas. 	
+
+island
+An island is a piece of land that is surrounded by water.
+
+
+isthmus
+An isthmus is a narrow strip of land connecting two larger landmasses. An isthmus has water on two sides. 	
+
+key
+The key of a map (also called the legend) is a small table accompanying the map that explains the symbols that are used on the map. 	
+
+lagoon
+A lagoon is a shallow body of water that is located alongside a coast and separated from the ocean by a strip of land or a sandbank. 	
+
+lake
+A lake is a large body of water surrounded by land on all sides. Really huge lakes are often called seas.
+
+
+landmark
+A landmark is a monument or some prominent object (like a mountain or lake) that is used to designate a place and determine one's location. 	
+
+latitude
+Latitude is the angular distance north or south from the equator to a particular location. The equator has a latitude of zero degrees. The North Pole has a latitude of 90 degrees North; the South Pole has a latitude of 90 degrees South. 	
+
+legend
+The legend of a map (also called the key) is a small table accompanying the map that explains the symbols that are used on the map. 	
+
+longitude
+Longitude is the angular distance east or west from the north-south line that passes through Greenwich, England, to a particular location. Greenwich, England has a longitude of zero degrees. The farther east or west of Greenwich you are, the greater your longitude. The Midway Islands (in the Pacific Ocean) have a longitude of 180 degrees (they are on the opposite side of the globe from Greenwich).
+
+
+map
+A map is a graphic representation of a place. There are many different types of maps that have different uses. Since a map is 2-dimensional representation of a 3-dimensional world, compromises must be made. Different maps differ in the relative accuracy of the depiction of the area, the shapes of objects, actual distances, and compass direction. Maps that accurately relect area are often called equal-area maps (an example is the Albers equal-area conic map). Maps that maintain the shape of objects are called conformal. Maps that correctly show the distance between areas are often called equi-distant maps (note that the shortest distance between two points on a map is generally not a straight line. but a curve). Navigational maps need accurate compass directions maintained on the map (like the Mercator map). 	
+
+map projections
+There are many ways of making maps. Since a map is a 2-dimensional representation of a curved surface (a globe), the map cannot be perfectly accurate. These map-making methods are called projections because cartographers have to project a 3-D surface onto a 2-D map. There are many different types of projections that have different uses. Some projections preserve compass directions but distort areas (like Mercator projections), while others preserve area but distort distances and compass directions (like Robinson projections). 	
+
+map scale
+The scale of a map is the ratio between the distance between two points found on the map as compared to the actual distance between these points in the real world.
+
+
+marsh
+A marsh is a type of freshwater, brackish water or saltwater wetland that is found along rivers, pond, lakes and coasts. Marsh plants grow up out of the water. 	
+
+Mercator projection
+A Mercator projection is a type of rectangular map (a cylindrical projection) in which the true compass directions are kept intact (lines of latitude and longitude intersect at right angles), but areas are distorted (for example, polar areas look much larger than they really are). Mercator projections are useful for nautical navigation. Geradus Mercator devised this cylindrical projection for use in navigation in 1569. 	
+
+meridian
+A meridian is a circular arc (a great circle) of longitude that meets at the north and south poles and connects all places of the same longitude. The prime meridian (0 degrees longitude) passes through Greenwich, England. 	
+
+mesa
+A mesa is a land formation that has a flat area onthe top and steep walls - mesas usually occur in dry areas.
+
+
+Mollweide projection
+A Mollweide projection is a type of sinusoidal projection map in which the entire surface of the Earth is shown within an ellipse. Lines of latitude are parallel to the equator, but lines of longitude are curved in such a way that area distortion is minimal. The distortion is greatest at the edges of the ellipse. This type of projection was created by Carl B. Mollweide in 1805. 	
+
+mountain
+A mountain is a very tall high, natural place on Earth - higher than a hill. The tallest mountain on Earth is Mt. Everest. 	
+Northern Hemisphere
+The Northern Hemisphere is the half of the Earth that is north of the equator. 	North Magnetic Pole
+The North Magnetic Pole is the point on the Northern Hemisphere of the Earth toward which a compass' needle always points; at the North Magnetic Pole, a compass' needle will stand vertically. It is now located near in northern Canada (and its location changes over time).
+North Pole
+The North Pole is the point on the Northern Hemisphere of the Earth that is farthest north. It is 90° north of the equator. 	oasis
+An oasis is a place in the desert that has water and is fertile. 	
+
+ocean
+An ocean is a large body of salt water that surrounds a continent. Oceans cover more the two-thirds of the Earth's surface 	
+
+Orthographic projection
+An Orthographic projection is a type of map which is essentially a drawing of (one side of) a globe. There is a lot of distortion of area in this type of map, but one gets the idea that the globe is being represented.
+
+
+Orthophanic projection
+The Orthophanic (meaning 'right appearing') projection, also called the Robinson projection, is a widely-used type of map in which the Earth is shown in a flattened ellipse. In this pseudocylindrical projection, lines of latitude are parallel to the equator, but lines of longitude are elliptical arcs. In a Robinson projection, area is represented accurately, but the distances and compass directions are distorted (for example, compass lines are curved). This type of projection was first made in 1963 by Arthur H. Robinson. 	
+
+parallel
+A parallel (of latitude) is a line on a map that represents an imaginary east-west circle drawn on the Earth in a plane parallel to the plane that contains the equator. 	
+
+peninsula
+A peninsula is a body of land that is surrounded by water on three sides. 	
+
+physical map
+A physical map is a map that shows an areas natural physical features, like mountains, lakes, and rivers.
+
+
+plain
+Plains are flat lands that have only small changes in elevation. 	
+
+planar projection
+A planar projection is a type of map in which the details of the globe are projected onto a plane (a flat surface) yielding a rectangular-shaped map. Cylindrical maps have a lot of distortion towards the edges. 	
+
+planimetric map
+A planimetric map is a map that represents only the horizontal positions of features (and not the vertical positions, like heights, which a topographic map shows). 	
+
+plateau
+A plateau is a large, flat area of land that is higher than the surrounding land.
+
+
+polar circle
+The polar circle refers to either the Arctic Circle (in the Northern Hempisphere) or Antarctic Circle (in the Southern Hemisphere). It is an imaginary line of latitude at 66°33'44" N or S. The area between a polar circle and its pole is very cold, and each year has at least one day each year in which the sun is continuously above the horizon and at least one day period when the sun never rises above the horizon. 	
+
+political map
+A political map is a map that shows cultural features, like the political boundaries of countries, states, provinces, and cities. 	
+
+pond
+A pond is a small body of water surrounded by land. A pond is smaller than a lake. 	
+
+prairie
+A prairie is a wide, relatively flat area of land that has grasses and only a few trees.
+
+
+prime meridian
+The prime meridian (0 degrees longitude) is the meridian that passes through Greenwich, England. 	
+
+projection
+A projection is a representation of one thing onto another, such as a curved 3-dimensional surface (like the Earth) onto a flat 2-dimensional map. A projection is a representation of one thing onto another, such as a curved 3-dimensional surface (like the Earth) onto a flat 2-dimensional map. There are 3 major types of projections, cylindrical, conic, and planar 	
+
+quadrangle
+A quadrangle is a four-sided area bounded by two lines (parallels) of latitude and two lines of longitude (meridians) on a map.
+
+
+range
+A range is a chain of mountains and/or high elevations. 	
+
+reef
+A reef is an undersea growth of coral near the surface of the water. 	
+
+relief map
+A relief map is a topographic map that uses different colors or shades to indicate elevations. 	
+
+reservoir
+A reservoir is a man-made lake that stores water for future use.
+
+
+river
+A river is a large, flowing body of water that usually empties into a sea or ocean. 	
+
+road map
+A road map shows major and minor highways, plus cities and towns. This type of map is used by road travelers, and often shows other information useful for travelers, including parks and campgrounds. 	
+
+Robinson projection
+The Robinson projection is a widely-used type of map in which the Earth is shown within an ellipse with a flat top and bottom. In this pseudocylindrical. projection, lines of latitude are parallel to the equator, but lines of longitude are elliptical arcs. In a Robinson projection, area is represented accurately, but the distances and compass directions are distorted (for example, compass lines are curved). This type of projection was first made in 1963 by Arthur H. Robinson; it is also called the Orthophanic projection (meaning 'right appearing'). 	
+
+scale
+The scale of a map is the ratio between the distance between two points found on the map as compared to the actual distance between these points in the real world.
+
+
+sea
+A sea is a large body of salty water that is often connected to an ocean. A sea may be partly or completely surrounded by land. 	
+
+sea level
+Sea level is height of a sea or ocean. 	
+
+sinusoidal projection
+A sinusoidal projection is a type of map projection in which lines of latitude are parallel to the equator, and lines of longitude are curved around the prime meridian. 	
+
+sound
+A sound is a wide inlet of the sea or ocean that is parallel to the coastline; it often separates a coastline from a nearby island.
+
+
+source
+A source is the beginning of a river. 	
+Southern Hemisphere
+The Southern Hemisphere is the half of the Earth that is south of the equator. 	South Magnetic Pole
+The South Magnetic Pole is the point on the Southern Hemisphere of the Earth toward which a compass' needle always points; at the South Magnetic Pole, a compass' needle will stand vertically. It is now located just off the coast the continent of Antarctica (and its location changes over time). 	South Pole
+The South Pole is the point on the Southern Hemisphere of the Earth that is farthest south. It is 90° south of the equator.
+
+
+strait
+A strait is a narrow body of water that connects two larger bodies of water. 	
+
+swamp
+A swamp is a type of freshwater wetland that has spongy, muddly land and a lot of water. Many trees and shrubs grow in swamps. 	
+
+topographic map
+A topographic map is a map that represents elevations on it. 	
+
+tributary
+A tributary is a stream or river that flows into a larger river.
+
+
+Tropic of Cancer
+The Tropic of Cancer is an imaginary line of latitude at 23°30' N. 	
+
+Tropic of Capricorn
+The Tropic of Capricorn is an imaginary line of latitude at 23°30' S. 	
+
+Tropics
+The tropics is the warm, equatorial region between the Tropic of Cancer and the Tropic of Capricorn. 	
+
+tundra
+A tundra is a cold, treeless area; it is the coldest biome.
+
+
+waterfall
+When a river falls off steeply, there is a waterfall. 	
+
+weather map
+A weather map is a map that shows weather conditions for a time period. Weather maps show storms, fronts, temperatures, rain, snow, sleet, fog, etc. 	
+
+valley
+A valley is a low place between mountains. 	
+
+volcano
+A volcano is a mountainous vent in the Earth's crust. When a volcano erupts, it spews out lava, ashes, and hot gases from deep inside the Earth.
+Western Hemisphere
+The Western Hemisphere is another name for the Americas (or the New World). 	
+wetland
+A wetland is an area of land that is often wet; the soil in wetlands are often low in oxygen. Wetland plants are adapted to life in wet soil. There are many types of wetlands, including: swamp, slough, fen, bog, marsh, moor, muskeg, peatland, bottomland, delmarva, mire, wet meadow, riparian, etc. 	
+
+Winkel Tripel projection
+A Winkel Tripel projection is a type of pseudocylindrical projection map in which both the lines of latitude and longitude are curved. The Winkel Tripel projection was adopted by the National Geographic Society in the late 1990s (replacing the Robinson projection).

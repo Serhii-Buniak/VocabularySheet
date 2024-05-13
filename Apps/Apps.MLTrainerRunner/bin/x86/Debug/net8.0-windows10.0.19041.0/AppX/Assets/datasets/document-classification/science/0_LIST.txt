@@ -1,0 +1,175 @@
+Natural Sciences
+
+Natural Sciences is the overall name given to the many branches of science that study the nature of our physical world and the universe. The 3 main branches of Natural Sciences are:
+
+    Physics: the Study of Universe
+    Chemistry: the Study of Matter
+    Biology: the Study of Life and Living Organisms.
+
+
+Physical science
+
+Physical science is a term given to the branches of natural sciences that investigate non-living systems.
+
+    Physics
+
+Physics is a branch of natural science that focuses on understanding how the universe works. It deals with the study of matter and its motion through spacetime. It also studies things like energy and force.
+
+
+
+    Chemistry
+
+Chemistry is a branch of natural science that studies the science of matter and the changes it goes through. The science of matter is not exclusive to chemistry, as it is also studied by physics. However, physics takes a more general and rudimentary approach to the science of matter, whilst chemistry is more specialised. Chemistry focuses on the composition, behaviour, structure, and properties of matter, as well as the changes that happen to it during chemical reactions.
+
+There are 5 main sub-disciplines of chemistry include:
+
+    Organic Chemistry
+    Analytical Chemistry
+    Physical Chemistry
+    Inorganic Chemistry
+    Biochemistry
+
+
+
+    Earth science
+
+Earth science, which is also called geoscience, is an umbrella term for all of the sciences concerning planet earth. 
+
+
+    Geology
+
+Geology is a branch of earth science that deals with the solid earth and the processes by which it changes and transforms over time. The study of the solid features of any terrestrial planet or natural satellite, such as Mercury, Venus, or the Moon, is also included in geology.
+
+
+    Oceanography
+
+As the name suggests, oceanography, also known as marine science, is a branch of earth science that studies the ocean. Oceanography includes many topics in its studies, such as marine organisms and ecosystem dynamics, ocean currents, waves, plate tectonics, the geology of the seafloor and more. Often, scientists studying oceanography use tools from other disciplines like biology, chemistry, geology, meteorology, physics, and even geography to further understand the ocean.
+
+
+    Astronomy
+
+Astronomy, also known as space science, is the name given to the study of everything in outer space. The reason astronomy is often referred to as ‘space science’ is because, in recent years, astronomy has come to take on new meaning. Astronomy is now seen by many as a subsection of broader space science, which includes other related fields. These fields include space travel, space exploration, space medicine, space archaeology, and science performed in outer space.
+Life science/Biology
+
+Life science, also known as biology, is a branch of natural science that studies life like microorganisms, plants, animals, and human beings. As part of its studies, life science, or biology, looks at the physical structure, chemical processes, molecular interactions, physiological mechanisms, development, and evolution of these living organisms.
+
+    Ecology
+
+Ecology is a branch of biology that deals with interactions among organisms and their biophysical environment. As part of ecology, topics like biodiversity, distribution, biomass, and populations of organisms, are studied, as well as collaboration and rivalry within and between species.
+
+Other branches of natural science are:
+
+    Biochemistry
+    Microbiology
+    Botany
+    Zoology
+    Meteorology
+
+
+Social Sciences
+
+Social science is the branch of science that studies societies and the relationships between individuals within those societies. Social science was originally a term used to refer to the field of sociology. However, it has now evolved to include a variety of disciplines, such as anthropology, archaeology, economics, human geography, linguistics, political science, and psychology, as well as sociology.
+
+There are a few types of social scientists. Positive social scientists, on one hand, use methods similar to those used in the natural sciences to better understand society, and so define science in its more rigid modern sense. Contrastingly, Interpretivist social scientists tend to use social critique and symbolic interpretation, as opposed to creating empirically refutable theories. Interpretivist social scientists, therefore, approach science in its broader sense.
+
+The main branches of Social Science are:
+
+    Psychology
+    Sociology
+    Anthropology
+    Economics
+    Archaeology
+    History
+    Geography
+    Law
+    Politics
+
+Formal Sciences
+
+Formal science is the study of the nature of different disciplines such as Mathematics, Logic, and Computer Science through the use of formal systems. In contrast to other branches of science, the formal sciences are not concerned with the validity of theories founded on observations in the real world. The formal sciences are, instead, focused on the attributes of formal systems founded on definitions and rules. For this reason, there is a significant amount of discourse about whether the formal sciences actually constitute a science.
+
+The main branches of Formal Science are:
+
+    Mathematics
+    Logic
+    Computer Science
+    Data Science
+    Statistics
+    Systems Science
+    Artificial Intelligence
+    Information Technology
+
+    Logic
+
+Logic is the name given to the methodical study of valid rules of inference. In its simplest terms, logic is the analysis and assessment of arguments.
+
+Logic includes:
+
+    The classification of arguments
+    The methodical exposition of the logical form
+    The validity of deductive reasoning (reasoning from one or more statements to reach a logical conclusion)
+    The strength of inductive reasoning
+    The study of formal proofs and inference
+    The study of syntax and semantics.
+
+Since ancient times, logic has been studied in philosophy, and it has been studied in mathematics since the mid-19th century. In recent years, logic has also been studied in cognitive science.
+
+    Mathematics
+
+Mathematics is basically the same as formal science. However, mathematics focuses more on the alliance of 4 areas: arithmetic, algebra, geometry, and analysis. These 4 areas translate to the study of quantity, structure, space, and change respectively.
+
+    Statistics
+
+Statistics is the name given to the study of the collection, organisation, and interpretation of data. As part of this study, statistics covers the planning of data collection in terms of the design of surveys and experiments.
+
+    Systems theory
+
+Systems theory is a transdisciplinary science that studies systems to clarify principles that can be applied to all types of systems in all fields of research. Within the context of systems theory, the word ‘systems’ specifically refers to systems that self-regulate through feedback. These self-regulating systems can be found in nature, including the physiological systems of our body, in local and global ecosystems, and climate.
+
+    Decision theory
+
+Decision theory is also known as the theory of choice, but should not be confused with choice theory. Decision theory is the name given to the study of an agent’s choices. There are 2 main branches of decision theory: normative decision theory and descriptive decision theory. Normative decision theory examines the outcomes of decisions and determines the most desirable decisions given constraints and assumptions. Descriptive theory, on the other hand, examines how agents actually make their decisions.
+
+    Theoretical computer science
+
+Theoretical computer science (TCS) is a subgroup of general computer science and mathematics. Theoretical computer science focuses on mathematical topics of computing and includes the theory of computation.
+
+Within theoretical computer science, a lot of different topics are covered, such as:
+
+    Algorithms
+    Data structures
+    Computational complexity
+    Parallel and distributed computation
+    Probabilistic computation
+    Quantum computation
+    Automata theory
+    Information theory
+    Cryptography
+    Program semantics and verification
+    Machine learning
+    Computational biology
+    Computational economics
+    Computational geometry
+    Computational number theory and algebra
+
+Specialised Branches of Science
+
+In addition to the branches of science above, there is a range of other cross-disciplinary branches that have grown and developed over time. These include:
+
+        Agronomy: the science of producing and using plants for food, fuel, and fibre.
+        Anthropology: the study of humanity, focusing on human behaviour, human biology, cultures and societies, in both the past and present.
+        Aeronautics: the study of the science of flight.
+        Astronomy: the study of everything in the universe beyond Earth's atmosphere, including celestial objects and phenomena.
+        Astrophysics: a science that applies the laws of physics and chemistry to gain a better understanding of the birth, life, and death of stars, planets, galaxies, nebulae and other objects in the universe.
+        Biotechnology: an area of biology, that uses living systems and organisms to develop and make products.
+        Cytology: the study of the structure, function, and behaviour of cells.
+        Engineering: a branch of science and technology that is focused on designing, building, and using engines, machines, and structures.
+        Astrobiology: the study of the origins, early evolution, distribution, and future of life in the universe.
+        Forensic Science: the application of science to the legal process and criminal investigations.
+        Materials Science: the study of the relationships between the structure and properties of a material and how it is made.
+        Mycology: the study on Fungi
+        Ornithology: the study of birds and how we can conserve the species.
+        Psychology: the study of the human mind and behaviour
+        Petrology: the study of rocks, meteorites, and minerals as well as their occurrences, composition, origin, and the evolution of the solar system.
+        Radiology: the medical science in which medical imaging is used to diagnose and treat diseases within the bodies of animals and humans.
+        Toxicology: the branch of science that investigates the adverse effects that chemicals, substances, and situations can have on people, animals, and the environment.

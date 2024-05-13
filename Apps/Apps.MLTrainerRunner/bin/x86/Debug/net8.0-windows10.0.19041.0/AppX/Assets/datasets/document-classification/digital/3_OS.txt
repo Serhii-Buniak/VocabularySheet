@@ -1,0 +1,238 @@
+CPU Scheduling:
+
+CPU scheduling is the process of allocating a CPU processor to a process and holding other processes in a queue if there is an unavailability of input/output resources or any other resource. CPU scheduling helps in increasing the efficiency of a CPU and makes it faster and fairer as the CPU can execute multi programs simultaneously and no job needs to wait in the queue.
+Critical Section:
+
+The critical section in an operating system is a particular part of the code section where share variables are stored and can be accessed. In this critical section, only one process can be executed at a single time. And the remaining processes have to wait in a queue to get executed in the critical section. An illustration of the critical section is given below:
+
+The entry section manages the entry of the process in the critical section. The exit section allows a process to exit from the critical section and also informs about the free critical section to other processes.
+
+The solution to a critical section for synchronizing the various processes is as follows:
+
+    Mutual Exclusion: This rule allows only one process at a single time inside the critical section.
+    Progress: This rule allows any process to enter the critical section only if the critical section is free at that time.
+    Wounded waiting: This rule states that there should be a limited period of waiting time for each of the processes.
+
+Deadlock:
+
+Deadlock is defined as a situation during the execution of a process when more than one computer starts sharing a single resource and ultimately they both stop each other from accessing the resource.
+Device Controllers:
+
+As we know, the operating system operates in a system using various external devices such as a mouse, keyboard, etc. So, a software module named Device Controllers is used to handling those devices. The operating system with the help of device drivers manages the input/output (I/O) devices.
+Demand Paging:
+
+Demand paging is a technique in an operating system that is used for page switching. The pages come to the main memory and are removed from the main memory when the system demands that particular page via the CPU. Demand paging is responsible for deciding which page needs to be present in the main memory and which page needs to be present in the secondary memory.
+Driver
+
+Drivers in the operating system are used for managing all the I/O devices. As we know an operating system with the help of hardware and external devices together functions for executing a process. Hence driver manages all the connections of all the external devices in a system.
+Error Handling
+
+Error Handling is defined as the process of detecting errors that may be in software or hardware. Whenever there is an error in software the programmer generates the code for handling these errors. For hardware errors, the system sends a signal and stops working on that particular part of the system to make sure that there is not any further error. There are four categories of errors that are as follows:
+
+    Logical errors
+    Generated errors
+    Compile-time errors
+    Runtime errors
+
+Fragmentation
+
+Fragmentation is defined as the process of removing an unwanted problem in the operating system. In fragmentation, the processes are loaded and then unloaded from the memory, and after that free memory space is fragmented. Conditions of fragmentation depend upon the memory allocation system. There are mainly two types of fragmentation in an operating system:
+
+    Internal Fragmentation
+    External Fragmentation
+
+Interrupts
+
+Interrupts are defined as the signal which is sent by either hardware or software when immediate attention by a process is required. When there is a high-priority job in waiting then it generates an alert for the processor and interrupts the current process. The operating system also manages these alerts by having some sets of code that are called Interrupt handler. Its work consists of making a priority list of high-priority alerts and saving them in a queue that can be later scheduled to execute. There are two types of interrupts:
+
+    Hardware interrupts
+    Software interrupts
+
+I/O Operation:
+
+In computing, the communication between the two systems is based on two things that are input and second is output. Suppose we are doing a ticket reservation on the website. We need to input details such as names, ages, etc into the website database. Also, we get our details updates on the website immediately. These immediate actions of input and output are managed by the I/O operations in an operating system.
+Kernel:
+
+The kernel is defined as the middle layer between the operating system and the hardware of a system. It is the core of an operating system. The kernel is the first program that starts after the bootloader when we start a system. A kernel is responsible for managing tasks like disk, memory, and task management. Following are the types of Kernel:
+
+    Monolithic kernel
+    Microkernel
+    Hybrid kernel
+    Nano kernel
+    Exo kernel
+
+Logical Address:
+
+The logical address is defined as the virtual address that the CPU generates when a program is running. This address can be used by the CPU to get access to the actual address of memory or any data.
+Memory Management:
+
+Memory management is defined as the appropriate management of a collection of data properly. All the instruction and processed data can be stored in it at a specific location that can be used later during the execution of a process.
+Monitor:
+
+The monitor is used for achieving process synchronization. The monitor is defined as a module or package that allows encapsulation of shared data structure, procedures, and the synchronization between other procedures existing at the same time.
+Multiprogramming:
+
+Multiprogramming is the operating system that allows the execution of more than one process at the same time. More than one jobs are there in the main memory at the same time.
+Mutual Exclusion:
+
+Mutual exclusion is also known as Mutex and is a locking-unlocking technique used in the operating system to protect a particular part of code. When a single resource is shared by more than one process or thread. The mutex allows sharing that resource to only one thread at a time. If one thread is accessing the resource, the mutex locks the access of the resource for other threads.
+Multitasking:
+
+Multitasking means working with two tasks at the same time. When a user performs. In it, more than one task shares the same CPU at the same time. Two types of Multitasking are as follows:
+
+    Preemptive Multitasking
+    Cooperative Multitasking
+
+Page Fault:
+
+Page default is defined as the situation in which the system demands a page and that particular page is not available in the RAM, of the system. So, the system loads this page from the main memory, and thus page fault occurs.
+Paging:
+
+Paging is a page retrieving technique in which the pages are fetched again from the secondary memory when we need them during the execution of a process. The aim of paging is to divide a process into pages. The pages can be stored in any location of the memory but they will be retrieved according to the priority that the system assigns.
+Page Replacement Algorithm:
+
+The page replacement algorithm is an algorithm of an operating system that manages the swapping of a page from the disk. This algorithm is done when there is an unavailability of the page in the main memory that is called by the system. Some of the page replacement algorithms are as follows:
+
+    Optimal Page Replacement algorithm
+    Least recently used (LRU) page replacement algorithm
+    FIFO (First In First Out) page replacement algorithm
+
+Polling:
+
+Polling is a technique of controlling the device waits. These waits are for external devices. It generally happens when there is low-level hardware for checking the state of a process.
+Process:
+
+A process is the state of execution of a program in a system. It is the basic unit of a work that shows a task under work or on the way to getting executed. A process can be divided into four sections:
+
+    Stacks
+    Heap
+    Data
+    Text
+
+Process Management:
+
+The work of process management is to arrange all the processes inside the CPU. It may possible that there is more than one process that is sharing the same resource. Here process management helps to handle this situation. It manages all the processes and work related to an allowance of that shared resource to the process.
+Process Control Block:
+
+It is a kind of data structure that contains all the information related to a process like registers, priority quantum, etc. The process control block is also called the task control block.
+
+The structure of the Process Control Block is as follows:
+
+    Process State
+    Process Number
+    Process Counter
+    Registers
+    List of Open Files
+    CPU Scheduling Information
+    Memory Management Information
+    I/O Status Information
+    Accounting information
+    Location of the Process Control Block
+
+Process Scheduling:
+
+It is the work related to managing and removing current processes and the selection of processes from the CPU. A multiprogramming operating system allows more than one process to load into the memory for execution and also shares the same CPU. The process scheduling queues handle the waiting jobs in the queue. Following are the states of the Processing Scheduling Queue:
+
+    Job queue
+    Ready Queue
+    Device Queue
+
+Program Threats:
+
+A program threat is the written code that is designed for attacking and hijacking the security behavior of the process. These programs are written by the hacker and these threats can harden and even destroy a system. Some common program threats are as follows:
+
+    Virus
+    Trojan Horse
+    Logic Bomb
+    Trap Door
+
+Physical Address:
+
+In computer science terms, a physical address is defined as the memory address of a particular data. This address is represented in binary form. A physical address is needed by the processor during the execution as without the physical address the processor can not fetch the data from the memory. It is a real address that can not be altered by the user.
+Race Condition:
+
+The Race Condition is an unfavorable condition for software, other systems, or any electronics when the program starts depending on the sequence or timing of unrelated events. This condition is called the Race Condition. In software, a race condition can be seen when the software starts depending on the threads of the program.
+Schedulers:
+
+The Schedulers is a special kind of software that is used to handle process scheduling on a disk. The main aim of the schedulers is to manage which tasks need to schedule on the disk. The three types of schedulers are as follows:
+
+    Long-term Scheduler
+    Short-term Scheduler
+    Medium-term Scheduler
+
+Scheduling Algorithms:
+
+An operating system schedules many jobs to the processor for which allocation of memory is needed. Various jobs are scheduled according to the priority need that is called by the system. A job gets allocated to the primary memory from where the job is fetched by the processor for execution. Many algorithms are done for scheduling the jobs to the disk. These are as follows:
+
+    First-Come, First-Served (FCFS) Scheduling
+    Shortest-Job-Next (SJN) Scheduling
+    Priority Scheduling
+    Shortest Remaining Time
+    Round Robin(RR) Scheduling
+    Multiple-Level Queues Scheduling
+
+Segmentation:
+
+Segmentation is defined as a memory management technique. In it, memory is divided into many simpler parts. All these parts are known as Segments. And these segments are allocated to a process. A table called segment table is used to store details of all these segments in a tabular form. This table consists of the following two parts:
+
+        Base: the base address of the segment
+        Limit: It is defined as the length of the segment
+
+Semaphore:
+
+The Semaphore is a technique that was developed by Dijkshra in 1965. This technique manages the process running concurrently by using an integer value. This value is known as Semaphore. The two types of Semaphore:
+
+    Binary Semaphore: It is also called Mutex. It consists of two values. The first value is 1 and the second is 0.
+    Counting Semaphore: It is used for controlling the access having multiple instances.
+
+Starvation:
+
+Starvation is a condition in the operating system when there are high-priority tasks that keep executing and the low-priority jobs are in the waiting queue for a very long time. Generally, starvation can occurs when there are not sufficient resources available for processes.
+Spooling:
+
+Spooling is defined as the process of holding data temporarily and getting executed by a device or a system. The data is stored in the volatile memory and stored here until the system requests it.
+System Call:
+
+The system call is defined as the way of establishing an interaction between the operating system and the hardware. When we start to do a process in a system, there are several requests generated in the system. These requests make a call for the operating system where the operating system does its work of managing the task, memory management, etc. This interaction is called the System calls.
+
+The programmatic way of interaction between the program and the kernel of a system is called a System call. The following services are provided by the system calls:
+
+    Process creation and management
+    Main memory management
+    File Access, Directory, and File system management
+    Device handling(I/O)
+    Protection
+    Networking
+
+Following are the types of system calls:
+
+    Process control
+    File management
+    Device management
+    Information maintenance
+    Communication
+
+System Threats:
+
+System threats refer to the use of the existing system, services, and network connections for troubling a user. These threats are used when a user is using a program over a network, called a Program Attack. System threats create an environment where the resources or user file files user is misused by the operating system.
+Synchronous vs Asynchronous I/O:
+
+Synchronous I/O is defined as when there is a process or a thread that is waiting for the operation to get executed. While Asynchronous I/O is defined as when there is no waiting for the operation to get executed.
+Thread:
+
+A thread is a basic unit of execution of any process. Each program may have several processes associated with it and each process may have several threads associated with the process. So, the thread can be referred to as the basic unit of a process or the basic unit of CPU utilization.
+
+A thread comprises the following parts-
+
+    A thread ID
+    Program Counter
+    A registered set
+    A stack
+
+Conclusion
+
+    Operating system is software that ensures the connection between the user and hardware.
+    Fragmentation is defined as the process of removing an unwanted problem in the operating system.
+    The kernel is defined as the middle layer between the operating system and the hardware of a system.
+    Multiprogramming is the operating system that allows the execution of more than one process at the same time.
+    To learn more about operating system tutorials, you can click here Operating System

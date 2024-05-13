@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
+        <PackageReference Include="MediatR" Version="12.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domain\Domain.Localization\Domain.Localization.csproj" />
+      <ProjectReference Include="..\..\Domain\Domain.WordModels\Domain.WordModels.csproj" />
+      <ProjectReference Include="..\..\ML\ML.Predictor\ML.Predictor.csproj" />
+      <ProjectReference Include="..\..\Tools\Tools.Validations\Tools.Validations.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domain\Domain.WebSources\Domain.WebSources.csproj" />
+      <ProjectReference Include="..\..\ML\ML.Predictor\ML.Predictor.csproj" />
+      <ProjectReference Include="..\..\Tools\Tools.Validations\Tools.Validations.csproj" />
+    </ItemGroup>
+
+</Project>

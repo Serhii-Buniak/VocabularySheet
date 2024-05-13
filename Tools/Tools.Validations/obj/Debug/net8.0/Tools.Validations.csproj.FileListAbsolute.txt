@@ -1,0 +1,12 @@
+Q:\repos\VocabularySheet\Tools\Tools.Validations\bin\Debug\net8.0\Tools.Validations.deps.json
+Q:\repos\VocabularySheet\Tools\Tools.Validations\bin\Debug\net8.0\Tools.Validations.dll
+Q:\repos\VocabularySheet\Tools\Tools.Validations\bin\Debug\net8.0\Tools.Validations.pdb
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.csproj.AssemblyReference.cache
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.GeneratedMSBuildEditorConfig.editorconfig
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.AssemblyInfoInputs.cache
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.AssemblyInfo.cs
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.csproj.CoreCompileInputs.cache
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.dll
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\refint\Tools.Validations.dll
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\Tools.Validations.pdb
+Q:\repos\VocabularySheet\Tools\Tools.Validations\obj\Debug\net8.0\ref\Tools.Validations.dll

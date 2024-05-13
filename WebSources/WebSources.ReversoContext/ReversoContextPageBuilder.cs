@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Common;
+﻿using Domain.Localization;
 using WebSources.Common;
 using WebSources.ReversoContext.Entities;
 

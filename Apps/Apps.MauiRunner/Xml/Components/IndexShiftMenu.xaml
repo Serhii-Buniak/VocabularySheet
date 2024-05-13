@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Apps.MauiRunner.Xml.Components.IndexShiftMenu"  
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModels="using:Apps.MauiRunner.ViewModels"
+             xmlns:controls="using:Apps.MauiRunner.Xml.Controls"
+             x:DataType="viewModels:WordsSpinVM"
+             x:Name="IndexShiftMenuX">
+    <Grid HorizontalOptions="CenterAndExpand" ColumnDefinitions="*,120,*">
+
+        <FlexLayout VerticalOptions="Center" Direction="{OnPlatform Android='Column'}" Grid.Column="0">
+
+            <controls:SwiftButton Text="-100"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>-100</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+            <controls:SwiftButton Text="-10"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>-10</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+            <controls:SwiftButton Text="-1"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>-1</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+        </FlexLayout>
+
+        <controls:CountDisplay Title="{Binding Title, Source={Reference IndexShiftMenuX}}"
+                               Grid.Column="1"
+                               Count="{Binding Count, Source={Reference IndexShiftMenuX}}"/>
+
+        <FlexLayout VerticalOptions="Center" Direction="{OnPlatform Android='Column'}" Grid.Column="2">
+
+            <controls:SwiftButton Text="1"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>1</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+            <controls:SwiftButton Text="10"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>10</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+            <controls:SwiftButton Text="100"
+                                  Command="{Binding ShiftCommand, Source={Reference IndexShiftMenuX}}">
+                <controls:SwiftButton.CommandParameter>
+                    <s:Int32>100</s:Int32>
+                </controls:SwiftButton.CommandParameter>
+            </controls:SwiftButton>
+
+        </FlexLayout>
+
+    </Grid>
+</ContentView>

@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using VocabularySheet.Common;
+﻿using Domain.Localization;
+using Microsoft.Extensions.Logging;
 
 namespace WebSources.Common;
 

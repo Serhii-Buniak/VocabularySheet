@@ -1,0 +1,96 @@
+
+Activities
+    In Android, an activity includes an app's UI and the actions it makes available to users. An app is a collection of activities that are created and reused from other apps. Read more on how activities allow for flexibility in the user journey.
+CTA
+    Call to action, the primary goal you want your user to achieve. For example, Subscribe could be a CTA for letting a user to sign into a service.
+Canonical layout
+    Commonly used design compositions that help layouts adapt for common use cases and screen sizes.
+Chroma
+    The colorfulness of a color, ranging from neutral gray to full vibrancy.
+Containment
+    The concept of visual grouping to create boundaries with use of white space or visible elements.
+Density-independent pixels (dp)
+    Flexible units that scale to have uniform dimensions on any screen. They are based on the physical density of the screen. These units are relative to a 160 dpi (dots per inch) screen, on which 1 dp is roughly equal to 1 px.
+Display cutout
+    An area on some devices that extends into the display surface to provide space for front-facing sensors.
+Hue
+    The perception of color, or how you would describe the color.
+Intents
+    An intent allows an app to signal it needs another app's assistance in performing an action; for example, a messaging app can use the Share intent to share a photo from the Photos app with a contact. Apps can indicate which intents to respond to through activities. Android provides flows and UI for a number of intents. Learn about common intents.
+Navigation bar
+    An Android system bar displayed at the bottom of the screen. It allows the user to navigate a device through either a gesture or tapping a button.
+Scalable pixels (sp)
+    Scalable pixels serve the same function as dp, but for fonts. The default value of an sp is the same as the default value for a dp. The Android system calculates the actual font size to use based on the device and the user's preference set in the Settings app of their Android-powered device.
+Status bar
+    An Android system bar displayed at the top of the screen. It contains notification icons and system icons.
+Tasks
+    A sequence of activities a user follows to accomplish a goal. These activities are arranged in a stack, known as the back stack, in the order in which each activity is opened. Learn more about the back stack lifecycle.
+Tone
+    The luminance, or brightness, of a color. Describes the level of light that a digital color value represents. 
+
+    Android Application Package (APK)
+    The archive (package) file format used by the Android operating system to distribute apps.
+Android Auto
+    Smartphone projection developed by Google to allow mobile devices running Android 5 or higher to project apps into the car.
+Android Automotive
+    Embedded operating system and platform on which to develop automotive apps.
+Android Open Source Project (AOSP)
+    Repository for the Android software stack. Led by Google, the AOSP repository offers the information and source code for creating custom variants of the Android stack, porting devices and accessories to the Android platform, and ensure Android devices meet compatibility requirements.
+Application Programming Interface (API)
+    Set of protocols that enable users to programmatically access tools and services and create software apps.
+Audio Video Bridging over Ethernet (Ethernet AVB)
+    Set of extensions to the core IEEE 802.1 standards that provide time-synchronized low-latency streaming services.
+Automotive Safety Integrity Level (ASIL)
+    Risk classification scheme defined by the ISO 26262 (Functional Safety for Road Vehicles) standard.
+Automotive Test Suite (ATS)
+    Test suite designed for verifying Android Automotive implementations work as expected. For example, ATS tests might exercise Car Manager APIs to verify vehicle HVAC integration.
+Board Support Package (BSP)
+    SoC-specific firmware for a device.
+Controller Area Network (CAN)
+    Vehicle bus standard that allows microcontrollers and devices to communicate with each other. 
+Compatibility Definition Document (CDD)
+    Document that enumerates the software and hardware requirements of a compatible Android device. For details, refer to Android Compatibility.
+Compatibility Test Suite (CTS)
+    Suite of tests to establish compatibility with the upstream Android Platform. For details, refer to Compatibility Test Suite. 
+Critical User Journey (CUJ)
+    The path users take to achieve a critical (important) goal.
+Digital Audio Broadcasting (DAB) and Terrestrial-DAB (T-DAB)
+    Audio broadcasting in which analog audio is converted into a digital signal and transmitted on an assigned channel in the AM or (more usually) FM frequency range.
+Digital Rights Management (DRM)
+    System for protecting the copyrights of data circulated on the Internet or other digital media by enabling secure distribution and/or disabling illegal distribution of the data.
+Digital Signal Processor (DSP)
+    Specialized microprocessor (or a SIP block), with architecture optimized for the operational needs of digital signal processing. Designed to measure, filter, and/or compress continuous real-world analog signals.
+Driver-Distraction (DD)
+    Driving while engaged in activities that take the driver's attention away from the road.
+Google Automotive Services (GAS)
+    Google Mobile Services (GMS) for automotive implementations. Provides a set of Google services and apps that can be integrated into Android Automotive devices.
+Hardware Abstraction Layer (HAL)
+    Software layer that all other higher level modules must interact with to access hardware functionality. Only the HAL can directly call the device drivers for the various hardware components on the device.
+Head Unit (HU)
+    Computing unit that powers the main display in the vehicle center console.
+Heat, Ventilation and Air Conditioning (HVAC)
+    Set of mechanical infrastructure functions designed to maintain a specific operating environment. HVAC systems perform activities such as warming homes, cooling data centers, and controlling fan speed in vehicles.
+In-Vehicle Infotainment (IVI)
+    Set of vehicle hardware and software functions that provide audio and/or video entertainment. Often used synonymously with Head Unit (HU) when describing the user-facing functionality of an Android Automotive device.
+Key Performance Indicators (KPI)
+    Business metrics for evaluating factors crucial to the success of an organization.
+Local Interconnect Network (LIN)
+    Serial network protocol used for communication between components in vehicles.
+Original Equipment Manufacturer (OEM)
+    Automaker (or suppliers) who create integrated IVI software for vehicles.
+Real-Time Operating System (RTOS)
+    OS for real-time apps that process data on receipt with minimal or no buffering delays. Processing time requirements (including OS delays) are measured in tenths of seconds or shorter increments of time.
+Service-Level Agreements (SLAs)
+    Service contract between two parties that defines an agreement about the provided service in measurable terms such as performance, availability, reliability, etc.
+System on Chip (SoC)
+    Integrated circuit that integrates all components of a computer or other electronic system into a single chip.
+Trusted Execution Environment (TEE)
+    Environment created by a small OS that runs beneath the regular kernel and is supported by special hardware. This OS can run special apps that are kept safe from each other and from the regular OS and programs (even when the regular OS is controlling the regular hardware). It can access cryptographic credentials in hardware to let specific programs prove their identity, either over the network or to secure storage hardware.
+Vehicle HAL
+    Interface that defines the properties OEMs can implement and contains property metadata (for example, whether the property is an int and which change modes are allowed).
+Vehicle Mapping Service (VMS)
+    In-vehicle data exchange service supporting advanced driver assistance systems (ADAS). Enables the sharing of road and navigation data with other vehicle systems, allowing many vehicle components and systems to behave more intelligently as they gain awareness of the road around them.
+Vehicle Network Service (VNS)
+    Controls vehicle HAL with built-in security. Access restricted to system components only (non-system components such as third party apps should use car API instead).
+Park, Reverse, Neutral, Drive and Low (PRNDL)
+    Gears available in most vehicles.

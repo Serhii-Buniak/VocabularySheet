@@ -1,4 +1,4 @@
-﻿using VocabularySheet.Common;
+﻿using Domain.Localization;
 
 namespace WebSources.Common;
 

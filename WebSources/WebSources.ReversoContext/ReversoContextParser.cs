@@ -1,7 +1,7 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
-using VocabularySheet.Common.Extensions;
+using Tools.Common.Extensions;
 using WebSources.Common;
 using WebSources.ReversoContext.Entities;
 

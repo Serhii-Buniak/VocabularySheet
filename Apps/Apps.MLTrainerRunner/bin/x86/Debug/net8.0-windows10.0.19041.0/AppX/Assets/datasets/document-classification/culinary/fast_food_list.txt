@@ -1,0 +1,51 @@
+    Burger: a sandwich made from ground meat, usually beef, placed inside a bun.
+    Fries: thin strips of potato that are deep-fried and seasoned; often served as a side.
+    Milkshake: a creamy beverage made by blending milk, ice cream, and flavorings.
+    Hot Dog: a cooked sausage, traditionally beef or pork, served in a sliced bun.
+    Chicken Nuggets: small pieces of chicken meat that are breaded and fried.
+    Taco: a traditional Mexican dish consisting of a folded or rolled tortilla filled with various ingredients.
+    Pizza: a popular dish made of a flat round base of dough topped with cheese, tomatoes, and various other ingredients.
+    Wrap: a roll-up of various fillings inside a large tortilla or flatbread.
+    Quesadilla: a Mexican dish made by filling a tortilla with cheese and then grilling it.
+    Sub: a long sandwich made from a baguette filled with various meats, cheeses, and vegetables.
+    Panini: a sandwich type of fast food, pressed and toasted in a grill.
+    Burrito: a large tortilla wrapped around a filling, typically including meat, beans, and cheese.
+
+        Coleslaw: a salad made from finely shredded raw cabbage mixed with a mayonnaise or vinaigrette dressing.
+    Onion Rings: slices of onion, coated in batter or bread crumbs, and deep-fried.
+    Soda: a sweetened carbonated beverage; known in some places as "pop" or "cola".
+    Cheese Sticks: sticks of cheese that are breaded and fried.
+    Guacamole: a dip made from mashed avocados, often mixed with onions, tomatoes, and spices.
+    Salsa: a spicy tomato sauce, usually containing onions and chili peppers.
+    Chili: a spicy stew containing chili peppers, meat, and often beans.
+    Mozzarella Sticks: breaded and fried cheese sticks, typically served with a side of marinara sauce.
+    Baked Beans: cooked beans, often in a sauce made from tomatoes and various spices.
+    Apple Pie: a dessert made of apples encased in pastry, often served warm.
+    Slaw: shredded vegetables, often dressed in a tangy or creamy sauce.
+    Potato Salad: a dish made from boiled potatoes that are mixed with various ingredients and usually dressed with mayonnaise.
+
+        Ketchup: a sweet and tangy sauce made from tomatoes, vinegar, and spices.
+    Mustard: a pungent sauce made from the ground seeds of a mustard plant.
+    Mayonnaise: a thick, creamy sauce made from oil, egg yolks, and vinegar or lemon juice.
+    Relish: a sauce or condiment made from diced vegetables or fruit; often used as a topping for hot dogs.
+    Lettuce: a green leafy vegetable commonly used as a topping for burgers and sandwiches.
+    Pickles: cucumbers that have been preserved in vinegar or brine.
+    Jalapenos: medium-sized chili peppers, often used as a spicy topping.
+    Sour Cream: a creamy dairy product that has a tangy flavor.
+    BBQ Sauce: a sauce that has a mix of sweet, tangy, and smoky flavors; commonly used for grilling.
+    Ranch Dressing: a creamy dressing made of buttermilk, herbs, and spices.
+    Sriracha: a type of spicy red chili sauce.
+    Aioli: a sauce made from garlic, egg yolk, lemon juice, and olive oil.
+
+        Combo or Combination: a meal deal that typically includes a main item, side, and a drink.
+    Drive-Thru: a service provided by restaurants where customers can order and pick up food without leaving their cars.
+    Takeout: food prepared at a restaurant and taken to be eaten elsewhere.
+    Dine-In: eating inside the restaurant.
+    To-Go: similar to takeout; it indicates that the food is to be taken away.
+    Refill: getting more of a beverage, usually at no extra charge.
+    Value Menu: a section of the menu with items offered at a lower price.
+    Large Size/Supersize: upgrading to a larger portion or size for an additional cost.
+    Happy Hour: a period of time during which drinks or fast food items are sold at a reduced price.
+    Kids' Meal: a smaller portioned meal intended for children, often accompanied by a toy.
+    Grilled: a method of cooking over direct heat, usually on a metal grate.
+    Fried: cooked by submerging in hot oil.

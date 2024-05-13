@@ -1,0 +1,179 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Apps.MauiRunner
+build_property.ProjectDir = Q:\repos\VocabularySheet\Apps\Apps.MauiRunner\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/GoogleSheets.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.GoogleSheets.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\GoogleSheets.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\GoogleSheets.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/WordClassification.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.WordClassification.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WordClassification.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WordClassification.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/WordDetails.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.WordDetails.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WordDetails.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WordDetails.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/WordSearch.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.WordSearch.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WordSearch.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WordSearch.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/WordsList.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.WordsList.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WordsList.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WordsList.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Views/WordsSpin.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Views.WordsSpin.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WordsSpin.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WordsSpin.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Components/IndexShiftMenu.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Components.IndexShiftMenu.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Components\IndexShiftMenu.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Components\IndexShiftMenu.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/BoxModels.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.BoxModels.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\BoxModels.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\BoxModels.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/ButtonIcon.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.ButtonIcon.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\ButtonIcon.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\ButtonIcon.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/Cambridge/CambridgeComponent.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.Cambridge.CambridgeComponent.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\Cambridge\CambridgeComponent.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\Cambridge\CambridgeComponent.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/CountDisplay.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.CountDisplay.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\CountDisplay.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\CountDisplay.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/DescriptionArea.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.DescriptionArea.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\DescriptionArea.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\DescriptionArea.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/EditorForUrl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.EditorForUrl.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\EditorForUrl.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\EditorForUrl.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/LabelEditor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.LabelEditor.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\LabelEditor.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\LabelEditor.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/MarkFrame.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.MarkFrame.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\MarkFrame.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\MarkFrame.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/PageHeader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.PageHeader.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\PageHeader.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\PageHeader.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/PrimaryButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.PrimaryButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\PrimaryButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\PrimaryButton.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/PrimaryTriggerButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.PrimaryTriggerButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\PrimaryTriggerButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\PrimaryTriggerButton.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/ReversoContext/ReversoContextComponent.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.ReversoContext.ReversoContextComponent.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\ReversoContext\ReversoContextComponent.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\ReversoContext\ReversoContextComponent.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/ShiftWordButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.ShiftWordButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\ShiftWordButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\ShiftWordButton.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/SwiftButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.SwiftButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\SwiftButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\SwiftButton.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/SwitchLabelPrimary.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.SwitchLabelPrimary.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\SwitchLabelPrimary.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\SwitchLabelPrimary.xaml
+
+[Q:/repos/VocabularySheet/Apps/Apps.MauiRunner/Xml/Controls/WordListItem.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Apps.MauiRunner.Xml.Controls.WordListItem.xaml
+build_metadata.AdditionalFiles.TargetPath = Xml\Controls\WordListItem.xaml
+build_metadata.AdditionalFiles.RelativePath = Xml\Controls\WordListItem.xaml

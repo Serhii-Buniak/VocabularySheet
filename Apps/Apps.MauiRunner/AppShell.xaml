@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Apps.MauiRunner.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels1="using:Apps.MauiRunner.ViewModels"
+    xmlns:views1="using:Apps.MauiRunner.Views"
+    x:DataType="viewModels1:AppShellVM">
+    
+    <Shell.FlyoutBehavior>
+        <OnPlatform x:TypeArguments="FlyoutBehavior">
+            <On Platform="WinUI" Value="Locked" />
+            <On Platform="Android" Value="Flyout" />
+        </OnPlatform>
+    </Shell.FlyoutBehavior>
+    
+    <FlyoutItem Title="Words Spin" Icon="words_spin_icon.png">
+        <ShellContent Route="WordsSpin" ContentTemplate="{DataTemplate views1:WordsSpin}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Words List" Icon="list_icon.png">
+        <ShellContent Route="WordsList" ContentTemplate="{DataTemplate views1:WordsList}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Google Sheets" Icon="google_sheet_icon.png">
+        <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate views1:GoogleSheets}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Classification" Icon="machine_learning.png">
+        <ShellContent Route="WordClassification" ContentTemplate="{DataTemplate views1:WordClassification}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Word Details" Icon="word_details_icon.png">
+        <ShellContent Route="WordDetails" ContentTemplate="{DataTemplate views1:WordDetails}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Search" Icon="search_word_icon.png">
+        <ShellContent  ContentTemplate="{DataTemplate views1:WordSearch}" />
+    </FlyoutItem>
+    
+</Shell>
