@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Runtime.CompilerServices;
 using CsvHelper;
 using CsvHelper.Configuration;
 
@@ -72,7 +73,7 @@ public static class CsvParser
         }
     }
     
-    public static async IAsyncEnumerable<T> DeserializeAsync<T>(this CsvConfiguration configuration, Stream stream, CancellationToken cancellationToken)  where T : ICsvFile
+    public static async IAsyncEnumerable<T> DeserializeAsync<T>(this CsvConfiguration configuration, Stream stream, [EnumeratorCancellation] CancellationToken cancellationToken)  where T : ICsvFile
     {
         using StreamReader reader = new(stream, leaveOpen: true);
         using CsvReader csv = new(reader, configuration, leaveOpen: true);
