@@ -35,7 +35,13 @@
 		<AppInstallerUri>C:\Temp</AppInstallerUri>
 		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
 	</PropertyGroup>
-
+	<PropertyGroup>
+		<MsPdbCmfExeFullpath>..\tools\MsPdbCmf.exe</MsPdbCmfExeFullpath>
+	</PropertyGroup>
+<!--	dotnet publish -f net8.0-windows10.0.19041.0 -c Release-->
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows' and '$(RuntimeIdentifierOverride)' != ''">
+		<RuntimeIdentifier>$(RuntimeIdentifierOverride)</RuntimeIdentifier>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'" Include="Resources\AppIcon\appicon.svg" Color="#09252B" />

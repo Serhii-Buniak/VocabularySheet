@@ -15,7 +15,7 @@ public static class OxfordDictionaryTranslatorLinker
             throw new ArgumentException("OxfordDictionary support only En", nameof(language));
         }
         
-        word = HttpUtility.UrlEncode(word);
+        word = HttpUtility.UrlEncode(word.Replace(" ", "-"));
         string link = $"{Base}/{word}";
         return link;
     }

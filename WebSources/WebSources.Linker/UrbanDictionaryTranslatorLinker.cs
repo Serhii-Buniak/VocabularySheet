@@ -15,7 +15,7 @@ public static class UrbanDictionaryTranslatorLinker
             throw new ArgumentException("UrbanDictionary support only En", nameof(language));
         }
         
-        word = HttpUtility.UrlEncode(word);
+        word = HttpUtility.UrlEncode(word).Replace("+", " ");
         string link = $"{Base}?term={word}";
         return link;
     }

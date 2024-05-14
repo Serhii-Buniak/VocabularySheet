@@ -10,7 +10,7 @@ public static class DeepLTranslatorLinker
     
     private static string WordLink(string word, WordLanguage language, WordLanguage translationLanguage)
     {
-        word = HttpUtility.UrlEncode(word);
+        word = HttpUtility.UrlEncode(word).Replace("+", " ");
         string link = $"{Base}#{LangToString(language)}/{LangToString(translationLanguage)}/{word}";
         return link;
     }
