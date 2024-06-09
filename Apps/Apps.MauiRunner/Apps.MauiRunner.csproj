@@ -16,7 +16,7 @@
 		<ApplicationTitle>Vocabulary Sheet</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>vocabulary.sheet.app</ApplicationId>
+		<ApplicationId>vocabulary.sheet.maui.app</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
