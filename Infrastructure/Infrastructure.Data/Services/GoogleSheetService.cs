@@ -7,8 +7,7 @@ namespace Infrastructure.Data.Services;
 
 public class GoogleSheetService : IGoogleSheetService
 {
-    private const float MinArticleValue = 0.15f;
-    private const float SumArticlePass = 0.55f;
+    private const float PassArticleValue = 0.42f;
     
     private readonly IWordsRepository _wordsRepository;
     private readonly IWordClassificationService _classificationService;
@@ -35,14 +34,14 @@ public class GoogleSheetService : IGoogleSheetService
     private void SetArticleType(Word word)
     {
         var probability = _classificationService.GetProbability(word.Original);
+        var list = probability.OrderedList;
+        //var articleTypes = list.Where(p => p.Value >= MinArticleValue).ToList();
 
-        var articleTypes = probability.OrderedList.Where(p => p.Value >= MinArticleValue).ToList();
+        //float sum = articleTypes.Sum(a => a.Value);
 
-        float sum = articleTypes.Sum(a => a.Value);
-
-        if (sum >= SumArticlePass)
+        if (/*sum >= SumArticlePass || */list.FirstOrDefault().Value >= PassArticleValue)
         {
-            word.ArticleType = articleTypes.First().Key;;
+            word.ArticleType = list.First().Key;;
         }
     }
 }
