@@ -24,7 +24,7 @@ public partial class WordDetailsVm : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
     private readonly StreamFetcherClient _fetcher;
-
+    private readonly WordClassificationVm _wordClassificationVM;
     [ObservableProperty] long _id = 0;
     [ObservableProperty] WordModel _prevWord = WordModel.Sample;
     [ObservableProperty] WordModel _word = WordModel.Sample;
@@ -37,10 +37,11 @@ public partial class WordDetailsVm : BaseViewModel
     
     [ObservableProperty] private Apps.MauiRunner.ViewModels.LinkBoxVm _box;
 
-    public WordDetailsVm(IMediator mediator, ILogger<WordDetailsVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+    public WordDetailsVm(IMediator mediator, ILogger<WordDetailsVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher, WordClassificationVm wordClassificationVM) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;
+        _wordClassificationVM = wordClassificationVM;
         _box = new Apps.MauiRunner.ViewModels.LinkBoxVm(mediator, logger);
     }
     
@@ -98,29 +99,39 @@ public partial class WordDetailsVm : BaseViewModel
             Id = wordId
         }, cancellationToken) ?? Word;
 
-        PrevWord = await Mediator.Send(new GetSpinWord.QueryId()
+        var prevWordTask = Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = (Word.Id - 1)
-        }, cancellationToken) ?? WordModel.Sample;
+        }, cancellationToken);
 
-        NextWord = await Mediator.Send(new GetSpinWord.QueryId()
+        var nextWordTask = Mediator.Send(new GetSpinWord.QueryId()
         {
             Id = (Word.Id + 1)
-        }, cancellationToken) ?? WordModel.Sample;
+        }, cancellationToken);
 
-        var cambridge = await Mediator.Send(new GetCambridgePage.Query()
+        var cambridgeTask = Mediator.Send(new GetCambridgePage.Query()
         {
             Word = Word
         }, cancellationToken);
 
-        var localization = await Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
 
-        var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.Query()
+        var localizationTask = Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
+        var reversoContextEntryTask = Mediator.Send(new GetReversoContextPage.Query()
         {
             Word = Word
         }, cancellationToken);
-        
-        await Box.SetWord(Word.Original, cancellationToken);
+
+
+        var setBoxTask = Box.SetWord(Word.Original, cancellationToken);
+        _wordClassificationVM.TrySet(Word.Original);
+
+        PrevWord = await prevWordTask ?? WordModel.Sample;
+        NextWord = await nextWordTask ?? WordModel.Sample;
+        var cambridge = await cambridgeTask;
+        var localization = await localizationTask;
+        var reversoContextEntry = await reversoContextEntryTask;
+        await setBoxTask;
+
         await Task.Run(() =>
         {
             TranslatorLink = GoogleTranslatorLinker.Link(Word.Original, localization.OriginLang, localization.TranslateLang);

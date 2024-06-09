@@ -103,7 +103,12 @@ public partial class WordClassificationVm : BaseViewModel
     public WordClassificationVm(IMediator mediator, ILogger<WordClassificationVm> logger) : base(mediator, logger)
     {
     }
-    
+
+    public void TrySet(string word)
+    {
+        SearchWord = word; ;
+    }
+
     public async Task LoadDataAsync()
     {
         if (!string.IsNullOrWhiteSpace(WordParam))

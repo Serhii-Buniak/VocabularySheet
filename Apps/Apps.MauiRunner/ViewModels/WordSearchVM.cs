@@ -19,7 +19,7 @@ public partial class WordSearchVm : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
     private readonly StreamFetcherClient _fetcher;
-
+    private readonly WordClassificationVm _wordClassificationVM;
     [ObservableProperty] string _searchWord = "";
     
     [ObservableProperty] WordModel? _word = null;
@@ -29,10 +29,11 @@ public partial class WordSearchVm : BaseViewModel
 
     [ObservableProperty] private Apps.MauiRunner.ViewModels.LinkBoxVm _box;
 
-    public WordSearchVm(IMediator mediator, ILogger<WordSearchVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher) : base(mediator, logger)
+    public WordSearchVm(IMediator mediator, ILogger<WordSearchVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher, WordClassificationVm wordClassificationVM) : base(mediator, logger)
     {
         _audioManager = audioManager;
         _fetcher = fetcher;
+        _wordClassificationVM = wordClassificationVM;
         _box = new Apps.MauiRunner.ViewModels.LinkBoxVm(mediator, logger);
     }
     
@@ -65,10 +66,6 @@ public partial class WordSearchVm : BaseViewModel
     [RelayCommand]
     public async Task Search(CancellationToken cancellationToken)
     {
-        using var stream = await FileSystem.OpenAppPackageFileAsync("AboutAssets.txt");
-
-        using var reader = new StreamReader(stream);
-        var data = await reader.ReadToEndAsync(cancellationToken);
         if (string.IsNullOrWhiteSpace(SearchWord))
         {
             return;
@@ -77,23 +74,32 @@ public partial class WordSearchVm : BaseViewModel
         OriginalCambridge = null;
         TranslateCambridge = null;
         ReversoContext = null;
-        Word = await Mediator.Send(new GetSpinWord.QueryName()
+
+        var wordTask = Mediator.Send(new GetSpinWord.QueryName()
         {
             Word = SearchWord
         }, cancellationToken);
         
-        var cambridge = await Mediator.Send(new GetCambridgePage.QuerySimple()
-        {
-            Word = SearchWord
-        }, cancellationToken);
-        
-        var reversoContextEntry = await Mediator.Send(new GetReversoContextPage.QuerySimple()
+        var cambridgeTask = Mediator.Send(new GetCambridgePage.QuerySimple()
         {
             Word = SearchWord
         }, cancellationToken);
 
-        var localization = await Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
-        await Box.SetWord(SearchWord, cancellationToken);
+        var reversoContextEntryTask = Mediator.Send(new GetReversoContextPage.QuerySimple()
+        {
+            Word = SearchWord
+        }, cancellationToken);
+
+        var localizationTask = Mediator.Send(new GetLanguageWord.Query(), cancellationToken);
+
+        var boxTask = Box.SetWord(SearchWord, cancellationToken);
+
+        Word = await wordTask;
+        var reversoContextEntry = await reversoContextEntryTask;
+        var cambridge = await cambridgeTask;
+        var localization = await localizationTask;
+        await boxTask;
+        _wordClassificationVM.TrySet(SearchWord);
         await Task.Run(() =>
         {
             OriginalCambridge = cambridge.GetValueOrDefault(localization.OriginLang) ?? new PublicCambridgeEntry()
@@ -122,6 +128,6 @@ public partial class WordSearchVm : BaseViewModel
             };
 
             ReversoContext = reversoContextEntry;
-        });
+        }, cancellationToken);
     }
 }

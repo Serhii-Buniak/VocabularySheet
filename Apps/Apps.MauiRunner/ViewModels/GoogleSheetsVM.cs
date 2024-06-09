@@ -96,6 +96,10 @@ public partial class GoogleSheetsVM : BaseViewModel
         {
             Error = ex.Message;
         }
+        catch (OperationCanceledException)
+        {
+            // ignore
+        }
     }
 
     public async Task LoadDataAsync()
