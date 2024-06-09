@@ -15,7 +15,8 @@ public static class WordMapping
         Original = word.Original,
         Translation = word.Translation,
         Description = word.Description,
-        ArticleType = word.ArticleType
+        ArticleType = word.ArticleType,
+        Category = word.Category ?? Category.Unknown
     };
 
 

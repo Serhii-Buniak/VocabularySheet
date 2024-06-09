@@ -7,8 +7,8 @@ namespace Infrastructure.Data.Services;
 
 public class GoogleSheetService : IGoogleSheetService
 {
-    private const float MinArticleValue = 0.10f;
-    private const float SumArticlePass = 0.65f;
+    private const float MinArticleValue = 0.15f;
+    private const float SumArticlePass = 0.55f;
     
     private readonly IWordsRepository _wordsRepository;
     private readonly IWordClassificationService _classificationService;

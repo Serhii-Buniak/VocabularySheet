@@ -11,13 +11,13 @@ public static class GetReversoContextPage
     {
         protected readonly IReversoContextRepository repository;
         protected readonly IConfigurator<LocalizationConfig> configurator;
-        
+
         protected BaseHandler(IReversoContextRepository repository, IConfigurator<LocalizationConfig> configurator)
         {
             this.repository = repository;
             this.configurator = configurator;
         }
-        
+
         protected async Task<PublicReversoContextEntry?> BaseSearch(string word, CancellationToken cancellationToken)
         {
             var languages = await configurator.Get(cancellationToken);
@@ -25,11 +25,11 @@ public static class GetReversoContextPage
         }
 
     }
-    
+
     public record Query : IRequest<PublicReversoContextEntry?>
     {
         public required IWord Word { get; init; }
-        
+
         public class Handler : BaseHandler, IRequestHandler<Query, PublicReversoContextEntry?>
         {
             public Handler(IReversoContextRepository repository, IConfigurator<LocalizationConfig> configurator) : base(repository, configurator)
@@ -38,15 +38,21 @@ public static class GetReversoContextPage
 
             public async Task<PublicReversoContextEntry?> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await BaseSearch(request.Word.Original, cancellationToken);
+                var result = await BaseSearch(request.Word.Original, cancellationToken);
+                if (result == null)
+                {
+                    return null;
+                }
+
+                return result with { Content = result.Content with { Examples = result.Content.Examples.Take(8).ToList() } };
             }
         }
     }
-    
+
     public record QuerySimple : IRequest<PublicReversoContextEntry?>
     {
         public required string Word { get; init; }
-        
+
         public class Handler : BaseHandler, IRequestHandler<QuerySimple, PublicReversoContextEntry?>
         {
             public Handler(IReversoContextRepository repository, IConfigurator<LocalizationConfig> configurator) : base(repository, configurator)
@@ -68,7 +74,7 @@ public static class GetReversoContextPage
             RuleFor(q => q.Word.Original).NotEmpty();
         }
     }
-    
+
     public class ValidationSimple : AbstractValidator<QuerySimple>
     {
         public ValidationSimple()

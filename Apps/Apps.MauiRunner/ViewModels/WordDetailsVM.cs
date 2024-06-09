@@ -93,6 +93,7 @@ public partial class WordDetailsVm : BaseViewModel
         OriginalCambridge = null;
         TranslateCambridge = null;
         ReversoContext = null;
+        ReversoContext = null;
 
         Word = await Mediator.Send(new GetSpinWord.QueryId()
         {

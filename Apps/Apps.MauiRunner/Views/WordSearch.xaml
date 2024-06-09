@@ -17,7 +17,7 @@
 
             <controls1:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
                                    Margin="0,5"
-                                   Word="{Binding Word, Mode=OneWay}" />
+                                   Word="{Binding Word, Mode=TwoWay}" />
 
             <Grid ColumnDefinitions="{OnPlatform WinUI='*,Auto'}"
                   RowDefinitions="{OnPlatform Android='*,Auto'}"

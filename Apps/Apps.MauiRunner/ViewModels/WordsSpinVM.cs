@@ -26,7 +26,7 @@ public partial class WordsSpinVM : BaseViewModel
         ToIndex = ToIndex,
         IsOriginalMode = IsOriginalMode,
         IsTranslationMode = IsTranslationMode,
-        Category = SelectedCategoryItem.Key,
+        SelectedCategory = SelectedCategoryItem.Key,
     };
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(StartCommandCanExecute))]

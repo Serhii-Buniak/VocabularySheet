@@ -11,43 +11,17 @@ namespace Apps.MauiRunner.ViewModels;
 public record WordClassificationRecord : IHasPercentage
 {
     private const float OtherPercentage = 0.1f;
-        
+
     public required ArticleType ArticleType { get; init; }
     public required string ArticleFormatted { get; init; }
     public required float Probability { get; init; }
     public required int Percentage { get; set; }
     public string ProbabilityFormatted => $"{Percentage}%";
 
-    public string BackgroundColor => ArticleType switch
-    {
-        ArticleType.Economic => "#33124530",
-        ArticleType.Fantasy => "#33c74d10",
-        ArticleType.Culinary => "#3372854e",
-        ArticleType.Digital => "#3303a874",
-        ArticleType.Historical => "#3338261f",
-        ArticleType.Medical => "#337d0420",
-        ArticleType.Politics => "#33bababa",
-        ArticleType.Sport => "#3306706e",
-        ArticleType.Science => "#33c7b708",
-        ArticleType.Religion => "#33ededed",
-        _ => "#33424242"
-    };
-    
-    public string BorderColor => ArticleType switch
-    {
-        ArticleType.Economic => "#ee124530",
-        ArticleType.Fantasy => "#eec74d10",
-        ArticleType.Culinary => "#ee72854e",
-        ArticleType.Digital => "#ee03a874",
-        ArticleType.Historical => "#ee38261f",
-        ArticleType.Medical => "#ee7d0420",
-        ArticleType.Politics => "#eebababa",
-        ArticleType.Sport => "#ee06706e",
-        ArticleType.Science => "#eec7b708",
-        ArticleType.Religion => "#eeededed",
-        _ => "#ee424242"
-    };
-    
+    public string BackgroundColor => ArticleType.ToAlphaMauiColor().ToArgbHex(true);
+
+    public string BorderColor => ArticleType.ToMauiColor().ToArgbHex(true);
+
     public string Icon => ArticleType switch
     {
         ArticleType.Economic => "article_business.png",
@@ -62,17 +36,17 @@ public record WordClassificationRecord : IHasPercentage
         ArticleType.Religion => "article_religion.png",
         _ => "article_other.png"
     };
-    
+
     public static List<WordClassificationRecord> CreateList(ArticleProbabilityResult probability)
     {
         var okProbabilities = probability.OrderedList.Where(r => r.Value >= OtherPercentage).ToList();
-        
+
         var otherProbabilities = probability.OrderedList.Where(r => r.Value < OtherPercentage).ToList();
 
         if (otherProbabilities.Count != 0)
         {
             var other = new KeyValuePair<ArticleType, float>(ArticleType.Other, otherProbabilities.Sum(p => p.Value));
-            okProbabilities = [..okProbabilities, other];
+            okProbabilities = [.. okProbabilities, other];
         }
 
         return okProbabilities.Select(Create).ToList().AdjustPercentageTo100();
@@ -81,7 +55,7 @@ public record WordClassificationRecord : IHasPercentage
     public static WordClassificationRecord Create(KeyValuePair<ArticleType, float> record)
     {
         int percent = (int)Math.Round(record.Value * 100);
-        
+
         return new WordClassificationRecord
         {
             ArticleType = record.Key,
@@ -97,7 +71,7 @@ public partial class WordClassificationVm : BaseViewModel
 {
     [ObservableProperty] private string _searchWord = string.Empty;
     [ObservableProperty] private List<WordClassificationRecord> _records = [];
-    
+
     [ObservableProperty] private string _wordParam = string.Empty;
 
     public WordClassificationVm(IMediator mediator, ILogger<WordClassificationVm> logger) : base(mediator, logger)
@@ -115,10 +89,10 @@ public partial class WordClassificationVm : BaseViewModel
         {
             SearchWord = WordParam;
         }
-        
+
         await Classify();
     }
-    
+
     [RelayCommand]
     public async Task Classify()
     {
@@ -131,12 +105,28 @@ public partial class WordClassificationVm : BaseViewModel
         {
             await Shell.Current.GoToWordClassification();
         }
-        
+
         ArticleProbabilityResult probabilityResult = await Mediator.Send(new ArticlePrediction.Query()
         {
             Word = SearchWord
         });
 
         Records = WordClassificationRecord.CreateList(probabilityResult);
+
+        //Records =
+        //[
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Other, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Sport, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Science, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Religion, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Politics, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Medical, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Historical, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Fantasy, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Economic, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Digital, 100)),
+        //    WordClassificationRecord.Create(new KeyValuePair<ArticleType, float>(ArticleType.Culinary, 100)),
+        //];
+
     }
 }

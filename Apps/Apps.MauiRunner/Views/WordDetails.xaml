@@ -19,7 +19,7 @@
             <controls1:WordListItem MaximumWidth="{OnPlatform WinUI=1600}"
                                    Margin="0,5"
                                    OnClick="{Binding GoBackCommand}"
-                                   Word="{Binding Word}" />
+                                   Word="{Binding Word, Mode=TwoWay}" />
             <FlexLayout MaximumWidthRequest="{OnPlatform WinUI=1600}" HorizontalOptions="Center" JustifyContent="SpaceBetween">
                 <controls1:ShiftWordButton Word="{Binding PrevWord}"
                                           OnClick="{Binding LoadWordCommand}"/>

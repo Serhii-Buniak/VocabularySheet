@@ -13,7 +13,7 @@ public static class GetSpinWords
         public int ToIndex { get; set; }
         public bool IsOriginalMode { get; set; }
         public bool IsTranslationMode { get; set; }
-        public Category? Category { get; set; }
+        public Category? SelectedCategory { get; set; }
 
         public bool IsValid() => FromIndex > 0;
         
@@ -36,9 +36,9 @@ public static class GetSpinWords
                 var languages = await _configuration.Get(cancellationToken);
                 
                 IEnumerable<Word> words;
-                if (request.Category.HasValue)
+                if (request.SelectedCategory.HasValue)
                 {
-                    words = await _repository.TakeAsync(needTake, needSkip, request.Category.Value, cancellationToken);
+                    words = await _repository.TakeAsync(needTake, needSkip, request.SelectedCategory.Value, cancellationToken);
                 }
                 else
                 {
@@ -63,6 +63,7 @@ public static class GetSpinWords
                             OrignalLanguage = languages.OriginLang,
                             TranslationlLanguage = languages.TranslateLang,
                             ArticleType = word.ArticleType,
+                            Category = word.Category ?? Category.Unknown
                         });
                     }          
                     
@@ -77,7 +78,8 @@ public static class GetSpinWords
                             Description = word.Description,
                             OrignalLanguage = languages.TranslateLang,
                             TranslationlLanguage = languages.OriginLang,
-                            ArticleType = word.ArticleType
+                            ArticleType = word.ArticleType,
+                            Category = word.Category ?? Category.Unknown
                         });
                     }
 
@@ -101,8 +103,8 @@ public static class GetSpinWords
 
             RuleFor(q => q.ToIndex)
                 .GreaterThanOrEqualTo(q => q.FromIndex)
-                .LessThanOrEqualTo(p => p.Category.HasValue 
-                    ? repository.Count(p.Category.Value) 
+                .LessThanOrEqualTo(p => p.SelectedCategory.HasValue 
+                    ? repository.Count(p.SelectedCategory.Value) 
                     : repository.Count());
 
         }
