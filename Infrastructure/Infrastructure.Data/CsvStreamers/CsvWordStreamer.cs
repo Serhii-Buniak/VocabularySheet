@@ -13,6 +13,11 @@ internal class CsvWordStreamer
             .DeserializeAsync<WordCsv>(stream, cancellationToken)
             .ToListAsync(cancellationToken);
 
-        return words.ToWordsCsv();
+        return words.Where(w => !IsBroken(w)).ToWordsCsv();
+    }
+
+    private static bool IsBroken(WordCsv wordCsv)
+    {
+        return string.IsNullOrWhiteSpace(wordCsv.Original);
     }
 }

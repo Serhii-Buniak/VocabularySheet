@@ -43,7 +43,6 @@
 		<RuntimeIdentifier>$(RuntimeIdentifierOverride)</RuntimeIdentifier>
 	</PropertyGroup>
 	
-	/
 <!--	ADD IF FOR ALL WHEN PUBLISH-->
 <!--	<TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>-->
 <!--	<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>-->
@@ -81,9 +80,9 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\Application\Application.Common\Application.Common.csproj"/>
-		<ProjectReference Include="..\..\Data\Infrastructure.Data\Infrastructure.Data.csproj"/>
 		<ProjectReference Include="..\..\Domain\Domain.Localization\Domain.Localization.csproj"/>
 		<ProjectReference Include="..\..\Domain\Domain.WebSources\Domain.WebSources.csproj"/>
+		<ProjectReference Include="..\..\Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj" />
 		<ProjectReference Include="..\..\WebSources\WebSources.Common\WebSources.Common.csproj"/>
 		<ProjectReference Include="..\..\WebSources\WebSources.Linker\WebSources.Linker.csproj"/>
 		<ProjectReference Include="..\..\WebSources\WebSources.ReversoContext\WebSources.ReversoContext.csproj"/>

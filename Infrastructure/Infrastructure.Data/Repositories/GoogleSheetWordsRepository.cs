@@ -20,13 +20,15 @@ internal class GoogleSheetWordsRepository : IGoogleSheetWordsRepository
         _configuration = configuration;
     }
     
-    public async Task<IEnumerable<Word>?> GetAllAsync(CancellationToken cancellationToken)
+    public async Task<List<Word>> GetAllAsync(CancellationToken cancellationToken)
     {
         var configuration = await _configuration.Get(cancellationToken);
-        await _client.RunScriptAsync(configuration.ScriptUrl, cancellationToken);
-
+        Task scriptTask = _client.RunScriptAsync(configuration.ScriptUrl, cancellationToken);
+        
         await using Stream stream = await _client.GetCsvFileAsync(configuration.SheetUrl, cancellationToken);
-
-        return await _streamer.ReadAsync(stream, cancellationToken);
+        var result = await _streamer.ReadAsync(stream, cancellationToken);
+        
+        await scriptTask;
+        return result.ToList();
     }
 }

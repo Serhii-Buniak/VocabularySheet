@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using ML.Predictor;
 
 namespace Domain.WordModels;
 
@@ -8,17 +9,21 @@ public interface IWord
     string Original { get; }
     string Translation { get; }
     string? Description { get; }
+    ArticleType ArticleType { get; }
 }
 
 public record Word : ILongEntity, IWord
 {
-    public long Id { get; set; }
+    public long Id { get; init; }
 
-    public required string Original { get; set; }
+    public required string Original { get; init; }
     
-    public required string Translation { get; set; }
+    public required string Translation { get; init; }
     
-    public string? Description { get; set; }
+    public string? Description { get; init; }
 
-    public Category? Category { get; set; }
+    public Category? Category { get; init; }
+    
+    public ArticleType ArticleType { get; set; } = ArticleType.Other;
+    public int RowNumber { get; init; } = 0;
 }

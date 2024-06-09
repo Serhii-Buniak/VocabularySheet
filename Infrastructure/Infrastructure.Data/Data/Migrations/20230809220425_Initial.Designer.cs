@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace VocabularySheet.Infrastructure.Migrations
+namespace Infrastructure.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20230809220425_Initial")]

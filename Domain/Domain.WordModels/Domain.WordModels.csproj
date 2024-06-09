@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\ML\ML.Predictor\ML.Predictor.csproj" />
       <ProjectReference Include="..\Domain.Common\Domain.Common.csproj" />
       <ProjectReference Include="..\Domain.Localization\Domain.Localization.csproj" />
     </ItemGroup>

@@ -8,31 +8,17 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace VocabularySheet.Infrastructure.Migrations
+namespace Infrastructure.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231202165748_MigConfiguration")]
-    partial class MigConfiguration
+    [Migration("20231001185626_Category")]
+    partial class Category
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
-
-            modelBuilder.Entity("VocabularySheet.Domain.ConfigEntities.ConfigEntry", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("JsonData")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Configs");
-                });
 
             modelBuilder.Entity("VocabularySheet.Domain.Word", b =>
                 {

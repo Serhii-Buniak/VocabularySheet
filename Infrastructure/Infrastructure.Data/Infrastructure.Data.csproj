@@ -8,10 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Application\Application.Common\Application.Common.csproj" />
-      <ProjectReference Include="..\..\Domain\Domain.WordModels\Domain.WordModels.csproj" />
-      <ProjectReference Include="..\..\Tools\Tools.Http\Tools.Http.csproj" />
-      <ProjectReference Include="..\..\Tools\Tools.Parsers\Tools.Parsers.csproj" />
+        <ProjectReference Include="..\..\Application\Application.Common\Application.Common.csproj" />
+        <ProjectReference Include="..\..\Domain\Domain.WordModels\Domain.WordModels.csproj" />
+        <ProjectReference Include="..\..\Tools\Tools.Http\Tools.Http.csproj" />
+        <ProjectReference Include="..\..\Tools\Tools.Parsers\Tools.Parsers.csproj" />
     </ItemGroup>
 
     <ItemGroup>

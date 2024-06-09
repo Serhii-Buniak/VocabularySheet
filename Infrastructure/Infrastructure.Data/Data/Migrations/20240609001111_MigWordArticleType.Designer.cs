@@ -8,19 +8,19 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace VocabularySheet.Infrastructure.Migrations
+namespace Infrastructure.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231204225759_MigCambridge")]
-    partial class MigCambridge
+    [Migration("20240609001111_MigWordArticleType")]
+    partial class MigWordArticleType
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
 
-            modelBuilder.Entity("VocabularySheet.Domain.ConfigEntities.ConfigEntry", b =>
+            modelBuilder.Entity("Domain.Common.ConfigEntry", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("INTEGER");
@@ -34,10 +34,13 @@ namespace VocabularySheet.Infrastructure.Migrations
                     b.ToTable("Configs");
                 });
 
-            modelBuilder.Entity("VocabularySheet.Domain.Word", b =>
+            modelBuilder.Entity("Domain.WordModels.Word", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ArticleType")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("Category")
@@ -50,21 +53,39 @@ namespace VocabularySheet.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("RowNumber")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Translation")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ArticleType");
+
+                    b.HasIndex("Category");
+
+                    b.HasIndex("Original")
+                        .IsUnique();
+
+                    b.HasIndex("RowNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Translation");
+
                     b.ToTable("Words");
                 });
 
-            modelBuilder.Entity("VocabularySheet.Infrastructure.Repositories.Pages.CambridgeEntry", b =>
+            modelBuilder.Entity("Infrastructure.Data.Repositories.Pages.CambridgeEntry", b =>
                 {
                     b.Property<string>("Word")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Language")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TranslationLanguage")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedAt")
@@ -82,9 +103,40 @@ namespace VocabularySheet.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Word", "Language");
+                    b.HasKey("Word", "Language", "TranslationLanguage");
 
                     b.ToTable("Cambridge");
+                });
+
+            modelBuilder.Entity("Infrastructure.Data.Repositories.Pages.ReversoContextEntry", b =>
+                {
+                    b.Property<string>("Word")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Language")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TranslationLanguage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Html")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("JsonContent")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Word", "Language", "TranslationLanguage");
+
+                    b.ToTable("ReversoContext");
                 });
 #pragma warning restore 612, 618
         }

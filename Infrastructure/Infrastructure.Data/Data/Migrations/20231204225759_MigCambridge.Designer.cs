@@ -3,16 +3,19 @@ using System;
 using Infrastructure.Data.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace VocabularySheet.Infrastructure.Migrations
+namespace Infrastructure.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231204225759_MigCambridge")]
+    partial class MigCambridge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
@@ -56,7 +59,7 @@ namespace VocabularySheet.Infrastructure.Migrations
                     b.ToTable("Words");
                 });
 
-            modelBuilder.Entity("VocabularySheet.Infrastructure.Repositories.Pages.CambridgeEntry", b =>
+            modelBuilder.Entity("Infrastructure.Data.Repositories.Pages.CambridgeEntry", b =>
                 {
                     b.Property<string>("Word")
                         .HasColumnType("TEXT");

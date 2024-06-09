@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Data.Data;
 
 /// <summary>
-///     dotnet ef migrations add Initial --startup-project ./VocabularySheet.Infrastructure --project ./VocabularySheet.Infrastructure
+/// dotnet ef migrations add Initial --startup-project ./Infrastructure/Infrastructure.Data
 /// </summary>
 public sealed class AppDbContext : DbContext, IAppDbContext
 {
@@ -19,6 +19,7 @@ public sealed class AppDbContext : DbContext, IAppDbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
         Database.EnsureCreated();
+      //  Database.Migrate();
     }
 
     public DbSet<Word> Words => Set<Word>();
@@ -39,7 +40,14 @@ public sealed class AppDbContext : DbContext, IAppDbContext
         modelBuilder.Entity<Word>()
             .HasIndex(w => w.Original)
             .IsUnique();
+        
+        modelBuilder.Entity<Word>()
+            .HasIndex(w => w.RowNumber)
+            .IsUnique();
 
+        modelBuilder.Entity<Word>()
+            .HasIndex(w => w.ArticleType);
+        
         modelBuilder.Entity<Word>()
             .HasIndex(w => w.Translation);
 

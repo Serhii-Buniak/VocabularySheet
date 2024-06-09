@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace VocabularySheet.Infrastructure.Migrations
+namespace Infrastructure.Data.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Category : Migration

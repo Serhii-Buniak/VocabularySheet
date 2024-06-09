@@ -1,7 +1,6 @@
-﻿using Infrastructure.Data;
-using Infrastructure.Data.Services.Interfaces;
+﻿using Infrastructure.Data.Services.Interfaces;
 
-namespace VocabularySheet.Infrastructure.Services;
+namespace Infrastructure.Data.Services;
 
 public class AppDataService : IAppDataService
 {

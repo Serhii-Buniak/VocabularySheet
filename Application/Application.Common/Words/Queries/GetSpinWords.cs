@@ -62,6 +62,7 @@ public static class GetSpinWords
                             Description = word.Description,
                             OrignalLanguage = languages.OriginLang,
                             TranslationlLanguage = languages.TranslateLang,
+                            ArticleType = word.ArticleType,
                         });
                     }          
                     
@@ -76,6 +77,7 @@ public static class GetSpinWords
                             Description = word.Description,
                             OrignalLanguage = languages.TranslateLang,
                             TranslationlLanguage = languages.OriginLang,
+                            ArticleType = word.ArticleType
                         });
                     }
 

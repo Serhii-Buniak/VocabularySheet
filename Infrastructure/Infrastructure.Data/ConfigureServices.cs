@@ -14,8 +14,6 @@ using Infrastructure.Data.Services;
 using Infrastructure.Data.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using VocabularySheet.Infrastructure;
-using VocabularySheet.Infrastructure.Services;
 using WebSources.CambridgeDictionary;
 using WebSources.ReversoContext;
 
@@ -69,7 +67,7 @@ public static class ConfigureServices
         
         services.AddDbContext<AppDbContext>(o
             => o.UseSqlite(path, x
-            => x.MigrationsAssembly("VocabularySheet.Infrastructure")
+            => x.MigrationsAssembly("Infrastructure.Data")
             )
         );
     }
