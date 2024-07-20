@@ -23,7 +23,7 @@ public partial class LinkBoxVm(IMediator mediator, ILogger logger) : BaseViewMod
     private LocalizationConfig Localization  { get; set; } = new()
     {
         OriginLang = WordModel.Sample.OrignalLanguage,
-        TranslateLang = WordModel.Sample.TranslationlLanguage,
+        TranslateLang = WordModel.Sample.TranslationLanguage,
     };
     
     private string Word { get; set; } = WordModel.Sample.Original;

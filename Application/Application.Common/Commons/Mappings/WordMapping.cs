@@ -11,7 +11,7 @@ public static class WordMapping
         Id = word.Id,
         Index = index,
         OrignalLanguage = language,
-        TranslationlLanguage = transLang,
+        TranslationLanguage = transLang,
         Original = word.Original,
         Translation = word.Translation,
         Description = word.Description,

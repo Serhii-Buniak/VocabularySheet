@@ -18,4 +18,10 @@ public static class ParsedPageEntryExtensions
     {
         return await queryable.FirstOrDefaultAsync(x => x.Word == word && x.Language == language && x.TranslationLanguage == translationLanguage, cancellationToken);
     }
+    
+    public static async Task<bool> IsExist<T>(this IQueryable<T> queryable, string word, WordLanguage language, 
+        WordLanguage translationLanguage, CancellationToken cancellationToken) where T : IParsedPageEntry
+    {
+        return await queryable.AnyAsync(x => x.Word == word && x.Language == language && x.TranslationLanguage == translationLanguage, cancellationToken);
+    }
 }

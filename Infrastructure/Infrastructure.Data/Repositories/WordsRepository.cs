@@ -1,19 +1,27 @@
-﻿using Application.Common.Commons.Interfaces;
+﻿using Application.Common.Commons.Dtos;
+using Application.Common.Commons.Interfaces;
 using Domain.Common;
+using Domain.Localization;
 using Domain.WordModels;
 using Infrastructure.Data.Commons;
 using Infrastructure.Data.Data.Interfaces;
+using Infrastructure.Data.Repositories.Configurations;
+using Infrastructure.Data.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Repositories;
 
-public class WordsRepository : IWordsRepository
+public class WordsRepository : IWordsRepository, IWordDescriptionProvider
 {
+    public WordDescriptionProviderId WordDescriptionId => WordDescriptionProviderId.GoogleSheet;
+    
     private readonly IAppDbContext _context;
+    private readonly LocalizationConfigurator _localizationConfigurator;
 
-    public WordsRepository(IAppDbContext context)
+    public WordsRepository(IAppDbContext context, LocalizationConfigurator localizationConfigurator)
     {
         _context = context;
+        _localizationConfigurator = localizationConfigurator;
     }
 
     public async Task AddRangeAsync(IEnumerable<Word> words, CancellationToken cancellationToken)
@@ -130,5 +138,34 @@ public class WordsRepository : IWordsRepository
     public IQueryable<Word> GetWordByCategoryQuery(Category category)
     {
         return _context.Words.Where(w => w.Category == category).AsNoTracking();
+    }
+
+    public async Task<WordDescriptionResult?> GetWordDescription(WordWithLanguage word, CancellationToken cancellationToken)
+    {
+        var localizationConfig = await _localizationConfigurator.Get(cancellationToken);
+
+        string? description;
+        if (localizationConfig.OriginLang == word.Language)
+        {
+            description = GetWordQuery().FirstOrDefault(r => r.Original == word.Word)?.Description;
+        }
+        else if (localizationConfig.TranslateLang == word.Language)
+        {
+            description = GetWordQuery().FirstOrDefault(r => r.Translation == word.Word)?.Description;
+        }
+        else
+        {
+            description = GetWordQuery().FirstOrDefault(r => r.Original == word.Word || r.Translation == word.Word)?.Description;
+        }
+
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            return null;
+        }
+        
+        return new WordDescriptionResult(WordDescriptionId)
+        {
+            Text = description
+        };
     }
 }

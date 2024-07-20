@@ -17,7 +17,7 @@ public partial class WordsSpinVM : BaseViewModel
 {
     public event ClipboardEvent.Handler OnClipboard = (_, _) => Task.CompletedTask;
 
-    private readonly TextToSpeechService _textToSpeechService;
+    private readonly MauiTextToSpeechService _mauiTextToSpeechService;
     public int MaxIndex { get; set; }
 
     public GetSpinWords.Query QueryParameters => new()
@@ -56,6 +56,12 @@ public partial class WordsSpinVM : BaseViewModel
 
     [ObservableProperty]
     private bool _isTranslationVisible = true;
+    
+    [ObservableProperty]
+    private bool _runAudioOnStart = true;
+    
+    [ObservableProperty]
+    private bool _runAudioOnEnd = false;
 
     [ObservableProperty]
     private double _delayInSeconds = 1;
@@ -73,9 +79,9 @@ public partial class WordsSpinVM : BaseViewModel
         new CategoryItem(Category.Pink, "Pink"),
     };
     
-    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, TextToSpeechService textToSpeechService) : base(mediator, logger)
+    public WordsSpinVM(IMediator mediator, ILogger<WordsSpinVM> logger, MauiTextToSpeechService mauiTextToSpeechService) : base(mediator, logger)
     {
-        _textToSpeechService = textToSpeechService;
+        _mauiTextToSpeechService = mauiTextToSpeechService;
     }
 
     public async Task SetMaxIndex()
@@ -198,17 +204,9 @@ public partial class WordsSpinVM : BaseViewModel
     }
     
     [RelayCommand]
-    public async Task TextSpeech()
+    public async Task TextSpeech(CancellationToken cancellationToken)
     {
-        LocaleAndText? value = await _textToSpeechService.GetLocaleAndTextForTextAsync(Word.Original, Word.OrignalLanguage);
-
-        if (value != null)
-        {
-            await TextToSpeech.SpeakAsync(value.Text, new SpeechOptions()
-            {
-                Locale = value.Locale,
-            });
-        }
+        await _mauiTextToSpeechService.RunVoice(Word.OriginalWord(), cancellationToken);
     }
 
     [RelayCommand]
@@ -284,7 +282,41 @@ public partial class WordsSpinVM : BaseViewModel
     private async Task NextWord(WordModel word, CancellationToken cancellationToken)
     {
         Word = word;
+
+        Task[] beforeDelayTasks =
+        [
+            Task.Run(async () =>
+            {
+                var description = await Mediator.Send(new GetWordDetails.QueryWordDescription
+                {
+                    Id = word.Id
+                }, cancellationToken);
+
+                if (description != null && description.Text != Word.Description)
+                {
+                    Word = Word with
+                    {
+                        Description = description.Text
+                    };
+                }
+            }, cancellationToken),
+            Task.Run(async () =>
+            {
+                if (RunAudioOnStart)
+                {
+                    await _mauiTextToSpeechService.RunVoice(Word.OriginalWord(), cancellationToken);
+                }
+            }, cancellationToken),
+        ];
+        
+        await Task.WhenAll(beforeDelayTasks);
+        
         await Task.Delay(TimeSpan.FromSeconds(DelayInSeconds), cancellationToken);
+        
+        if (RunAudioOnEnd)
+        {
+            await _mauiTextToSpeechService.RunVoice(Word.TranslationWord(), cancellationToken);
+        }
     }
 
     private async Task WaitPause(CancellationToken cancellationToken)

@@ -26,6 +26,8 @@ public abstract record ParsedPageEntry : IParsedPageEntry
     public required string Link { get; init; }
     public required DateTime CreatedAt { get; init; }
     public required string JsonContent { get; init; }
+
+    public string CacheKey() => $"{Word}_{Language}_{TranslationLanguage}";
 }
 
 public record CambridgeEntry : ParsedPageEntry

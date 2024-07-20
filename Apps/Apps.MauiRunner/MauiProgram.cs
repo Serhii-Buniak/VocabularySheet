@@ -57,7 +57,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<AppShellVM>();
         builder.Services.AddSingleton(AudioManager.Current);
 
-        builder.Services.AddSingleton<TextToSpeechService>();
+        builder.Services.AddSingleton<MauiTextToSpeechService>();
 
         builder.Services.AddSingleton<GoogleSheets>()
             .AddSingleton<GoogleSheetsVM>();

@@ -26,7 +26,7 @@
         <ShellContent Route="GoogleSheets" ContentTemplate="{DataTemplate views1:GoogleSheets}" />
     </FlyoutItem>
     
-    <FlyoutItem Title="Classification" Icon="machine_learning.png">
+    <FlyoutItem FlyoutItemIsVisible="False" Title="Classification" Icon="machine_learning.png">
         <ShellContent Route="WordClassification" ContentTemplate="{DataTemplate views1:WordClassification}" />
     </FlyoutItem>
     

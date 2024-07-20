@@ -3,6 +3,7 @@ using Application.Common.Commons.Dtos;
 using Application.Common.LanguageWords;
 using Application.Common.ReversoContext.Queries;
 using Application.Common.Words.Queries;
+using Apps.MauiRunner.Common.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domain.WebSources;
@@ -22,7 +23,7 @@ namespace Apps.MauiRunner.ViewModels;
 [QueryProperty("Id", "Id")]
 public partial class WordDetailsVm : BaseViewModel
 {
-    private readonly IAudioManager _audioManager;
+    private readonly MauiTextToSpeechService _textToSpeechService;
     private readonly StreamFetcherClient _fetcher;
     private readonly WordClassificationVm _wordClassificationVM;
     [ObservableProperty] long _id = 0;
@@ -33,13 +34,13 @@ public partial class WordDetailsVm : BaseViewModel
     [ObservableProperty] PublicCambridgeEntry? _originalCambridge = null;
     [ObservableProperty] PublicCambridgeEntry? _translateCambridge = null;
     [ObservableProperty] PublicReversoContextEntry? _reversoContext = null;
-    [ObservableProperty] ExternalSourceLink _translatorLink = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationlLanguage);
+    [ObservableProperty] ExternalSourceLink _translatorLink = GoogleTranslatorLinker.Link(WordModel.Sample.Original, WordModel.Sample.OrignalLanguage, WordModel.Sample.TranslationLanguage);
     
     [ObservableProperty] private Apps.MauiRunner.ViewModels.LinkBoxVm _box;
 
-    public WordDetailsVm(IMediator mediator, ILogger<WordDetailsVm> logger, IAudioManager audioManager, StreamFetcherClient fetcher, WordClassificationVm wordClassificationVM) : base(mediator, logger)
+    public WordDetailsVm(IMediator mediator, ILogger<WordDetailsVm> logger, MauiTextToSpeechService textToSpeechService , StreamFetcherClient fetcher, WordClassificationVm wordClassificationVM) : base(mediator, logger)
     {
-        _audioManager = audioManager;
+        _textToSpeechService = textToSpeechService;
         _fetcher = fetcher;
         _wordClassificationVM = wordClassificationVM;
         _box = new Apps.MauiRunner.ViewModels.LinkBoxVm(mediator, logger);
@@ -63,18 +64,7 @@ public partial class WordDetailsVm : BaseViewModel
     [RelayCommand]
     public async Task PlayAudio(IHaveAudioLink audioLink, CancellationToken cancellationToken)
     {
-        try
-        {
-            IAudioPlayer player =
-                _audioManager.CreatePlayer(await _fetcher.Fetch(audioLink.FullLink(), cancellationToken));
-
-            player.Play();
-
-        }
-        catch (Exception)
-        {
-            // ignored
-        }
+        await _textToSpeechService.RunLinkVoice(audioLink.FullLink(), cancellationToken);
     }
 
     public async Task LoadDataAsync()

@@ -73,7 +73,7 @@
 
 
 
-            <Grid ColumnDefinitions="{OnPlatform WinUI='*,*' }" RowDefinitions="{OnPlatform WinUI='*,*', Android='*,*,*,*'}" ColumnSpacing="10"  RowSpacing="10" HorizontalOptions="Center">
+            <Grid ColumnDefinitions="{OnPlatform WinUI='*,*' }" RowDefinitions="{OnPlatform WinUI='*,*,*', Android='*,*,*,*,*,*'}" ColumnSpacing="10"  RowSpacing="10" HorizontalOptions="Center">
                 <controls1:SwitchLabelPrimary LabelText="Translation" 
                                              Grid.Row="{OnPlatform WinUI=0, Android=0}" 
                                              Grid.Column="{OnPlatform WinUI=0}"
@@ -93,6 +93,16 @@
                                              Grid.Row="{OnPlatform WinUI=1, Android=3}" 
                                              Grid.Column="{OnPlatform WinUI=1}"
                                              IsToggled="{Binding IsTranslationMode}"/>
+                
+                <controls1:SwitchLabelPrimary LabelText="Start Audio" 
+                                             Grid.Row="{OnPlatform WinUI=2, Android=4}" 
+                                             Grid.Column="{OnPlatform WinUI=0}"
+                                             IsToggled="{Binding RunAudioOnStart}"/>
+
+                <controls1:SwitchLabelPrimary LabelText="End Audio" 
+                                             Grid.Row="{OnPlatform WinUI=2, Android=5}" 
+                                             Grid.Column="{OnPlatform WinUI=1}"
+                                             IsToggled="{Binding RunAudioOnEnd}"/>
             </Grid>
 
 

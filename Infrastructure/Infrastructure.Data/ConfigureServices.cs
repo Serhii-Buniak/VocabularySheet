@@ -76,6 +76,32 @@ public static class ConfigureServices
     {
         services.AddScoped<IAppDataService, AppDataService>();
         services.AddScoped<IGoogleSheetService, GoogleSheetService>();
+        services.AddTextToSpeech();
+        services.AddWordDescription();
+    }
+    
+    private static void AddWordDescription(this IServiceCollection services)
+    {
+        services.AddScoped<IWordDescriptionService, WordDescriptionService>();
+        services.AddWordDescriptionProvider<CambridgeRepository>();
+        services.AddWordDescriptionProvider<ReversoContextRepository>();
+        services.AddWordDescriptionProvider<WordsRepository>();
+    }
+    
+    private static void AddTextToSpeech(this IServiceCollection services)
+    {
+        services.AddScoped<ITextToSpeechService, TextToSpeechService>();
+        services.AddTextToSpeechProvider<CambridgeRepository>();
+    }
+    
+    private static void AddTextToSpeechProvider<T>(this IServiceCollection services) where T : class, ITextToSpeechProvider
+    {
+        services.AddScoped<ITextToSpeechProvider, T>();
+    }
+    
+    private static void AddWordDescriptionProvider<T>(this IServiceCollection services) where T : class, IWordDescriptionProvider
+    {
+        services.AddScoped<IWordDescriptionProvider, T>();
     }
 
     private static void AddCsvSteamers(this IServiceCollection services)
@@ -87,6 +113,7 @@ public static class ConfigureServices
         where TEntity : BaseConfigurationEntity<TEntity>, new()
         where TRepository : BaseConfigurator<TEntity>
     {
+        services.AddScoped<TRepository>();
         services.AddScoped<IConfigurator<TEntity>, TRepository>();
     }
 }
