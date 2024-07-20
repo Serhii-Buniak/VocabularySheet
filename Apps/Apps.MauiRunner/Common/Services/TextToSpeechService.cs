@@ -91,6 +91,9 @@ public class MauiTextToSpeechService
             foreach (var localeLang in localeLangs)
             {
                 locale ??= locales.Where(l => l.Language.Equals(localeLang, StringComparison.InvariantCultureIgnoreCase)).Random();
+            }
+            foreach (var localeLang in localeLangs)
+            {
                 locale ??= locales.Where(l => l.Language.Contains(localeLang, StringComparison.InvariantCultureIgnoreCase)).Random();
             }
 
@@ -102,6 +105,9 @@ public class MauiTextToSpeechService
             foreach (var localeLang in LocalesLanguages[WordLanguage.En])
             {
                 locale ??= locales.Where(l => l.Language.Equals(localeLang, StringComparison.InvariantCultureIgnoreCase)).Random();
+            }
+            foreach (var localeLang in LocalesLanguages[WordLanguage.En])
+            {
                 locale ??= locales.Where(l => l.Language.Contains(localeLang, StringComparison.InvariantCultureIgnoreCase)).Random();
             }
 

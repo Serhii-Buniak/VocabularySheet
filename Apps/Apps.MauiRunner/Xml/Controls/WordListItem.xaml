@@ -18,8 +18,8 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="{OnPlatform WinUI=90, Android=60}" />
-                <ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
-                <ColumnDefinition Width="{OnPlatform WinUI=260, Android=120}" />
+                <ColumnDefinition Width="{OnPlatform WinUI=260, Android=115}" />
+                <ColumnDefinition Width="{OnPlatform WinUI=260, Android=115}" />
             </Grid.ColumnDefinitions>
 
             <BoxView Grid.Column="0" 

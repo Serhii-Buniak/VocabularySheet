@@ -67,7 +67,7 @@ public class ReversoContextRepository : IReversoContextRepository, IWordDescript
         
         var reversoContext = await Get(word.Word, word.Language, translateLanguage, cancellationToken);
 
-        var subArticles = reversoContext?.Content.Examples.Select(ex => $"- {ex}").ToList();
+        var subArticles = reversoContext?.Content.Examples.Select(ex => $"- {ex.Origin}").ToList();
         if (subArticles?.Count is 0 or null)
         {
             return null;
