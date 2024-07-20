@@ -47,7 +47,7 @@ public partial class PrimaryTriggerButton : ContentView
         typeof(PrimaryTriggerButton),
         true);
     
-    public new static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
+    public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
         nameof(ImageSource),
         typeof(ImageSource),
         typeof(PrimaryTriggerButton));

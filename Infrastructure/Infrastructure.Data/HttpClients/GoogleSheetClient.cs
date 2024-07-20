@@ -22,7 +22,7 @@ public class GoogleSheetClient : IGoogleSheetClient
 
         string id = match.Groups[1].Value;
 
-        string fileUrl = string.Format(@"https://docs.google.com/spreadsheets/u/0/d/{0}/export?format=csv&id={0}&gid=0", id);
+        string fileUrl = string.Format(@"https://docs.google.com/spreadsheets/u/0/d/{0}/export?format=xlsx&id={0}", id);
 
         HttpResponseMessage httpResponse = await _httpClient.GetAsync(fileUrl, cancellationToken);
 

@@ -1,7 +1,6 @@
 ﻿using Application.Common.Commons.Interfaces;
 using Domain.Common;
 using Domain.Localization;
-using Infrastructure.Data.CsvStreamers;
 using Infrastructure.Data.Data;
 using Infrastructure.Data.Data.Interfaces;
 using Infrastructure.Data.HttpClients;
@@ -12,6 +11,7 @@ using Infrastructure.Data.Repositories.Interfaces;
 using Infrastructure.Data.Repositories.Pages;
 using Infrastructure.Data.Services;
 using Infrastructure.Data.Services.Interfaces;
+using Infrastructure.Data.SheetStreamers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebSources.CambridgeDictionary;
@@ -106,7 +106,7 @@ public static class ConfigureServices
 
     private static void AddCsvSteamers(this IServiceCollection services)
     {
-        services.AddSingleton<CsvWordStreamer>();
+        services.AddSingleton<SheetWordStreamer>();
     }
     
     private static void AddConfigurationRepository<TEntity, TRepository>(this IServiceCollection services)

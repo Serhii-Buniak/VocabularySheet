@@ -25,6 +25,11 @@
                                     Command="{Binding SynchronizeCommand}"
                                     IsEnabled="{Binding IsGoogleSheetEnable}" />
 
+            
+            <Entry FontSize="16"
+                   WidthRequest="{OnPlatform WinUI=600, Android=300}"
+                   Text="{Binding GoogleSheetName, Mode=TwoWay}" />
+            
             <controls1:EditorForUrl Text="{Binding GoogleSheetUrl, Mode=TwoWay}" />
 
             <controls1:EditorForUrl Text="{Binding GoogleScriptUrl, Mode=TwoWay}" />

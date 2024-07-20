@@ -9,6 +9,7 @@ public static partial class SetGoogleSheetUrl
     public class Command : IRequest
     {
         public required string Url { get; set; }
+        public string? SheetName { get; set; }
 
         public class Handler : IRequestHandler<Command>
         {
@@ -24,6 +25,7 @@ public static partial class SetGoogleSheetUrl
                 await _configuration.Set(conf =>
                 {
                     conf.SheetUrl = request.Url;
+                    conf.SheetName = request.SheetName;
                     return conf;
                 }, cancellationToken);
             }

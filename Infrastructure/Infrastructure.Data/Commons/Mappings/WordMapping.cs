@@ -1,5 +1,5 @@
 ﻿using Domain.WordModels;
-using Infrastructure.Data.CsvStreamers.Models;
+using Infrastructure.Data.SheetStreamers.Models;
 
 namespace Infrastructure.Data.Commons.Mappings;
 

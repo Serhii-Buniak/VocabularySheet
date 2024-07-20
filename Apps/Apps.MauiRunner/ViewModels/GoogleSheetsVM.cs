@@ -9,7 +9,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CsvHelper;
 using Domain.Localization;
-using Infrastructure.Data.CsvStreamers.Models;
+using Infrastructure.Data.SheetStreamers.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Tools.Http.Exceptions;
@@ -25,6 +25,9 @@ public partial class GoogleSheetsVM : BaseViewModel
 
     [ObservableProperty, NotifyPropertyChangedFor(nameof(IsGoogleSheetEnable))]
     private string _googleScriptUrl = "https://script.google.com/macros/s";
+    
+    [ObservableProperty]
+    private string? _googleSheetName;
 
     public event SynchronizeEvent.Handler OnSynchronize = (_, _) => Task.CompletedTask;
     public bool IsGoogleSheetEnable => SetGoogleSheetUrl.Validation.UrlRegex.IsMatch((string)GoogleSheetUrl) && SetGoogleScriptUrl.Validation.UrlRegex.IsMatch((string)GoogleScriptUrl);
@@ -68,7 +71,7 @@ public partial class GoogleSheetsVM : BaseViewModel
     {
         try
         {
-            await Mediator.Send(new SetGoogleSheetUrl.Command() { Url = GoogleSheetUrl });
+            await Mediator.Send(new SetGoogleSheetUrl.Command() { Url = GoogleSheetUrl, SheetName = GoogleSheetName});
             await Mediator.Send(new SetGoogleScriptUrl.Command() { Url = GoogleScriptUrl });
             await Mediator.Send(new SynchronizeWords.Command());
             await OnSynchronize.Invoke(this, new SynchronizeEvent.Args());
@@ -104,17 +107,17 @@ public partial class GoogleSheetsVM : BaseViewModel
 
     public async Task LoadDataAsync()
     {
-        string sheetUrl = await Mediator.Send(new GetGoogleSheetUrl.Query());
-        string scriptUrl = await Mediator.Send(new GetGoogleScriptUrl.Query());
+        var google = await Mediator.Send(new GetGoogleSheetConfig.Query());
 
-        if (!string.IsNullOrWhiteSpace(sheetUrl))
+        GoogleSheetName = google.SheetName;
+        if (!string.IsNullOrWhiteSpace(google.SheetUrl))
         {
-            GoogleSheetUrl = sheetUrl;
+            GoogleSheetUrl = google.SheetUrl;
         }
 
-        if (!string.IsNullOrWhiteSpace(scriptUrl))
+        if (!string.IsNullOrWhiteSpace(google.ScriptUrl))
         {
-            GoogleScriptUrl = scriptUrl;
+            GoogleScriptUrl = google.ScriptUrl;
         }
         
         var configuration = await Mediator.Send(new GetLanguageWord.Query());

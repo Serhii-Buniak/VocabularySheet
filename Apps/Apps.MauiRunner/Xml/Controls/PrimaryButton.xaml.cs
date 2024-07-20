@@ -40,7 +40,7 @@ public partial class PrimaryButton : ContentView
         typeof(PrimaryButton),
         50.0);
     
-    public new static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
+    public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
         nameof(ImageSource),
         typeof(ImageSource),
         typeof(PrimaryButton));

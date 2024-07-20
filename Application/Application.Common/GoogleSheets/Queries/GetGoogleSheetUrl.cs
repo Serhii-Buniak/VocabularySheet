@@ -3,11 +3,11 @@ using Domain.Common;
 
 namespace Application.Common.GoogleSheets.Queries;
 
-public static class GetGoogleSheetUrl
+public static class GetGoogleSheetConfig
 {
-    public class Query : IRequest<string>
+    public class Query : IRequest<GoogleSheetConfig>
     {
-        public class Handler : IRequestHandler<Query, string>
+        public class Handler : IRequestHandler<Query, GoogleSheetConfig>
         {
             private readonly IConfigurator<GoogleSheetConfig> _configuration;
 
@@ -16,10 +16,10 @@ public static class GetGoogleSheetUrl
                 _configuration = configuration;
             }
 
-            public async Task<string> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<GoogleSheetConfig> Handle(Query request, CancellationToken cancellationToken)
             {
                 var googleSheetConfiguration = await _configuration.Get(cancellationToken);
-                return googleSheetConfiguration.SheetUrl;
+                return googleSheetConfiguration;
             }
         }
     }
