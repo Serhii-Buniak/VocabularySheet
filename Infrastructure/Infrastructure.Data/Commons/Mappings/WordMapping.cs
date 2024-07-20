@@ -5,7 +5,7 @@ namespace Infrastructure.Data.Commons.Mappings;
 
 public static class WordMapping
 {
-    public static Word ToWordCsv(this WordCsv wordCsv, int rowNumber) => new()
+    public static Word ToWordCsv(this WordCsv wordCsv, int rowNumber) => new Word()
     {
         Original = wordCsv.Original,
         Translation = wordCsv.Translation,

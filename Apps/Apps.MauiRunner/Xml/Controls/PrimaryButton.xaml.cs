@@ -27,15 +27,32 @@ public partial class PrimaryButton : ContentView
         typeof(bool),
         typeof(PrimaryButton),
         true);
+    
+    public new static readonly BindableProperty WidthRequestProperty = BindableProperty.Create(
+        nameof(WidthRequest),
+        typeof(double),
+        typeof(PrimaryButton),
+        170.0);
+    
+    public new static readonly BindableProperty HeightRequestProperty = BindableProperty.Create(
+        nameof(HeightRequest),
+        typeof(double),
+        typeof(PrimaryButton),
+        50.0);
+    
+    public new static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
+        nameof(ImageSource),
+        typeof(ImageSource),
+        typeof(PrimaryButton));
 
     public PrimaryButton()
     {
         InitializeComponent();
     }
 
-    public string Text
+    public string? Text
     {
-        get => (string)GetValue(TextProperty);
+        get => (string?)GetValue(TextProperty);
         set => SetValue(TextProperty, value);
     }
 
@@ -49,6 +66,23 @@ public partial class PrimaryButton : ContentView
     {
         get => (bool)GetValue(IsVisibleProperty);
         set => SetValue(IsVisibleProperty, value);
+    }
+    
+    public new double? WidthRequest
+    {
+        get => (double?)GetValue(WidthRequestProperty);
+        set => SetValue(WidthRequestProperty, value);
+    }
+    public new double? HeightRequest
+    {
+        get => (double?)GetValue(HeightRequestProperty);
+        set => SetValue(HeightRequestProperty, value);
+    }
+    
+    public ImageSource? ImageSource
+    {
+        get => (ImageSource?)GetValue(ImageSourceProperty);
+        set => SetValue(ImageSourceProperty, value);
     }
 
     public new bool IsEnabled

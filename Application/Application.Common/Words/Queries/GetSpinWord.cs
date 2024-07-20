@@ -26,7 +26,7 @@ public static class GetSpinWord
             {
                 var languages = await _configuration.Get(cancellationToken);
 
-                var word = await _repository.GetById(request.Id, cancellationToken);
+                var word = await _repository.GetByIdRealOnly(request.Id, cancellationToken);
                 var index = await _repository.GetIndexOf(request.Id, cancellationToken);
 
                 return word?.ToWordSpin(index ?? 0, languages.OriginLang, languages.TranslateLang);

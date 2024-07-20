@@ -46,6 +46,16 @@ public partial class PrimaryTriggerButton : ContentView
         typeof(bool),
         typeof(PrimaryTriggerButton),
         true);
+    
+    public new static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
+        nameof(ImageSource),
+        typeof(ImageSource),
+        typeof(PrimaryTriggerButton));
+    
+    public static readonly BindableProperty TriggerImageSourceProperty = BindableProperty.Create(
+        nameof(TriggerImageSource),
+        typeof(ImageSource),
+        typeof(PrimaryTriggerButton));
 
 
     public PrimaryTriggerButton()
@@ -94,4 +104,17 @@ public partial class PrimaryTriggerButton : ContentView
         get => (bool)GetValue(IsEnabledProperty);
         set => SetValue(IsEnabledProperty, value);
     }
+    
+    public ImageSource? ImageSource
+    {
+        get => (ImageSource?)GetValue(ImageSourceProperty);
+        set => SetValue(ImageSourceProperty, value);
+    }
+    
+    public ImageSource? TriggerImageSource
+    {
+        get => (ImageSource?)GetValue(TriggerImageSourceProperty);
+        set => SetValue(TriggerImageSourceProperty, value);
+    }
+
 }

@@ -25,9 +25,20 @@
             <BoxView Grid.Column="0" 
                      WidthRequest="5" 
                      Color="{Binding LineColor, Source={Reference WordListItemX}}" />
-            <Label Text="{Binding Word.Index, Source={Reference WordListItemX}}" 
+            <Label Text="{Binding Word.Index, Source={Reference WordListItemX}}"
 			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="1"
-			       VerticalOptions="Center"/>
+			       VerticalOptions="Center">
+	            <Label.Style>
+		            <Style TargetType="Label">
+			            <Setter Property="TextDecorations" Value="None"/>
+			            <Style.Triggers>
+				            <DataTrigger TargetType="Label" Binding="{Binding Word.Hidden, Source={Reference WordListItemX}}" Value="True">
+					            <Setter Property="TextDecorations" Value="Strikethrough"/>
+				            </DataTrigger>
+			            </Style.Triggers>
+		            </Style>
+	            </Label.Style>
+            </Label>
             <Label Text="{Binding Word.Original, Source={Reference WordListItemX}}" 
 			       FontSize="{OnPlatform WinUI=20, Android=16}" Grid.Column="2" 
 			       VerticalOptions="Center"/>

@@ -6,6 +6,7 @@
              xmlns:viewModels1="using:Apps.MauiRunner.ViewModels"
              xmlns:components="using:Apps.MauiRunner.Xml.Components"
              xmlns:controls1="using:Apps.MauiRunner.Xml.Controls"
+             xmlns:converters="using:Apps.MauiRunner.Converters"
              x:DataType="viewModels1:WordsSpinVM">
     <ScrollView MinimumWidthRequest="{OnPlatform WinUI=650}">
         <VerticalStackLayout
@@ -50,24 +51,31 @@
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
 
                 <controls1:PrimaryTriggerButton Text="Start"
-                                               Command="{Binding StartCommand}"
-                                               IsEnabled="{Binding StartCommandCanExecute}"
-                                               TriggerCondition="{Binding IsStarted}"
-                                               TriggerText="Stop"
-                                               TriggerCommand="{Binding StartCancelCommand}"
+                                                Command="{Binding StartCommand}"
+                                                IsEnabled="{Binding StartCommandCanExecute}"
+                                                TriggerCondition="{Binding IsStarted}"
+                                                TriggerText="Stop"
+                                                TriggerCommand="{Binding StartCancelCommand}"
                 />
 
                 <controls1:PrimaryTriggerButton Text="Pause"
-                                               Command="{Binding PauseCommand}"
-                                               TriggerCondition="{Binding IsPaused}"
-                                               TriggerText="Resume"
-                                               TriggerCommand="{Binding ResumeCommand}"
+                                                Command="{Binding PauseCommand}"
+                                                TriggerCondition="{Binding IsPaused}"
+                                                TriggerText="Resume"
+                                                TriggerCommand="{Binding ResumeCommand}"
                 />
 
             </HorizontalStackLayout>
 
-            <controls1:PrimaryButton Text="Speech"
-                                    Command="{Binding TextSpeechCommand}"/>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <controls1:PrimaryButton Text="Speech"
+                                         Command="{Binding TextSpeechCommand}"/>
+                
+                <controls1:PrimaryButton ImageSource="hidden.png"
+                                         IsEnabled="{Binding Word.Hidden, Converter={converters:BooleanNegationConverter}}"
+                                         Command="{Binding SetHiddenCommand}"
+                                         Text="Hide"/>
+            </HorizontalStackLayout>
 
 
 
@@ -140,13 +148,17 @@
                                        Count="{Binding ToIndex}"
                                        ShiftCommand="{Binding ShiftToLineCommand}"/>
 
+            <controls1:PrimaryButton Text="No Hide"
+                                     IsVisible="{Binding HasHiddenInRange}"
+                                     ImageSource="hidden.png"
+                                     Command="{Binding SetNotHiddenCommand}"/>
+            
             <Picker HorizontalOptions="Center" 
                     FontSize="25"
                     WidthRequest="300"
                     Margin="10"
                     ItemsSource="{Binding CategoryItems}"
-                    SelectedItem="{Binding SelectedCategoryItem}"
-                    >
+                    SelectedItem="{Binding SelectedCategoryItem}">
             </Picker>
 
             

@@ -1,7 +1,6 @@
 ﻿using Application.Common.Commons.Dtos;
 using Application.Common.Commons.Interfaces;
 using Domain.Common;
-using Domain.Localization;
 using Domain.WordModels;
 using Infrastructure.Data.Commons;
 using Infrastructure.Data.Data.Interfaces;
@@ -23,7 +22,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
         _context = context;
         _localizationConfigurator = localizationConfigurator;
     }
-
+    
     public async Task AddRangeAsync(IEnumerable<Word> words, CancellationToken cancellationToken)
     {
         await _context.Words.AddRangeAsync(words, cancellationToken);
@@ -59,16 +58,52 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
        return await _context.Words.FirstOrDefaultId(id, cancellationToken);
     }
     
+    public async Task<Word?> GetByIdRealOnly(long id, CancellationToken cancellationToken)
+    {
+       return await _context.Words.AsNoTracking().FirstOrDefaultId(id, cancellationToken);
+    }
+
+    public async Task SetHidden(long id, CancellationToken cancellationToken)
+    {
+        var word = await GetById(id, cancellationToken);
+        if (word == null)
+        {
+            return;
+        }
+        
+        word.HiddenTo = Word.CreateHiddenTo();
+        await SaveAsync(cancellationToken);
+    }
+
+    public async Task SetNotHidden(int take, int skip, CancellationToken cancellationToken)
+    {
+        await _context.Words
+            .Skip(skip)
+            .Take(take)
+            .ExecuteUpdateAsync(p => p.SetProperty(pr => pr.HiddenTo, Word.CreateNoHiddenTo()), cancellationToken);
+        
+    }
+    
+    public async Task SetNotHidden(int take, int skip, Category category, CancellationToken cancellationToken)
+    {
+        await _context.Words
+            .Where(w => w.Category == category)
+            .Skip(skip)
+            .Take(take)
+            .ExecuteUpdateAsync(p => p.SetProperty(pr => pr.HiddenTo, Word.CreateNoHiddenTo()), cancellationToken);
+    }
+
     public async Task<Word?> GetByName(string word, CancellationToken cancellationToken)
     {
         var strictOrigial = await _context.Words
+            .AsNoTracking()
             .FirstOrDefaultAsync(w => w.Original == word, cancellationToken);
         if (strictOrigial != null)
         {
             return strictOrigial;
         }
         
-        var strictTranslate = await _context.Words
+        var strictTranslate = await GetWordQuery()
             .FirstOrDefaultAsync(w => w.Translation == word, cancellationToken);
         if (strictTranslate != null)
         {
@@ -76,6 +111,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
         }
 
         var original = await _context.Words.OrderBy(w => w.Original.Length)
+            .AsNoTracking()
             .FirstOrDefaultAsync(w => w.Original.Contains(word), cancellationToken);
         if (original != null)
         {
@@ -83,6 +119,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
         }
         
         var translate = await _context.Words.OrderBy(w => w.Translation.Length)
+            .AsNoTracking()
             .FirstOrDefaultAsync(w => w.Translation.Contains(word), cancellationToken);
         
         return translate;
@@ -90,7 +127,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
 
     public async Task<int?> GetIndexOf(long id, CancellationToken cancellationToken)
     {
-        var words = await _context.Words
+        var words = await GetWordQuery()
             .OrderBy(w => w.Id)
             .OfType<IEntity<long>>()
             .ToListAsync(cancellationToken);
@@ -106,7 +143,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
 
     public async Task<IEnumerable<Word>> GetAllAsync(CancellationToken cancellationToken)
     {
-        return await _context.Words.AsNoTracking().ToListAsync(cancellationToken);
+        return await GetWordQuery().ToListAsync(cancellationToken);
     }
 
     public async Task<int> SaveAsync(CancellationToken cancellationToken)
@@ -128,7 +165,7 @@ public class WordsRepository : IWordsRepository, IWordDescriptionProvider
             .Skip(skip)
             .Take(take)
             .ToListAsync(cancellationToken);
-    }   
+    }
     
     public IQueryable<Word> GetWordQuery()
     {

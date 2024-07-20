@@ -5,7 +5,9 @@
              x:Name="PrimaryBtnX">
 
     <Button FontSize="24"
-			WidthRequest="170"
+			WidthRequest="{Binding WidthRequest, Source={Reference PrimaryBtnX}}"
+			HeightRequest="{Binding HeightRequest, Source={Reference PrimaryBtnX}}"
+			ImageSource="{Binding ImageSource, Source={Reference PrimaryBtnX}}"
 			Text="{Binding Text, Source={Reference PrimaryBtnX}}"
 			Command="{Binding Command, Source={Reference PrimaryBtnX}}"
 			IsEnabled="{Binding IsEnabled, Source={Reference PrimaryBtnX}}"

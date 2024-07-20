@@ -32,8 +32,6 @@ public static class GetSpinWords
             {
                 int needSkip = request.FromIndex - 1;
                 int needTake = request.ToIndex - needSkip;
-
-                var languages = await _configuration.Get(cancellationToken);
                 
                 IEnumerable<Word> words;
                 if (request.SelectedCategory.HasValue)
@@ -45,7 +43,7 @@ public static class GetSpinWords
                     words = await _repository.TakeAsync(needTake, needSkip, cancellationToken);
                 }
                 
-                
+                var languages = await _configuration.Get(cancellationToken);
                 List<WordModel> result = new();
 
                 int index = request.FromIndex;
@@ -63,7 +61,8 @@ public static class GetSpinWords
                             OrignalLanguage = languages.OriginLang,
                             TranslationLanguage = languages.TranslateLang,
                             ArticleType = word.ArticleType,
-                            Category = word.Category ?? Category.Unknown
+                            Category = word.Category ?? Category.Unknown,
+                            Hidden = word.Hidden
                         });
                     }          
                     
@@ -79,7 +78,8 @@ public static class GetSpinWords
                             OrignalLanguage = languages.TranslateLang,
                             TranslationLanguage = languages.OriginLang,
                             ArticleType = word.ArticleType,
-                            Category = word.Category ?? Category.Unknown
+                            Category = word.Category ?? Category.Unknown,
+                            Hidden = word.Hidden
                         });
                     }
 

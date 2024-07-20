@@ -54,7 +54,7 @@ public static class GetWordDetails
             public async Task<WordDescriptionResult?> Handle(QueryWordDescription request, CancellationToken cancellationToken)
             {
                 var config = await _configuration.Get(cancellationToken);
-                var word = await _repository.GetById(request.Id, cancellationToken);
+                var word = await _repository.GetByIdRealOnly(request.Id, cancellationToken);
                 if (word == null)
                 {
                     return null;

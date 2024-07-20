@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Application.Common.Commons.Dtos;
+using Application.Common.Words.Commands;
 using Application.Common.Words.Queries;
 using Apps.MauiRunner.Common.Events;
 using Apps.MauiRunner.Common.Services;
@@ -20,7 +21,7 @@ public partial class WordsSpinVM : BaseViewModel
     private readonly MauiTextToSpeechService _mauiTextToSpeechService;
     public int MaxIndex { get; set; }
 
-    public GetSpinWords.Query QueryParameters => new()
+    public GetSpinWords.Query QueryParameters => new ()
     {
         FromIndex = FromIndex,
         ToIndex = ToIndex,
@@ -62,6 +63,9 @@ public partial class WordsSpinVM : BaseViewModel
     
     [ObservableProperty]
     private bool _runAudioOnEnd = false;
+    
+    [ObservableProperty]
+    private bool _hasHiddenInRange = false;
 
     [ObservableProperty]
     private double _delayInSeconds = 1;
@@ -157,7 +161,7 @@ public partial class WordsSpinVM : BaseViewModel
         {
             List<WordModel> words = await GetWordsListAsync(cancellationToken);
 
-            foreach (WordModel word in words)
+            foreach (WordModel word in words.Where(w => !w.Hidden))
             {
                 await WaitPause(cancellationToken);
                 await NextWord(word, cancellationToken);
@@ -179,6 +183,33 @@ public partial class WordsSpinVM : BaseViewModel
     {
         ResetSpin();
         await Shell.Current.GoToWordDetails(Word.Id);
+    }
+    
+    [RelayCommand]
+    public async Task SetHidden(CancellationToken cancellationToken)
+    {
+        await Mediator.Send(new WordHidden.SetHidden
+        {
+            Id = Word.Id
+        }, cancellationToken);
+        
+        Word = Word with
+        {
+            Hidden = true
+        };
+    }
+    
+    [RelayCommand]
+    public async Task SetNotHidden(CancellationToken cancellationToken)
+    {
+        await Mediator.Send(new WordHidden.SetNotHidden()
+        {
+            FromIndex = QueryParameters.FromIndex,
+            ToIndex = QueryParameters.ToIndex,
+            SelectedCategory = QueryParameters.SelectedCategory
+        }, cancellationToken);
+
+        HasHiddenInRange = false;
     }
     
     [RelayCommand]
@@ -329,6 +360,9 @@ public partial class WordsSpinVM : BaseViewModel
     private async Task<List<WordModel>> GetWordsListAsync(CancellationToken cancellationToken)
     {
         IEnumerable<WordModel> words = await Mediator.Send(QueryParameters, cancellationToken);
-        return words.OrderRandom().ToList();
+        var list = words.OrderRandom().ToList();
+        HasHiddenInRange = list.Any(w => w.Hidden);
+            
+        return list;
     }
 }

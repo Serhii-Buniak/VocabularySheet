@@ -10,10 +10,14 @@ public interface IWord
     string Translation { get; }
     string? Description { get; }
     ArticleType ArticleType { get; }
+    bool Hidden { get; }
 }
 
 public record Word : ILongEntity, IWord
 {
+    public static DateTime CreateHiddenTo() => DateTime.UtcNow + TimeSpan.FromHours(50);
+    public static DateTime CreateNoHiddenTo() => DateTime.MinValue;
+    
     public long Id { get; init; }
 
     public required string Original { get; init; }
@@ -26,4 +30,7 @@ public record Word : ILongEntity, IWord
     
     public ArticleType ArticleType { get; set; } = ArticleType.Other;
     public int RowNumber { get; init; } = 0;
+    public DateTime HiddenTo { get; set; }
+    
+    public bool Hidden => DateTime.UtcNow < HiddenTo;
 }

@@ -6,7 +6,8 @@
              x:Name="PrimaryTriggerBtnX">
 
     <controls1:PrimaryButton Text="{Binding Text, Source={Reference PrimaryTriggerBtnX}}" 
-                            Command="{Binding Command, Source={Reference PrimaryTriggerBtnX}}"                                                                          
+                            Command="{Binding Command, Source={Reference PrimaryTriggerBtnX}}"                                                                    
+                            ImageSource="{Binding ImageSource, Source={Reference PrimaryTriggerBtnX}}"                                                                    
                             IsEnabled="{Binding IsEnabled, Source={Reference PrimaryTriggerBtnX}}"                                                                          
                             IsVisible="{Binding IsVisible, Source={Reference PrimaryTriggerBtnX}}"                                                                          
     >
@@ -16,6 +17,7 @@
                                      Value="True">
                 <Setter Property="Text" Value="{Binding TriggerText, Source={Reference PrimaryTriggerBtnX}}" />
                 <Setter Property="Command" Value="{Binding TriggerCommand, Source={Reference PrimaryTriggerBtnX}}" />
+                <Setter Property="ImageSource" Value="{Binding TriggerImageSource, Source={Reference PrimaryTriggerBtnX}}" />
             </DataTrigger>
         </controls1:PrimaryButton.Triggers>
     </controls1:PrimaryButton>

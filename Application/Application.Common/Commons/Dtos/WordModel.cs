@@ -17,7 +17,8 @@ public record WordModel : IWord
         Description =
             "a single unit of language that has meaning and can be spoken or written:\r\n- Your essay should be no more than two thousand words long.\r\n- Some words are more difficult to spell than others.\r\n- What's the word for bikini in French?\r\n- It's sometimes difficult to find exactly the right word to express what you want to say.",
         ArticleType = ArticleType.Other,
-        Category = Category.Unknown
+        Category = Category.Unknown,
+        Hidden = false
     };
 
     public required long Id { get; init; }
@@ -32,6 +33,7 @@ public record WordModel : IWord
     public string? Description { get; init; }
     public required ArticleType ArticleType { get; init; } = ArticleType.Other;
     public required Category Category { get; init; }
+    public required bool Hidden { get; init; }
 
     public WordModel Self => this;
 
