@@ -32,6 +32,8 @@ public class ReversoContextRepository : IReversoContextRepository, IWordDescript
 
     public async Task<PublicReversoContextEntry?> Get(string word, WordLanguage language, WordLanguage translateLanguage, CancellationToken cancellationToken)
     {
+        using var _ = await Locks.LockKey($"{word}_{language}_{translateLanguage}", cancellationToken);
+
         var entry = await _reverso.AsNoTracking().OfType<IParsedPageEntry>()
             .FirstOrDefaultKey(word, language, translateLanguage, cancellationToken);
         if (entry != null)
@@ -47,7 +49,6 @@ public class ReversoContextRepository : IReversoContextRepository, IWordDescript
         
         var reversoEntry = ReversoContextEntry.Create(reversoPage);
         
-        using var _ = await Locks.LockKey(reversoEntry.CacheKey(), cancellationToken);
         bool isExist = await _reverso.AsNoTracking().OfType<IParsedPageEntry>().IsExist(reversoEntry.Word,
             reversoEntry.Language, reversoEntry.TranslationLanguage, cancellationToken);
         if (!isExist)

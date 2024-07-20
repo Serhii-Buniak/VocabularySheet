@@ -33,6 +33,8 @@ public class CambridgeRepository : ICambridgeRepository, ITextToSpeechProvider, 
 
     public async Task<PublicCambridgeEntry?> Get(string word, WordLanguage language, CancellationToken cancellationToken)
     {
+        using var _ = await Locks.LockKey($"{word}_{language}", cancellationToken);
+        
         var entry = await _cambridge.AsNoTracking()
             .OfType<IParsedPageEntry>()
             .FirstOrDefaultKey(word, language, WordLanguage.En, cancellationToken);
@@ -48,7 +50,6 @@ public class CambridgeRepository : ICambridgeRepository, ITextToSpeechProvider, 
         }
         
         var cambridgeEntry = CambridgeEntry.Create(cambridgePage);
-        using var _ = await Locks.LockKey(cambridgeEntry.CacheKey(), cancellationToken);
         
         bool isExist = await _cambridge.AsNoTracking()
             .OfType<IParsedPageEntry>()
